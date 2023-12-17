@@ -1,3 +1,57 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gatsby-remark-code-title {
+  margin-bottom: -0.6rem;
+  padding: 0.5em 1em;
+  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace;
+
+  z-index: 0;
+
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.gatsby-remark-prismjs-copy-button {
+  margin-right: 1rem;
+  padding: 0 0.5rem;
+}
+
+.ribbon .backdrop {
+  height: 150px;
+  width: 150px;
+  right: -10px;
+  top: -10px;
+}
+
+.ribbon .backdrop::before,
+.ribbon .backdrop::after {
+  content: '';
+  position: absolute;
+}
+
+.ribbon .backdrop::before {
+  left: -1px;
+  width: 40px;
+  height: 12px;
+  right: 100px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.ribbon .backdrop::after {
+  right: 0;
+  bottom: 3px;
+  width: 11px;
+  height: 20px;
+  border-bottom-right-radius: 5px;
+}
+
+.ribbon .backdrop .foreground {
+  z-index: 1;
+}

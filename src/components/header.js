@@ -57,7 +57,7 @@ const Header = ({
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
               <ToggleSidebar isOpen={isSidebarOpen} toggle={toggleSidebar} />
-              <Logo to="/portal" logo={logo.image} alt={logo.alt} />
+              <Logo to="/" logo={logo.image} alt={logo.alt} />
             </div>
             <div className="flex items-center">
               <Search />

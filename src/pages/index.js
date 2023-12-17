@@ -86,49 +86,49 @@ const IndexPage = () => {
           <div class="grid grid-cols-3 gap-8 text-gray-500 sm:gap-12 md:grid-cols-4 lg:grid-cols-8 dark:text-gray-400">
             <a
               href="https://github.com/cbillowes"
-              class="flex justify-center items-center text-5xl hover:-mt-4"
+              class="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
             >
               <FaGithub className="text-white" />
             </a>
             <a
               href="https://www.linkedin.com/in/cbouwer/"
-              class="flex justify-center items-center text-5xl hover:-mt-4"
+              class="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
             >
               <FaLinkedin className="text-white" />
             </a>
             <a
               href="https://stackoverflow.com/users/849986/clarice-bouwer"
-              class="flex justify-center items-center text-5xl hover:-mt-4"
+              class="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
             >
               <FaStackOverflow className="text-white" />
             </a>
             <a
               href="https://www.buymeacoffee.com/cbillowes"
-              class="flex justify-center items-center text-5xl hover:-mt-4"
+              class="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
             >
               <img src={coffee} alt="Buy me a coffee" className="h-11" />
             </a>
             <a
               href="https://www.cloudsure.mu"
-              class="flex justify-center items-center hover:-mt-4"
+              class="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <img src={cloudsure} alt="Cloudsure" className="h-11" />
             </a>
             <a
               href="https://clojure.org/"
-              class="flex justify-center items-center hover:-mt-4"
+              class="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <img src={clojure} alt="Clojure" className="h-11" />
             </a>
             <a
               href="https://en.wikipedia.org/wiki/Mauritius"
-              class="flex justify-center items-center hover:-mt-4"
+              class="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <img src={mauritius} alt="Mauritius" className="h-11" />
             </a>
             <a
               href="https://en.wikipedia.org/wiki/South_Africa"
-              class="flex justify-center items-center hover:-mt-4"
+              class="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <img src={southafrica} alt="South Africa" className="h-11" />
             </a>

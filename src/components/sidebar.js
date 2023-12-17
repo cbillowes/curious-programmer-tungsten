@@ -6,7 +6,7 @@ import classnames from 'classnames';
 const MenuItemLink = ({ to, icon, name }) => {
   return (
     <Link
-      href={`/portal${to}`}
+      href={to}
       className="text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 px-4 space-2 flex items-center py-2"
     >
       {icon}
