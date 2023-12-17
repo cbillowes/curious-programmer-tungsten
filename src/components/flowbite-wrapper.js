@@ -3,6 +3,7 @@ import { Flowbite } from 'flowbite-react';
 import withTheme from '@hooks/theme';
 import flowbiteTheme from '@components/flowbite-theme';
 import Header from '@components/header';
+import Footer from '@components/footer';
 
 const FlowbiteWrapper = ({ children, setTheme, theme }) => {
   return (
@@ -16,6 +17,7 @@ const FlowbiteWrapper = ({ children, setTheme, theme }) => {
         }}
       />
       <div className="pt-16">{children}</div>
+      <Footer />
     </Flowbite>
   );
 };

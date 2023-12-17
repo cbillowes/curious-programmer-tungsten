@@ -74,7 +74,7 @@ const IndexPage = () => {
           <img
             src={profile}
             alt="Clarice Bouwer"
-            className="bg-white w-64 h-64 mx-auto shadow-lg object-cover rounded-full p-2"
+            className="w-64 h-64 mx-auto shadow-lg object-cover rounded-full p-2"
           />
           <h2 class="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-white md:text-4xl">
             My name is Clarice Bouwer
