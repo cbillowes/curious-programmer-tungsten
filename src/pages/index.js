@@ -13,25 +13,29 @@ import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 const IndexPage = () => {
   return (
     <Layout>
-      <section className="bg-white dark:bg-gray-900 p-16">
+      <section className="bg-white dark:bg-gray-900 py-32">
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
-            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-              Curiosity is the <span className="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-green-400">secret sauce</span> for Software Engineers 🚀
+            <h1 className="max-w-2xl mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+              Curiosity is the{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-green-400">
+                secret sauce
+              </span>{' '}
+              for Software Engineers 🚀
             </h1>
-            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">
               Passionate developers, fueled by an insatiable thirst for
               knowledge, boldly tinker with new tech, unraveling mysteries of
               code and algorithms.
             </p>
-            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">
               It's not just about zeros and ones; it's a journey of perpetual
               excitement, where curiosity isn't just a trait, but the heartbeat
               of innovation. So, join the geek squad and let curiosity be your
               compass in the ever-expanding universe of software magic! 🌐 🦄 💻
             </p>
-            <a
-              href="#"
+            <Link
+              to="/resume"
               className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
             >
               About me
@@ -47,13 +51,13 @@ const IndexPage = () => {
                   clip-rule="evenodd"
                 ></path>
               </svg>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/blog"
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
             >
               My blog
-            </a>
+            </Link>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <img
@@ -64,40 +68,68 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
-      <hr className="dark:border-pink-900 border-pink-400" />
-      <section class="dark:b1g-pink-950 b1g-pink-200 bg-gradient-to-tl to-pink-400 dark:to-pink-950 from-pink-200 dark:from-pink-600">
+      <hr className="border-pink-900" />
+      <section class="bg-gradient-to-tl to-pink-950 from-pink-600 py-16">
         <div class="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
-          <img src={profile} alt="Clarice Bouwer" className="bg-pink-800 w-64 h-64 mx-auto shadow-lg object-cover rounded-full p-2" />
-          <h2 class="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl">
+          <img
+            src={profile}
+            alt="Clarice Bouwer"
+            className="bg-white w-64 h-64 mx-auto shadow-lg object-cover rounded-full p-2"
+          />
+          <h2 class="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-white md:text-4xl">
             My name is Clarice Bouwer
           </h2>
-          <p className="max-w-2xl mx-auto mb-4 lg:mb-16 text-center font-light text-gray-800 md:text-lg lg:text-xl dark:text-gray-50">
-            I am a Software Engineering Team Lead and Director at Cloudsure
-            Limited based in Mauritius.
+          <p className="max-w-2xl mx-auto mb-4 lg:mb-16 text-center font-light md:text-lg lg:text-xl text-gray-50">
+            I am a Software Engineering Team Lead in the Financial Sector, and
+            Director at Cloudsure Limited based in Mauritius.
           </p>
           <div class="grid grid-cols-3 gap-8 text-gray-500 sm:gap-12 md:grid-cols-4 lg:grid-cols-8 dark:text-gray-400">
-            <a href="https://github.com/cbillowes" class="flex justify-center items-center text-5xl hover:-mt-4">
-              <FaGithub className="dark:text-white text-github rounded-full" />
+            <a
+              href="https://github.com/cbillowes"
+              class="flex justify-center items-center text-5xl hover:-mt-4"
+            >
+              <FaGithub className="text-white" />
             </a>
-            <a href="https://www.linkedin.com/in/cbouwer/" class="flex justify-center items-center text-5xl hover:-mt-4">
-              <FaLinkedin className="dark:text-white text-linkedin" />
+            <a
+              href="https://www.linkedin.com/in/cbouwer/"
+              class="flex justify-center items-center text-5xl hover:-mt-4"
+            >
+              <FaLinkedin className="text-white" />
             </a>
-            <a href="https://stackoverflow.com/users/849986/clarice-bouwer" class="flex justify-center items-center text-5xl hover:-mt-4">
-              <FaStackOverflow className="dark:text-white text-stackoverflow" />
+            <a
+              href="https://stackoverflow.com/users/849986/clarice-bouwer"
+              class="flex justify-center items-center text-5xl hover:-mt-4"
+            >
+              <FaStackOverflow className="text-white" />
             </a>
-            <a href="https://www.buymeacoffee.com/cbillowes" class="flex justify-center items-center text-5xl hover:-mt-4">
+            <a
+              href="https://www.buymeacoffee.com/cbillowes"
+              class="flex justify-center items-center text-5xl hover:-mt-4"
+            >
               <img src={coffee} alt="Buy me a coffee" className="h-11" />
             </a>
-            <a href="https://www.cloudsure.mu" class="flex justify-center items-center hover:-mt-4">
+            <a
+              href="https://www.cloudsure.mu"
+              class="flex justify-center items-center hover:-mt-4"
+            >
               <img src={cloudsure} alt="Cloudsure" className="h-11" />
             </a>
-            <a href="https://clojure.org/" class="flex justify-center items-center hover:-mt-4">
+            <a
+              href="https://clojure.org/"
+              class="flex justify-center items-center hover:-mt-4"
+            >
               <img src={clojure} alt="Clojure" className="h-11" />
             </a>
-            <a href="https://en.wikipedia.org/wiki/Mauritius" class="flex justify-center items-center hover:-mt-4">
+            <a
+              href="https://en.wikipedia.org/wiki/Mauritius"
+              class="flex justify-center items-center hover:-mt-4"
+            >
               <img src={mauritius} alt="Mauritius" className="h-11" />
             </a>
-            <a href="https://en.wikipedia.org/wiki/South_Africa" class="flex justify-center items-center hover:-mt-4">
+            <a
+              href="https://en.wikipedia.org/wiki/South_Africa"
+              class="flex justify-center items-center hover:-mt-4"
+            >
               <img src={southafrica} alt="South Africa" className="h-11" />
             </a>
           </div>
