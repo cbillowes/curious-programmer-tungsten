@@ -44,7 +44,12 @@ const Credit = ({ source, link, text }) => {
 const ExternalThumbnail = ({ to, alt, src, className }) => {
   return (
     <Anchor to={to} title={alt} className={classNames('flex', className)}>
-      <img alt={alt} src={src} width={1200} className="w-full object-cover h-96" />
+      <img
+        alt={alt}
+        src={src}
+        width={1200}
+        className="w-full object-cover h-96"
+      />
     </Anchor>
   );
 };
@@ -70,27 +75,24 @@ const Thumbnail = ({
       />
     );
 
-  const Image = ComponentIndex[component];
-  return (
-    <div className="relative text-center mx-auto">
-      <Anchor to={to} isBlock>
-        {Image && (
-          <Image
-            className="shadow-md transform w-full border-8"
-            alt={alt}
-            title={alt}
-            width={1200}
-          />
-        )}
-      </Anchor>
-      <Credit
-        componentName={component}
-        source={source}
-        link={link}
-        text={credit}
-      />
-    </div>
-  );
+  try {
+    const src = require(`./images/${image}`).default;
+    return (
+      <div>
+        <Anchor to={to} isBlock>
+          <img src={src} className="h-96 object-cover" />
+        </Anchor>
+        <Credit
+          componentName={component}
+          source={source}
+          link={link}
+          text={credit}
+        />
+      </div>
+    );
+  } catch (e) {
+    return <div>{e.message}</div>
+  }
 };
 
 export default Thumbnail;

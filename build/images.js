@@ -114,73 +114,11 @@ const processLowRes = (sourcePath, reporter) => {
   );
 };
 
-const generateComponent = (sourcePath, reporter) => {
-  const template = path.join(__dirname, 'image.jsx.template');
-  fs.readFile(template, (err, data) => {
-    if (err) {
-      reporter.error(`Could not generate component: ${sourcePath}\n${err}`);
-    } else {
-      const componentsDest = path.join(__dirname, `../src/components/images/`);
-      const filename = path.basename(sourcePath);
-      const destFilename = filename.replace(path.extname(filename), `.js`);
-      const destinationPath = path.join(componentsDest, destFilename);
-
-      const component = data
-        .toString()
-        .replace(/%COMPONENT_NAME%/g, kebabToTitleCase(filename).split(".")[0])
-        .replace(/%IMAGE_FILENAME%/g, path.basename(sourcePath))
-        .replace(/%IMAGE_WIDTH%/, 1920);
-
-      fs.writeFile(destinationPath, component, () => {
-        reporter.verbose(`image [component]: ${filename}`);
-      });
-    }
-  });
-};
-
-const getComponentsToBeIndexed = (sourcePath) => {
-  const files = fs.readdirSync(sourcePath);
-
-  let content = '';
-  files.forEach((file) => {
-    if (file.indexOf(`.keep`) > -1) return;
-
-    const filename = path.basename(file).replace(path.extname(file), '');
-    const componentName = kebabToTitleCase(filename);
-    content += `\nComponent['${componentName}'] = (props) => (\n  require('./${filename}').default(props)\n);\n`;
-  });
-  return content;
-};
-
-exports.generateComponentIndex = (reporter) => {
-  const sourcePath = path.join(__dirname, '../src/components/Images');
-  const filename = 'index.js';
-  const destinationRelativePath = '../src/components/Images';
-  const destinationPath = path.join(
-    __dirname,
-    destinationRelativePath,
-    filename,
-  );
-  const indexDb = getComponentsToBeIndexed(sourcePath);
-  const template = path.join(__dirname, 'image.index.template');
-  fs.readFile(template, (err, data) => {
-    if (err) {
-      reporter.error(`could not generate component index: ${err}`);
-    } else {
-      const component = data.toString().replace(/%INDEX%/, indexDb);
-      fs.writeFile(destinationPath, component, () => {
-        reporter.verbose(`image [index db]: ${path.basename(destinationPath)}`);
-      });
-    }
-  });
-};
-
 exports.process = (node, reporter) => {
   const { absolutePath } = node;
   if (isResource(node)) {
     processHighRes(absolutePath, reporter);
     processLowRes(absolutePath, reporter);
-    generateComponent(absolutePath, reporter);
     reporter.success(`image [processed]: ${absolutePath}`);
   }
 };
@@ -205,7 +143,6 @@ exports.bulk = () => {
     ),
   );
 
-  this.generateComponentIndex(reporter);
   copyGifs();
   copySvgs();
   copyWebps();
