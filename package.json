@@ -16,20 +16,25 @@
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.0",
-    "autoprefixer": "^10.4.16",
+    "@uidotdev/usehooks": "^2.4.1",
+    "flowbite": "^2.2.1",
+    "flowbite-react": "^0.7.2",
     "gatsby": "^5.12.12",
     "gatsby-plugin-google-gtag": "^5.12.3",
     "gatsby-plugin-image": "^3.12.3",
     "gatsby-plugin-manifest": "^5.12.3",
-    "gatsby-plugin-mdx": "^5.12.3",
-    "gatsby-plugin-postcss": "^6.12.0",
     "gatsby-plugin-sharp": "^5.12.3",
     "gatsby-plugin-sitemap": "^6.12.3",
     "gatsby-source-filesystem": "^5.12.1",
     "gatsby-transformer-sharp": "^5.12.3",
-    "postcss": "^8.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "gatsby-plugin-postcss": "^6.12.0",
+    "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6"
   }
 }
