@@ -7,13 +7,15 @@ import mauritius from '@images/mauritius.webp';
 import southafrica from '@images/south-africa.webp';
 import coffee from '@images/coffee.svg';
 import Layout from '@components/layout';
+import Backdrop from '@components/backdrop';
 import { Link } from 'gatsby';
 import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 
 const IndexPage = () => {
   return (
     <Layout>
-      <section className="bg-white dark:bg-gray-900 py-32">
+      <section className="bg-gray-50 dark:bg-gray-900 py-32">
+        <Backdrop />
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
             <h1 className="max-w-2xl mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
@@ -69,66 +71,66 @@ const IndexPage = () => {
         </div>
       </section>
       <hr className="border-pink-900" />
-      <section class="bg-gradient-to-tl to-pink-950 from-pink-600 py-16">
-        <div class="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
+      <section className="bg-gradient-to-tl to-pink-950 from-pink-600 py-16">
+        <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
           <img
             src={profile}
             alt="Clarice Bouwer"
-            className="w-64 h-64 mx-auto shadow-lg object-cover rounded-full p-2"
+            className="w-64 h-64 mx-auto object-cover rounded-full"
           />
-          <h2 class="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-white md:text-4xl">
+          <h2 className="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-white md:text-4xl">
             My name is Clarice Bouwer
           </h2>
           <p className="max-w-2xl mx-auto mb-4 lg:mb-16 text-center font-light md:text-lg lg:text-xl text-gray-50">
             I am a Software Engineering Team Lead in the Financial Sector, and
             Director at Cloudsure Limited based in Mauritius.
           </p>
-          <div class="grid grid-cols-3 gap-8 text-gray-500 sm:gap-12 md:grid-cols-4 lg:grid-cols-8 dark:text-gray-400">
+          <div className="grid grid-cols-3 gap-8 text-gray-500 sm:gap-12 md:grid-cols-4 lg:grid-cols-8 dark:text-gray-400">
             <a
               href="https://github.com/cbillowes"
-              class="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
             >
               <FaGithub className="text-white" />
             </a>
             <a
               href="https://www.linkedin.com/in/cbouwer/"
-              class="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
             >
               <FaLinkedin className="text-white" />
             </a>
             <a
               href="https://stackoverflow.com/users/849986/clarice-bouwer"
-              class="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
             >
               <FaStackOverflow className="text-white" />
             </a>
             <a
               href="https://www.buymeacoffee.com/cbillowes"
-              class="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
             >
               <img src={coffee} alt="Buy me a coffee" className="h-11" />
             </a>
             <a
               href="https://www.cloudsure.mu"
-              class="flex justify-center items-center hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <img src={cloudsure} alt="Cloudsure" className="h-11" />
             </a>
             <a
               href="https://clojure.org/"
-              class="flex justify-center items-center hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <img src={clojure} alt="Clojure" className="h-11" />
             </a>
             <a
               href="https://en.wikipedia.org/wiki/Mauritius"
-              class="flex justify-center items-center hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <img src={mauritius} alt="Mauritius" className="h-11" />
             </a>
             <a
               href="https://en.wikipedia.org/wiki/South_Africa"
-              class="flex justify-center items-center hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <img src={southafrica} alt="South Africa" className="h-11" />
             </a>
@@ -136,23 +138,23 @@ const IndexPage = () => {
         </div>
       </section>
       <hr className="dark:border-pink-900 border-pink-400" />
-      <section class="bg-white dark:bg-gray-900">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-          <div class="max-w-screen-md mb-8 lg:mb-16">
-            <h2 class="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white md:text-4xl">
+      <section className="bg-gray-100 dark:bg-gray-900">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+          <div className="max-w-screen-md mb-8 lg:mb-16">
+            <h2 className="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white md:text-4xl">
               I share what I learn
             </h2>
-            <p class="font-light text-gray-500 dark:text-gray-400 sm:text-xl">
+            <p className="font-light text-gray-500 dark:text-gray-400 sm:text-xl">
               I'm on a perpetual learning journey, and I love sharing the gems I
               uncover along the way. Knowledge is power, but sharing it? That's
               the real magic! ✨
             </p>
           </div>
-          <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0">
+          <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0">
             <div>
-              <div class="flex justify-center items-center mb-4 w-10 h-10 bg-primary-100 rounded dark:bg-primary-900 lg:h-16 lg:w-16">
+              <div className="flex justify-center items-center mb-4 w-10 h-10 bg-primary-100 rounded dark:bg-primary-900 lg:h-16 lg:w-16">
                 <svg
-                  class="w-5 h-5 text-primary-600 dark:text-primary-300 lg:w-8 lg:h-8"
+                  className="w-5 h-5 text-primary-600 dark:text-primary-300 lg:w-8 lg:h-8"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -164,13 +166,13 @@ const IndexPage = () => {
                   ></path>
                 </svg>
               </div>
-              <h3 class="mb-2 text-xl font-bold dark:text-white text-gray-900">
+              <h3 className="mb-2 text-xl font-bold dark:text-white text-gray-900">
                 Soft Skills
               </h3>
-              <ul role="list" class="my-6 lg:mb-0 space-y-4">
-                <li class="flex space-x-2.5">
+              <ul role="list" className="my-6 lg:mb-0 space-y-4">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
+                    className="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -181,13 +183,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tags/mindset">Mindset</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
+                    className="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -198,13 +200,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tags/relationships">Relationships</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
+                    className="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -215,13 +217,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tags/communication">Communication</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
+                    className="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -232,13 +234,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tags/productivity">Productivity</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
+                    className="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -249,13 +251,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tags/personal-brand">Personal brand</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
+                    className="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -266,16 +268,16 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tags">...and more</Link>
                   </span>
                 </li>
               </ul>
             </div>
             <div>
-              <div class="flex justify-center items-center mb-4 w-10 h-10 bg-purple-100 rounded dark:bg-purple-900 lg:h-16 lg:w-16">
+              <div className="flex justify-center items-center mb-4 w-10 h-10 bg-purple-100 rounded dark:bg-purple-900 lg:h-16 lg:w-16">
                 <svg
-                  class="w-5 h-5 text-purple-600 dark:text-purple-300 lg:w-8 lg:h-8"
+                  className="w-5 h-5 text-purple-600 dark:text-purple-300 lg:w-8 lg:h-8"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -283,13 +285,13 @@ const IndexPage = () => {
                   <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
                 </svg>
               </div>
-              <h3 class="mb-2 text-xl font-bold dark:text-white text-gray-900">
+              <h3 className="mb-2 text-xl font-bold dark:text-white text-gray-900">
                 Software Engineering
               </h3>
-              <ul role="list" class="my-6 lg:mb-0 space-y-4">
-                <li class="flex space-x-2.5">
+              <ul role="list" className="my-6 lg:mb-0 space-y-4">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
+                    className="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -300,13 +302,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tag/java-script">JavaScript</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
+                    className="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -317,13 +319,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tag/clojure">Clojure</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
+                    className="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -334,13 +336,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tag/clojure-script">ClojureScript</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
+                    className="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -351,13 +353,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tag/react">React</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
+                    className="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -368,16 +370,16 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tags">...and more</Link>
                   </span>
                 </li>
               </ul>
             </div>
             <div>
-              <div class="flex justify-center items-center mb-4 w-10 h-10 bg-teal-100 rounded dark:bg-teal-900 lg:h-16 lg:w-16">
+              <div className="flex justify-center items-center mb-4 w-10 h-10 bg-teal-100 rounded dark:bg-teal-900 lg:h-16 lg:w-16">
                 <svg
-                  class="w-5 h-5 text-teal-600 dark:text-teal-300 lg:w-8 lg:h-8"
+                  className="w-5 h-5 text-teal-600 dark:text-teal-300 lg:w-8 lg:h-8"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -390,13 +392,13 @@ const IndexPage = () => {
                   <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
                 </svg>
               </div>
-              <h3 class="mb-2 text-xl font-bold dark:text-white text-gray-900">
+              <h3 className="mb-2 text-xl font-bold dark:text-white text-gray-900">
                 Engineering Toolkit
               </h3>
-              <ul role="list" class="my-6 lg:mb-0 space-y-4">
-                <li class="flex space-x-2.5">
+              <ul role="list" className="my-6 lg:mb-0 space-y-4">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
+                    className="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -407,13 +409,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tag/visual-studio-code">Visual Studio Code</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
+                    className="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -424,13 +426,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tag/mac-os">MacOS</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
+                    className="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -441,13 +443,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tag/dev-tools">DevTools</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
+                    className="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -458,13 +460,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tag/storybook">Storybook</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
+                    className="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -475,13 +477,13 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tag/git">Git</Link>
                   </span>
                 </li>
-                <li class="flex space-x-2.5">
+                <li className="flex space-x-2.5">
                   <svg
-                    class="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
+                    className="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -492,7 +494,7 @@ const IndexPage = () => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                  <span class="leading-tight text-gray-500 dark:text-gray-400">
+                  <span className="leading-tight text-gray-500 dark:text-gray-400">
                     <Link to="/tags">...and more</Link>
                   </span>
                 </li>

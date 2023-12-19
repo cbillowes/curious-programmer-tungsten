@@ -11,7 +11,7 @@ import { TbBook, TbSchool, TbScribble } from 'react-icons/tb';
 const Ribbon = ({ children }) => {
   if (!children) return <></>;
   return (
-    <div className="ribbon absolute right-0">
+    <div className="ribbon absolute right-0 z-40">
       <div className="backdrop absolute overflow-hidden inline-block">
         <div className="bg-pink-600 w-52 h-10 absolute top-10 -right-12 overflow-hidden transform rotate-45 py-1 text-center font-bold">
           <div className="border-dashed border-b border-l border-r border-t border-pink-200 mb-1 pb-1 text-pink-200">
@@ -90,8 +90,8 @@ const Preview = ({
           className={classNames(
             'text-xl mt-8 xl:mt-0 md:text-4xl leading-loose font-semibold tracking-tight',
             'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
-            type === 'scribbles' && 'hover:to-red-600 hover:from-blue-600',
-            type === 'article' && 'hover:to-red-600 hover:from-pink-600',
+            type === 'scribbles' && 'hover:to-green-600 hover:from-blue-600',
+            type === 'article' && 'hover:to-blue-600 hover:from-pink-600',
             type === 'course' && 'hover:to-red-600 hover:from-violet-600',
           )}
         >
@@ -129,7 +129,7 @@ const Preview = ({
       </div>
       <div
         className={classNames(
-          'xl:w-1/2 relative border-8 border-gray-300 dark:border-gray-800',
+          'xl:w-1/2 relative',
           isEven ? 'xl:text-right' : 'xl:text-left',
         )}
       >
@@ -151,7 +151,7 @@ const BlogPage = ({ data }) => {
   const edges = allMarkdownRemark.edges;
   return (
     <Layout>
-      <section className="py-8 lg:py-16 px-4 bg-white dark:bg-gray-900">
+      <section className="py-8 lg:py-16 px-4 bg-gray-100 dark:bg-gray-900">
         <div className="relative border-gray-200 dark:border-gray-700 mx-auto max-w-screen-xl dark:text-gray-100 text-gray-900">
           {edges.map((edge, index) => {
             const { node } = edge;

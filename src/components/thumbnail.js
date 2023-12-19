@@ -2,7 +2,6 @@ import React from 'react';
 import DownloadLogo from '@images/svgs/download.svg';
 import UnsplashLogo from '@images/svgs/unsplash.svg';
 import Anchor from '@components/anchor';
-import ComponentIndex from '@components/images';
 import classNames from 'classnames';
 
 const getCreditTitle = (source, attribute) => {
@@ -41,14 +40,18 @@ const Credit = ({ source, link, text }) => {
   );
 };
 
-const ExternalThumbnail = ({ to, alt, src, className }) => {
+const ExternalThumbnail = ({ to, alt, src, className, isHero }) => {
   return (
     <Anchor to={to} title={alt} className={classNames('flex', className)}>
       <img
         alt={alt}
         src={src}
         width={1200}
-        className="w-full object-cover h-96"
+        className={classNames(
+          'relative object-cover w-full',
+          isHero ? 'h-[650px]' : 'w-96',
+          isHero ? '' : 'border-8 dark:border-gray-800',
+        )}
       />
     </Anchor>
   );
@@ -56,7 +59,7 @@ const ExternalThumbnail = ({ to, alt, src, className }) => {
 
 const Thumbnail = ({
   alt = '',
-  to,
+  isHero = false,
   image,
   credit,
   source,
@@ -72,16 +75,24 @@ const Thumbnail = ({
         src={image}
         title={alt}
         className={className}
+        isHero={isHero}
       />
     );
 
   try {
     const src = require(`./images/${image}`).default;
     return (
-      <div>
-        <Anchor to={to} isBlock>
-          <img src={src} className="h-96 object-cover" />
-        </Anchor>
+      <div
+        className={classNames(
+          'relative bg-no-repeat bg-center w-full',
+          isHero ? 'bg-contain' : 'bg-cover',
+          isHero ? '' : 'border-8 dark:border-gray-800',
+        )}
+        style={{
+          backgroundImage: `url(${src})`,
+          height: isHero ? '650px' : '350px',
+        }}
+      >
         <Credit
           componentName={component}
           source={source}
@@ -91,7 +102,7 @@ const Thumbnail = ({
       </div>
     );
   } catch (e) {
-    return <div>{e.message}</div>
+    return <div>{e.message}</div>;
   }
 };
 

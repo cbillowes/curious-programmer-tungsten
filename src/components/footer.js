@@ -5,7 +5,7 @@ import iconDark from '@images/icon-dark.webp';
 
 const Footer = () => {
   return (
-    <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800 border-t-8 border-pink-600">
+    <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800 border-t border-gray-300">
       <div className="mx-auto max-w-screen-xl text-center">
         <Link
           to="/"

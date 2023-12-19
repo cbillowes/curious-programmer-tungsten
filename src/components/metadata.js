@@ -1,5 +1,5 @@
 import React from 'react';
-import { toMauritiusLocaleDateString } from '../common/date';
+import { toMauritiusLocaleDateString } from '@common/date';
 
 const Divider = ({ props, index }) => {
   return index + 1 <= props.length &&

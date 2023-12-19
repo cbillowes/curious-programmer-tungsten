@@ -24,6 +24,7 @@ const FlowbiteWrapper = ({ children, setTheme, theme }) => {
       <Sidebar
         isOpen={isSidebarOpen}
         menuItems={[
+          { to: '/', name: 'Home' },
           { to: '/blog', name: 'Blog' },
           { to: '/about', name: 'About' },
           { to: '/resume', name: 'Resume' },
@@ -40,7 +41,7 @@ const FlowbiteWrapper = ({ children, setTheme, theme }) => {
           },
         ]}
       />
-      <div className="pt-16">{children}</div>
+      <div className="selection:bg-pink-600 selection:text-white">{children}</div>
       <Footer />
     </Flowbite>
   );
