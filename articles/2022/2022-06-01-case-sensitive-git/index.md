@@ -1,6 +1,6 @@
 ---
 title: Make sure Git knows about case-sensitive changes to your file names
-date: 2022-06-01 00:00 +0400
+date: 2022-06-01
 cover: git.png
 credit: Vasil Enchev
 creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202
@@ -35,7 +35,7 @@ I must've renamed the component on the filesystem and forgot to do so on Git.
 When Netlify pulls the repository from GitHub, the poor component has a different name.
 You'll need to move the file in Git in order to fix this.
 
-```bash
+```bash:title=testing.sh
 git mv src/components/layout.js src/components/Layout.js
 ```
 
