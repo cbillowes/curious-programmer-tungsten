@@ -1,0 +1,15 @@
+.light {
+  .gatsby-remark-prismjs-copy-button {
+    background-color: #e10f64;
+
+    &:hover {
+      background-color: #0f6ae1;
+    }
+  }
+
+  #article {
+    a {
+      background-image: linear-gradient(to right, #d3079d, #0066ff 100%);
+    }
+  }
+}

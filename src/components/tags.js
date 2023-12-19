@@ -27,8 +27,8 @@ const Tags = ({ tags, isButton, redirect, additionalClasses }) => {
   if (tags && tags.length === 0) return <span></span>;
 
   const className = isButton
-    ? `bg-color-1 text-color-1-script py-1 px-4 rounded mx-1 mt-4 inline-block hover:bg-color-1-alternative ${additionalClasses}`
-    : `ml-2 text-neutral leading-loose hover:text-color-3 ${additionalClasses} ${
+    ? `py-1 px-4 rounded mx-1 mt-4 inline-block hover:text-white hover:bg-pink-700 ${additionalClasses}`
+    : `ml-2 text-white dark:text-black leading-loose ${additionalClasses} ${
         redirect && 'cursor-pointer'
       }`;
 

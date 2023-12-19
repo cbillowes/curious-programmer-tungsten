@@ -1,6 +1,6 @@
 import React from 'react';
 import unicornLaptop from '@images/unicorn-laptop-xmas.webp';
-import profile from '@images/clarice.webp';
+import profile from '@images/avatar.png';
 import cloudsure from '@images/cloudsure.webp';
 import clojure from '@images/clojure.webp';
 import mauritius from '@images/mauritius.webp';

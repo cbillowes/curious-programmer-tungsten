@@ -22,8 +22,8 @@ const Metadata = ({
   // data to decide where to put the mid-dot dividers
   const props = [timeToRead, date, page, created, modified];
   return (
-    <div className="text-neutral leading-loose text-xl font-light">
-      <div className=" opacity-50">
+    <div className="text-base text-gray-500 dark:text-gray-400">
+      <div className=" opacity-70">
         {timeToRead && (
           <>
             Estimated {timeToRead} minute read

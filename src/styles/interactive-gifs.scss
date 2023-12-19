@@ -1,0 +1,65 @@
+.interactive-gif {
+  .embedded {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.interactive-gif .loading,
+.interactive-gif .still-container,
+.interactive-gif .gif-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.interactive-gif .still,
+.interactive-gif .gif {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.interactive-gif {
+  .loading {
+    .indicator {
+      position: absolute;
+      bottom: 5;
+      left: 0;
+      width: 32px;
+      filter: contrast(0.5);
+    }
+  }
+
+  .still-container {
+    .play {
+      cursor: pointer;
+      width: 15%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      border-radius: 50%;
+      border: solid 10px var(--color-2);
+      background-color: var(--color-1);
+      opacity: 0.5;
+    }
+  }
+
+  .caption {
+    margin-top: 1.5rem;
+    font-size: 90%;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .placeholder {
+    filter: grayscale(100%);
+    text-align: center;
+    img {
+      width: 200px;
+    }
+  }
+}

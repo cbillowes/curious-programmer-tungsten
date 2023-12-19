@@ -1,0 +1,117 @@
+@import './dark.scss';
+@import './light.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#article {
+  line-height: 1.75rem;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+  }
+
+  h2 {
+    font-size: 1.95rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 0.875rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  pre {
+    margin-top: 2rem;
+  }
+
+  a {
+    font-weight: bold;
+    color: transparent;
+    background-clip: text;
+  }
+
+  ul, ol {
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: 0.5rem;
+      padding-left: 0.5rem;
+    }
+
+  }
+}
+
+.gatsby-remark-code-title {
+  padding: 0.5em 1em;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-family: monospace;
+}
+
+.gatsby-remark-prismjs-copy-button {
+  position: absolute;
+  top: 0.25rem;
+  right: 1rem;
+  padding: 0 1rem;
+}
+
+.gatsby-remark-prismjs-copy-button-container + .gatsby-highlight {
+  pre {
+    padding-top: 2rem !important;
+    line-height: 2rem !important;
+  }
+}
+
+.ribbon {
+  .backdrop {
+    height: 150px;
+    width: 150px;
+    right: -10px;
+    top: -10px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
+    &::before {
+      left: -1px;
+      width: 40px;
+      height: 12px;
+      right: 100px;
+      border-radius: 8px 8px 0px 0px;
+    }
+
+    &::after {
+      right: 0;
+      bottom: 3px;
+      width: 11px;
+      height: 20px;
+      border-bottom-right-radius: 5px;
+    }
+
+    .foreground {
+      z-index: 1;
+    }
+  }
+}

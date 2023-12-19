@@ -26,7 +26,7 @@ const toProperCase = (value) => {
 const Type = ({ type, to, number }) => {
   const title = toProperCase(type);
   return (
-    <div className="uppercase text-center opacity-40 my-3">
+    <div className="uppercase text-center opacity-70 my-3">
       <Link to={to}>
         <Icon
           icon={type}

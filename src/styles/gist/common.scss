@@ -1,0 +1,23 @@
+// Need to specify #article because #article a overrides the anchor classes below.
+body, #article {
+  .gist-data {
+    font-family: 'Fira Code', Courier, monospace;
+
+    .highlight {
+      width: 100%;
+    }
+
+    .blob-wrapper {
+      padding: 1.75rem;
+    }
+  }
+
+  .gist-meta {
+    padding: 1rem 1.5rem;
+    font-size: 0.85rem;
+
+    a {
+      background-color: transparent;
+    }
+  }
+}

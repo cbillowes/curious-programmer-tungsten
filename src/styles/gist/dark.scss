@@ -1,0 +1,110 @@
+/*
+   Adapted from theme solarized-light:
+   https://github.com/lonekorean/gist-syntax-themes/blob/master/stylesheets/solarized-light.css
+*/
+
+.dark {
+  // Overrides
+  .blob-wrapper {
+    background-color: #1b2933;
+  }
+
+  .gist-meta {
+    background-color: #16222b;
+
+    a {
+      color: #859900 !important;
+      font-size: 1rem !important;
+    }
+  }
+
+  // Theme
+  .gist .highlight {
+    background: #1b2933;
+  }
+  .gist .blob-num,
+  .gist .blob-code-inner,
+  .gist .pl-s1 .pl-s2,
+  .gist .pl-smi,
+  .gist .pl-smp,
+  .gist .pl-stj,
+  .gist .pl-vo,
+  .gist .pl-vpf {
+    color: #839496;
+  }
+  .gist .pl-c,
+  .gist .pl-c span {
+    color: #586e75;
+    font-style: italic;
+  }
+  .gist .pl-mb {
+    color: #2aa198;
+    font-weight: 700;
+  }
+  .gist .pl-mh .pl-en {
+    color: #cb4b16;
+    font-weight: 700;
+  }
+  .gist .pl-mi {
+    color: #859900;
+    font-style: italic;
+  }
+  .gist .pl-c1,
+  .gist .pl-pds,
+  .gist .pl-s1,
+  .gist .pl-s1 .pl-pse .pl-s2,
+  .gist .pl-sv {
+    color: #2aa198;
+  }
+  .gist .pl-e,
+  .gist .pl-en,
+  .gist .pl-ent,
+  .gist .pl-s,
+  .gist .pl-v {
+    color: #268bd2;
+  }
+  .gist .pl-k,
+  .gist .pl-mdh,
+  .gist .pl-mdr,
+  .gist .pl-ml,
+  .gist .pl-mm,
+  .gist .pl-mo,
+  .gist .pl-mp,
+  .gist .pl-mr,
+  .gist .pl-ms,
+  .gist .pl-s1 .pl-v,
+  .gist .pl-s3 {
+    color: #859900;
+  }
+  .gist .pl-mh,
+  .gist .pl-sc,
+  .gist .pl-sr .pl-cce {
+    color: #cb4b16;
+  }
+  .gist .pl-mq,
+  .gist .highlight-source-css .pl-k {
+    color: #586e75;
+  }
+  .gist .pl-sr,
+  .gist .pl-sr .pl-sra,
+  .gist .pl-sr .pl-sre,
+  .gist .pl-src {
+    color: #d30102;
+  }
+  .gist .pl-st,
+  .gist .highlight-source-c\+\+ .pl-s {
+    color: #dc322f;
+  }
+  .gist .pl-mi1,
+  .gist .pl-mdht {
+    color: #839496;
+    background: rgba(0, 64, 0, 0.5);
+  }
+  .gist .pl-md,
+  .gist .pl-mdhf,
+  .gist .pl-id,
+  .gist .pl-ii {
+    color: #839496;
+    background: rgba(64, 0, 0, 0.5);
+  }
+}
