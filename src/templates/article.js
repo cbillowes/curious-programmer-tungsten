@@ -66,9 +66,9 @@ export const query = graphql`
 const ArticleTemplate = ({ data }) => {
   const { markdownRemark, site } = data;
   const { excerpt, timeToRead, html, fields, frontmatter } = markdownRemark;
-  const { title, description, url } = site.siteMetadata;
+  const { title, description } = site.siteMetadata;
   const keywords = getKeywords(html);
-  const commentBox = React.useRef(null);
+  const commentBox = useRef(null);
 
   useEffect(() => {
     let scriptEl = document.createElement('script');
