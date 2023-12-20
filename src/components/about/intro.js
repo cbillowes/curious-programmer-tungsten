@@ -36,7 +36,7 @@ const Intro = () => {
           <span className="font-semibold">{greeting}!</span>
         </h1>
         <div className="text-xl leading-loose xl:max-w-2xl mx-auto">
-          <p>
+          <p className="mb-4">
             My name is Clarice Bouwer and I am a Software Engineering Team Lead
             working in the Financial Services Industry at Cloudsure Limited in
             Mauritius (born in South Africa)
@@ -44,7 +44,7 @@ const Intro = () => {
             <Emoji className="inline-block mx-2">🇲🇺</Emoji>
             <Emoji className="inline-block mx-2">🇿🇦</Emoji>
           </p>
-          <p>
+          <p className="mb-8">
             I obsess over Clojure(Script), Gatsby and Git{' '}
             <Emoji className="inline-block">🤤</Emoji>
           </p>
