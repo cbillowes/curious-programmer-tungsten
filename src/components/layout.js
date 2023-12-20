@@ -2,15 +2,21 @@ import React, { useState } from 'react';
 import { Flowbite } from 'flowbite-react';
 import withTheme from '@hooks/theme';
 import flowbiteTheme from '@components/flowbite-theme';
+import Head from '@components/head';
 import Header from '@components/header';
 import Footer from '@components/footer';
 import Sidebar from '@components/sidebar';
 
-const Layout = ({ children, setTheme, theme }) => {
+const Layout = ({ children, setTheme, theme, meta }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  console.log(
+    '👋 Welcome! "Stay a while and listen." 💖 Want to get in touch? clarice@bouwer.dev',
+  );
 
   return (
     <Flowbite theme={{ dark: theme === 'dark', theme: flowbiteTheme }}>
+      <Head {...meta} />
       <Header
         isSidebarOpen={isSidebarOpen}
         theme={theme}
@@ -41,7 +47,9 @@ const Layout = ({ children, setTheme, theme }) => {
           },
         ]}
       />
-      <div className="pt-12 selection:bg-pink-600 selection:text-white">{children}</div>
+      <div className="pt-12 selection:bg-pink-600 selection:text-white">
+        {children}
+      </div>
       <Footer />
     </Flowbite>
   );
