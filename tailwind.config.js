@@ -8,6 +8,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      borderColor: {
+        'color-1': 'var(--color-1)',
+        'color-2': 'var(--color-2)',
+        neutral: 'var(--neutral)',
+      },
       colors: {
         stackoverflow: '#F48024',
         linkedin: '#0077B5',
@@ -25,6 +30,9 @@ module.exports = {
           900: '#751a3d',
           950: '#3f0e20',
         },
+        'color-1': 'var(--color-1)',
+        'color-2': 'var(--color-2)',
+        neutral: 'var(--neutral)',
       },
     },
   },
