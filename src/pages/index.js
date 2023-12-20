@@ -1,4 +1,6 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import unicornLaptop from '@images/unicorn-laptop-xmas.webp';
 import profile from '@images/avatar.png';
 import cloudsure from '@images/cloudsure.webp';
@@ -8,12 +10,29 @@ import southafrica from '@images/south-africa.webp';
 import coffee from '@images/coffee.svg';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
-import { Link } from 'gatsby';
+import Thumbnail from '@components/thumbnail';
+import Metadata from '@components/metadata';
+import Ribbon from '@components/ribbon';
 import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const { allMarkdownRemark, site } = data;
+  const { title } = site.siteMetadata;
+  const edges = allMarkdownRemark.edges;
+  const groupedBy = 3;
+  const groupedEdges = [];
+  for (let i = 0; i < edges.length; i += groupedBy) {
+    groupedEdges.push(edges.slice(i, i + groupedBy));
+  }
   return (
-    <Layout>
+    <Layout
+      meta={{
+        ...site.siteMetadata,
+        pageTitle: 'Welcome to my blog',
+        siteTitle: title,
+        route: '/',
+      }}
+    >
       <section className="bg-gray-50 dark:bg-gray-900 py-32">
         <Backdrop />
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
@@ -503,10 +522,134 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
+      <hr className="dark:border-pink-900 border-pink-400" />
+      <aside
+        aria-label="Related articles"
+        className="py-8 bg-white dark:bg-gray-900 lg:py-16 antialiased"
+      >
+        <div className="px-4 mx-auto w-full max-w-screen-xl">
+          <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-white">
+            Featured articles
+          </h2>
+          <div>
+            <div className="relative">
+              {groupedEdges.map((group, index) => (
+                <div className="bg-white duration-700 ease-in-out dark:bg-gray-900 mb-4">
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    {group.map(({ node }) => (
+                      <article className="relative p-4 mx-auto w-full bg-white rounded-lg shadow-md border border-gray-200 dark:border-gray-800 dark:bg-gray-800">
+                        <Ribbon>#{node.fields.number}</Ribbon>
+                        <Link to={node.fields.slug}>
+                          <Thumbnail {...node.fields.hero} />
+                        </Link>
+                        <div className="flex items-center mb-3 space-x-2">
+                          <img
+                            className="w-8 h-8 rounded-full"
+                            src={require('@images/avatar.png').default}
+                            alt="Clarice Bouwer"
+                          />
+                          <div className="font-medium dark:text-white">
+                            <div>Clarice Bouwer</div>
+                            <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                              <Metadata {...node} />
+                            </div>
+                          </div>
+                        </div>
+                        <h3 className="mb-2 text-xl font-bold tracking-tight text-gray-900 lg:text-2xl dark:text-white">
+                          <Link to={node.fields.slug}>
+                            {node.frontmatter.title}
+                          </Link>
+                        </h3>
+                        <p className="mb-3 text-gray-500 dark:text-gray-400">
+                          {node.excerpt}
+                        </p>
+                        <Link
+                          to={node.fields.slug}
+                          className="inline-flex items-center font-medium
+                          text-primary-600 hover:text-blue-800
+                          dark:text-primary-500 hover:dark:text-blue-600 hover:no-underline"
+                        >
+                          {' '}
+                          Read more{' '}
+                          <svg
+                            className="mt-px ml-1 w-3 h-3"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 14 10"
+                          >
+                            <path
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M1 5h12m0 0L9 1m4 4L9 9"
+                            />
+                          </svg>
+                        </Link>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </aside>
     </Layout>
   );
 };
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>;
+export const query = graphql`
+  query IndexPageQuery {
+    allMarkdownRemark(
+      limit: 9
+      sort: { order: DESC, fields: fields___number }
+      filter: {
+        fields: { type: { in: ["article", "scribbles"] } }
+        frontmatter: { featured: { eq: true } }
+      }
+    ) {
+      edges {
+        node {
+          timeToRead
+          excerpt(truncate: true, pruneLength: 200, format: PLAIN)
+          fields {
+            slug
+            date(formatString: "dddd, DD MMMM YYYY")
+            number
+            type
+            hero {
+              component
+              image
+              credit
+              source
+              link
+            }
+          }
+          frontmatter {
+            title
+            tags
+          }
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        author {
+          name
+          url
+          twitter
+        }
+        brand
+        description
+        keywords
+        lang
+        title
+        url
+      }
+    }
+  }
+`;

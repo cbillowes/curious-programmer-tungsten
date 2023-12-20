@@ -12,7 +12,7 @@ const Divider = ({ props, index }) => {
 
 const Metadata = ({
   timeToRead,
-  date,
+  fields,
   created,
   modified,
   abstract,
@@ -20,19 +20,20 @@ const Metadata = ({
   totalPages,
 }) => {
   // data to decide where to put the mid-dot dividers
-  const props = [timeToRead, date, page, created, modified];
+  const props = [timeToRead, fields, page, created, modified];
+  const { date } = fields;
   return (
-    <div className="text-base text-gray-500 dark:text-gray-400">
+    <div className="text-gray-500 dark:text-gray-400">
       <div className=" opacity-70">
-        {timeToRead && (
-          <>
-            Estimated {timeToRead} minute read
-            <Divider props={props} index={0} />
-          </>
-        )}
         {date && (
           <>
             {toMauritiusLocaleDateString(date)}
+            <Divider props={props} index={0} />
+          </>
+        )}
+        {timeToRead && (
+          <>
+            Estimated {timeToRead} minute read
             <Divider props={props} index={1} />
           </>
         )}
@@ -40,18 +41,6 @@ const Metadata = ({
           <>
             Page {parseInt(page, 10)} out of {totalPages}
             <Divider props={props} index={2} />
-          </>
-        )}
-        {created && (
-          <>
-            Created on {toMauritiusLocaleDateString(created)}
-            <Divider props={props} index={3} />
-          </>
-        )}
-        {modified && (
-          <>
-            Last modified on {toMauritiusLocaleDateString(modified)}
-            <Divider props={props} index={4} />
           </>
         )}
       </div>
