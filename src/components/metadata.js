@@ -12,7 +12,7 @@ const Divider = ({ props, index }) => {
 
 const Metadata = ({
   timeToRead,
-  fields,
+  date,
   created,
   modified,
   abstract,
@@ -20,8 +20,7 @@ const Metadata = ({
   totalPages,
 }) => {
   // data to decide where to put the mid-dot dividers
-  const props = [timeToRead, fields, page, created, modified];
-  const { date } = fields;
+  const props = [timeToRead, date, page, created, modified];
   return (
     <div className="text-gray-500 dark:text-gray-400">
       <div className=" opacity-70">

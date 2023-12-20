@@ -551,7 +551,7 @@ const IndexPage = ({ data }) => {
                           <div className="font-medium dark:text-white">
                             <div>Clarice Bouwer</div>
                             <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                              <Metadata {...node} />
+                              <Metadata date={node.fields.date} timeToRead={node.timeToRead} />
                             </div>
                           </div>
                         </div>
