@@ -11,7 +11,7 @@ const trackClickEvent = (data) => {
 
 const getClassNames = (className, useMarkdownStyles, isBlock) => {
   const markdownClasses =
-    'font-cursive text-color-1 px-1 text-xl hover:text-color-1-alternative hover:underline';
+    'font-bold px-1 text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-green-400 hover:to-blue-600 hover:from-pink-600';
 
   const display = isBlock ? 'block' : 'inline-block';
 

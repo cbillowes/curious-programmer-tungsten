@@ -1,0 +1,76 @@
+.privacy, .guidelines {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    line-height: 2.75rem;
+    margin-bottom: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 640px) {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+
+    @media screen and (max-width: 640px) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  h3 {
+    font-size: 2.5rem;
+
+    @media screen and (max-width: 640px) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.75rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.85rem;
+  }
+
+  li {
+    font-size: 1.1rem;
+    line-height: 2.25rem;
+    list-style-type: disc;
+    margin-left: 1rem;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+// https://www.privacypolicygenerator.info/download.php?lang=en&token=DYjC9Jd5Vui3RvjXJHZ9c9LNbpUAv0m5#
