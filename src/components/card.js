@@ -61,7 +61,7 @@ const Card = ({
           </div>
           {link && (
             <Anchor
-              className="rounded-sm bg-color-1 text-color-1-script hover:bg-color-1-alternative px-4 mt-6"
+              className="rounded-md bg-primary-600 text-primary-200 hover:bg-blue-600 hover:text-blue-200 px-4 mt-6"
               to={link}
             >
               {buttonText ? buttonText : 'Check it out'}
@@ -72,7 +72,7 @@ const Card = ({
       <div className="xl:w-1/4 relative">
         {ribbon}
         <div>
-          <div className="bg-color-3" style={{ minHeight: '180px ' }}>
+          <div style={{ minHeight: '180px ' }}>
             {image}
           </div>
           <div className="leading-loose mt-1 text-center text-sm">
