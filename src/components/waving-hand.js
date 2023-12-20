@@ -18,7 +18,7 @@ const WavingHand = ({ className, onClick }) => {
       }}
     >
       <StaticImage
-        src="../../images/emoji-waving-hand.png"
+        src="../images/emoji-waving-hand.png"
         alt="Waving hand emoji"
         width={80}
         style={{
