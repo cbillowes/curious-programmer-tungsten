@@ -1,8 +1,10 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { TagCloud } from 'react-tagcloud';
+import { graphql, navigate } from 'gatsby';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
+import _ from 'lodash';
 
 const getTags = (edges) => {
   const tags = [];
@@ -47,7 +49,14 @@ const TagsPage = ({ data }) => {
             All the things
           </h1>
           <div className="max-w-screen-md mx-auto p-4">
-            <Tags tags={tags} />
+            <TagCloud
+              minSize={14}
+              maxSize={64}
+              tags={tags}
+              className="flex flex-wrap items-center justify-center gap-4 cursor-pointer text-transparent bg-clip-text bg-gradient-to-r dark:to-blue-600 dark:from-green-400 to-blue-600 from-pink-600"
+              disableRandomColor={true}
+              onClick={(tag) => navigate(`/tags/${_.kebabCase(tag.value)}`)}
+            />
           </div>
         </div>
       </div>
