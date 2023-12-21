@@ -47,7 +47,7 @@ const Layout = ({ children, setTheme, theme, meta }) => {
           },
         ]}
       />
-      <div className="pt-12 selection:bg-pink-600 selection:text-white">
+      <div className="pt-12 selection:bg-pink-600 selection:text-white bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
         {children}
       </div>
       <Footer />

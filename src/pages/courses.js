@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import classNames from 'classnames';
 import Layout from '@components/layout';
+import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
 import Anchor from '@components/anchor';
 import Thumbnail from '@components/thumbnail';
@@ -14,20 +16,28 @@ const Courses = ({ edges }) => {
     const isEven = index % 2 === 0;
 
     return (
-      <section
+      <aside
         key={index}
-        className={`relative mx-auto max-w-[1600px] lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
-          isEven ? 'xl:flex-row-reverse' : 'xl:flex-row'
-        }`}
+        className={classNames(
+          'relative mx-auto max-w-full md:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse',
+          isEven ? 'xl:flex-row-reverse' : 'xl:flex-row',
+        )}
       >
         <div
-          className={`border-color-3 border-none xl:border-dashed xl:w-1/4 xl:mx-8 ${
+          className={classNames(
+            `dark:border-gray-600 border-gray-300 border-none xl:border-dashed xl:w-1/2 xl:mx-8`,
             isEven
               ? 'xl:text-left xl:border-l xl:pl-8'
-              : 'xl:text-right xl:border-r xl:pr-8'
-          }`}
+              : 'xl:text-right xl:border-r xl:pr-8',
+          )}
         >
-          <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1 font-alt-sans">
+          <h2
+            className={classNames(
+              'text-xl mt-8 xl:mt-0 md:text-4xl leading-loose font-semibold tracking-tight',
+              'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
+              'hover:to-red-600 hover:from-violet-600'
+            )}
+          >
             <Anchor to={slug} title={title}>
               {title}
             </Anchor>
@@ -59,16 +69,24 @@ const Courses = ({ edges }) => {
             <Tags tags={tags} redirect={true} />
           </div>
         </div>
-        <div className="xl:w-1/4 relative">
+        <div
+          className={classNames(
+            'xl:w-1/2 relative',
+            isEven ? 'xl:text-right' : 'xl:text-left',
+          )}
+        >
           <Ribbon>#{edges.length - index}</Ribbon>
           <Thumbnail
             number={edges.length - index}
             to={slug}
             alt={title}
             {...hero}
+            className={classNames(
+              isEven ? 'xl:justify-end' : 'xl:justify-start',
+            )}
           />
         </div>
-      </section>
+      </aside>
     );
   });
 };
@@ -82,15 +100,21 @@ const CoursesPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: 'Courses',
+        pageTitle: 'Crash Courses',
         siteTitle: title,
+        route: '/courses',
       }}
     >
-      <div className="bg-default text-default-script">
-        <div className="mx-auto pb-5">
-          <h1 className="text-center text-5xl font-bold mb-0 mt-12">Courses</h1>
-          <Courses edges={edges} />
-        </div>
+      <div className="py-24">
+        <Backdrop />
+        <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+          Crash Courses
+        </h1>
+        <section>
+          <div className="mx-auto max-w-screen-xl">
+            <Courses edges={edges} />
+          </div>
+        </section>
       </div>
     </Layout>
   );

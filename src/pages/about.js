@@ -23,7 +23,7 @@ const AboutPage = ({ data }) => {
         route: '/about',
       }}
     >
-      <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-16">
+      <section className="py-8 lg:py-16 px-4">
         <Backdrop />
         <Intro />
         <Brands />
@@ -31,7 +31,7 @@ const AboutPage = ({ data }) => {
         <Attributes />
         <References />
         <Articles edges={edges} />
-      </div>
+      </section>
     </Layout>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@components/layout';
 import Anchor from '@components/anchor';
+import Backdrop from '@components/backdrop';
 import '../styles/privacy.scss';
 
 const Privacy = ({ data }) => {
@@ -12,18 +13,20 @@ const Privacy = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: 'Our main priorities is the privacy of our visitors',
+        pageTitle: 'Your privacy is important',
         siteTitle: title,
-        description: `One of our main priorities is the privacy of our visitors.
-        This Privacy Policy document contains types of information that is collected
-        and recorded by Curious Programmer and how we use it.`,
-        keywords: '',
+        description: `Ensuring the privacy of our visitors is among our top priorities. This Privacy Policy outlines the types of information collected and recorded by Curious Programmer, as well as how we utilize that information.`,
+        keywords:
+          'privacy, privacy policy, data protection, cookies, data collection',
         route: '/privacy',
       }}
     >
-      <div className="privacy  bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-        <div className="max-w-screen-md mx-auto p-4">
-          <h1>Privacy Policy for Curious Programmer</h1>
+      <div className="privacy">
+        <Backdrop />
+        <div className="max-w-screen-md mx-auto pt-12 pb-24">
+          <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+            Privacy Policy for Curious Programmer
+          </h1>
           <p>
             At Curious Programmer, accessible from
             <strong>https://curiousprogrammer.dev</strong>, one of our main

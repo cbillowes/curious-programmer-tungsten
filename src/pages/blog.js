@@ -1,15 +1,29 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@components/layout';
+import Backdrop from '@components/backdrop';
 import Preview from '@components/preview';
 
 const BlogPage = ({ data }) => {
-  const { allMarkdownRemark } = data;
+  const { allMarkdownRemark, site } = data;
   const edges = allMarkdownRemark.edges;
+  const { title } = site.siteMetadata;
+
   return (
-    <Layout>
-      <section className="py-8 lg:py-16 px-4 bg-gray-100 dark:bg-gray-900">
-        <div className="relative border-gray-200 dark:border-gray-700 mx-auto max-w-screen-xl dark:text-gray-100 text-gray-900">
+    <Layout
+      meta={{
+        ...site.siteMetadata,
+        pageTitle: 'Blog',
+        siteTitle: title,
+        route: '/blog',
+      }}
+    >
+      <section className="py-8 lg:py-16 px-4">
+        <Backdrop />
+        <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+          Blog
+        </h1>
+        <div className="mx-auto max-w-screen-xl">
           {edges.map((edge, index) => {
             const { node } = edge;
             const { frontmatter, fields, excerpt, timeToRead } = node;
@@ -65,6 +79,21 @@ export const query = graphql`
             tags
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        author {
+          name
+          url
+          twitter
+        }
+        brand
+        description
+        keywords
+        lang
+        title
+        url
       }
     }
   }

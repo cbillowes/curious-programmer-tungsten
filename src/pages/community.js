@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@components/layout';
 import Anchor from '@components/anchor';
+import Backdrop from '@components/backdrop';
 import '../styles/privacy.scss';
 
 const CommunityPage = ({ data }) => {
@@ -12,15 +13,18 @@ const CommunityPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: 'How to interact with the website and others',
+        pageTitle: 'Community guidelines',
         siteTitle: title,
         description:
-          'Essentially, words can hurt. Be nice but clear! Find out more about how to interact in our community guidelines.',
+          'In essence, words have the power to cause harm. Practice kindness while maintaining clarity! Explore further insights on interacting in our community guidelines.',
         route: '/community',
       }}
     >
-      <div className="guidelines max-w-screen-md mx-auto p-4">
-        <h1>Community Guidelines</h1>
+      <div className="guidelines max-w-screen-md mx-auto pt-12 pb-24">
+        <Backdrop />
+        <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+          Community Guidelines
+        </h1>
         <p>Essentially, words can hurt. Be nice but clear!</p>
 
         <h2>Things to know</h2>

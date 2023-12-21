@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
 import Layout from '@components/layout';
@@ -8,16 +7,23 @@ import ResumeDates from '@components/resume-dates';
 import ResumeIcon from '@components/resume-icon';
 import Backdrop from '@components/backdrop';
 import {
+  FaLinux,
   FaApple,
   FaEnvelope,
   FaGithub,
   FaLinkedin,
-  FaLinux,
   FaPrint,
   FaSpider,
   FaWindows,
+  FaCheckCircle,
+  FaGrinHearts,
+  FaScroll,
 } from 'react-icons/fa';
+import { SiLevelsdotfyi } from 'react-icons/si';
+import { GiDramaMasks } from 'react-icons/gi';
+import { GrGrow } from 'react-icons/gr';
 import '../styles/print.scss';
+import classNames from 'classnames';
 
 const getLogo = (logo) => {
   try {
@@ -69,7 +75,9 @@ const Timeline = ({
         className="relative mx-auto max-w-[1600px] lg:w-6/12 xl:w-screen md:mt-3 md:mb-3 p-5 flex justify-center flex-col-reverse xl:flex-row print:px-0 print:py-2"
       >
         <div
-          className={`absolute text-2xl top-1/2 transform -translate-y-1/2 rounded-full p-2 ${color[category].button} hidden xl:block`}
+          className={classNames(
+            `absolute text-2xl top-1/2 transform -translate-y-1/2 rounded-full p-2 ${color[category].button} hidden xl:block`,
+          )}
         >
           <ResumeIcon category={category} />
         </div>
@@ -179,7 +187,7 @@ const Timeline = ({
 const Meta = () => {
   const dimensions = 300;
   return (
-    <div className="text-center mb-6 print:text-left">
+    <div className="text-center mb-6 print:text-left pt-4 lg:pt-16 px-4">
       <p className="text-right hidden print:block print:text-sm">2022-06-04</p>
       <div className="w-44 mx-auto print:w-20 print:float-right">
         <StaticImage
@@ -193,11 +201,11 @@ const Meta = () => {
       <div className="hidden print:block print:text-2xl font-semibold">
         Resume
       </div>
-      <h1 className="text-xl mt-4 md:text-4xl leading-loose font-semibold font-alt-sans print:text-sm print:mt-1">
+      <h1 className="mx-auto text-center mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl print:text-sm">
         Clarice Bouwer
       </h1>
       <h2 className="text-xl mt-2 md:text-xl leading-loose font-alt-sans font-bold print:mt-0 print:text-sm">
-        Senior Software Engineer
+        Senior Software Engineer and Director at Cloudsure
       </h2>
       <p className="px-6 mt-2 leading-loose print:text-sm print:mt-0">
         <Anchor to="mailto:clarice@bouwer.dev" title="Email address">
@@ -228,35 +236,125 @@ const Meta = () => {
   );
 };
 
+const Pillar = ({ icon, title, items, className }) => {
+  return (
+    <div>
+      <div
+        class={classNames(
+          'flex justify-center items-center mb-4 w-10 h-10 text-3xl rounded lg:h-16 lg:w-16',
+          className,
+        )}
+      >
+        {icon}
+      </div>
+      <h3 class="mb-2 text-xl font-bold dark:text-white text-gray-900">
+        {title}
+      </h3>
+      <ul role="list" class="my-6 lg:mb-0 space-y-4">
+        {items?.map((item) => (
+          <li class="flex space-x-2.5">
+            <svg
+              class={classNames('flex-shrink-0 w-5 h-5', className)}
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <span class="leading-relaxed text-gray-500 dark:text-gray-400">
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 const CoverLetter = () => {
   return (
-    <div className="px-6 text-center max-w-5xl mx-auto m-4 leading-loose print:text-left print:text-sm">
-      <p className="mb-4">
-        Going on {new Date().getFullYear() - 2006} years now, I professionally
-        strive to develop aesthetically pleasing, user (and developer)-friendly
-        web products with powerful features. I am at my best when working across
-        different competencies within a team. I am curious, I think about the
-        bigger picture which makes me empathetic and helps me make well-informed
-        decisions. I work well with others forming a safe cohesive environment.
-        I value keeping people in the loop through open honest communication.
+    <div className="text-left max-w-5xl mx-auto mb-4 leading-loose print:text-left print:text-sm">
+      <p className="max-w-2xl text-center mx-auto mb-8">
+        My unwavering commitment to driving quantifiable results through{' '}
+        {new Date().getFullYear() - 2006} years of professional expertise in
+        developing cutting-edge, user-centric web products positions me as a
+        dynamic asset. I am fueled by a passion for continuous learning and have
+        a proven track record of achieving impactful outcomes.
       </p>
-      <p className="mb-4">
-        I thrive in a collaborative - people first - culture. An atmosphere rich
-        in constructive conversations, intrinsic willingness to help each other,
-        pair/mob programming, code reviews, mentoring and the desire to
-        continuously improve.
-      </p>
-      <p>
-        Coding, learning, solving problems, collecting e-books, reading, anime,
-        music and breaking free from my comfort zone keeps me ticking.{' '}
-        <span className="print:hidden">
-          Find out more{' '}
-          <Anchor useMarkdownStyles={true} to="/about">
-            about me
-          </Anchor>
-          .
-        </span>
-      </p>
+      <div class="mb-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0">
+        <Pillar
+          title="Experience"
+          icon={<SiLevelsdotfyi />}
+          className="text-pink-600 ring-pink-400 ring-2 rounded-full"
+          items={[
+            `${
+              new Date().getFullYear() - 2006
+            } years of professional experience.`,
+            `Develops aesthetically pleasing and user-friendly web products.`,
+            `Creates features that cater to both users and developers.`,
+            `Thrives in a collaborative team environment, working across different competencies.`,
+          ]}
+        />
+        <Pillar
+          title="Attributes"
+          icon={<FaCheckCircle />}
+          className="text-green-600 ring-green-400 ring-2 rounded-full"
+          items={[
+            `Curious and considers the bigger picture.`,
+            `Empathetic decision-maker.`,
+            `Values open and honest communication.`,
+            `Works well with others to create a safe and cohesive environment.`,
+          ]}
+        />
+        <Pillar
+          title="Culture"
+          icon={<GiDramaMasks />}
+          className="text-blue-600 ring-blue-400 ring-2 rounded-full"
+          items={[
+            `Thrives in a collaborative, people-first culture.`,
+            `Values constructive conversations and a willingness to help.`,
+            `Enjoys pair/mob programming, code reviews, and mentoring.`,
+            `Committed to continuous improvement.`,
+          ]}
+        />
+        <Pillar
+          title="Interests"
+          icon={<FaGrinHearts />}
+          className="text-orange-600 ring-orange-400 ring-2 rounded-full"
+          items={[
+            `Passionate about coding and continuous learning.`,
+            `Enjoys problem-solving.`,
+            `Collects e-books and engages in reading.`,
+            `Appreciates anime and music.`,
+            `Values breaking free from the comfort zone.`,
+          ]}
+        />
+        <Pillar
+          title="Philosophy"
+          icon={<FaScroll />}
+          className="text-indigo-600 ring-indigo-400 ring-2 rounded-full"
+          items={[
+            `Believes in keeping people informed through open and honest communication.`,
+            `Values a collaborative and inclusive work environment.`,
+            `Recognizes and values the importance of time and punctuality.`,
+            `Works for purpose and not for the sake of working.`,
+          ]}
+        />
+        <Pillar
+          title="Growth"
+          icon={<GrGrow />}
+          className="text-yellow-600 ring-yellow-400 ring-2 rounded-full"
+          items={[
+            `Actively engages to expand knowledge through various sources like reading and watching videos.`,
+            `Enrolls in courses to enhance skills and acquire new knowledge.`,
+            `Demonstrates a commitment to personal and professional growth through continuous learning practices.`,
+          ]}
+        />
+      </div>
     </div>
   );
 };
@@ -382,14 +480,6 @@ const ResumePage = ({ data }) => {
       </div>
     </Layout>
   );
-};
-
-ResumePage.propTypes = {
-  data: PropTypes.shape({
-    site: PropTypes.shape({
-      siteMetadata: PropTypes.object.isRequired,
-    }).isRequired,
-  }).isRequired,
 };
 
 export const query = graphql`

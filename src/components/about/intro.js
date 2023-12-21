@@ -32,7 +32,7 @@ const Intro = () => {
           />
           <WavingHand className="absolute right-0 top-0" onClick={greet} />
         </div>
-        <h1 className="text-5xl xl:text-8xl text-center mb-5 xl:mb-10 mt-5">
+        <h1 className="mx-auto text-center mt-4 mb-8 text-5xl font-extrabold tracking-tight leading-none md:text-6xl xl:text-7xl">
           <span className="font-semibold">{greeting}!</span>
         </h1>
         <div className="text-xl leading-loose xl:max-w-2xl mx-auto">
