@@ -7,7 +7,7 @@ const chaptersQuery = async (graphql) => {
     query ChaptersBuildQuery {
       chapters: allMarkdownRemark(
         filter: { fields: { type: { eq: "chapter" } } }
-        sort: { fields: fields___slug }
+        sort: { fields: { slug: ASC } }
       ) {
         edges {
           node {

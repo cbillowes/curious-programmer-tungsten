@@ -9,7 +9,7 @@ const articlesQuery = async (graphql) => {
   return await graphql(`
     query ArticlesBuildQuery {
       allMarkdownRemark(
-        sort: { order: ASC, fields: frontmatter___date }
+        sort: { frontmatter: { date: ASC } }
         filter: { fields: { type: { eq: "article" } } }
       ) {
         edges {

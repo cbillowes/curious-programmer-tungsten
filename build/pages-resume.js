@@ -6,8 +6,8 @@ const resumeQuery = async (graphql) => {
   return await graphql(`
     query ResumeBuildQuery {
       allMarkdownRemark(
-        sort: { order: ASC, fields: frontmatter___slug }
-        filter: { fields: { type: { eq: "resume" } } }
+        sort: {frontmatter: {slug: ASC}}
+        filter: {fields: {type: {eq: "resume"}}}
       ) {
         edges {
           node {
