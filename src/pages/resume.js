@@ -250,7 +250,7 @@ const Pillar = ({ icon, title, items, className }) => {
       <h3 class="mb-2 text-xl font-bold dark:text-white text-gray-900">
         {title}
       </h3>
-      <ul role="list" class="my-6 lg:mb-0 space-y-4">
+      <ul class="my-6 lg:mb-0 space-y-4">
         {items?.map((item) => (
           <li class="flex space-x-2.5">
             <svg

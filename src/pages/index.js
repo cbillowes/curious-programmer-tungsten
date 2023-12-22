@@ -195,7 +195,7 @@ const IndexPage = ({ data }) => {
               <h3 className="mb-2 text-xl font-bold dark:text-white text-gray-900">
                 Soft Skills
               </h3>
-              <ul role="list" className="my-6 lg:mb-0 space-y-4">
+              <ul className="my-6 lg:mb-0 space-y-4">
                 <li className="flex space-x-2.5">
                   <svg
                     className="flex-shrink-0 w-5 h-5 text-primary-600 dark:text-primary-500"
@@ -314,7 +314,7 @@ const IndexPage = ({ data }) => {
               <h3 className="mb-2 text-xl font-bold dark:text-white text-gray-900">
                 Software Engineering
               </h3>
-              <ul role="list" className="my-6 lg:mb-0 space-y-4">
+              <ul className="my-6 lg:mb-0 space-y-4">
                 <li className="flex space-x-2.5">
                   <svg
                     className="flex-shrink-0 w-5 h-5 text-purple-600 dark:text-purple-500"
@@ -421,7 +421,7 @@ const IndexPage = ({ data }) => {
               <h3 className="mb-2 text-xl font-bold dark:text-white text-gray-900">
                 Engineering Toolkit
               </h3>
-              <ul role="list" className="my-6 lg:mb-0 space-y-4">
+              <ul className="my-6 lg:mb-0 space-y-4">
                 <li className="flex space-x-2.5">
                   <svg
                     className="flex-shrink-0 w-5 h-5 text-teal-500 dark:text-teal-400"
