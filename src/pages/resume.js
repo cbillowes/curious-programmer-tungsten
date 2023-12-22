@@ -191,7 +191,7 @@ const Meta = () => {
       <p className="text-right hidden print:block print:text-sm">2022-06-04</p>
       <div className="w-44 mx-auto print:w-20 print:float-right">
         <StaticImage
-          src="../../images/avatar.png"
+          src="../images/avatar.png"
           alt="A photo of Clarice Bouwer holding her head in a pose"
           width={dimensions}
           height={dimensions}
