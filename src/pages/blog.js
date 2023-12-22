@@ -19,6 +19,7 @@ const BlogPage = ({ data }) => {
         pageTitle: 'Blog',
         siteTitle: title,
         route: '/blog',
+        group: 'Blog',
       }}
     >
       <section className="py-16 px-4">
@@ -31,7 +32,7 @@ const BlogPage = ({ data }) => {
             const { node } = edge;
             const { frontmatter, fields, timeToRead } = node;
             const { title, tags } = frontmatter;
-            const { slug, number, hero, date, type } = fields;
+            const { slug, number, date, type } = fields;
             return (
               <div className="mb-8">
                 {number}.{' '}
