@@ -40,7 +40,7 @@ export const query = graphql`
   query AboutPageQuery {
     allMarkdownRemark(
       limit: 10
-      sort: { order: DESC, fields: fields___number }
+      sort: { fields: { number: DESC } }
       filter: {
         fields: { type: { in: ["article", "scribbles"] } }
         frontmatter: { featured: { eq: true } }

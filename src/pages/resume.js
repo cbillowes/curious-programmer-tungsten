@@ -445,7 +445,10 @@ const ResumePage = ({ data }) => {
         <Backdrop />
         <Meta />
         <CoverLetter />
-        <div id="resume" className="pt-16 text-center max-w-4xl mx-auto m-4 leading-loose print:hidden">
+        <div
+          id="resume"
+          className="pt-16 text-center max-w-4xl mx-auto m-4 leading-loose print:hidden"
+        >
           <Button
             color={education ? color['Education'].button : ''}
             onClick={() => toggle(setEducation, !education)}
@@ -498,7 +501,7 @@ export const query = graphql`
   query ResumePageQuery {
     allMarkdownRemark(
       filter: { fields: { type: { eq: "resume" } } }
-      sort: { fields: frontmatter___resume___start, order: DESC }
+      sort: { frontmatter: { resume: { start: DESC } } }
     ) {
       edges {
         node {

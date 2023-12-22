@@ -50,7 +50,7 @@ export const query = graphql`
     }
     allMarkdownRemark(
       filter: { frontmatter: { parent: { eq: $slug } } }
-      sort: { order: ASC, fields: fileAbsolutePath }
+      sort: { fileAbsolutePath: ASC }
     ) {
       edges {
         node {

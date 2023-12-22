@@ -124,7 +124,7 @@ const CoursesPage = ({ data }) => {
 export const query = graphql`
   query CoursesPageQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: fields___date }
+      sort: { fields: { date: DESC } }
       filter: { fields: { type: { eq: "course" } } }
     ) {
       edges {

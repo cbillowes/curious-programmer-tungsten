@@ -29,7 +29,7 @@ const ScribblesPage = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: 'Scribbles',
         siteTitle: title,
-        route: '/scribbles'
+        route: '/scribbles',
       }}
     >
       <section className="py-16 px-4">
@@ -48,7 +48,7 @@ const ScribblesPage = ({ data }) => {
 export const query = graphql`
   query ScribblesPageQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: fields___date }
+      sort: { fields: { date: DESC } }
       filter: { fields: { type: { eq: "scribbles" } } }
     ) {
       edges {

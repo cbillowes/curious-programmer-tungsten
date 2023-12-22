@@ -36,7 +36,11 @@ const TagsPage = ({ data }) => {
         ...site.siteMetadata,
         description:
           'Choose from one of more tags used to categorize and help discover articles more.',
-        keywords: tags.sort((a, b) => b.count - a.count).slice(0, 5).map((tag) => tag.value.toLowerCase()).join(', '),
+        keywords: tags
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 5)
+          .map((tag) => tag.value.toLowerCase())
+          .join(', '),
         pageTitle: 'Tags for all the things',
         siteTitle: title,
         route: '/tags',
@@ -65,7 +69,7 @@ const TagsPage = ({ data }) => {
 export const query = graphql`
   query TagsPageQuery {
     allMarkdownRemark(
-      sort: { order: DESC, fields: fields___number }
+      sort: { fields: { number: DESC } }
       filter: { fields: { type: { in: ["article", "scribbles"] } } }
     ) {
       totalCount

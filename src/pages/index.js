@@ -616,7 +616,7 @@ export const query = graphql`
   query IndexPageQuery {
     allMarkdownRemark(
       limit: 9
-      sort: { order: DESC, fields: fields___number }
+      sort: { fields: { number: DESC } }
       filter: {
         fields: { type: { in: ["article", "scribbles"] } }
         frontmatter: { featured: { eq: true } }
