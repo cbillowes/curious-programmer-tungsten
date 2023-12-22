@@ -91,7 +91,7 @@ const Thumbnail = ({
         style={{
           backgroundImage: `url(${src})`,
         }}
-      >
+    >
         <Credit
           componentName={component}
           source={source}

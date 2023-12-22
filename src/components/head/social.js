@@ -14,7 +14,7 @@ const isRelativePath = (imagePath) => {
 const getStaticPath = (imagePath, cover) => {
   return isRelativePath(imagePath)
     ? imagePath
-    : require(`../Images/${cover || "default-01.jpg"}`).default;
+    : require(`../images/${cover || "default-01.jpg"}`).default;
 };
 
 const Social = ({ pageType, imagePath, url, twitter, cover }) => {

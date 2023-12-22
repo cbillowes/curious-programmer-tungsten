@@ -3,7 +3,7 @@ import { FaMicrophoneAlt } from 'react-icons/fa';
 import { GrArticle } from 'react-icons/gr';
 import { GiPublicSpeaker } from 'react-icons/gi';
 import { BiCodeAlt } from 'react-icons/bi';
-import Anchor from './Anchor';
+import Anchor from '@components/anchor';
 
 const Icon = ({ isEven, type }) => {
   return (

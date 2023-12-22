@@ -68,8 +68,8 @@ export const query = graphql`
 
 const ResumeTemplate = ({ data }) => {
   const { markdownRemark, site } = data;
-  const { excerpt, html, fields, frontmatter } = markdownRemark;
-  const { title, description, url } = site.siteMetadata;
+  const { excerpt, html, frontmatter } = markdownRemark;
+  const { title, description } = site.siteMetadata;
   const {
     category,
     logo,
