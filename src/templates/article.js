@@ -43,6 +43,7 @@ export const query = graphql`
         cover
         title
         tags
+        date
       }
     }
     site {
@@ -77,7 +78,11 @@ const ArticleTemplate = ({ data }) => {
     scriptEl.setAttribute('async', true);
     scriptEl.setAttribute('repo', 'cbillowes/curious-programmer-tungsten');
     scriptEl.setAttribute('issue-term', 'title');
-    scriptEl.setAttribute('theme', 'github-light');
+    if (typeof window === 'undefined' && window.localStorage.getItem('theme') === 'dark') {
+      scriptEl.setAttribute('theme', 'github-dark');
+    } else {
+      scriptEl.setAttribute('theme', 'github-light');
+    }
     commentBox.current.appendChild(scriptEl);
   }, []);
 
@@ -93,7 +98,7 @@ const ArticleTemplate = ({ data }) => {
         pageType: 'article',
         cover: frontmatter.cover,
         groupActive: '/blog',
-        route: `/${frontmatter.date.split('-')[0].toLowerCase()}`,
+        route: `/${frontmatter.date.split('-')[0]}`,
       }}
     >
       <div>

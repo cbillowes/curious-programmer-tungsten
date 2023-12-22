@@ -48,9 +48,9 @@ const ExternalThumbnail = ({ to, alt, src, className, isHero }) => {
         src={src}
         width={1200}
         className={classNames(
-          'relative object-cover w-full',
+          'relative object-cover w-full shadow-lg border border-gray-400 dark:border-gray-600',
           isHero ? 'h-[350px] xl:h-[650px]' : 'w-96',
-          isHero ? '' : 'border-8 dark:border-gray-800',
+          isHero ? '' : 'dark:border-gray-800',
         )}
       />
     </Anchor>

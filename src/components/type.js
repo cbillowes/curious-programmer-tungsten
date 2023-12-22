@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { RiArticleLine } from 'react-icons/ri';
 import { MdOutlineSchool } from 'react-icons/md';
 import { TbScribble } from 'react-icons/tb';
+import classNames from 'classnames';
 
 const Icon = ({ icon, ...rest }) => {
   switch (icon) {
@@ -23,14 +24,22 @@ const toProperCase = (value) => {
   });
 };
 
-const Type = ({ type, to, number }) => {
+const Type = ({ type, to, number, inline }) => {
   const title = toProperCase(type);
   return (
-    <div className="uppercase text-center opacity-70 my-3">
+    <div
+      className={classNames(
+        'opacity-70',
+        inline ? 'text-left capitalize' : 'text-center my-3 uppercase',
+      )}
+    >
       <Link to={to}>
         <Icon
           icon={type}
-          className="inline-block mr-2 bg-color-neutral p-2 text-4xl rounded"
+          className={classNames(
+            'inline-block mr-2 text-4xl rounded',
+            inline ? 'text-sm' : 'p-2',
+          )}
           alt={title}
           title={title}
         />

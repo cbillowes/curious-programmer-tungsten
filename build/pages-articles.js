@@ -24,6 +24,7 @@ const articlesQuery = async (graphql) => {
             frontmatter {
               title
               tags
+              date
             }
           }
         }
