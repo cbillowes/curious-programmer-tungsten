@@ -3,7 +3,6 @@ import { TagCloud } from 'react-tagcloud';
 import { graphql, navigate } from 'gatsby';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
-import Tags from '@components/tags';
 import _ from 'lodash';
 
 const getTags = (edges) => {

@@ -98,7 +98,6 @@ const CourseTemplate = ({ data }) => {
         description: excerpt || description,
         keywords,
         pageType: 'article',
-        route: fields.slug,
         cover: frontmatter.cover,
         route: '/courses',
       }}

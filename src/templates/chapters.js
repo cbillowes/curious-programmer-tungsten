@@ -6,7 +6,6 @@ import Layout from '@components/layout';
 // import CommentSystem from '@components/CommentSystem';
 import Anchor from '@components/anchor';
 import Metadata from '@components/metadata';
-import Type from '@components/type';
 import Thumbnail from '@components/thumbnail';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
@@ -142,7 +141,6 @@ const ChaptersTemplate = ({ data, pageContext }) => {
           description: excerpt || description,
           keywords,
           pageType: 'article',
-          route: fields.slug,
           cover,
           route: '/courses',
         }}
