@@ -82,6 +82,11 @@ const BlogTemplate = ({ data, pageContext }) => {
           Blog: year {year}
         </h1>
         <div className="mx-auto max-w-screen-xl">
+          {edges.length === 0 && (
+            <div className="text-center">
+              Nothing to see here. It looks like I did very little this year.
+            </div>
+          )}
           {edges.map((edge, index) => {
             const { node } = edge;
             const { frontmatter, fields, excerpt, timeToRead } = node;
