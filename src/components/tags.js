@@ -1,5 +1,4 @@
 import React from 'react';
-import { TagCloud } from 'react-tagcloud';
 import Anchor from '@components/anchor';
 import _ from 'lodash';
 

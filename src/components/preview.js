@@ -48,12 +48,12 @@ const Preview = ({
           <span
             className={classNames(
               'flex items-center justify-center w-12 h-12 rounded-full text-4xl -start-3 ring-8 mb-4 text-white',
-              type === 'scribbles' && 'bg-blue-500 ring-blue-300',
+              type === 'scribble' && 'bg-blue-500 ring-blue-300',
               type === 'article' && 'bg-pink-600 ring-pink-300',
               type === 'course' && 'bg-violet-500 ring-violet-300',
             )}
           >
-            {type === 'scribbles' && (
+            {type === 'scribble' && (
               <Link to="/scribbles">
                 <TbScribble />
               </Link>
@@ -75,7 +75,7 @@ const Preview = ({
           className={classNames(
             'text-2xl mt-8 xl:mt-0 md:text-4xl font-semibold tracking-tight',
             'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
-            type === 'scribbles' && 'hover:to-green-600 hover:from-blue-600',
+            type === 'scribble' && 'hover:to-green-600 hover:from-blue-600',
             type === 'article' && 'hover:to-blue-600 hover:from-pink-600',
             type === 'course' && 'hover:to-red-600 hover:from-violet-600',
           )}
@@ -85,7 +85,7 @@ const Preview = ({
           </Anchor>
         </h2>
         <div className="leading-loose mb-4">
-          <Metadata data={date} timeToRead={timeToRead} />
+          <Metadata date={date} timeToRead={timeToRead} type={type} />
           <p
             className={`mt-2 text-xl font-light ${
               isEven ? 'xl:text-left' : 'xl:text-right'

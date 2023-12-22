@@ -1,6 +1,7 @@
 ---
 title: Name CSS Split Chunks using MiniCssExtractPlugin
 devTo: https://dev.to/cbillowes/code-snippet-name-css-split-chunks-using-minicssextractplugin-fg2/
+date: 2022-03-17
 cover: webpack.png
 creditSource: Wikipedia
 creditLink: https://en.wikipedia.org/wiki/File:Webpack.svg

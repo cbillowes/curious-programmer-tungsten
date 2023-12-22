@@ -9,6 +9,8 @@ const createThePage = (createPage, year, reporter) => {
     component: path.resolve(template),
     context: {
       year,
+      startDate: `${year}-01-01`,
+      endDate: `${year + 1}-01-01`,
     },
   });
   reporter.success(`create blog: ${year}`);

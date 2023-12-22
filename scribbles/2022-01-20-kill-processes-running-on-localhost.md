@@ -1,6 +1,7 @@
 ---
 title: How to kill processes running on localhost (macOS)
 devTo: https://dev.to/cbillowes/how-to-kill-processes-running-on-localhost-macos-1h5o
+date: 2022-01-20
 tags:
   - Technical
   - Tip

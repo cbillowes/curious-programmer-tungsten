@@ -25,7 +25,6 @@ const Attribute = ({ title, children, icon }) => {
 };
 
 const Attributes = () => {
-  const [activeAttribute, setActiveAttribute] = useState('');
   const [visible, toggleVisibility] = useState(false);
   const phrases = [
     'creative',

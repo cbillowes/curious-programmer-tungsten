@@ -2,6 +2,7 @@
 title: VS Code extensions that I use every day
 cover: vscode.png
 creditSource: Wikipedia
+date: 2022-11-01
 creditLink: https://commons.wikimedia.org/wiki/File:Visual_Studio_Code_1.35_icon.svg
 tags:
   - Technical

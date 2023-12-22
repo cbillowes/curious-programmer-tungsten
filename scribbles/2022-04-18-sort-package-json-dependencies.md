@@ -1,6 +1,7 @@
 ---
 title: How to sort your package.json dependencies
 devTo: https://dev.to/cbillowes/how-to-sort-your-packagejson-dependencies-1gi1
+date: 2022-04-18
 cover: npm.png
 creditSource: Wikipedia
 creditLink: https://en.wikipedia.org/wiki/Npm_(software)#/media/File:Npm-logo.svg

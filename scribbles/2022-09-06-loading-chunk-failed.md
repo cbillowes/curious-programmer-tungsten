@@ -1,6 +1,7 @@
 ---
 title: Why you will see the error 'Loading chunk \d+ failed'
 devTo: https://dev.to/cbillowes/why-you-will-see-the-error-loading-chunk-d-failed-1ne4
+date: 2022-09-06
 cover: webpack.png
 creditSource: Wikipedia
 creditLink: https://en.wikipedia.org/wiki/File:Webpack.svg

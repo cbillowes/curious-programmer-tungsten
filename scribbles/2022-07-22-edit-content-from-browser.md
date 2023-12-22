@@ -1,6 +1,7 @@
 ---
 title: Edit your web page content directly in Chrome
 devTo: https://dev.to/cbillowes/pro-tip-edit-your-web-page-content-from-the-browser-window-350i
+date: 2022-07-22
 tags:
   - Technical
   - Chrome

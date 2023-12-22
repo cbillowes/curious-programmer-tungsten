@@ -6,7 +6,7 @@ const scribblesQuery = async (graphql) => {
   return await graphql(`
     query ScribblesBuildQuery {
       allMarkdownRemark(
-        filter: { fields: { type: { eq: "scribbles" } } }
+        filter: { fields: { type: { eq: "scribble" } } }
       ) {
         edges {
           node {

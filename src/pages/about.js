@@ -42,7 +42,7 @@ export const query = graphql`
       limit: 10
       sort: { fields: { number: DESC } }
       filter: {
-        fields: { type: { in: ["article", "scribbles"] } }
+        fields: { type: { in: ["article", "scribble"] } }
         frontmatter: { featured: { eq: true } }
       }
     ) {

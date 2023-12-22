@@ -91,9 +91,9 @@ const ArticleTemplate = ({ data }) => {
         description: excerpt || description,
         image: fields.hero.image,
         pageType: 'article',
-        route: fields.slug,
         cover: frontmatter.cover,
-        route: '/articles',
+        groupActive: '/blog',
+        route: `/${frontmatter.date.split('-')[0].toLowerCase()}`,
       }}
     >
       <div>

@@ -8,30 +8,38 @@ exports.isResume = (node) => {
   return node.fileAbsolutePath.indexOf('/resume/') > -1;
 };
 
-exports.isScribbles = (node) => {
+exports.isScribble = (node) => {
   return node.fileAbsolutePath.indexOf('/scribbles/') > -1;
 };
 
 exports.isCourse = (node) => {
-  return node.fileAbsolutePath.indexOf('/courses/') > -1 && node.frontmatter.index;
+  return (
+    node.fileAbsolutePath.indexOf('/courses/') > -1 && node.frontmatter.index
+  );
 };
 
 exports.isChapter = (node) => {
-  return node.fileAbsolutePath.indexOf('/courses/') > -1 && !node.frontmatter.index;
-}
+  return (
+    node.fileAbsolutePath.indexOf('/courses/') > -1 && !node.frontmatter.index
+  );
+};
 
 exports.markdownType = (node) => {
   if (this.isArticle(node)) return 'article';
   if (this.isResume(node)) return 'resume';
-  if (this.isScribbles(node)) return 'scribbles';
+  if (this.isScribble(node)) return 'scribble';
   if (this.isCourse(node)) return 'course';
   if (this.isChapter(node)) return 'chapter';
   return '';
 };
 
+const canApplyNumbers = (node) => {
+  return this.isArticle(node) || this.isScribble(node) || this.isCourse(node);
+};
+
 exports.applyNumbers = (nodes, createNodeField, reporter) => {
   const selectedOrderedNodes = nodes
-    .filter((node) => this.isArticle(node) || this.isScribbles(node))
+    .filter((node) => canApplyNumbers(node))
     .sort((a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date));
 
   selectedOrderedNodes.forEach((node, index) => {
@@ -63,7 +71,7 @@ exports.createFields = (node, createNodeField, reporter) => {
     const slug = getSlug(node.frontmatter, node.fileAbsolutePath, type);
     const date = getDate(node.frontmatter.date, node.fileAbsolutePath);
 
-    if (this.isArticle(node)) {
+    if (canApplyNumbers(node)) {
       createNodeField({
         node,
         name: `number`,

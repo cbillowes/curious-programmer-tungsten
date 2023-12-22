@@ -49,7 +49,7 @@ export const query = graphql`
   query ScribblesPageQuery {
     allMarkdownRemark(
       sort: { fields: { date: DESC } }
-      filter: { fields: { type: { eq: "scribbles" } } }
+      filter: { fields: { type: { eq: "scribble" } } }
     ) {
       edges {
         node {

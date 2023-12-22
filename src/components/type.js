@@ -10,7 +10,7 @@ const Icon = ({ icon, ...rest }) => {
       return <RiArticleLine {...rest} />;
     case 'course':
       return <MdOutlineSchool {...rest} />;
-    case 'scribbles':
+    case 'scribble':
       return <TbScribble {...rest} />;
     default:
       return <></>;

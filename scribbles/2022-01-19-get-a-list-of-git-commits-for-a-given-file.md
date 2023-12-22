@@ -1,6 +1,7 @@
 ---
 title: Why you will see the error 'Loading chunk \d+ failed'
 devTo: https://dev.to/cbillowes/why-you-will-see-the-error-loading-chunk-d-failed-1ne4
+date: 2022-01-19
 cover: git.png
 credit: Vasil Enchev
 creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202

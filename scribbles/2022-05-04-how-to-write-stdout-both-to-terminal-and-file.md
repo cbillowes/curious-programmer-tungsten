@@ -1,6 +1,7 @@
 ---
 title: How to write stdout both to the terminal and a file
 devTo: https://dev.to/cbillowes/how-to-write-stdout-both-to-the-terminal-and-a-file-3dod
+date: 2022-05-04
 tags:
   - Technical
   - Tip

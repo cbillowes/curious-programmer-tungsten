@@ -1,6 +1,7 @@
 ---
 title: Hack to fix Gatsby image process from stalling
 cover: gatsby.png
+date: 2022-10-09
 credit: gatsbyjs
 creditLink: https://www.gatsbyjs.org/
 tags:

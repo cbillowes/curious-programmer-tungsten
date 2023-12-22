@@ -69,7 +69,7 @@ export const query = graphql`
   query TagsPageQuery {
     allMarkdownRemark(
       sort: { fields: { number: DESC } }
-      filter: { fields: { type: { in: ["article", "scribbles"] } } }
+      filter: { fields: { type: { in: ["article", "scribble", "course"] } } }
     ) {
       totalCount
       edges {

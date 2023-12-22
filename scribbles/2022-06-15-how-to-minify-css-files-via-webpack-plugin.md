@@ -1,6 +1,7 @@
 ---
 title: How to minify CSS files via CopyWebpackPlugin for Webpack5
 devTo: https://dev.to/cbillowes/how-to-minify-css-files-via-copywebpackplugin-for-webpack5-4fc0
+date: 2022-06-15
 cover: webpack.png
 creditSource: Wikipedia
 creditLink: https://en.wikipedia.org/wiki/File:Webpack.svg

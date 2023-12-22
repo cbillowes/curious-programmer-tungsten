@@ -60,7 +60,7 @@ const Header = ({
               <Logo to="/" logo={logo.image} alt={logo.alt} />
             </div>
             <div className="flex items-center">
-              <Search />
+              {/* <Search /> */}
               <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
             </div>
           </div>

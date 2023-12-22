@@ -1,6 +1,7 @@
 ---
 title: How to search through all files in your web application in Google Chrome
 devTo: https://dev.to/cbillowes/how-to-search-through-all-files-in-your-web-application-in-google-chrome-3p0a
+date: 2022-01-18
 tags:
   - Technical
   - Tip

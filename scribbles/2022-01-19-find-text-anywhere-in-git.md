@@ -1,6 +1,7 @@
 ---
 title: How to find text anywhere in your Git repository from the very beginning
 devTo: https://dev.to/cbillowes/how-to-find-text-anywhere-in-your-git-repository-from-the-very-beginning-29d9
+date: 2022-01-19
 cover: git.png
 credit: Vasil Enchev
 creditLink: https://dribbble.com/shots/4037272-Git-monster-illustration/attachments/925202

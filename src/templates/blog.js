@@ -5,8 +5,14 @@ import Backdrop from '@components/backdrop';
 import Preview from '@components/preview';
 
 export const query = graphql`
-  query BlogTemplateQuery {
-    allMarkdownRemark {
+  query BlogTemplateQuery($startDate: Date!, $endDate: Date!) {
+    allMarkdownRemark(
+      filter: {
+        frontmatter: { date: { gte: $startDate, lte: $endDate } }
+        fields: { type: { in: ["article", "scribble", "course"] } }
+      }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       edges {
         node {
           html
@@ -31,6 +37,7 @@ export const query = graphql`
             cover
             title
             tags
+            date(formatString: "dddd, DD MMMM YYYY")
           }
         }
       }
@@ -65,7 +72,8 @@ const BlogTemplate = ({ data, pageContext }) => {
         ...site.siteMetadata,
         pageTitle: `Blog: year ${year}`,
         siteTitle: title,
-        route: '/blog',
+        route: `/blog/${year}`,
+        group: 'Blog',
       }}
     >
       <section className="py-16 px-4">
@@ -73,7 +81,7 @@ const BlogTemplate = ({ data, pageContext }) => {
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
           Blog: year {year}
         </h1>
-        {/* <div className="mx-auto max-w-screen-xl">
+        <div className="mx-auto max-w-screen-xl">
           {edges.map((edge, index) => {
             const { node } = edge;
             const { frontmatter, fields, excerpt, timeToRead } = node;
@@ -86,7 +94,7 @@ const BlogTemplate = ({ data, pageContext }) => {
                 number={number}
                 slug={slug}
                 title={title}
-                date={date}
+                date={date || frontmatter.date}
                 timeToRead={timeToRead}
                 excerpt={excerpt}
                 tags={tags}
@@ -95,7 +103,7 @@ const BlogTemplate = ({ data, pageContext }) => {
               />
             );
           })}
-        </div> */}
+        </div>
       </section>
     </Layout>
   );

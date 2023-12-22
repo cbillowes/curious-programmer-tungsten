@@ -1,6 +1,7 @@
 ---
 title: How to unmap a var from a Clojure namespace
 devTo: https://dev.to/cbillowes/how-to-unmap-a-var-from-a-clojure-namespace-n5c
+date: 2022-06-21
 cover: clojure.jpg
 credit: Tom & Rich Hickey
 creditLink: https://en.wikipedia.org/wiki/Clojure
