@@ -95,16 +95,16 @@ const ArticleTemplate = ({ data }) => {
         cover: frontmatter.cover,
       }}
     >
-      <div className="dark:bg-gray-900 bg-white text-gray-900 dark:text-gray-200">
+      <div>
         <Thumbnail {...fields.hero} isHero />
         <div className="relative">
           <Backdrop />
-          <main className="pt-4 pb-16 lg:pt-8 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
+          <div className="pt-4 pb-16 lg:pt-8 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
             <div className="flex justify-between px-4 mx-auto max-w-screen-xl">
               <article className="mx-auto w-full format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                 <header className="mb-2 lg:mb-4 not-format">
                   <Type type={fields.type} to="/blog" number={fields.number} />
-                  <h1 className="text-5xl font-extrabold leading-tight lg:mb-6 lg:text-4xl text-center dark:text-white mx-auto max-w-5xl">
+                  <h1 className="text-5xl font-extrabold tracking-tight lg:mb-6 lg:text-6xl text-center dark:text-white mx-auto max-w-5xl">
                     {frontmatter.title}
                   </h1>
                   <div className="text-center">
@@ -152,7 +152,7 @@ const ArticleTemplate = ({ data }) => {
                 <div ref={commentBox}></div>
               </article>
             </div>
-          </main>
+          </div>
         </div>
       </div>
     </Layout>

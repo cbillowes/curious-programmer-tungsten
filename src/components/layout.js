@@ -6,8 +6,9 @@ import Head from '@components/head';
 import Header from '@components/header';
 import Footer from '@components/footer';
 import Sidebar from '@components/sidebar';
+import classNames from 'classnames';
 
-const Layout = ({ children, setTheme, theme, meta }) => {
+const Layout = ({ className, children, setTheme, theme, meta }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   console.log(
@@ -47,7 +48,12 @@ const Layout = ({ children, setTheme, theme, meta }) => {
           },
         ]}
       />
-      <div className="pt-12 selection:bg-pink-600 selection:text-white bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+      <div
+        className={classNames(
+          'pt-12 selection:bg-pink-600 selection:text-white bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200',
+          className,
+        )}
+      >
         {children}
       </div>
       <Footer />
