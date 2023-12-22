@@ -2,6 +2,7 @@ const path = require('path');
 const nodes = require('./build/nodes');
 const thumbnails = require('./build/thumbnails');
 const tags = require('./build/pages-tags');
+const blog = require('./build/pages-blog');
 const articles = require('./build/pages-articles');
 const resume = require('./build/pages-resume');
 const scribbles = require('./build/pages-scribbles');
@@ -43,6 +44,7 @@ exports.onCreateNode = ({ node, actions, reporter }) => {
 // Create the necessary dynamic pages required to make the blog delicious.
 // https://www.gatsbyjs.org/docs/node-apis/#createPages
 exports.createPages = async ({ graphql, actions, reporter }) => {
+  await blog.create(actions, graphql, reporter);
   await tags.create(actions, graphql, reporter);
   await articles.create(actions, graphql, reporter);
   await resume.create(actions, graphql, reporter);

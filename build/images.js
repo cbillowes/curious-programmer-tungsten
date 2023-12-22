@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const sharp = require('sharp');
 const { copyGifs, copySvgs, copyWebps } = require('./copy');
-const { toHeroImageComponent, kebabToTitleCase } = require('./helpers');
 
 /**
  * Any source file residing in the resources directory which is used to
@@ -17,10 +16,6 @@ const isResource = ({ internal, absolutePath }) => {
 
 const toDestinationPath = (destinationPath, sourcePath) => {
   return path.join(destinationPath, path.basename(sourcePath));
-};
-
-exports.getComponentName = (text) => {
-  return toHeroImageComponent(text);
 };
 
 /**
@@ -69,7 +64,7 @@ const processImage = (
 const processHighRes = (sourcePath, reporter) => {
   const quality = 100;
   const destinationPath = toDestinationPath(
-    `src/components/Images`,
+    `src/components/images`,
     sourcePath,
   );
   const width = 1920;
