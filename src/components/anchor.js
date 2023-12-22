@@ -11,7 +11,7 @@ const trackClickEvent = (data) => {
 
 const getClassNames = (className, useMarkdownStyles, isBlock) => {
   const markdownClasses =
-    'font-bold px-1 text-xl text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-green-400 hover:to-blue-600 hover:from-pink-600';
+    'font-bold px-1 text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-green-400 hover:to-blue-600 hover:from-pink-600';
 
   const display = isBlock ? 'block' : 'inline-block';
 
@@ -66,7 +66,7 @@ const Anchor = ({
         {children}
 
         {newTabIndicator && (
-          <IoOpenOutline className="float-right text-md mx-2 text-neutral" />
+          <IoOpenOutline className="float-right text-md mx-1 mt-2 text-neutral" />
         )}
       </OutboundLink>
     </span>
