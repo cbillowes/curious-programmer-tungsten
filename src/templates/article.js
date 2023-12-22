@@ -93,6 +93,7 @@ const ArticleTemplate = ({ data }) => {
         pageType: 'article',
         route: fields.slug,
         cover: frontmatter.cover,
+        route: '/articles',
       }}
     >
       <div>

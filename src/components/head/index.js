@@ -29,7 +29,6 @@ const Head = ({
   type,
   url,
   cover,
-  route,
   crawl = true,
 }) => (
   <React.Fragment>
@@ -73,7 +72,6 @@ const Head = ({
       twitter={social?.twitter}
       imagePath={image || social?.image}
       pageType={pageType}
-      route={route}
       cover={cover}
     />
 

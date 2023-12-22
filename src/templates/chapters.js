@@ -144,6 +144,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
           pageType: 'article',
           route: fields.slug,
           cover,
+          route: '/courses',
         }}
       >
         <Thumbnail {...data.courses.fields.hero} />
@@ -258,7 +259,9 @@ const ChaptersTemplate = ({ data, pageContext }) => {
               <div className="mt-2">
                 <Anchor to={slug} title={title}>
                   <span
-                    className={`hover:underline ${isOnPage ? 'font-bold text-primary-600' : ''}`}
+                    className={`hover:underline ${
+                      isOnPage ? 'font-bold text-primary-600' : ''
+                    }`}
                   >
                     {isOnPage && <>&#x25BA;</>} {page} - {title}
                   </span>

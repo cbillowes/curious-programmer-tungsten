@@ -97,7 +97,7 @@ const ResumeTemplate = ({ data }) => {
         description: excerpt || description,
         keywords,
         pageType: 'article',
-        route: fields.slug,
+        route: '/resume',
       }}
     >
       <Backdrop />

@@ -29,6 +29,8 @@ const Layout = ({ className, children, setTheme, theme, meta }) => {
         }}
       />
       <Sidebar
+        active={meta.route}
+        groupActive={meta.group}
         isOpen={isSidebarOpen}
         menuItems={[
           { to: '/', name: 'Home' },

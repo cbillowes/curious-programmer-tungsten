@@ -33,7 +33,7 @@ const Courses = ({ edges }) => {
         >
           <h2
             className={classNames(
-              'text-xl mt-8 xl:mt-0 md:text-4xl leading-loose font-semibold tracking-tight',
+              'text-2xl mt-8 xl:mt-0 md:text-4xl font-semibold tracking-tight',
               'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
               'hover:to-red-600 hover:from-violet-600',
             )}
@@ -43,7 +43,7 @@ const Courses = ({ edges }) => {
             </Anchor>
           </h2>
           <div className="leading-loose mb-4">
-            <Metadata created={date} />
+            <Metadata date={date} />
             <p
               className={`mt-2 text-left ${
                 isEven ? 'xl:text-left' : 'xl:text-right'
@@ -106,7 +106,7 @@ const CoursesPage = ({ data }) => {
         route: '/courses',
       }}
     >
-      <div className="py-24">
+      <div className="py-16 px-4">
         <Backdrop />
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
           Crash Courses

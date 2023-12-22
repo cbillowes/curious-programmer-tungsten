@@ -100,6 +100,7 @@ const CourseTemplate = ({ data }) => {
         pageType: 'article',
         route: fields.slug,
         cover: frontmatter.cover,
+        route: '/courses',
       }}
     >
       <div>

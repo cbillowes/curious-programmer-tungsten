@@ -17,7 +17,8 @@ const getStaticPath = (imagePath, cover) => {
     : require(`../Images/${cover || "default-01.jpg"}`).default;
 };
 
-const Social = ({ pageType, imagePath, url, route, twitter, cover }) => {
+const Social = ({ pageType, imagePath, url, twitter, cover }) => {
+  const route = typeof window !== 'undefined' ? window.location.path : '';
   const canonical = getResource(url, route);
   const image = `${url}${
     isUrl(imagePath) ? imagePath : getStaticPath(imagePath, cover)

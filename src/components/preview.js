@@ -39,7 +39,7 @@ const Preview = ({
       >
         <div
           className={classNames(
-            `uppercase mb-6 text-center mt-5 xl:mt-0 flex flex-col`,
+            `uppercase mb-6 text-center mt-5 xl:mt-0 flex flex-col items-center`,
             isEven
               ? 'xl:text-left xl:items-start'
               : 'xl:text-right xl:items-end',
@@ -73,7 +73,7 @@ const Preview = ({
         </div>
         <h2
           className={classNames(
-            'text-xl mt-8 xl:mt-0 md:text-4xl leading-loose font-semibold tracking-tight',
+            'text-2xl mt-8 xl:mt-0 md:text-4xl font-semibold tracking-tight',
             'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
             type === 'scribbles' && 'hover:to-green-600 hover:from-blue-600',
             type === 'article' && 'hover:to-blue-600 hover:from-pink-600',

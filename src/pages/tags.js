@@ -42,7 +42,7 @@ const TagsPage = ({ data }) => {
         route: '/tags',
       }}
     >
-      <div className="py-24">
+      <div className="py-16 px-4">
         <Backdrop />
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
           All the things

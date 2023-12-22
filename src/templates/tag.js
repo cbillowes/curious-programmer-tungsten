@@ -4,11 +4,20 @@ import Layout from '@components/layout';
 import Preview from '@components/preview';
 
 const TagTemplate = ({ data, pageContext }) => {
-  const { allMarkdownRemark } = data;
+  const { allMarkdownRemark, site } = data;
   const { tag } = pageContext;
   const edges = allMarkdownRemark.edges;
+  const { title } = site.siteMetadata;
   return (
-    <Layout>
+    <Layout
+      meta={{
+        ...data.site.siteMetadata,
+        pageTitle: `More about ${tag}`,
+        siteTitle: title,
+        description: `A collection of articles, tutorials, and other things related to ${tag}.`,
+        route: '/tags',
+      }}
+    >
       <section className="py-8 lg:py-16 px-4 bg-gray-100 dark:bg-gray-900">
         <div className="relative border-gray-200 dark:border-gray-700 mx-auto max-w-screen-xl dark:text-gray-100 text-gray-900">
           <h1 className="text-center text-5xl font-bold mb-0 mt-5 tracking-tight">
@@ -72,6 +81,21 @@ export const query = graphql`
             tags
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        author {
+          name
+          url
+          twitter
+        }
+        brand
+        description
+        keywords
+        lang
+        title
+        url
       }
     }
   }

@@ -19,13 +19,14 @@ const Privacy = ({ data }) => {
         keywords:
           'privacy, privacy policy, data protection, cookies, data collection',
         route: '/privacy',
+        group: 'Legalities',
       }}
     >
-      <div className="privacy">
+      <div className="guidelines">
         <Backdrop />
-        <div className="max-w-screen-md mx-auto pt-12 pb-24">
-          <h1 className="mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
-            Privacy Policy for Curious Programmer
+        <div className="max-w-screen-md mx-auto py-16 px-4">
+          <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+            Privacy policy for Curious Programmer
           </h1>
           <p>
             At Curious Programmer, accessible from

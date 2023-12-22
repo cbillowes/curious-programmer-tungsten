@@ -67,7 +67,7 @@ export const query = graphql`
 const ScribblesTemplate = ({ data }) => {
   const { markdownRemark, site } = data;
   const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
-  const { title, description, url } = site.siteMetadata;
+  const { title, description } = site.siteMetadata;
   const { cover } = frontmatter;
   const keywords = getKeywords(excerpt);
 
@@ -80,7 +80,7 @@ const ScribblesTemplate = ({ data }) => {
         description: excerpt || description,
         keywords,
         pageType: 'article',
-        route: fields.slug,
+        route: '/scribbles',
         cover,
       }}
     >

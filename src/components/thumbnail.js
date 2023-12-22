@@ -49,7 +49,7 @@ const ExternalThumbnail = ({ to, alt, src, className, isHero }) => {
         width={1200}
         className={classNames(
           'relative object-cover w-full',
-          isHero ? 'h-[650px]' : 'w-96',
+          isHero ? 'h-[350px] xl:h-[650px]' : 'w-96',
           isHero ? '' : 'border-8 dark:border-gray-800',
         )}
       />
@@ -84,13 +84,12 @@ const Thumbnail = ({
     return (
       <div
         className={classNames(
-          'relative bg-no-repeat bg-center w-full',
-          isHero ? 'bg-contain' : 'bg-cover',
+          'relative bg-no-repeat bg-center w-full  h-[350px]',
+          isHero ? 'xl:h-[650px] bg-contain' : 'bg-cover',
           isHero ? '' : 'border-8 dark:border-gray-800',
         )}
         style={{
           backgroundImage: `url(${src})`,
-          height: isHero ? '650px' : '350px',
         }}
       >
         <Credit

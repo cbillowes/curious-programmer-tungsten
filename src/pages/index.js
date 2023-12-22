@@ -35,8 +35,15 @@ const IndexPage = ({ data }) => {
     >
       <section className="bg-gray-50 dark:bg-gray-900 py-32">
         <Backdrop />
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div className="px-4 sm:px-32 grid max-w-screen-xl xl:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
+            <div className="lg:hidden">
+              <img
+                src={unicornLaptop}
+                className="w-32 h-32 object-cover"
+                alt="Unicorn using a laptop"
+              />
+            </div>
             <h1 className="max-w-2xl mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
               Curiosity is the{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-green-400">
@@ -83,8 +90,8 @@ const IndexPage = ({ data }) => {
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <img
               src={unicornLaptop}
-              className="rw-96 h-96 object-cover"
-              alt="mockup"
+              className="w-96 h-96 object-cover"
+              alt="Unicorn using a laptop"
             />
           </div>
         </div>
@@ -100,32 +107,32 @@ const IndexPage = ({ data }) => {
           <h2 className="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-white md:text-4xl">
             My name is Clarice Bouwer
           </h2>
-          <p className="max-w-2xl mx-auto mb-4 lg:mb-16 text-center font-light md:text-lg lg:text-xl text-gray-50">
+          <p className="max-w-2xl mx-auto mb-8 lg:mb-16 text-center font-light md:text-lg lg:text-xl text-gray-50">
             I am a Software Engineering Team Lead and Director at Cloudsure
             Limited based in Mauritius.
           </p>
-          <div className="grid grid-cols-3 gap-8 text-gray-500 sm:gap-12 md:grid-cols-4 lg:grid-cols-8 dark:text-gray-400">
+          <div className="grid grid-cols-4 gap-8 text-5xl text-gray-500 sm:gap-12 lg:grid-cols-8 dark:text-gray-400">
             <a
               href="https://github.com/cbillowes"
-              className="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <FaGithub className="text-white" />
             </a>
             <a
               href="https://www.linkedin.com/in/cbouwer/"
-              className="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <FaLinkedin className="text-white" />
             </a>
             <a
               href="https://stackoverflow.com/users/849986/clarice-bouwer"
-              className="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <FaStackOverflow className="text-white" />
             </a>
             <a
               href="https://www.buymeacoffee.com/cbillowes"
-              className="flex justify-center items-center text-5xl hover:scale-125 transition-all duration-300"
+              className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
               <img src={coffee} alt="Buy me a coffee" className="h-11" />
             </a>

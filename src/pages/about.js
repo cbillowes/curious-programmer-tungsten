@@ -23,7 +23,7 @@ const AboutPage = ({ data }) => {
         route: '/about',
       }}
     >
-      <section className="py-8 lg:py-16 px-4">
+      <section className="py-16 px-4">
         <Backdrop />
         <Intro />
         <Brands />

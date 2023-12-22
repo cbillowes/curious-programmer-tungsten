@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { FaCode } from 'react-icons/fa';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
-const MenuItemLink = ({ to, icon, name }) => {
+const MenuItemLink = ({ active, to, icon, name }) => {
   return (
     <Link
       href={to}
-      className="text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 px-4 space-2 flex items-center py-2"
+      className={classNames(
+        'text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 px-4 space-2 flex items-center py-2',
+        active === to && 'bg-primary-600 text-primary-200',
+      )}
     >
       {icon}
       <span className="ml-3" sidebar-toggle-item>
@@ -17,15 +20,15 @@ const MenuItemLink = ({ to, icon, name }) => {
   );
 };
 
-const MenuItemDropdown = ({ icon, name, items }) => {
-  const [expand, setExpand] = useState(false);
+const MenuItemDropdown = ({ icon, name, items, active, groupActive }) => {
+  const [expand, setExpand] = useState(name === groupActive);
   const id = name.replace(/\s+/g, '-').toLowerCase();
 
   return (
     <>
       <button
         type="button"
-        class={classnames(
+        class={classNames(
           'px-4 flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group dark:text-gray-200',
           expand
             ? 'bg-gray-100 dark:bg-gray-700'
@@ -38,7 +41,7 @@ const MenuItemDropdown = ({ icon, name, items }) => {
         {icon}
         <span className="flex-1 ml-3 text-left whitespace-nowrap">{name}</span>
         <svg
-          class={classnames('w-6 h-6', expand ? 'transform rotate-180' : '')}
+          class={classNames('w-6 h-6', expand ? 'transform rotate-180' : '')}
           fill="currentColor"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -52,11 +55,11 @@ const MenuItemDropdown = ({ icon, name, items }) => {
       </button>
       <ul
         id={id}
-        class={classnames('py-2 space-y-2', expand ? 'block' : 'hidden')}
+        class={classNames('py-2 space-y-2', expand ? 'block' : 'hidden')}
       >
         {items.map((item) => (
-          <div className={classnames('px-4')}>
-            <MenuItemLink {...item} />
+          <div className={classNames('px-4')}>
+            <MenuItemLink active={active} {...item} />
           </div>
         ))}
       </ul>
@@ -64,7 +67,7 @@ const MenuItemDropdown = ({ icon, name, items }) => {
   );
 };
 
-const Sidebar = ({ isOpen, menuItems = [] }) => {
+const Sidebar = ({ groupActive, active, isOpen, menuItems = [] }) => {
   return (
     isOpen && (
       <div
@@ -78,9 +81,16 @@ const Sidebar = ({ isOpen, menuItems = [] }) => {
                 {menuItems.map(({ items = [], ...rest }) => {
                   return (
                     <li>
-                      {items.length === 0 && <MenuItemLink {...rest} />}
+                      {items.length === 0 && (
+                        <MenuItemLink active={active} {...rest} />
+                      )}
                       {items.length > 0 && (
-                        <MenuItemDropdown items={items} {...rest} />
+                        <MenuItemDropdown
+                          groupActive={groupActive}
+                          active={active}
+                          items={items}
+                          {...rest}
+                        />
                       )}
                     </li>
                   );
