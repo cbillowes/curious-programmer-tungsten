@@ -34,9 +34,16 @@ const Layout = ({ className, children, setTheme, theme, meta }) => {
         isOpen={isSidebarOpen}
         menuItems={[
           { to: '/', name: 'Home' },
-          { to: '/blog', name: 'Blog' },
           { to: '/about', name: 'About' },
           { to: '/resume', name: 'Resume' },
+          {
+            to: '/blog',
+            name: 'Blog',
+            items: new Array(new Date().getFullYear() - 2016)
+              .fill(0)
+              .map((_, i) => ({ to: `/blog/${2016 + i}`, name: 2016 + i }))
+              .sort((a, b) => b.name - a.name),
+          },
           { to: '/scribbles', name: 'Scribbles' },
           { to: '/courses', name: 'Courses' },
           { to: '/tags', name: 'Tags' },
