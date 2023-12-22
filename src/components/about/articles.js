@@ -14,7 +14,7 @@ const Articles = ({ edges }) => {
       >
         Featured articles
       </Kebab>
-      <div className={`mx-auto text-center ${visible ? 'block' : 'hidden'}`}>
+      <div className={`mx-auto max-w-screen-xl text-center ${visible ? 'block' : 'hidden'}`}>
         <Previews edges={edges} />
         <Anchor
           to="/blog"

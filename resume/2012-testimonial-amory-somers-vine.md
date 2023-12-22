@@ -6,6 +6,7 @@ resume:
   name: Amory Somers Vine
   start: 2012-04-18
   description: April 18, 2012, my client
+  summary: Amory describes me as a fantastic team asset, emphasizing her remarkable commitment to delivery and attention to detail.
 ---
 
 Clarice is a fantastic asset to have on your team.

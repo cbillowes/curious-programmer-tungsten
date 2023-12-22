@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
@@ -101,9 +101,22 @@ const ResumeTemplate = ({ data }) => {
       }}
     >
       <Backdrop />
-      <div id="article" className="pt-14 px-4 pb-24 max-w-3xl mx-auto text-gray-900 dark:text-gray-200">
+      <div
+        id="article"
+        className="pt-14 px-4 pb-24 max-w-3xl mx-auto text-gray-900 dark:text-gray-200"
+      >
         <div className="uppercase text-center my-3 opacity-40 flex justify-between items-center">
-          <Anchor to="/resume">&larr; Back</Anchor>
+          <button
+            onClick={() =>
+              navigate('/resume', {
+                state: {
+                  scroll: true,
+                },
+              })
+            }
+          >
+            &larr; Back
+          </button>
         </div>
         {logo && (
           <img
@@ -116,7 +129,7 @@ const ResumeTemplate = ({ data }) => {
         )}
         {company && (
           <>
-            <h1 className="text-center font-bold max-w-screen-xl mx-auto">
+            <h1 className="mt-4 mx-auto text-center mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
               {jobTitle}
             </h1>
             <h2 className="text-center font-bold max-w-screen-xl mx-auto">
@@ -138,7 +151,7 @@ const ResumeTemplate = ({ data }) => {
         )}
         {name && (
           <>
-            <h1 className="text-center font-bold max-w-screen-xl mx-auto">
+            <h1 className="mt-4 mx-auto text-center mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
               {name}
             </h1>
             <p className="text-center font-bold max-w-screen-xl mx-auto">

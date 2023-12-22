@@ -376,6 +376,18 @@ const Button = ({
 };
 
 const ResumePage = ({ data }) => {
+  const scroll = typeof window !== 'undefined' && window.history.state?.scroll;
+  if (scroll) {
+    setTimeout(() => {
+      const element = document.getElementById('resume');
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
+    }, 100);
+  }
+
   const { site, allMarkdownRemark } = data;
   const { title } = site.siteMetadata;
   const [education, setEducation] = useState(true);
@@ -433,7 +445,7 @@ const ResumePage = ({ data }) => {
         <Backdrop />
         <Meta />
         <CoverLetter />
-        <div className="text-center max-w-4xl mx-auto m-4 leading-loose print:hidden">
+        <div id="resume" className="pt-16 text-center max-w-4xl mx-auto m-4 leading-loose print:hidden">
           <Button
             color={education ? color['Education'].button : ''}
             onClick={() => toggle(setEducation, !education)}

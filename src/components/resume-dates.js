@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const timeSince = (duration) => {
   let result = '';
@@ -48,9 +47,3 @@ const ResumeDates = ({ className, start, end }) => {
 };
 
 export default ResumeDates;
-
-ResumeDates.propTypes = {
-  className: PropTypes.string,
-  start: PropTypes.string.isRequired,
-  end: PropTypes.string,
-};

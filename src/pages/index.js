@@ -89,8 +89,8 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
-      <hr className="border-pink-900" />
-      <section className="bg-gradient-to-tl to-pink-950 from-pink-600 py-16">
+      <hr className="border-indigo-900" />
+      <section className="bg-gradient-to-tl to-indigo-950 from-pink-600 py-16">
         <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
           <img
             src={profile}
@@ -101,8 +101,8 @@ const IndexPage = ({ data }) => {
             My name is Clarice Bouwer
           </h2>
           <p className="max-w-2xl mx-auto mb-4 lg:mb-16 text-center font-light md:text-lg lg:text-xl text-gray-50">
-            I am a Software Engineering Team Lead in the Financial Sector, and
-            Director at Cloudsure Limited based in Mauritius.
+            I am a Software Engineering Team Lead and Director at Cloudsure
+            Limited based in Mauritius.
           </p>
           <div className="grid grid-cols-3 gap-8 text-gray-500 sm:gap-12 md:grid-cols-4 lg:grid-cols-8 dark:text-gray-400">
             <a
@@ -203,7 +203,7 @@ const IndexPage = ({ data }) => {
                     ></path>
                   </svg>
                   <span className="leading-tight text-gray-500 dark:text-gray-400">
-                    <Link to="/tags/mindset">Mindset</Link>
+                    <Link to="/tag/mindset">Mindset</Link>
                   </span>
                 </li>
                 <li className="flex space-x-2.5">
@@ -220,7 +220,7 @@ const IndexPage = ({ data }) => {
                     ></path>
                   </svg>
                   <span className="leading-tight text-gray-500 dark:text-gray-400">
-                    <Link to="/tags/relationships">Relationships</Link>
+                    <Link to="/tag/relationships">Relationships</Link>
                   </span>
                 </li>
                 <li className="flex space-x-2.5">
@@ -237,7 +237,7 @@ const IndexPage = ({ data }) => {
                     ></path>
                   </svg>
                   <span className="leading-tight text-gray-500 dark:text-gray-400">
-                    <Link to="/tags/communication">Communication</Link>
+                    <Link to="/tag/communication">Communication</Link>
                   </span>
                 </li>
                 <li className="flex space-x-2.5">
@@ -254,7 +254,7 @@ const IndexPage = ({ data }) => {
                     ></path>
                   </svg>
                   <span className="leading-tight text-gray-500 dark:text-gray-400">
-                    <Link to="/tags/productivity">Productivity</Link>
+                    <Link to="/tag/productivity">Productivity</Link>
                   </span>
                 </li>
                 <li className="flex space-x-2.5">
@@ -271,7 +271,7 @@ const IndexPage = ({ data }) => {
                     ></path>
                   </svg>
                   <span className="leading-tight text-gray-500 dark:text-gray-400">
-                    <Link to="/tags/personal-brand">Personal brand</Link>
+                    <Link to="/tag/personal-brand">Personal brand</Link>
                   </span>
                 </li>
                 <li className="flex space-x-2.5">
@@ -551,7 +551,10 @@ const IndexPage = ({ data }) => {
                           <div className="font-medium dark:text-white">
                             <div>Clarice Bouwer</div>
                             <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                              <Metadata date={node.fields.date} timeToRead={node.timeToRead} />
+                              <Metadata
+                                date={node.fields.date}
+                                timeToRead={node.timeToRead}
+                              />
                             </div>
                           </div>
                         </div>

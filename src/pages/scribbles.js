@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '@components/layout';
+import Backdrop from '@components/backdrop';
 import Articles from '@components/articles';
 
 const numberTheEdges = (edges) => {
@@ -31,14 +31,15 @@ const ScribblesPage = ({ data }) => {
         siteTitle: title,
       }}
     >
-      <div className="bg-default text-default-script">
+      <section className="py-8 md:py-16 px-4">
+        <Backdrop />
         <div className="mx-auto pb-5">
-          <h1 className="text-center text-5xl font-bold mb-0 mt-12">
+          <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
             Scribbles
           </h1>
           <Articles edges={edges} />
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

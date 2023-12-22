@@ -18,7 +18,7 @@ const BlogPage = ({ data }) => {
         route: '/blog',
       }}
     >
-      <section className="py-8 lg:py-16 px-4">
+      <section className="py-8 md:py-16 px-4">
         <Backdrop />
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
           Blog

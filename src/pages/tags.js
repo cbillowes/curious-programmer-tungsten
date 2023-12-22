@@ -54,7 +54,7 @@ const TagsPage = ({ data }) => {
             tags={tags}
             className="font-bold flex flex-wrap items-center justify-center gap-4 cursor-pointer text-transparent bg-clip-text bg-gradient-to-r dark:to-blue-600 dark:from-green-400 to-blue-600 from-pink-600"
             disableRandomColor={true}
-            onClick={(tag) => navigate(`/tags/${_.kebabCase(tag.value)}`)}
+            onClick={(tag) => navigate(`/tag/${_.kebabCase(tag.value)}`)}
           />
         </div>
       </div>

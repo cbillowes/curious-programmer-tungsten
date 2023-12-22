@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   FaCode,
   FaGraduationCap,
@@ -31,8 +30,3 @@ const ResumeIcon = ({ category, className = '' }) => {
 };
 
 export default ResumeIcon;
-
-ResumeIcon.propTypes = {
-  category: PropTypes.string.isRequired,
-  className: PropTypes.string,
-};

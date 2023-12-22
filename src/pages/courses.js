@@ -35,7 +35,7 @@ const Courses = ({ edges }) => {
             className={classNames(
               'text-xl mt-8 xl:mt-0 md:text-4xl leading-loose font-semibold tracking-tight',
               'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
-              'hover:to-red-600 hover:from-violet-600'
+              'hover:to-red-600 hover:from-violet-600',
             )}
           >
             <Anchor to={slug} title={title}>
@@ -58,9 +58,10 @@ const Courses = ({ edges }) => {
             }`}
           >
             <Anchor
-              className={`bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-color-1-alternative ${
-                isEven ? 'xl:mr-2' : 'xl:ml-4'
-              }`}
+              className={classNames(
+                'bg-pink-600 text-white rounded py-1 px-3 transform shadow-md hover:bg-blue-600 hover:scale-105 transition-all duration-300',
+                isEven ? 'xl:mr-2' : 'xl:ml-4',
+              )}
               to={slug}
               title={slug}
             >
