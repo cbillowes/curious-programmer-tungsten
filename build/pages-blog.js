@@ -17,7 +17,7 @@ const createThePage = (createPage, year, reporter) => {
 };
 
 const createBlogPages = (createPage, reporter) => {
-  const years = new Array(new Date().getFullYear() - startAtYear)
+  const years = new Array(new Date().getFullYear() + 1 - startAtYear)
     .fill(0)
     .map((_, i) => startAtYear + i);
   years.forEach((year) => {
