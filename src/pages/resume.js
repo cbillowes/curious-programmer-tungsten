@@ -146,7 +146,7 @@ const Timeline = ({
           </div>
           <div className="flex items-center flex-wrap xl:flex-row-reverse print:hidden">
             <Anchor
-              className="bg-color-1 text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-color-1-alternative xl:mr-2"
+              className="bg-primary-600 text-primary-200 rounded py-1 px-3 transform shadow-md hover:bg-blue-600 hover:text-blue-200 xl:mr-2"
               to={`/resume/${slug}`}
               title={company}
               forceNewTab={false}

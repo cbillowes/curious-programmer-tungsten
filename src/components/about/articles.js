@@ -19,7 +19,7 @@ const Articles = ({ edges }) => {
         <Anchor
           to="/blog"
           title="All articles"
-          className="bg-color-1-alternative text-color-1-script rounded py-1 px-3 transform shadow-md hover:bg-color-1"
+          className="rounded py-1 px-3 transform shadow-md bg-primary-600 text-primary-200 hover:bg-blue-600 hover:text-blue-200"
         >
           Discover more
         </Anchor>
