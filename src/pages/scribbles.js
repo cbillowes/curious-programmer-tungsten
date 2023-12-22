@@ -33,10 +33,10 @@ const ScribblesPage = ({ data }) => {
     >
       <section className="py-8 md:py-16 px-4">
         <Backdrop />
-        <div className="mx-auto pb-5">
-          <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
-            Scribbles
-          </h1>
+        <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+          Scribbles
+        </h1>
+        <div className="mx-auto max-w-screen-xl">
           <Articles edges={edges} />
         </div>
       </section>
