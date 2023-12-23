@@ -14,8 +14,20 @@
   }
 
   #article {
+    .gatsby-remark-autolink-header svg {
+      fill: white;
+    }
+
+    h2::after {
+      background: linear-gradient(45deg, #55c3ff 0%, #35ffb2 100%);
+    }
+
     a {
       background-image: linear-gradient(to right, #55c3ff, #35ffb2 100%);
+
+      &:hover {
+        background-image: linear-gradient(to right, #55c3ff, #e10f64 100%);
+      }
     }
   }
 }
