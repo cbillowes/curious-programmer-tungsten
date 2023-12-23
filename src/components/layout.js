@@ -11,9 +11,11 @@ import classNames from 'classnames';
 const Layout = ({ className, children, setTheme, theme, meta }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  console.log(
-    '👋 Welcome! "Stay a while and listen." 💖 Want to get in touch? clarice@bouwer.dev',
-  );
+  if (typeof window !== 'undefined') {
+    console.log(
+      '👋 Welcome! "Stay a while and listen." 💖 Want to get in touch? clarice@bouwer.dev',
+    );
+  }
 
   return (
     <Flowbite theme={{ dark: theme === 'dark', theme: flowbiteTheme }}>

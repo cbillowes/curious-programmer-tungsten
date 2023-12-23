@@ -25,8 +25,24 @@ module.exports = {
   siteMetadata,
   plugins: [
     'gatsby-plugin-postcss',
+    'gatsby-plugin-sass',
     'gatsby-plugin-image',
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: ['/**/404', '/**/404.html'],
+        query: `
+            {
+              allSitePage {
+                nodes {
+                  path
+                }
+              }
+            }
+          `,
+        resolveSiteUrl: () => siteMetadata.siteUrl,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -112,41 +128,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        query: `
-        {
-          allSitePage {
-            edges {
-              node {
-                path
-                slug: path
-                url: path
-              }
-            }
-          }
-        }
-        `,
-        mapping: {
-          allSitePage: {
-            sitemap: `pages`,
-          },
-        },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        sassOptions: {
-          precision: 6,
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: siteMetadata.siteUrl,
-        sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
+        host: siteMetadata.url,
+        sitemap: `${siteMetadata.url}/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
