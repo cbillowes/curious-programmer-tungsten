@@ -143,6 +143,7 @@ const ArticleTemplate = ({ data }) => {
                           <Metadata
                             timeToRead={timeToRead}
                             date={fields.date}
+                            type={fields.type}
                           />
                         </div>
                       </div>
