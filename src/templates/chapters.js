@@ -201,6 +201,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
                             timeToRead={timeToRead}
                             date={date}
                             modified={modified}
+                            type={fields.type}
                           />
                         </div>
                       </div>

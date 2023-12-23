@@ -561,6 +561,7 @@ const IndexPage = ({ data }) => {
                               <Metadata
                                 date={node.fields.date}
                                 timeToRead={node.timeToRead}
+                                type={node.fields.type}
                               />
                             </div>
                           </div>

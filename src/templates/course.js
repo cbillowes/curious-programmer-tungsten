@@ -61,6 +61,7 @@ export const query = graphql`
           }
           fields {
             slug
+            type
           }
         }
       }
@@ -144,6 +145,7 @@ const CourseTemplate = ({ data }) => {
                           <Metadata
                             timeToRead={timeToRead}
                             date={fields.date}
+                            type={fields.type}
                           />
                         </div>
                       </div>
