@@ -73,6 +73,7 @@ const BlogTemplate = ({ data, pageContext }) => {
         pageTitle: `Blog: year ${year}`,
         siteTitle: title,
         route: `/blog/${year}`,
+        path: `/blog/${year}`,
         group: 'Blog',
       }}
     >

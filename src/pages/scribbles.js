@@ -30,6 +30,7 @@ const ScribblesPage = ({ data }) => {
         pageTitle: 'Scribbles',
         siteTitle: title,
         route: '/scribbles',
+        path: '/scribbles',
       }}
     >
       <section className="py-16 px-4">

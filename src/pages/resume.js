@@ -439,6 +439,7 @@ const ResumePage = ({ data }) => {
         pageTitle: 'My name is Clarice Bouwer',
         siteTitle: title,
         route: '/resume',
+        path: '/resume',
       }}
     >
       <div className="py-16 px-4">

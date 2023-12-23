@@ -104,6 +104,7 @@ const CoursesPage = ({ data }) => {
         pageTitle: 'Crash Courses',
         siteTitle: title,
         route: '/courses',
+        path: '/courses',
       }}
     >
       <div className="py-16 px-4">

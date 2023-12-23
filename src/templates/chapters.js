@@ -144,6 +144,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
           pageType: 'article',
           cover,
           route: '/courses',
+          path: `/courses/${fields.slug}`, //TODO: confirm this is correct
         }}
       >
         <Thumbnail {...data.courses.fields.hero} />

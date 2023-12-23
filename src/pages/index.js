@@ -31,6 +31,7 @@ const IndexPage = ({ data }) => {
         pageTitle: 'Welcome to my blog',
         siteTitle: title,
         route: '/',
+        path: '/',
       }}
     >
       <section className="bg-gray-50 dark:bg-gray-900 py-32">

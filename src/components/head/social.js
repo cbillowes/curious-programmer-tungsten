@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import defaultCover from '../../images/unicorn-heart.webp';
 
 const getResource = (url, route) => `${url}${route || '/'}`;
 
@@ -14,15 +15,14 @@ const isRelativePath = (imagePath) => {
 const getStaticPath = (imagePath, cover) => {
   return isRelativePath(imagePath)
     ? imagePath
-    : require(`../images/${cover || "default-01.jpg"}`).default;
+    : require(`../images/${cover || 'default-01.jpg'}`).default;
 };
 
-const Social = ({ pageType, imagePath, url, twitter, cover }) => {
-  const route = typeof window !== 'undefined' ? window.location.path : '';
-  const canonical = getResource(url, route);
-  const image = `${url}${
-    isUrl(imagePath) ? imagePath : getStaticPath(imagePath, cover)
-  }`;
+const Social = ({ path, pageType, imagePath, url, twitter, cover }) => {
+  const canonical = getResource(url, path);
+  const image = imagePath
+    ? `${url}${isUrl(imagePath) ? imagePath : getStaticPath(imagePath, cover)}`
+    : `${url}${defaultCover}`;
 
   return (
     <Helmet>

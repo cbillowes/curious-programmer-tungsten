@@ -102,6 +102,7 @@ const CourseTemplate = ({ data }) => {
         pageType: 'article',
         cover: frontmatter.cover,
         route: '/courses',
+        path: `/courses/${fields.slug}`
       }}
     >
       <div>

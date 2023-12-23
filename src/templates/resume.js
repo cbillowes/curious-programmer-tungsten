@@ -99,6 +99,7 @@ const ResumeTemplate = ({ data }) => {
         keywords,
         pageType: 'article',
         route: '/resume',
+        path: '/resume',
       }}
     >
       <Backdrop />

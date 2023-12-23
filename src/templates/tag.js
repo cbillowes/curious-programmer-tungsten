@@ -16,6 +16,7 @@ const TagTemplate = ({ data, pageContext }) => {
         siteTitle: title,
         description: `A collection of articles, tutorials, and other things related to ${tag}.`,
         route: '/tags',
+        page: `/tags/${tag}`,
       }}
     >
       <section className="py-8 lg:py-16 px-4 bg-gray-100 dark:bg-gray-900">

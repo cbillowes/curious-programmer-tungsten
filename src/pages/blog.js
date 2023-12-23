@@ -19,6 +19,7 @@ const BlogPage = ({ data }) => {
         pageTitle: 'Blog',
         siteTitle: title,
         route: '/blog',
+        path: '/blog',
         group: 'Blog',
       }}
     >

@@ -21,6 +21,7 @@ const AboutPage = ({ data }) => {
         pageTitle: 'My name is Clarice Bouwer',
         siteTitle: title,
         route: '/about',
+        route: '/about',
       }}
     >
       <section className="py-16 px-4">

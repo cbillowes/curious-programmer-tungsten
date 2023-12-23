@@ -82,6 +82,7 @@ const ScribblesTemplate = ({ data }) => {
         keywords,
         pageType: 'article',
         route: '/scribbles',
+        page: '/scribbles',
         cover,
       }}
     >

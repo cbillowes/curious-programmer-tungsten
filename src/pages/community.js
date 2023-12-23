@@ -18,6 +18,7 @@ const CommunityPage = ({ data }) => {
         description:
           'In essence, words have the power to cause harm. Practice kindness while maintaining clarity! Explore further insights on interacting in our community guidelines.',
         route: '/community',
+        path: '/community',
         group: 'Legalities',
       }}
     >

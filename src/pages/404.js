@@ -22,7 +22,8 @@ const NotFoundPage = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: 'Welcome to my blog',
         siteTitle: title,
-        route: '/',
+        route: '/404',
+        path: '/404',
       }}
     >
       <section className="bg-gray-50 dark:bg-gray-900 py-32">

@@ -84,6 +84,7 @@ const ArticleTemplate = ({ data }) => {
         cover: frontmatter.cover,
         groupActive: '/blog',
         route: `/${frontmatter.date.split('-')[0]}`,
+        path: `/blog/${fields.slug}`,
       }}
     >
       <div>

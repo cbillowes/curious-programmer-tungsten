@@ -43,6 +43,7 @@ const TagsPage = ({ data }) => {
         pageTitle: 'Tags for all the things',
         siteTitle: title,
         route: '/tags',
+        path: '/tags',
       }}
     >
       <div className="py-16 px-4">

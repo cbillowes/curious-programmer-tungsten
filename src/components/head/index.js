@@ -29,6 +29,7 @@ const Head = ({
   type,
   url,
   cover,
+  path,
   crawl = true,
 }) => (
   <React.Fragment>
@@ -73,6 +74,7 @@ const Head = ({
       imagePath={image || social?.image}
       pageType={pageType}
       cover={cover}
+      path={path}
     />
 
     <Schema

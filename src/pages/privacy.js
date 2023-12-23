@@ -19,6 +19,7 @@ const Privacy = ({ data }) => {
         keywords:
           'privacy, privacy policy, data protection, cookies, data collection',
         route: '/privacy',
+        path: '/privacy',
         group: 'Legalities',
       }}
     >
