@@ -88,6 +88,7 @@ const ResumeTemplate = ({ data }) => {
 
   return (
     <Layout
+      showComments
       meta={{
         ...data.site.siteMetadata,
         pageTitle: company

@@ -73,6 +73,7 @@ const ScribblesTemplate = ({ data }) => {
 
   return (
     <Layout
+      showComments
       meta={{
         ...data.site.siteMetadata,
         pageTitle: frontmatter.title,

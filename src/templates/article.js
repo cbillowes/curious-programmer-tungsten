@@ -69,25 +69,10 @@ const ArticleTemplate = ({ data }) => {
   const { excerpt, timeToRead, html, fields, frontmatter } = markdownRemark;
   const { title, description } = site.siteMetadata;
   const keywords = getKeywords(html);
-  const commentBox = useRef(null);
-
-  useEffect(() => {
-    let scriptEl = document.createElement('script');
-    scriptEl.setAttribute('src', 'https://utteranc.es/client.js');
-    scriptEl.setAttribute('crossorigin', 'anonymous');
-    scriptEl.setAttribute('async', true);
-    scriptEl.setAttribute('repo', 'cbillowes/curious-programmer-tungsten');
-    scriptEl.setAttribute('issue-term', 'title');
-    if (typeof window === 'undefined' && window.localStorage.getItem('theme') === 'dark') {
-      scriptEl.setAttribute('theme', 'github-dark');
-    } else {
-      scriptEl.setAttribute('theme', 'github-light');
-    }
-    commentBox.current.appendChild(scriptEl);
-  }, []);
 
   return (
     <Layout
+      showComments
       meta={{
         ...data.site.siteMetadata,
         keywords: frontmatter.keywords || keywords,
@@ -156,7 +141,6 @@ const ArticleTemplate = ({ data }) => {
                   // eslint-disable-next-line react/no-danger
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
-                <div ref={commentBox}></div>
               </article>
             </div>
           </div>

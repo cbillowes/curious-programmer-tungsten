@@ -133,6 +133,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
   return (
     <div className="min-h-screen">
       <Layout
+        showComments
         className={showToc ? 'blur' : ''}
         meta={{
           ...data.site.siteMetadata,
