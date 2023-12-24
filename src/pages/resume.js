@@ -438,10 +438,10 @@ const ResumePage = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: 'My name is Clarice Bouwer',
         siteTitle: title,
-        description:
-          `I drive results in web product development, blending user-centric innovation and continuous learning, ensuring impactful outcomes.`,
+        description: `I drive results in web product development, blending user-centric innovation and continuous learning, ensuring impactful outcomes.`,
         route: '/resume',
         path: '/resume',
+        cover: 'avatar.png',
       }}
     >
       <div className="py-16 px-4">

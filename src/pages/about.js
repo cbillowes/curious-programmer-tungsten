@@ -24,6 +24,7 @@ const AboutPage = ({ data }) => {
         siteTitle: title,
         route: '/about',
         path: '/about',
+        cover: 'avatar.png',
       }}
     >
       <section className="py-16 px-4">
