@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import Anchor from '@components/anchor';
 import { FaCode } from 'react-icons/fa';
 import classNames from 'classnames';
 
 const MenuItemLink = ({ active, to, icon, name }) => {
   return (
-    <Link
-      href={to}
+    <Anchor
+      to={to}
       className={classNames(
         'text-base text-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-900 group dark:text-gray-200 px-4 space-2 flex items-center py-2',
         active === to && 'bg-primary-600 text-primary-200 hover:bg-color-1 hover:text-white dark:hover:bg-color-1',
@@ -16,7 +16,7 @@ const MenuItemLink = ({ active, to, icon, name }) => {
       <span className="ml-3" sidebar-toggle-item>
         {name}
       </span>
-    </Link>
+    </Anchor>
   );
 };
 
