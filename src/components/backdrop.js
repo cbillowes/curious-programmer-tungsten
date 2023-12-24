@@ -6,7 +6,7 @@ const Backdrop = () => {
       <div className="w-[108rem] flex-none flex justify-end blur opacity-60">
         <picture>
           <source
-            srcset={require('@images/backdrop_1.webp').default}
+            srcSet={require('@images/backdrop_1.webp').default}
             type="image/webp"
           />
           <img
@@ -18,7 +18,7 @@ const Backdrop = () => {
         </picture>
         <picture>
           <source
-            srcset={require('@images/backdrop_2.webp').default}
+            srcSet={require('@images/backdrop_2.webp').default}
             type="image/webp"
           />
           <img
