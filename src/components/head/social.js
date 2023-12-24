@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const getResource = (url, route) => `${url}${route || '/'}`;
+const getResource = (url, route) => `${url}${route}/`;
 
 const isUrl = (imagePath) => {
   return imagePath && imagePath.startsWith('http');
