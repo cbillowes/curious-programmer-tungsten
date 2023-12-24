@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@components/layout';
 import Tags from '@components/tags';
-// import CommentSystem from '@components/CommentSystem';
 import Thumbnail from '@components/thumbnail';
 import Metadata from '@components/metadata';
 import Type from '@components/type';

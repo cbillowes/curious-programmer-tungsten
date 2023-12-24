@@ -27,7 +27,7 @@ import classNames from 'classnames';
 
 const getLogo = (logo) => {
   try {
-    return require(`../images/logos/${logo}`).default;
+    return require(`@images/logos/${logo}`).default;
   } catch (e) {
     return '';
   }

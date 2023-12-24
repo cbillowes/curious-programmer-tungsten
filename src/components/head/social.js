@@ -7,16 +7,6 @@ const isUrl = (imagePath) => {
   return imagePath && imagePath.startsWith('http');
 };
 
-const isRelativePath = (imagePath) => {
-  return imagePath && imagePath.startsWith('../');
-};
-
-const getStaticPath = (imagePath, cover) => {
-  return isRelativePath(imagePath)
-    ? imagePath
-    : require(`../images/${cover || 'default-01.jpg'}`).default;
-};
-
 const Social = ({ path, pageType, imagePath, url, twitter, cover }) => {
   const canonical = getResource(url, path);
   let image = '';
@@ -26,10 +16,10 @@ const Social = ({ path, pageType, imagePath, url, twitter, cover }) => {
   } else {
     try {
       const defaultCover = 'unicorn-heart.webp';
-      image = require(`../images/${cover || defaultCover}`).default;
+      image = require(`@images/covers/${cover || defaultCover}`).default;
       image = `${url}${image}`;
     } catch (e) {
-      console.log('Could not find cover image', e);
+      console.error('Could not find cover image', e);
     }
   }
 

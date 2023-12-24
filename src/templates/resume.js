@@ -3,7 +3,6 @@ import { graphql, navigate } from 'gatsby';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
-// import CommentSystem from '@components/CommentSystem';
 import Anchor from '@components/anchor';
 import ResumeDates from '@components/resume-dates';
 import ResumeIcon from '@components/resume-icon';
@@ -68,7 +67,7 @@ export const query = graphql`
 
 const ResumeTemplate = ({ data }) => {
   const { markdownRemark, site } = data;
-  const { excerpt, html, frontmatter } = markdownRemark;
+  const { excerpt, html, fields, frontmatter } = markdownRemark;
   const { title, description } = site.siteMetadata;
   const {
     category,
@@ -99,14 +98,11 @@ const ResumeTemplate = ({ data }) => {
         keywords,
         pageType: 'article',
         route: '/resume',
-        path: '/resume',
+        path: fields.slug,
       }}
     >
       <Backdrop />
-      <div
-        id="article"
-        className="pt-14 px-4 pb-24 max-w-3xl mx-auto text-gray-900 dark:text-gray-200"
-      >
+      <div className="pt-14 px-4 pb-24 max-w-3xl mx-auto text-gray-900 dark:text-gray-200">
         <div className="uppercase text-center my-3 opacity-40 flex justify-between items-center">
           <button
             onClick={() =>
@@ -122,7 +118,7 @@ const ResumeTemplate = ({ data }) => {
         </div>
         {logo && (
           <img
-            src={require(`../images/logos/${logo}`).default}
+            src={require(`@images/logos/${logo}`).default}
             alt={company}
             className={`logo mx-auto ${
               category === 'Testimonial' ? 'rounded-full' : ''
@@ -134,7 +130,7 @@ const ResumeTemplate = ({ data }) => {
             <h1 className="mt-4 mx-auto text-center mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
               {jobTitle}
             </h1>
-            <h2 className="text-center font-bold max-w-screen-xl mx-auto">
+            <h2 className="text-center font-bold max-w-screen-xl mx-auto text-3xl md:text-4xl mb-4 tracking-tight">
               {company}
               <ResumeIcon
                 className="inline text-3xl ml-3"
@@ -170,15 +166,11 @@ const ResumeTemplate = ({ data }) => {
         </div>
         <div className="text-center"></div>
         <div
-          className="content max-w-3xl mx-auto mt-8 leading-loose"
+          id="article"
+          className="max-w-3xl mx-auto mt-8 leading-loose"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: html || summary }}
         />
-        {/* <CommentSystem
-          url={`${url}${fields.slug}`}
-          identifier={fields.slug}
-          title={title}
-        /> */}
       </div>
     </Layout>
   );

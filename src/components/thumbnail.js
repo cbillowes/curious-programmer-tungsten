@@ -80,7 +80,7 @@ const Thumbnail = ({
     );
 
   try {
-    const src = require(`./images/${image}`).default;
+    const src = require(`@images/covers/${image}`).default;
     return (
       <div
         className={classNames(
