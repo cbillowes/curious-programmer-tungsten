@@ -4,7 +4,7 @@
 const siteMetadata = {
   title: 'Curious Programmer',
   description:
-    'A curious place for a curious mind. A software engineering blog.',
+    'Explore a spectrum of skills at Curious Programmer—soft to technical. Articles, courses, and notes for continuous learning in software engineering.',
   keywords: 'software development, software, programming',
   url: 'https://curiousprogrammer.dev',
   // This duplicated gem is used for gatsby-plugin-advanced-sitemap

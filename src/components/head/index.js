@@ -38,6 +38,7 @@ const Head = ({
         lang,
       }}
     >
+      <meta charSet="utf-8" />
       <meta name="build" content={new Date()} />
       <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
       <meta name="apple-mobile-web-app-capable" content="yes" />

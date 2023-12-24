@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: 'Welcome to my blog',
+        pageTitle: 'A programmer’s quest for knowledge',
         siteTitle: title,
         route: '/',
         path: '/',
