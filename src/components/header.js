@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from '@components/search';
+// import Search from '@components/search';
 import Logo from '@components/logo';
 import ThemeSwitcher from '@components/theme-switcher';
 
