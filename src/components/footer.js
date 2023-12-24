@@ -27,22 +27,34 @@ const Footer = () => {
         </p>
         <ul className="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
           <li>
-            <a href="https://curiousprogrammer.dev/privacy" className="mr-4 hover:underline md:mr-6 ">
+            <a
+              href="https://curiousprogrammer.dev/privacy"
+              className="mr-4 hover:underline md:mr-6 "
+            >
               Privacy policy
             </a>
           </li>
           <li>
-            <a href="https://curiousprogrammer.dev/community" className="mr-4 hover:underline md:mr-6">
+            <a
+              href="https://curiousprogrammer.dev/community"
+              className="mr-4 hover:underline md:mr-6"
+            >
               Community guidelines
             </a>
           </li>
           <li>
-            <a href="https://github.com/cbillowes/curious-programmer-tungsten" className="mr-4 hover:underline md:mr-6 ">
+            <a
+              href="https://github.com/cbillowes/curious-programmer-tungsten"
+              className="mr-4 hover:underline md:mr-6 "
+            >
               Source code
             </a>
           </li>
           <li>
-            <a href="https://react-icons.github.io/react-icons/" className="mr-4 hover:underline md:mr-6">
+            <a
+              href="https://react-icons.github.io/react-icons/"
+              className="mr-4 hover:underline md:mr-6"
+            >
               React icons
             </a>
           </li>
