@@ -6,6 +6,8 @@ tags:
   - Mindset
   - Communication
   - Relationships
+abstract:
+  Explore the power of MBTI in my latest article, unraveling how personality insights enhance self-awareness, teamwork, and career paths.
 ---
 
 I want to express my gratitude to Sylvester Jalnaiz for prompting me to revisit an article I wrote back in 2017 called "[Discovering yourself](/blog/discovering-yourself)." Sylvester introduced me to the [Fingerprint for Success](https://www.fingerprintforsuccess.com/personality-type) MBTI which motivated me to rejuvenate my blog and start contributing once more. Your support means a lot—thank you!
