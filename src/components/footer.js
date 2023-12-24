@@ -10,16 +10,20 @@ const Footer = () => {
           to="/"
           className="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white"
         >
-          <StaticImage
-            src="../images/icon-light.webp"
-            alt="Curious Programmer"
-            className="dark:hidden block h-11 w-11"
-          />
-          <StaticImage
-            src="../images/icon-dark.webp"
-            alt="Curious Programmer"
-            className="dark:block hidden h-11 w-11"
-          />
+          <div className="block dark:hidden">
+            <StaticImage
+              src="../images/icon-light.webp"
+              alt="Curious Programmer"
+              className="h-11 w-11"
+            />
+          </div>
+          <div className="hidden dark:block">
+            <StaticImage
+              src="../images/icon-dark.webp"
+              alt="Curious Programmer"
+              className="h-11 w-11"
+            />
+          </div>
         </Link>
         <p className="my-6 text-gray-500 dark:text-gray-400">
           Curious Programmer
