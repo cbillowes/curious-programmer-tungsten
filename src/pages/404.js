@@ -28,17 +28,17 @@ const NotFoundPage = ({ data }) => {
     >
       <section className="bg-gray-50 dark:bg-gray-900 py-32">
         <Backdrop />
-        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
-          <div class="mx-auto max-w-screen-sm text-center">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
+          <div className="mx-auto max-w-screen-sm text-center">
             <img
-              class="mx-auto mb-4 w-96"
+              className="mx-auto mb-4 w-96"
               src={require('../images/unicorn-thinking.webp').default}
               alt="404 Not Found"
             />
-            <h1 class="mb-4 text-2xl font-extrabold text-primary-600 dark:text-primary-500">
+            <h1 className="mb-4 text-2xl font-extrabold text-primary-600 dark:text-primary-500">
               {"< 404 />"} Page not found
             </h1>
-            <p class="text-3xl tracking-tight font-bold md:text-4xl">
+            <p className="text-3xl tracking-tight font-bold md:text-4xl">
               Sorry, this is not the page you were looking for.
             </p>
           </div>

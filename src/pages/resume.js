@@ -247,12 +247,12 @@ const Pillar = ({ icon, title, items, className }) => {
       >
         {icon}
       </div>
-      <h3 class="mb-2 text-xl font-bold dark:text-white text-gray-900">
+      <h3 className="mb-2 text-xl font-bold dark:text-white text-gray-900">
         {title}
       </h3>
-      <ul class="my-6 lg:mb-0 space-y-4">
+      <ul className="my-6 lg:mb-0 space-y-4">
         {items?.map((item) => (
-          <li class="flex space-x-2.5">
+          <li className="flex space-x-2.5">
             <svg
               class={classNames('flex-shrink-0 w-5 h-5', className)}
               fill="currentColor"
@@ -265,7 +265,7 @@ const Pillar = ({ icon, title, items, className }) => {
                 clip-rule="evenodd"
               ></path>
             </svg>
-            <span class="leading-relaxed text-gray-500 dark:text-gray-400">
+            <span className="leading-relaxed text-gray-500 dark:text-gray-400">
               {item}
             </span>
           </li>
@@ -285,7 +285,7 @@ const CoverLetter = () => {
         dynamic asset. I am fueled by a passion for continuous learning and have
         a proven track record of achieving impactful outcomes.
       </p>
-      <div class="mb-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0">
+      <div className="mb-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0">
         <Pillar
           title="Experience"
           icon={<SiLevelsdotfyi />}

@@ -55,7 +55,7 @@ const Attributes = () => {
         <p className="text-gray-500 sm:text-xl dark:text-gray-400">
           I am {phrases.join(', ')}.
         </p>
-        <div class="mt-8 lg:mt-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+        <div className="mt-8 lg:mt-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
           <Attribute title="Pragmatic" icon={<GiSwissArmyKnife />}>
             <p>
               I prioritize practical solutions, solve problems, and adapt to
