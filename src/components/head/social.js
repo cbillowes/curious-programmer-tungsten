@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import defaultCover from '../../images/unicorn-heart.webp';
 
 const getResource = (url, route) => `${url}${route || '/'}`;
 
@@ -20,9 +19,19 @@ const getStaticPath = (imagePath, cover) => {
 
 const Social = ({ path, pageType, imagePath, url, twitter, cover }) => {
   const canonical = getResource(url, path);
-  const image = imagePath
-    ? `${url}${isUrl(imagePath) ? imagePath : getStaticPath(imagePath, cover)}`
-    : `${url}${defaultCover}`;
+  let image = '';
+
+  if (isUrl(imagePath)) {
+    image = imagePath;
+  } else {
+    try {
+      const defaultCover = 'unicorn-heart.webp';
+      image = require(`../images/${cover || defaultCover}`).default;
+      image = `${url}${image}`;
+    } catch (e) {
+      console.log('Could not find cover image', e);
+    }
+  }
 
   return (
     <Helmet>

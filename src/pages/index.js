@@ -26,6 +26,7 @@ const IndexPage = ({ data }) => {
         siteTitle: title,
         route: '/',
         path: '/',
+        image: require('@images/unicorn-laptop-xmas.webp').default,
       }}
     >
       <section className="bg-gray-50 dark:bg-gray-900 py-32">
