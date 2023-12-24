@@ -1,19 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
-import unicornLaptop from '@images/unicorn-laptop-xmas.webp';
-import profile from '@images/avatar.png';
-import cloudsure from '@images/cloudsure.webp';
-import clojure from '@images/clojure.webp';
-import mauritius from '@images/mauritius.webp';
-import southafrica from '@images/south-africa.webp';
-import coffee from '@images/coffee.svg';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Thumbnail from '@components/thumbnail';
 import Metadata from '@components/metadata';
 import Ribbon from '@components/ribbon';
 import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const IndexPage = ({ data }) => {
   const { allMarkdownRemark, site } = data;
@@ -39,8 +33,8 @@ const IndexPage = ({ data }) => {
         <div className="px-4 sm:px-32 grid max-w-screen-xl xl:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
             <div className="lg:hidden">
-              <img
-                src={unicornLaptop}
+              <StaticImage
+                src="../images/unicorn-laptop-xmas.webp"
                 className="w-32 h-32 object-cover"
                 alt="Unicorn using a laptop"
               />
@@ -50,7 +44,12 @@ const IndexPage = ({ data }) => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-green-400">
                 secret sauce
               </span>{' '}
-              for Software Engineers 🚀
+              for Software Engineers
+              <StaticImage
+                src="../images/rocket.png"
+                alt="Rocket emoji"
+                className="inline-block w-16 h-16 ml-4"
+              />
             </h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">
               Passionate developers, fueled by an insatiable thirst for
@@ -61,8 +60,20 @@ const IndexPage = ({ data }) => {
               It's not just about zeros and ones; it's a journey of perpetual
               excitement, where curiosity isn't just a trait, but the heartbeat
               of innovation. So, join the geek squad and let curiosity be your
-              compass in the ever-expanding universe of software magic! 🌐 🦄 💻
+              compass in the ever-expanding universe of software magic!
             </p>
+            <div className="mb-8">
+              <StaticImage
+                src="../images/unicorn.png"
+                alt="Unicorn emoji"
+                className="inline-block w-16 h-16 ml-4"
+              />
+              <StaticImage
+                src="../images/mac.png"
+                alt="Woman technologist emoji"
+                className="inline-block w-16 h-16 ml-4"
+              />
+            </div>
             <Link
               to="/resume"
               className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
@@ -89,8 +100,8 @@ const IndexPage = ({ data }) => {
             </Link>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img
-              src={unicornLaptop}
+            <StaticImage
+              src="../images/unicorn-laptop-xmas.webp"
               className="w-96 h-96 object-cover"
               alt="Unicorn using a laptop"
             />
@@ -99,18 +110,20 @@ const IndexPage = ({ data }) => {
       </section>
       <hr className="border-indigo-900" />
       <section className="bg-gradient-to-tl to-indigo-950 from-pink-600 py-16">
-        <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
-          <img
-            src={profile}
+        <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4 text-center">
+          <StaticImage
+            src="../images/avatar.png"
             alt="Clarice Bouwer"
-            className="w-64 h-64 mx-auto object-cover rounded-full"
+            className="w-64 h-64 object-cover rounded-full"
           />
           <h2 className="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-white md:text-4xl">
             My name is Clarice Bouwer
           </h2>
           <p className="max-w-2xl mx-auto mb-8 lg:mb-16 text-center font-light md:text-lg lg:text-xl text-gray-50">
-            I am a Software Engineering Team Lead and Director at Cloudsure
-            Limited based in Mauritius.
+            Software Engineering Team Lead at Cloudsure Limited in Mauritius
+            (born in South Africa). Obsessively passionate about
+            Clojure(Script), Gatsby, and Git, I navigate the realms of financial
+            services and code innovation.
           </p>
           <div className="grid grid-cols-4 gap-8 text-5xl text-gray-500 sm:gap-12 lg:grid-cols-8 dark:text-gray-400">
             <a
@@ -135,31 +148,51 @@ const IndexPage = ({ data }) => {
               href="https://www.buymeacoffee.com/cbillowes"
               className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
-              <img src={coffee} alt="Buy me a coffee" className="h-11" />
+              <StaticImage
+                src="../images/coffee.svg"
+                alt="Buy me a coffee"
+                className="h-11 w-11"
+              />
             </a>
             <a
               href="https://www.cloudsure.mu"
               className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
-              <img src={cloudsure} alt="Cloudsure" className="h-11" />
+              <StaticImage
+                src="../images/cloudsure.webp"
+                alt="Cloudsure"
+                className="h-11 w-11"
+              />
             </a>
             <a
               href="https://clojure.org/"
               className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
-              <img src={clojure} alt="Clojure" className="h-11" />
+              <StaticImage
+                src="../images/clojure.webp"
+                alt="Clojure"
+                className="h-11 w-11"
+              />
             </a>
             <a
               href="https://en.wikipedia.org/wiki/Mauritius"
               className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
-              <img src={mauritius} alt="Mauritius" className="h-11" />
+              <StaticImage
+                src="../images/mauritius.webp"
+                alt="Mauritius"
+                className="h-11 w-11"
+              />
             </a>
             <a
               href="https://en.wikipedia.org/wiki/South_Africa"
               className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
-              <img src={southafrica} alt="South Africa" className="h-11" />
+              <StaticImage
+                src="../images/south-africa.webp"
+                alt="South Africa"
+                className="h-11 w-11"
+              />
             </a>
           </div>
         </div>
@@ -551,9 +584,9 @@ const IndexPage = ({ data }) => {
                           <Thumbnail {...node.fields.hero} />
                         </Link>
                         <div className="flex items-center mb-3 space-x-2">
-                          <img
+                          <StaticImage
                             className="w-8 h-8 rounded-full"
-                            src={require('@images/avatar.png').default}
+                            src="../images/avatar.png"
                             alt="Clarice Bouwer"
                           />
                           <div className="font-medium dark:text-white">

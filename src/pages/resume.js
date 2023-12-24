@@ -277,15 +277,15 @@ const Pillar = ({ icon, title, items, className }) => {
 
 const CoverLetter = () => {
   return (
-    <div className="text-left max-w-5xl mx-auto mb-4 leading-loose print:text-left print:text-sm">
-      <p className="max-w-2xl text-center mx-auto mb-8">
+    <div className="text-left max-w-6xl mx-auto mb-4 leading-relaxed print:text-left print:text-md">
+      <p className="max-w-4xl text-center mx-auto mb-16 text-xl">
         My unwavering commitment to driving quantifiable results through{' '}
         {new Date().getFullYear() - 2006} years of professional expertise in
         developing cutting-edge, user-centric web products positions me as a
         dynamic asset. I am fueled by a passion for continuous learning and have
         a proven track record of achieving impactful outcomes.
       </p>
-      <div className="mb-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0">
+      <div className="mb-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0 text-md">
         <Pillar
           title="Experience"
           icon={<SiLevelsdotfyi />}
@@ -438,6 +438,8 @@ const ResumePage = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: 'My name is Clarice Bouwer',
         siteTitle: title,
+        description:
+          `I drive results in web product development, blending user-centric innovation and continuous learning, ensuring impactful outcomes.`,
         route: '/resume',
         path: '/resume',
       }}

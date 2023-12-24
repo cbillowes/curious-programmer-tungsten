@@ -70,7 +70,7 @@ const BlogTemplate = ({ data, pageContext }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: `Blog: year ${year}`,
+        pageTitle: `Blog: Unlock technical insights and stories from ${year}`,
         siteTitle: title,
         route: `/blog/${year}`,
         path: `/blog/${year}`,
@@ -80,7 +80,7 @@ const BlogTemplate = ({ data, pageContext }) => {
       <section className="py-16 px-4">
         <Backdrop />
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
-          Blog: year {year}
+          Blog<br/>{`< ${year} />`}
         </h1>
         <div className="mx-auto max-w-screen-xl">
           {edges.length === 0 && (

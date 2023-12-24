@@ -34,13 +34,13 @@ const TagsPage = ({ data }) => {
       meta={{
         ...site.siteMetadata,
         description:
-          'Choose from one of more tags used to categorize and help discover articles more.',
+          'Choose tags that are used to categorize and help discover content more effectively.',
         keywords: tags
           .sort((a, b) => b.count - a.count)
           .slice(0, 5)
           .map((tag) => tag.value.toLowerCase())
           .join(', '),
-        pageTitle: 'Tags for all the things',
+        pageTitle: 'Tags: Navigate content effortlessly through our tag cloud',
         siteTitle: title,
         route: '/tags',
         path: '/tags',

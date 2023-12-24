@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import iconLight from '@images/icon-light.webp';
-import iconDark from '@images/icon-dark.webp';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Footer = () => {
   return (
@@ -11,15 +10,15 @@ const Footer = () => {
           to="/"
           className="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white"
         >
-          <img
-            src={iconLight}
+          <StaticImage
+            src="../images/icon-light.webp"
             alt="Curious Programmer"
-            className="dark:hidden block h-11"
+            className="dark:hidden block h-11 w-11"
           />
-          <img
-            src={iconDark}
+          <StaticImage
+            src="../images/icon-dark.webp"
             alt="Curious Programmer"
-            className="dark:block hidden h-11"
+            className="dark:block hidden h-11 w-11"
           />
         </Link>
         <p className="my-6 text-gray-500 dark:text-gray-400">

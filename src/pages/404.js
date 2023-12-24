@@ -6,6 +6,7 @@ import Backdrop from '@components/backdrop';
 import Thumbnail from '@components/thumbnail';
 import Metadata from '@components/metadata';
 import Ribbon from '@components/ribbon';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const NotFoundPage = ({ data }) => {
   const { allMarkdownRemark, site } = data;
@@ -30,13 +31,13 @@ const NotFoundPage = ({ data }) => {
         <Backdrop />
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center">
-            <img
+            <StaticImage
               className="mx-auto mb-4 w-96"
-              src={require('../images/unicorn-thinking.webp').default}
+              src="../images/unicorn-thinking.webp"
               alt="404 Not Found"
             />
             <h1 className="mb-4 text-2xl font-extrabold text-primary-600 dark:text-primary-500">
-              {"< 404 />"} Page not found
+              {'< 404 />'} Page not found
             </h1>
             <p className="text-3xl tracking-tight font-bold md:text-4xl">
               Sorry, this is not the page you were looking for.
@@ -64,9 +65,9 @@ const NotFoundPage = ({ data }) => {
                           <Thumbnail {...node.fields.hero} />
                         </Link>
                         <div className="flex items-center mb-3 space-x-2">
-                          <img
+                          <StaticImage
                             className="w-8 h-8 rounded-full"
-                            src={require('@images/avatar.png').default}
+                            src="../images/avatar.png"
                             alt="Clarice Bouwer"
                           />
                           <div className="font-medium dark:text-white">

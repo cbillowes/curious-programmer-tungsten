@@ -27,7 +27,7 @@ const ScribblesPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: 'Scribbles',
+        pageTitle: 'Scribbles: Unearth bite-sized wisdom',
         siteTitle: title,
         route: '/scribbles',
         path: '/scribbles',

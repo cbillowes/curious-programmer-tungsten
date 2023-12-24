@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@components/layout';
 import Thumbnail from '@components/thumbnail';
@@ -7,6 +7,7 @@ import Metadata from '@components/metadata';
 import Type from '@components/type';
 import Backdrop from '@components/backdrop';
 import { getKeywords } from '@common/seo';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // gatsby-remark-embed-gist
 import '../styles/gist/common.scss';
@@ -44,6 +45,7 @@ export const query = graphql`
         title
         tags
         date
+        abstract
       }
     }
     site {
@@ -78,13 +80,13 @@ const ArticleTemplate = ({ data }) => {
         keywords: frontmatter.keywords || keywords,
         pageTitle: frontmatter.title,
         siteTitle: title,
-        description: excerpt || description,
+        description: frontmatter.abstract || excerpt || description,
         image: fields.hero.image,
         pageType: 'article',
         cover: frontmatter.cover,
         groupActive: '/blog',
         route: `/${frontmatter.date.split('-')[0]}`,
-        path: `/blog/${fields.slug}`,
+        path: fields.slug,
       }}
     >
       <div>
@@ -108,9 +110,9 @@ const ArticleTemplate = ({ data }) => {
                   </div>
                   <address className="flex items-center mt-8 mb-6 not-italic max-w-2xl mx-auto">
                     <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                      <img
+                      <StaticImage
                         className="mr-4 w-16 h-16 rounded-full"
-                        src={require('@images/avatar.png').default}
+                        src="../images/avatar.png"
                         alt="Clarice Bouwer"
                       />
                       <div>

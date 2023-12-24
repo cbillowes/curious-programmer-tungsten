@@ -101,7 +101,7 @@ const CoursesPage = ({ data }) => {
     <Layout
       meta={{
         ...site.siteMetadata,
-        pageTitle: 'Crash Courses',
+        pageTitle: 'Crash Courses: Accelerate your learning by unpacking various topics',
         siteTitle: title,
         route: '/courses',
         path: '/courses',

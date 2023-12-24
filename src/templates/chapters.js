@@ -3,12 +3,12 @@ import { graphql } from 'gatsby';
 import { MdOutlineSchool } from 'react-icons/md';
 import { getKeywords } from '@common/seo';
 import Layout from '@components/layout';
-// import CommentSystem from '@components/CommentSystem';
 import Anchor from '@components/anchor';
 import Metadata from '@components/metadata';
 import Thumbnail from '@components/thumbnail';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // gatsby-remark-embed-gist
 import '../styles/gist/common.scss';
@@ -181,9 +181,9 @@ const ChaptersTemplate = ({ data, pageContext }) => {
                   </div>
                   <address className="flex items-center mt-8 mb-6 not-italic max-w-2xl mx-auto">
                     <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                      <img
+                      <StaticImage
                         className="mr-4 w-16 h-16 rounded-full"
-                        src={require('@images/avatar.png').default}
+                        src="../images/avatar.png"
                         alt="Clarice Bouwer"
                       />
                       <div>

@@ -15,7 +15,7 @@ const Privacy = ({ data }) => {
         ...site.siteMetadata,
         pageTitle: 'Your privacy is important',
         siteTitle: title,
-        description: `Ensuring the privacy of our visitors is among our top priorities. This Privacy Policy outlines the types of information collected and recorded by Curious Programmer, as well as how we utilize that information.`,
+        description: `This Privacy Policy outlines the types of information collected and recorded by Curious Programmer.`,
         keywords:
           'privacy, privacy policy, data protection, cookies, data collection',
         route: '/privacy',

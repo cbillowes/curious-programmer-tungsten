@@ -20,6 +20,7 @@ import '../styles/interactive-gifs.scss';
 // gatsby-remark-prismjs
 import '../styles/prismjs/dark.scss';
 import '../styles/prismjs/light.scss';
+import { StaticImage } from 'gatsby-plugin-image';
 
 export const query = graphql`
   query ScribblesTemplateQuery($slug: String!) {
@@ -82,7 +83,7 @@ const ScribblesTemplate = ({ data }) => {
         keywords,
         pageType: 'article',
         route: '/scribbles',
-        page: '/scribbles',
+        path: fields.slug,
         cover,
       }}
     >
@@ -107,9 +108,9 @@ const ScribblesTemplate = ({ data }) => {
                   </div>
                   <address className="flex items-center mt-8 mb-6 not-italic max-w-2xl mx-auto">
                     <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                      <img
+                      <StaticImage
                         className="mr-4 w-16 h-16 rounded-full"
-                        src={require('@images/avatar.png').default}
+                        src="../images/avatar.png"
                         alt="Clarice Bouwer"
                       />
                       <div>

@@ -7,6 +7,7 @@ import Metadata from '@components/metadata';
 import Tags from '@components/tags';
 import Ribbon from '@components/ribbon';
 import { TbBook, TbSchool, TbScribble } from 'react-icons/tb';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Preview = ({
   index,
@@ -85,7 +86,23 @@ const Preview = ({
           </Anchor>
         </h2>
         <div className="leading-loose mb-4">
-          <Metadata date={date} timeToRead={timeToRead} type={type} />
+          <div className="flex items-center mb-3 space-x-2">
+            <StaticImage
+              className="w-8 h-8 rounded-full"
+              src="../images/avatar.png"
+              alt="Clarice Bouwer"
+            />
+            <div className="font-medium dark:text-white">
+              <div>Clarice Bouwer</div>
+              <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                <Metadata
+                  date={date}
+                  timeToRead={timeToRead}
+                  type={type}
+                />
+              </div>
+            </div>
+          </div>
           <p
             className={`mt-2 text-xl font-light ${
               isEven ? 'xl:text-left' : 'xl:text-right'

@@ -2,12 +2,12 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '@components/layout';
 import Tags from '@components/tags';
-// import CommentSystem from '@components/CommentSystem';
 import Thumbnail from '@components/thumbnail';
 import Metadata from '@components/metadata';
 import Type from '@components/type';
 import Backdrop from '@components/backdrop';
 import { getKeywords } from '@common/seo';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // gatsby-remark-embed-gist
 import '../styles/gist/common.scss';
@@ -102,7 +102,7 @@ const CourseTemplate = ({ data }) => {
         pageType: 'article',
         cover: frontmatter.cover,
         route: '/courses',
-        path: `/courses/${fields.slug}`
+        path: `/courses/${fields.slug}`,
       }}
     >
       <div>
@@ -126,9 +126,9 @@ const CourseTemplate = ({ data }) => {
                   </div>
                   <address className="flex items-center mt-8 mb-6 not-italic max-w-2xl mx-auto">
                     <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                      <img
+                      <StaticImage
                         className="mr-4 w-16 h-16 rounded-full"
-                        src={require('@images/avatar.png').default}
+                        src="../images/avatar.png"
                         alt="Clarice Bouwer"
                       />
                       <div>

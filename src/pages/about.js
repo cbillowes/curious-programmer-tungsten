@@ -19,9 +19,11 @@ const AboutPage = ({ data }) => {
       meta={{
         ...site.siteMetadata,
         pageTitle: 'My name is Clarice Bouwer',
+        description:
+          'Obsessively passionate about Clojure(Script), Gatsby, and Git, I navigate the realms of financial services and code innovation.',
         siteTitle: title,
         route: '/about',
-        route: '/about',
+        path: '/about',
       }}
     >
       <section className="py-16 px-4">
