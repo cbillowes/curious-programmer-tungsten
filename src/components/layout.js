@@ -64,7 +64,7 @@ const Layout = ({ className, children, setTheme, theme, meta }) => {
       />
       <div
         className={classNames(
-          'pt-12 selection:bg-pink-600 selection:text-white bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200',
+          'pt-12 selection:bg-pink-600 selection:text-primary-200 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200',
           className,
         )}
       >

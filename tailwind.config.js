@@ -49,6 +49,7 @@ module.exports = {
       animation: {
         // https://codepen.io/jakejarvis/pen/pBZWZw
         wave: 'wave 2.5s ease-in-out 3',
+        bouncy: 'bounce 2s infinite',
       },
     },
   },
