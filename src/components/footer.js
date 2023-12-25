@@ -65,7 +65,7 @@ const Footer = () => {
         </ul>
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2016-{new Date().getFullYear()}{' '}
-          <a href="#" className="hover:underline">
+          <a href="/" className="hover:underline">
             Curious Programmer
           </a>
           . All Rights Reserved.

@@ -389,7 +389,7 @@ const ResumePage = ({ data }) => {
     }, 100);
   }
 
-  const { site, allMarkdownRemark } = data;
+  const { allMarkdownRemark } = data;
   const [education, setEducation] = useState(true);
   const [career, setCareer] = useState(true);
   const [testimonials, setTestimonials] = useState(true);

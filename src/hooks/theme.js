@@ -37,7 +37,7 @@ const withTheme = (WrappedComponent) => {
         }
         commentBox.current.appendChild(scriptEl);
       }
-    }, [theme]);
+    }, [theme, props.showComments]);
 
     return (
       <WrappedComponent {...props} theme={theme} setTheme={setTheme}>

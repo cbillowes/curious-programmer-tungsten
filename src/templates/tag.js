@@ -5,7 +5,7 @@ import Layout from '@components/layout';
 import Preview from '@components/preview';
 
 const TagTemplate = ({ data, pageContext }) => {
-  const { allMarkdownRemark, site } = data;
+  const { allMarkdownRemark } = data;
   const { tag } = pageContext;
   const edges = allMarkdownRemark.edges;
   return (
