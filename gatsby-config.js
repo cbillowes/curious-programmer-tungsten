@@ -5,13 +5,12 @@ const siteMetadata = {
   title: 'Curious Programmer',
   description:
     'Explore a spectrum of skills at Curious Programmer—soft to technical. Articles, courses, and notes for continuous learning in software engineering.',
-  keywords: 'software development, software, programming',
-  url: 'https://curiousprogrammer.dev',
+  keywords: 'blog, software development, software, programming',
   // This duplicated gem is used for gatsby-plugin-advanced-sitemap
   // and gatsby-plugin-robots-txt
   // https://www.gatsbyjs.com/plugins/gatsby-plugin-advanced-sitemap/?=sitemap
   // https://www.gatsbyjs.com/plugins/gatsby-plugin-robots-txt/?=Robots.txt
-  siteUrl: 'https://curiousprogrammer.dev',
+  siteUrl: process.env.GATSBY_DOMAIN || 'https://curiousprogrammer.dev',
   lang: 'en-US',
   brand: '#f0ff7b',
   author: {
@@ -130,8 +129,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: siteMetadata.url,
-        sitemap: `${siteMetadata.url}/sitemap.xml`,
+        host: siteMetadata.siteUrl,
+        sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },

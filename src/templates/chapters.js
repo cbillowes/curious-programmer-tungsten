@@ -72,7 +72,7 @@ export const query = graphql`
         keywords
         lang
         title
-        url
+        siteUrl
       }
     }
   }

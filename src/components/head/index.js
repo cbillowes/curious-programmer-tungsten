@@ -25,7 +25,7 @@ const Head = ({
   social,
   siteTitle,
   type,
-  url,
+  siteUrl,
   shareImage,
   crawl = true,
   location,
@@ -63,7 +63,7 @@ const Head = ({
     <Icons themeColor={brand} />
 
     <Social
-      url={url}
+      url={siteUrl}
       handle={social?.twitter}
       imagePath={shareImage || image || social?.image}
       pageType={pageType}
@@ -72,7 +72,7 @@ const Head = ({
 
     <Schema
       type={type}
-      url={url}
+      url={siteUrl}
       name={pageTitle}
       description={removeWhitespace(description)}
       author={{
