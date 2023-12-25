@@ -1,5 +1,6 @@
 ---
 slug: cloudsure
+share: cloudsure.webp
 resume:
   category: Career
   logo: cloudsure.png

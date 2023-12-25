@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Anchor from '@components/anchor';
 import ResumeDates from '@components/resume-dates';
@@ -22,7 +23,7 @@ import {
 import { SiLevelsdotfyi } from 'react-icons/si';
 import { GiDramaMasks } from 'react-icons/gi';
 import { GrGrow } from 'react-icons/gr';
-import '../styles/print.scss';
+import '@styles/print.scss';
 import classNames from 'classnames';
 
 const getLogo = (logo) => {
@@ -389,7 +390,6 @@ const ResumePage = ({ data }) => {
   }
 
   const { site, allMarkdownRemark } = data;
-  const { title } = site.siteMetadata;
   const [education, setEducation] = useState(true);
   const [career, setCareer] = useState(true);
   const [testimonials, setTestimonials] = useState(true);
@@ -433,17 +433,7 @@ const ResumePage = ({ data }) => {
   };
 
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: 'My name is Clarice Bouwer',
-        siteTitle: title,
-        description: `I drive results in web product development, blending user-centric innovation and continuous learning, ensuring impactful outcomes.`,
-        route: '/resume',
-        path: '/resume',
-        cover: 'avatar.png',
-      }}
-    >
+    <Layout baseRoute="/resume">
       <div className="py-16 px-4">
         <Backdrop />
         <Meta />
@@ -553,3 +543,18 @@ export const query = graphql`
 `;
 
 export default ResumePage;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="My career in Software Engineering"
+      siteTitle={siteMetadata.title}
+      description="I craft cutting-edge web products, continuously learn & deliver impactful results."
+      shareImage="unicorn-thinking.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

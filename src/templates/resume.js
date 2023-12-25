@@ -1,22 +1,13 @@
 import React from 'react';
 import { graphql, navigate } from 'gatsby';
 import Layout from '@components/layout';
+import SEO from '@components/head';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
 import Anchor from '@components/anchor';
 import ResumeDates from '@components/resume-dates';
 import ResumeIcon from '@components/resume-icon';
 import { getKeywords } from '@common/seo';
-
-// gatsby-remark-embed-gist
-import '../styles/gist/common.scss';
-import '../styles/gist/dark.scss';
-import '../styles/gist/light.scss';
-// gatsby-remark-interactive-gifs
-import '../styles/interactive-gifs.scss';
-// gatsby-remark-prismjs
-import '../styles/prismjs/dark.scss';
-import '../styles/prismjs/light.scss';
 
 export const query = graphql`
   query ResumeTemplateQuery($slug: String!) {
@@ -67,8 +58,7 @@ export const query = graphql`
 
 const ResumeTemplate = ({ data }) => {
   const { markdownRemark, site } = data;
-  const { excerpt, html, fields, frontmatter } = markdownRemark;
-  const { title, description } = site.siteMetadata;
+  const { html, frontmatter } = markdownRemark;
   const {
     category,
     logo,
@@ -83,24 +73,9 @@ const ResumeTemplate = ({ data }) => {
     name,
     summary,
   } = frontmatter.resume;
-  const keywords = getKeywords(excerpt);
 
   return (
-    <Layout
-      showComments
-      meta={{
-        ...data.site.siteMetadata,
-        pageTitle: company
-          ? `${jobTitle} @ ${company}, ${location}`
-          : `${name} | ${frontmatter.resume.description}`,
-        siteTitle: title,
-        description: excerpt || description,
-        keywords,
-        pageType: 'article',
-        route: '/resume',
-        path: fields.slug,
-      }}
-    >
+    <Layout showComments baseRoute="/resume">
       <Backdrop />
       <div className="pt-14 px-4 pb-24 max-w-3xl mx-auto text-gray-900 dark:text-gray-200">
         <div className="uppercase text-center my-3 opacity-40 flex justify-between items-center">
@@ -177,3 +152,28 @@ const ResumeTemplate = ({ data }) => {
 };
 
 export default ResumeTemplate;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  const { markdownRemark, site } = data;
+  const { excerpt, frontmatter } = markdownRemark;
+  const { description } = site.siteMetadata;
+  const { company, jobTitle, location: area, name } = frontmatter.resume;
+  const keywords = getKeywords(excerpt);
+  const pageTitle = company
+    ? `${jobTitle} @ ${company}, ${area}`
+    : `${name} | ${frontmatter.resume.description}`;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle={pageTitle}
+      siteTitle={siteMetadata.title}
+      description={excerpt || description}
+      keywords={keywords}
+      shareImage={frontmatter.share}
+      pageType="article"
+      location={location}
+      params={params}
+    />
+  );
+};

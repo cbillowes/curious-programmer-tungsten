@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Preview from '@components/preview';
 
@@ -7,18 +8,8 @@ const TagTemplate = ({ data, pageContext }) => {
   const { allMarkdownRemark, site } = data;
   const { tag } = pageContext;
   const edges = allMarkdownRemark.edges;
-  const { title } = site.siteMetadata;
   return (
-    <Layout
-      meta={{
-        ...data.site.siteMetadata,
-        pageTitle: `More about ${tag}`,
-        siteTitle: title,
-        description: `A collection of articles, tutorials, and other things related to ${tag}.`,
-        route: '/tags',
-        page: `/tags/${tag}`,
-      }}
-    >
+    <Layout group="Tags">
       <section className="py-8 lg:py-16 px-4 bg-gray-100 dark:bg-gray-900">
         <div className="relative border-gray-200 dark:border-gray-700 mx-auto max-w-screen-xl dark:text-gray-100 text-gray-900">
           <h1 className="text-center text-5xl font-bold mb-0 mt-5 tracking-tight">
@@ -103,3 +94,18 @@ export const query = graphql`
 `;
 
 export default TagTemplate;
+
+export const Head = ({ location, params, data, pageContext }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle={`More about ${pageContext.tag}`}
+      siteTitle={siteMetadata.title}
+      description={`A collection of articles, tutorials, and other things related to ${pageContext.tag}.`}
+      shareImage="unicorn-bubble-tea.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

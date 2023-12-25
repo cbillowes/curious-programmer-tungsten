@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Preview from '@components/preview';
@@ -62,21 +63,11 @@ export const query = graphql`
 
 const BlogTemplate = ({ data, pageContext }) => {
   const { year } = pageContext;
-  const { allMarkdownRemark, site } = data;
+  const { allMarkdownRemark } = data;
   const edges = allMarkdownRemark.edges;
-  const { title } = site.siteMetadata;
 
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: `Blog: Unlock technical insights and stories from ${year}`,
-        siteTitle: title,
-        route: `/blog/${year}`,
-        path: `/blog/${year}`,
-        group: 'Blog',
-      }}
-    >
+    <Layout baseRoute="/blog" group="Blog">
       <section className="py-16 px-4">
         <Backdrop />
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
@@ -116,3 +107,19 @@ const BlogTemplate = ({ data, pageContext }) => {
 };
 
 export default BlogTemplate;
+
+export const Head = ({ location, params, data, pageContext }) => {
+  const { year } = pageContext;
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle={`Blog: Unlock insights from ${year}`}
+      siteTitle={siteMetadata.title}
+      description="Browse diverse blog listings—your gateway to a rich tapestry of insights, expertise, and inspiration, neatly organized for seamless exploration."
+      shareImage="unicorn-bubble-tea.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

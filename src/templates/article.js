@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Thumbnail from '@components/thumbnail';
 import Tags from '@components/tags';
@@ -8,18 +9,6 @@ import Type from '@components/type';
 import Backdrop from '@components/backdrop';
 import { getKeywords } from '@common/seo';
 import { StaticImage } from 'gatsby-plugin-image';
-
-// gatsby-remark-embed-gist
-import '../styles/gist/common.scss';
-import '../styles/gist/dark.scss';
-import '../styles/gist/light.scss';
-
-// gatsby-remark-interactive-gifs
-import '../styles/interactive-gifs.scss';
-
-// gatsby-remark-prismjs
-import '../styles/prismjs/dark.scss';
-import '../styles/prismjs/light.scss';
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
@@ -67,27 +56,14 @@ export const query = graphql`
 `;
 
 const ArticleTemplate = ({ data }) => {
-  const { markdownRemark, site } = data;
-  const { excerpt, timeToRead, html, fields, frontmatter } = markdownRemark;
-  const { title, description } = site.siteMetadata;
-  const keywords = getKeywords(html);
+  const { markdownRemark } = data;
+  const { timeToRead, html, fields, frontmatter } = markdownRemark;
 
   return (
     <Layout
       showComments
-      meta={{
-        ...data.site.siteMetadata,
-        keywords: frontmatter.keywords || keywords,
-        pageTitle: frontmatter.title,
-        siteTitle: title,
-        description: frontmatter.abstract || excerpt || description,
-        image: fields.hero.image,
-        pageType: 'article',
-        cover: frontmatter.cover,
-        groupActive: '/blog',
-        route: `/${frontmatter.date.split('-')[0]}`,
-        path: fields.slug,
-      }}
+      baseRoute={`/blog/${frontmatter.date.split('-')[0]}`}
+      group="Blog"
     >
       <div>
         <Thumbnail {...fields.hero} isHero />
@@ -154,3 +130,24 @@ const ArticleTemplate = ({ data }) => {
 };
 
 export default ArticleTemplate;
+
+export const Head = ({ location, params, data }) => {
+  const { site, markdownRemark } = data;
+  const { siteMetadata } = site;
+  const { excerpt, html, fields, frontmatter } = markdownRemark;
+  const keywords = getKeywords(html);
+
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle={frontmatter.title}
+      siteTitle={siteMetadata.title}
+      description={frontmatter.abstract || excerpt || siteMetadata.description}
+      keywords={frontmatter.keywords || keywords}
+      shareImage={fields.hero.image}
+      pageType="article"
+      location={location}
+      params={params}
+    />
+  );
+};

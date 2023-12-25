@@ -1,27 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Anchor from '@components/anchor';
 import Backdrop from '@components/backdrop';
-import '../styles/privacy.scss';
+import '@styles/privacy.scss';
 
 const CommunityPage = ({ data }) => {
-  const { site } = data;
-  const { title } = site.siteMetadata;
-
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: 'Community guidelines',
-        siteTitle: title,
-        description:
-          'Words have the power to cause harm. Practice kindness while maintaining clarity! Explore further insights on interacting in our community guidelines.',
-        route: '/community',
-        path: '/community',
-        group: 'Legalities',
-      }}
-    >
+    <Layout baseRoute="/community" group="Legalities">
       <div className="max-w-screen-md mx-auto py-16 px-4">
         <Backdrop />
         <div className="guidelines">
@@ -107,3 +94,18 @@ export const query = graphql`
 `;
 
 export default CommunityPage;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="Community guidelines"
+      siteTitle={siteMetadata.title}
+      description="Words have the power to cause harm. Practice kindness while maintaining clarity! Explore further insights on interacting in our community guidelines."
+      shareImage="unicorn-bubble-tea.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

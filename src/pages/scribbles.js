@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Articles from '@components/articles';
@@ -21,18 +22,9 @@ const numberTheEdges = (edges) => {
 const ScribblesPage = ({ data }) => {
   const { allMarkdownRemark, site } = data;
   const edges = numberTheEdges(allMarkdownRemark.edges);
-  const { title } = site.siteMetadata;
 
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: 'Scribbles: Unearth bite-sized wisdom',
-        siteTitle: title,
-        route: '/scribbles',
-        path: '/scribbles',
-      }}
-    >
+    <Layout baseRoute="/scribbles">
       <section className="py-16 px-4">
         <Backdrop />
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
@@ -94,3 +86,18 @@ export const query = graphql`
 `;
 
 export default ScribblesPage;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="Scribbles: Unearth bite-sized wisdom"
+      siteTitle={siteMetadata.title}
+      description="My scribbles are notes of bite-sized wisdom. They are tiny, actionable lessons or ideas that I’ve learned from my experiences, books, podcasts, or other people."
+      shareImage="unicorn-thinking.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Thumbnail from '@components/thumbnail';
@@ -9,8 +10,7 @@ import Ribbon from '@components/ribbon';
 import { StaticImage } from 'gatsby-plugin-image';
 
 const NotFoundPage = ({ data }) => {
-  const { allMarkdownRemark, site } = data;
-  const { title } = site.siteMetadata;
+  const { allMarkdownRemark } = data;
   const edges = allMarkdownRemark.edges;
   const groupedBy = 3;
   const groupedEdges = [];
@@ -18,15 +18,7 @@ const NotFoundPage = ({ data }) => {
     groupedEdges.push(edges.slice(i, i + groupedBy));
   }
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: 'This is not the page you were looking for',
-        siteTitle: title,
-        route: '/404',
-        path: '/404',
-      }}
-    >
+    <Layout baseRoute="/404">
       <section className="bg-gray-50 dark:bg-gray-900 py-32">
         <Backdrop />
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
@@ -126,8 +118,6 @@ const NotFoundPage = ({ data }) => {
   );
 };
 
-export default NotFoundPage;
-
 export const query = graphql`
   query NotFoundPageQuery {
     allMarkdownRemark(
@@ -179,3 +169,19 @@ export const query = graphql`
     }
   }
 `;
+
+export default NotFoundPage;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="Not the page you were looking for"
+      siteTitle={siteMetadata.title}
+      shareImage="unicorn-thinking.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

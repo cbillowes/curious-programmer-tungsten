@@ -1,5 +1,6 @@
 ---
 slug: education-cti
+share: cti.webp
 resume:
   category: Education
   logo: cti.png

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const Font = () => (
-  <Helmet>
+  <>
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
@@ -14,7 +13,7 @@ const Font = () => (
       defer="defer"
       async="async"
     />
-  </Helmet>
+  </>
 );
 
 export default Font;

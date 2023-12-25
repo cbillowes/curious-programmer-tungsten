@@ -1,47 +1,53 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
-const getResource = (url, route) => `${url}${route}/`;
+const getResource = (url, route) =>
+  `${url}${route}`;
 
 const isUrl = (imagePath) => {
   return imagePath && imagePath.startsWith('http');
 };
 
-const Social = ({ path, pageType, imagePath, url, twitter, cover }) => {
-  const canonical = getResource(url, path);
-  let image = '';
+const getImage = (imagePath, url) => {
+  try {
+    const image = require(`@images/social-media/${imagePath}`).default;
+    return `${url}${image}`;
+  } catch (e) {
+    console.error('Could not find social media image', e);
+  }
+};
 
-  if (isUrl(imagePath)) {
-    image = imagePath;
-  } else {
-    try {
-      const defaultCover = 'unicorn-heart.webp';
-      image = require(`@images/covers/${cover || defaultCover}`).default;
-      image = `${url}${image}`;
-    } catch (e) {
-      console.error('Could not find cover image', e);
-    }
+const Social = ({ path, pageType, imagePath, url, handle }) => {
+  const canonical = getResource(url, path);
+  let facebook = imagePath;
+  let twitter = imagePath;
+  let image = imagePath;
+
+  if (!isUrl(imagePath)) {
+    const img = imagePath || "unicorn-laptop.webp";
+    image = getImage(img, url);
+    facebook = getImage(`facebook/${img}`, url);
+    twitter = getImage(`twitter/${img}`, url);
   }
 
   return (
-    <Helmet>
+    <>
       <link rel="canonical" href={canonical} />
       <meta name="image" content={image} />
 
       <meta property="og:type" content={pageType || 'website'} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={facebook} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
 
       <meta name="twitter:url" content={canonical} />
-      <meta name="twitter:image" content={image} />
-      <meta name="twitter:image:width" content="1200" />
-      <meta name="twitter:image:height" content="630" />
+      <meta name="twitter:image" content={twitter} />
+      <meta name="twitter:image:width" content="1500" />
+      <meta name="twitter:image:height" content="500" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={`@${twitter}`} />
-      <meta name="twitter:creator" content={`@${twitter}`} />
-    </Helmet>
+      <meta name="twitter:site" content={`@${handle}`} />
+      <meta name="twitter:creator" content={`@${handle}`} />
+    </>
   );
 };
 

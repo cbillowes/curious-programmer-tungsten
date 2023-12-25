@@ -1,6 +1,19 @@
-import './src/styles/global.scss';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'flowbite/dist/flowbite';
+
+import '@styles/global.scss';
+
+// gatsby-remark-embed-gist
+import '@styles/gist/common.scss';
+import '@styles/gist/dark.scss';
+import '@styles/gist/light.scss';
+
+// gatsby-remark-interactive-gifs
+import '@styles/interactive-gifs.scss';
+
+// gatsby-remark-prismjs
+import '@styles/prismjs/dark.scss';
+import '@styles/prismjs/light.scss';
 
 const loader = document.querySelector('.loader-wrapper');
 

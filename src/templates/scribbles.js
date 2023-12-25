@@ -1,5 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Tags from '@components/tags';
 import Thumbnail from '@components/thumbnail';
@@ -7,19 +9,6 @@ import Metadata from '@components/metadata';
 import Type from '@components/type';
 import Backdrop from '@components/backdrop';
 import { getKeywords } from '@common/seo';
-
-// gatsby-remark-embed-gist
-import '../styles/gist/common.scss';
-import '../styles/gist/dark.scss';
-import '../styles/gist/light.scss';
-
-// gatsby-remark-interactive-gifs
-import '../styles/interactive-gifs.scss';
-
-// gatsby-remark-prismjs
-import '../styles/prismjs/dark.scss';
-import '../styles/prismjs/light.scss';
-import { StaticImage } from 'gatsby-plugin-image';
 
 export const query = graphql`
   query ScribblesTemplateQuery($slug: String!) {
@@ -151,3 +140,24 @@ const ScribblesTemplate = ({ data }) => {
 };
 
 export default ScribblesTemplate;
+
+export const Head = ({ location, params, data }) => {
+  const { markdownRemark, site } = data;
+  const { excerpt, frontmatter } = markdownRemark;
+  const { title, description } = site.siteMetadata;
+  const { cover } = frontmatter;
+  const keywords = getKeywords(excerpt);
+  return (
+    <SEO
+      {...site.siteMetadata}
+      pageTitle={frontmatter.title}
+      siteTitle={title}
+      description={excerpt || description}
+      keywords={keywords}
+      pageType="article"
+      shareImage={cover}
+      location={location}
+      params={params}
+    />
+  );
+};

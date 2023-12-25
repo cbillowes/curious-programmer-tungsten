@@ -1,5 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Tags from '@components/tags';
 import Thumbnail from '@components/thumbnail';
@@ -7,19 +9,6 @@ import Metadata from '@components/metadata';
 import Type from '@components/type';
 import Backdrop from '@components/backdrop';
 import { getKeywords } from '@common/seo';
-import { StaticImage } from 'gatsby-plugin-image';
-
-// gatsby-remark-embed-gist
-import '../styles/gist/common.scss';
-import '../styles/gist/dark.scss';
-import '../styles/gist/light.scss';
-
-// gatsby-remark-interactive-gifs
-import '../styles/interactive-gifs.scss';
-
-// gatsby-remark-prismjs
-import '../styles/prismjs/dark.scss';
-import '../styles/prismjs/light.scss';
 
 export const query = graphql`
   query CourseTemplateQuery($slug: String!) {
@@ -86,25 +75,10 @@ export const query = graphql`
 
 const CourseTemplate = ({ data }) => {
   const { markdownRemark, allMarkdownRemark, site } = data;
-  const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
-  const { title, description } = site.siteMetadata;
-  const keywords = getKeywords(excerpt);
+  const { html, timeToRead, fields, frontmatter } = markdownRemark;
 
   return (
-    <Layout
-      showComments
-      meta={{
-        ...data.site.siteMetadata,
-        pageTitle: frontmatter.title,
-        siteTitle: title,
-        description: excerpt || description,
-        keywords,
-        pageType: 'article',
-        cover: frontmatter.cover,
-        route: '/courses',
-        path: `/courses/${fields.slug}`,
-      }}
-    >
+    <Layout showComments baseRoute="/courses">
       <div>
         <Thumbnail {...fields.hero} isHero />
         <div className="relative">
@@ -189,3 +163,22 @@ const CourseTemplate = ({ data }) => {
 };
 
 export default CourseTemplate;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  const { excerpt, frontmatter } = data.markdownRemark;
+  const keywords = getKeywords(excerpt);
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle={frontmatter.title}
+      siteTitle={siteMetadata.title}
+      description={excerpt || siteMetadata.description}
+      keywords={keywords}
+      shareImage={frontmatter.cover}
+      pageType="article"
+      location={location}
+      params={params}
+    />
+  );
+};

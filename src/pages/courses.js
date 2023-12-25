@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import classNames from 'classnames';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
@@ -93,20 +94,11 @@ const Courses = ({ edges }) => {
 };
 
 const CoursesPage = ({ data }) => {
-  const { allMarkdownRemark, site } = data;
+  const { allMarkdownRemark } = data;
   const edges = allMarkdownRemark.edges;
-  const { title } = site.siteMetadata;
 
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: 'Crash Courses: Accelerate your learning by unpacking various topics',
-        siteTitle: title,
-        route: '/courses',
-        path: '/courses',
-      }}
-    >
+    <Layout baseRoute="/courses">
       <div className="py-16 px-4">
         <Backdrop />
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
@@ -173,3 +165,18 @@ export const query = graphql`
 `;
 
 export default CoursesPage;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="Crash Courses: Accelerate your learning"
+      siteTitle={siteMetadata.title}
+      description="Explore concise crash courses—a gateway to diverse topics for quick exposure and understanding."
+      shareImage="unicorn-bubble-tea.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

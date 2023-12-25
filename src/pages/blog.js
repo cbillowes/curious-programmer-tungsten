@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Anchor from '@components/anchor';
@@ -8,21 +9,11 @@ import Type from '@components/type';
 import Tags from '@components/tags';
 
 const BlogPage = ({ data }) => {
-  const { allMarkdownRemark, site } = data;
+  const { allMarkdownRemark } = data;
   const edges = allMarkdownRemark.edges;
-  const { title } = site.siteMetadata;
 
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: 'Blog: Unlock technical insights and stories',
-        siteTitle: title,
-        route: '/blog',
-        path: '/blog',
-        group: 'Blog',
-      }}
-    >
+    <Layout baseRoute="/blog" group="Blog">
       <section className="py-16 px-4">
         <Backdrop />
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
@@ -104,3 +95,18 @@ export const query = graphql`
 `;
 
 export default BlogPage;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="Blog: Unlock insights and stories"
+      siteTitle={siteMetadata.title}
+      description="Browse diverse blog listings—your gateway to a rich tapestry of insights, expertise, and inspiration, neatly organized for seamless exploration."
+      shareImage="unicorn-bubble-tea.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

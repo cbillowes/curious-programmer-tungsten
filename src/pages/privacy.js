@@ -1,28 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Anchor from '@components/anchor';
 import Backdrop from '@components/backdrop';
-import '../styles/privacy.scss';
+import '@styles/privacy.scss';
 
-const Privacy = ({ data }) => {
-  const { site } = data;
-  const { title } = site.siteMetadata;
-
+const Privacy = () => {
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: 'Your privacy is important',
-        siteTitle: title,
-        description: `This Privacy Policy outlines the types of information collected and recorded by Curious Programmer.`,
-        keywords:
-          'privacy, privacy policy, data protection, cookies, data collection',
-        route: '/privacy',
-        path: '/privacy',
-        group: 'Legalities',
-      }}
-    >
+    <Layout baseRoute="/privacy" group="Legalities">
       <div className="guidelines">
         <Backdrop />
         <div className="max-w-screen-md mx-auto py-16 px-4">
@@ -341,5 +327,20 @@ export const query = graphql`
 `;
 
 export default Privacy;
-
 // https://www.privacypolicygenerator.info/live.php?token=DYjC9Jd5Vui3RvjXJHZ9c9LNbpUAv0m5
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="Your privacy is important"
+      siteTitle={siteMetadata.title}
+      description="This Privacy Policy outlines the types of information collected and recorded by Curious Programmer."
+      keywords="privacy, privacy policy, data protection, cookies, data collection"
+      shareImage="unicorn-bubble-tea.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

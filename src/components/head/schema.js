@@ -1,8 +1,7 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 const Schema = ({ type, url, name, description, author, image }) => (
-  <Helmet>
+  <>
     <script type="application/ld+json">
       {JSON.stringify({
         '@context': 'https://schema.org/',
@@ -23,7 +22,7 @@ const Schema = ({ type, url, name, description, author, image }) => (
         datePublished: new Date(),
       })}
     </script>
-  </Helmet>
+  </>
 );
 
 export default Schema;

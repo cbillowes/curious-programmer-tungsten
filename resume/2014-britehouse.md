@@ -1,5 +1,6 @@
 ---
 slug: britehouse
+share: britehouse.webp
 resume:
   category: Career
   logo: britehouse.png

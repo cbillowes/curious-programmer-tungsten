@@ -132,8 +132,11 @@ export const getKeywords = (text) => {
 };
 
 export const getTitle = (pageTitle, siteTitle) => {
-  const title = `${pageTitle} - ${siteTitle}`;
-  return title.length <= 65
-    ? title.substring(0, 65)
-    : `${title.substring(0, 62)}...`;
+  const suffix = siteTitle && ` - ${siteTitle}`;
+  if (pageTitle.length + suffix.length <= 60) {
+    return `${pageTitle}${suffix}`;
+  }
+
+  const title = pageTitle.substring(0, 60 - suffix.length - 3);
+  return `${title}...${suffix}`;
 };

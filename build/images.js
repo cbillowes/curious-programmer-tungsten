@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const sharp = require('sharp');
-const { copyGifs, copySvgs, copyWebps } = require('./copy');
+const { copyGifs, copySvgs, copyWebps, mkdir } = require('./copy');
 
 /**
  * Any source file residing in the resources directory which is used to
@@ -82,15 +82,14 @@ const processHighRes = (sourcePath, reporter) => {
   );
 };
 
-const processLowRes = (sourcePath, reporter) => {
+const processLowRes = (width, height, imageCategory, sourcePath, reporter) => {
+  mkdir(`src/images/social-media/${imageCategory}`);
   const quality = 80;
   const destinationPath = toDestinationPath(
-    `src/images/social-media`,
+    `src/images/social-media/${imageCategory}`,
     sourcePath,
   );
-  const width = 1440;
-  const height = 810;
-  const fit = sharp.fit.contain;
+  const fit = sharp.fit.cover;
   const position = sharp.strategy.attention;
 
   reporter.verbose(`image [low res]: ${path.basename(sourcePath)}`);
@@ -110,7 +109,9 @@ exports.process = (node, reporter) => {
   const { absolutePath } = node;
   if (isResource(node)) {
     processHighRes(absolutePath, reporter);
-    processLowRes(absolutePath, reporter);
+    processLowRes(1200, 630, 'facebook', absolutePath, reporter);
+    processLowRes(1500, 500, 'twitter', absolutePath, reporter);
+    processLowRes(1980, 1020, '', absolutePath, reporter);
     reporter.success(`image [processed]: ${absolutePath}`);
   }
 };

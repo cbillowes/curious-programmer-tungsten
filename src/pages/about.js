@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Intro from '@components/about/intro';
 import Brands from '@components/about/brands';
@@ -10,23 +11,11 @@ import References from '@components/about/references';
 import Backdrop from '@components/backdrop';
 
 const AboutPage = ({ data }) => {
-  const { allMarkdownRemark, site } = data;
-  const { title } = site.siteMetadata;
+  const { allMarkdownRemark } = data;
   const edges = allMarkdownRemark.edges;
 
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: 'My name is Clarice Bouwer',
-        description:
-          'Obsessively passionate about Clojure(Script), Gatsby, and Git, I navigate the realms of financial services and code innovation.',
-        siteTitle: title,
-        route: '/about',
-        path: '/about',
-        cover: 'avatar.png',
-      }}
-    >
+    <Layout baseRoute="/about">
       <section className="py-16 px-4">
         <Backdrop />
         <Intro />
@@ -93,3 +82,18 @@ export const query = graphql`
 `;
 
 export default AboutPage;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="My name is Clarice Bouwer"
+      siteTitle={siteMetadata.title}
+      description="Obsessively passionate about Clojure(Script), Gatsby, and Git, I navigate the realms of financial services and code innovation."
+      shareImage="clarice-bouwer.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

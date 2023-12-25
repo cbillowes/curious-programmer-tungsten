@@ -35,4 +35,5 @@ module.exports = {
   copySvgs,
   copyGifs,
   copyWebps,
+  mkdir,
 };

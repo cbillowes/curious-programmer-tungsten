@@ -1,6 +1,7 @@
 import React from 'react';
 import { TagCloud } from 'react-tagcloud';
 import { graphql, navigate } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import _ from 'lodash';
@@ -24,28 +25,12 @@ const getTags = (edges) => {
 };
 
 const TagsPage = ({ data }) => {
-  const { allMarkdownRemark, site } = data;
+  const { allMarkdownRemark } = data;
   const edges = allMarkdownRemark.edges;
-  const { title } = site.siteMetadata;
   const tags = getTags(edges);
 
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        description:
-          'Choose tags that are used to categorize and help discover content more effectively.',
-        keywords: tags
-          .sort((a, b) => b.count - a.count)
-          .slice(0, 5)
-          .map((tag) => tag.value.toLowerCase())
-          .join(', '),
-        pageTitle: 'Tags: Navigate content effortlessly through our tag cloud',
-        siteTitle: title,
-        route: '/tags',
-        path: '/tags',
-      }}
-    >
+    <Layout baseRoute="/tags">
       <div className="py-16 px-4">
         <Backdrop />
         <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
@@ -100,3 +85,26 @@ export const query = graphql`
 `;
 
 export default TagsPage;
+
+export const Head = ({ location, params, data }) => {
+  const { site, allMarkdownRemark } = data;
+  const siteMetadata = site.siteMetadata;
+  const keywords = getTags(allMarkdownRemark.edges)
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 5)
+    .map((tag) => tag.value.toLowerCase())
+    .join(', ');
+
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="Tags: Navigate content effortlessly"
+      siteTitle={siteMetadata.title}
+      description="Choose tags that are used to categorize and help discover content more effectively."
+      keywords={keywords}
+      shareImage="unicorn-bubble-tea.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

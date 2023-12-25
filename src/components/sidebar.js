@@ -9,7 +9,7 @@ const MenuItemLink = ({ active, to, icon, name }) => {
       to={to}
       className={classNames(
         'text-base text-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-900 group dark:text-gray-200 px-4 space-2 flex items-center py-2',
-        active === to && 'bg-primary-600 text-primary-200 hover:bg-color-1 hover:text-white dark:hover:bg-color-1',
+        active === to && 'bg-primary-600 text-primary-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white',
       )}
     >
       {icon}

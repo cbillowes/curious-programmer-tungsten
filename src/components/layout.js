@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { Flowbite } from 'flowbite-react';
 import withTheme from '@hooks/theme';
 import flowbiteTheme from '@components/flowbite-theme';
-import Head from '@components/head';
 import Header from '@components/header';
 import Footer from '@components/footer';
 import Sidebar from '@components/sidebar';
 import classNames from 'classnames';
 
-const Layout = ({ className, children, setTheme, theme, meta }) => {
+const Layout = ({ className, children, setTheme, theme, baseRoute, group }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   if (typeof window !== 'undefined') {
@@ -19,7 +18,6 @@ const Layout = ({ className, children, setTheme, theme, meta }) => {
 
   return (
     <Flowbite theme={{ dark: theme === 'dark', theme: flowbiteTheme }}>
-      <Head {...meta} />
       <Header
         isSidebarOpen={isSidebarOpen}
         theme={theme}
@@ -31,8 +29,8 @@ const Layout = ({ className, children, setTheme, theme, meta }) => {
         }}
       />
       <Sidebar
-        active={meta.route}
-        groupActive={meta.group}
+        active={baseRoute}
+        groupActive={group}
         isOpen={isSidebarOpen}
         menuItems={[
           { to: '/', name: 'Home' },

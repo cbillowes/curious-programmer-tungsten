@@ -1,27 +1,16 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { MdOutlineSchool } from 'react-icons/md';
-import { getKeywords } from '@common/seo';
+import { StaticImage } from 'gatsby-plugin-image';
+import classNames from 'classnames';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Anchor from '@components/anchor';
 import Metadata from '@components/metadata';
 import Thumbnail from '@components/thumbnail';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
-import { StaticImage } from 'gatsby-plugin-image';
-
-// gatsby-remark-embed-gist
-import '../styles/gist/common.scss';
-import '../styles/gist/dark.scss';
-import '../styles/gist/light.scss';
-
-// gatsby-remark-interactive-gifs
-import '../styles/interactive-gifs.scss';
-
-// gatsby-remark-prismjs
-import '../styles/prismjs/dark.scss';
-import '../styles/prismjs/light.scss';
-import classNames from 'classnames';
+import { getKeywords } from '@common/seo';
 
 export const query = graphql`
   query ChaptersTemplateQuery($parent: String!, $slug: String!) {
@@ -115,19 +104,10 @@ const Navigation = ({ previous, next, toggleToc }) => {
 };
 
 const ChaptersTemplate = ({ data, pageContext }) => {
-  const { markdownRemark, allMarkdownRemark, site } = data;
-  const { page, total, next, previous, courseTitle } = pageContext;
-  const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
-  const { title, description } = site.siteMetadata;
-  const {
-    title: chapterTitle,
-    date,
-    modified,
-    parent,
-    abstract,
-    cover,
-  } = frontmatter;
-  const keywords = getKeywords(excerpt);
+  const { markdownRemark, allMarkdownRemark } = data;
+  const { page, total, next, previous } = pageContext;
+  const { html, timeToRead, fields, frontmatter } = markdownRemark;
+  const { date, modified, parent, abstract } = frontmatter;
   const [showToc, toggleToc] = useState(false);
 
   return (
@@ -135,17 +115,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
       <Layout
         showComments
         className={showToc ? 'blur' : ''}
-        meta={{
-          ...data.site.siteMetadata,
-          pageTitle: `${chapterTitle} - ${courseTitle}`,
-          siteTitle: title,
-          description: excerpt || description,
-          keywords,
-          pageType: 'article',
-          cover,
-          route: '/courses',
-          path: `/courses/${fields.slug}`, //TODO: confirm this is correct
-        }}
+        baseRoute="/courses"
       >
         <Thumbnail {...data.courses.fields.hero} />
         <div className="relative">
@@ -288,3 +258,23 @@ const ChaptersTemplate = ({ data, pageContext }) => {
 };
 
 export default ChaptersTemplate;
+
+export const Head = ({ location, params, data, pageContext }) => {
+  const { siteMetadata } = data.site;
+  const { excerpt, frontmatter } = data.markdownRemark;
+  const { courseTitle } = pageContext;
+  const keywords = getKeywords(excerpt);
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle={`${frontmatter.seoTitle || frontmatter.title} - ${courseTitle}`}
+      siteTitle={siteMetadata.title}
+      description={excerpt || siteMetadata.description}
+      keywords={keywords}
+      shareImage={frontmatter.cover}
+      pageType="article"
+      location={location}
+      params={params}
+    />
+  );
+};

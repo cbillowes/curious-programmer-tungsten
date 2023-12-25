@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
+import SEO from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Thumbnail from '@components/thumbnail';
@@ -10,8 +11,7 @@ import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 import { StaticImage } from 'gatsby-plugin-image';
 
 const IndexPage = ({ data }) => {
-  const { allMarkdownRemark, site } = data;
-  const { title } = site.siteMetadata;
+  const { allMarkdownRemark } = data;
   const edges = allMarkdownRemark.edges;
   const groupedBy = 3;
   const groupedEdges = [];
@@ -19,16 +19,7 @@ const IndexPage = ({ data }) => {
     groupedEdges.push(edges.slice(i, i + groupedBy));
   }
   return (
-    <Layout
-      meta={{
-        ...site.siteMetadata,
-        pageTitle: 'A programmer’s quest for knowledge',
-        siteTitle: title,
-        route: '/',
-        path: '/',
-        image: require('@images/unicorn-laptop-xmas.webp').default,
-      }}
-    >
+    <Layout group="/" route="/">
       <section className="bg-gray-50 dark:bg-gray-900 py-32">
         <Backdrop />
         <div className="px-4 sm:px-32 grid max-w-screen-xl xl:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
@@ -646,8 +637,6 @@ const IndexPage = ({ data }) => {
   );
 };
 
-export default IndexPage;
-
 export const query = graphql`
   query IndexPageQuery {
     allMarkdownRemark(
@@ -699,3 +688,19 @@ export const query = graphql`
     }
   }
 `;
+
+export default IndexPage;
+
+export const Head = ({ location, params, data }) => {
+  const { siteMetadata } = data.site;
+  return (
+    <SEO
+      {...siteMetadata}
+      pageTitle="A programmer's quest for knowledge"
+      siteTitle={siteMetadata.title}
+      shareImage="unicorn-laptop.webp"
+      location={location}
+      params={params}
+    />
+  );
+};
