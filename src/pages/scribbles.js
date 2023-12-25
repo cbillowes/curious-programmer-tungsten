@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Articles from '@components/articles';
@@ -90,7 +90,7 @@ export default ScribblesPage;
 export const Head = ({ location, params, data }) => {
   const { siteMetadata } = data.site;
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle="Scribbles: Unearth bite-sized wisdom"
       siteTitle={siteMetadata.title}

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { MdOutlineSchool } from 'react-icons/md';
 import { StaticImage } from 'gatsby-plugin-image';
 import classNames from 'classnames';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Anchor from '@components/anchor';
 import Metadata from '@components/metadata';
@@ -265,7 +265,7 @@ export const Head = ({ location, params, data, pageContext }) => {
   const { courseTitle } = pageContext;
   const keywords = getKeywords(excerpt);
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle={`${frontmatter.seoTitle || frontmatter.title} - ${courseTitle}`}
       siteTitle={siteMetadata.title}

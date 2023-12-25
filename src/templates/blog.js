@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Preview from '@components/preview';
@@ -112,7 +112,7 @@ export const Head = ({ location, params, data, pageContext }) => {
   const { year } = pageContext;
   const { siteMetadata } = data.site;
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle={`Blog: Unlock insights from ${year}`}
       siteTitle={siteMetadata.title}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TagCloud } from 'react-tagcloud';
 import { graphql, navigate } from 'gatsby';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import _ from 'lodash';
@@ -96,7 +96,7 @@ export const Head = ({ location, params, data }) => {
     .join(', ');
 
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle="Tags: Navigate content effortlessly"
       siteTitle={siteMetadata.title}

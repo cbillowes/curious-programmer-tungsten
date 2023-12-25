@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Preview from '@components/preview';
 
@@ -98,7 +98,7 @@ export default TagTemplate;
 export const Head = ({ location, params, data, pageContext }) => {
   const { siteMetadata } = data.site;
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle={`More about ${pageContext.tag}`}
       siteTitle={siteMetadata.title}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Thumbnail from '@components/thumbnail';
@@ -700,7 +700,7 @@ export default IndexPage;
 export const Head = ({ location, params, data }) => {
   const { siteMetadata } = data.site;
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle="A programmer's quest for knowledge"
       siteTitle={siteMetadata.title}

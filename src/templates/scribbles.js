@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Tags from '@components/tags';
 import Thumbnail from '@components/thumbnail';
@@ -148,7 +148,7 @@ export const Head = ({ location, params, data }) => {
   const { cover } = frontmatter;
   const keywords = getKeywords(excerpt);
   return (
-    <SEO
+    <Seo
       {...site.siteMetadata}
       pageTitle={frontmatter.title}
       siteTitle={title}

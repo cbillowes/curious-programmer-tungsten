@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Anchor from '@components/anchor';
 import Backdrop from '@components/backdrop';
@@ -332,7 +332,7 @@ export default Privacy;
 export const Head = ({ location, params, data }) => {
   const { siteMetadata } = data.site;
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle="Your privacy is important"
       siteTitle={siteMetadata.title}

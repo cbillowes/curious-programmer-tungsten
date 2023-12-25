@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import classNames from 'classnames';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
@@ -169,7 +169,7 @@ export default CoursesPage;
 export const Head = ({ location, params, data }) => {
   const { siteMetadata } = data.site;
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle="Crash Courses: Accelerate your learning"
       siteTitle={siteMetadata.title}

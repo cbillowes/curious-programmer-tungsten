@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Anchor from '@components/anchor';
@@ -99,7 +99,7 @@ export default BlogPage;
 export const Head = ({ location, params, data }) => {
   const { siteMetadata } = data.site;
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle="Blog: Unlock insights and stories"
       siteTitle={siteMetadata.title}

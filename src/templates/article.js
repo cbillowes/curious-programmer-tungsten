@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Thumbnail from '@components/thumbnail';
 import Tags from '@components/tags';
@@ -138,7 +138,7 @@ export const Head = ({ location, params, data }) => {
   const keywords = getKeywords(html);
 
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle={frontmatter.title}
       siteTitle={siteMetadata.title}

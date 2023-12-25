@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, navigate } from 'gatsby';
 import Layout from '@components/layout';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Backdrop from '@components/backdrop';
 import Tags from '@components/tags';
 import Anchor from '@components/anchor';
@@ -164,7 +164,7 @@ export const Head = ({ location, params, data }) => {
     ? `${jobTitle} @ ${company}, ${area}`
     : `${name} | ${frontmatter.resume.description}`;
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle={pageTitle}
       siteTitle={siteMetadata.title}

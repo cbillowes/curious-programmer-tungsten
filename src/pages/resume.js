@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
-import SEO from '@components/head';
+import Seo from '@components/head';
 import Layout from '@components/layout';
 import Anchor from '@components/anchor';
 import ResumeDates from '@components/resume-dates';
@@ -547,7 +547,7 @@ export default ResumePage;
 export const Head = ({ location, params, data }) => {
   const { siteMetadata } = data.site;
   return (
-    <SEO
+    <Seo
       {...siteMetadata}
       pageTitle="My career in Software Engineering"
       siteTitle={siteMetadata.title}
