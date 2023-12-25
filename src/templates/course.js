@@ -74,7 +74,7 @@ export const query = graphql`
 `;
 
 const CourseTemplate = ({ data }) => {
-  const { markdownRemark, allMarkdownRemark, site } = data;
+  const { markdownRemark, allMarkdownRemark } = data;
   const { html, timeToRead, fields, frontmatter } = markdownRemark;
 
   return (

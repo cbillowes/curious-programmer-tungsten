@@ -54,27 +54,11 @@ export const query = graphql`
 `;
 
 const ScribblesTemplate = ({ data }) => {
-  const { markdownRemark, site } = data;
-  const { excerpt, html, timeToRead, fields, frontmatter } = markdownRemark;
-  const { title, description } = site.siteMetadata;
-  const { cover } = frontmatter;
-  const keywords = getKeywords(excerpt);
+  const { markdownRemark } = data;
+  const { html, timeToRead, fields, frontmatter } = markdownRemark;
 
   return (
-    <Layout
-      showComments
-      meta={{
-        ...data.site.siteMetadata,
-        pageTitle: frontmatter.title,
-        siteTitle: title,
-        description: excerpt || description,
-        keywords,
-        pageType: 'article',
-        route: '/scribbles',
-        path: fields.slug,
-        cover,
-      }}
-    >
+    <Layout showComments baseRoute="/scribbles">
       <div>
         <Thumbnail {...fields.hero} isHero />
         <div className="relative">

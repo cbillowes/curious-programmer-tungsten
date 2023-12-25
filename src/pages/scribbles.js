@@ -20,7 +20,7 @@ const numberTheEdges = (edges) => {
 };
 
 const ScribblesPage = ({ data }) => {
-  const { allMarkdownRemark, site } = data;
+  const { allMarkdownRemark } = data;
   const edges = numberTheEdges(allMarkdownRemark.edges);
 
   return (

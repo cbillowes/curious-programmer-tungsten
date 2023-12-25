@@ -57,7 +57,7 @@ export const query = graphql`
 `;
 
 const ResumeTemplate = ({ data }) => {
-  const { markdownRemark, site } = data;
+  const { markdownRemark } = data;
   const { html, frontmatter } = markdownRemark;
   const {
     category,
