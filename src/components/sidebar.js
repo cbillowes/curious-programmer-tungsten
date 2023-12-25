@@ -9,7 +9,8 @@ const MenuItemLink = ({ active, to, icon, name }) => {
       to={to}
       className={classNames(
         'text-base text-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-900 group dark:text-gray-200 px-4 space-2 flex items-center py-2',
-        active === to && 'bg-primary-600 text-primary-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white',
+        active === to &&
+          'bg-primary-600 text-primary-200 hover:bg-blue-500 dark:hover:bg-blue-500 hover:text-white',
       )}
     >
       {icon}
@@ -58,7 +59,7 @@ const MenuItemDropdown = ({ icon, name, items, active, groupActive }) => {
         class={classNames('py-2 space-y-2', expand ? 'block' : 'hidden')}
       >
         {items.map((item) => (
-          <div className={classNames('px-4')}>
+          <div key={item.to} className={classNames('px-4')}>
             <MenuItemLink active={active} {...item} />
           </div>
         ))}
@@ -80,7 +81,7 @@ const Sidebar = ({ groupActive, active, isOpen, menuItems = [] }) => {
               <ul className="px-2 pb-2 space-y-2">
                 {menuItems.map(({ items = [], ...rest }) => {
                   return (
-                    <li>
+                    <li key={rest.to}>
                       {items.length === 0 && (
                         <MenuItemLink active={active} {...rest} />
                       )}
