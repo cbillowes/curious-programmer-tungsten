@@ -5,7 +5,7 @@ const Font = () => (
     <link
       rel="preconnect"
       href="https://fonts.gstatic.com"
-      crossOrigin={true}
+      crossOrigin
     />
     <link
       href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&family=Manrope:wght@300;600;700&family=Fira+Code:wght@300;700&family=Handlee&display=swap"

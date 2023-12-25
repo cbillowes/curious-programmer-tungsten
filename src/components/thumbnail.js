@@ -82,7 +82,7 @@ const Thumbnail = ({
   try {
     const src = require(`@images/covers/${image}`).default;
     return (
-      <div
+      <span
         className={classNames(
           'relative bg-no-repeat bg-center w-full  h-[350px]',
           isHero ? 'xl:h-[650px] bg-contain' : 'bg-cover',
@@ -91,17 +91,17 @@ const Thumbnail = ({
         style={{
           backgroundImage: `url(${src})`,
         }}
-    >
+      >
         <Credit
           componentName={component}
           source={source}
           link={link}
           text={credit}
         />
-      </div>
+      </span>
     );
   } catch (e) {
-    return <div>{e.message}</div>;
+    return <></>;
   }
 };
 
