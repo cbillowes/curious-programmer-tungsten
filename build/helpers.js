@@ -13,7 +13,7 @@ const kebabToTitleCase = (text) => {
 };
 
 const getRandomDefaultComponent = () => {
-  const sourcePath = path.join(__dirname, '../src/components/images/');
+  const sourcePath = path.join(__dirname, '../src/images/covers');
   const files = fs.readdirSync(sourcePath);
 
   const defaults = files.filter((file) => {

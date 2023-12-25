@@ -63,10 +63,7 @@ const processImage = (
 
 const processHighRes = (sourcePath, reporter) => {
   const quality = 100;
-  const destinationPath = toDestinationPath(
-    `src/components/images`,
-    sourcePath,
-  );
+  const destinationPath = toDestinationPath(`src/images/covers`, sourcePath);
   const width = 1920;
   const height = 1080;
   const fit = sharp.fit.cover;
