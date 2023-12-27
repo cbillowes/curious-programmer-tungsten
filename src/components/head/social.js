@@ -1,7 +1,6 @@
 import React from 'react';
 
-const getResource = (url, route) =>
-  `${url}${route}`;
+const getResource = (url, route) => `${url}${route}`;
 
 const isUrl = (imagePath) => {
   return imagePath && imagePath.startsWith('http');
@@ -10,6 +9,7 @@ const isUrl = (imagePath) => {
 const getImage = (imagePath, url) => {
   try {
     const image = require(`@images/social-media/${imagePath}`).default;
+    if (image.startsWith('data')) return image;
     return `${url}${image}`;
   } catch (e) {
     console.error('Could not find social media image', e);
@@ -23,12 +23,11 @@ const Social = ({ path, pageType, imagePath, url, handle }) => {
   let image = imagePath;
 
   if (!isUrl(imagePath)) {
-    const img = imagePath || "unicorn-laptop.webp";
+    const img = imagePath || 'unicorn-laptop.webp';
     image = getImage(img, url);
     facebook = getImage(`facebook/${img}`, url);
     twitter = getImage(`twitter/${img}`, url);
   }
-
   return (
     <>
       <link rel="canonical" href={canonical} />
