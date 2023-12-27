@@ -62,14 +62,16 @@ const processImage = (
 };
 
 const processHighRes = (sourcePath, reporter) => {
+  const destPath = 'src/images/covers';
   const quality = 100;
-  const destinationPath = toDestinationPath(`src/images/covers`, sourcePath);
+  const destinationPath = toDestinationPath(destPath, sourcePath);
   const width = 1920;
   const height = 1080;
   const fit = sharp.fit.cover;
   const position = sharp.strategy.attention;
 
   reporter.verbose(`image [high res]: ${path.basename(sourcePath)}`);
+  mkdir(destPath);
   processImage(
     sourcePath,
     destinationPath,
