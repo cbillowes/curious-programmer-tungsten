@@ -1,16 +1,14 @@
 const path = require('path');
-const template = `./src/templates/article.js`;
 const createPages = true;
 
-const landingPage = './src/pages/index.js';
-const landingPageSlug = '/';
-
-const articlesQuery = async (graphql) => {
+const contentQuery = async (graphql) => {
   return await graphql(`
-    query ArticlesBuildQuery {
+    query ContentBuildQuery {
       allMarkdownRemark(
         sort: { frontmatter: { date: ASC } }
-        filter: { fields: { type: { eq: "article" } } }
+        filter: {
+          fields: { type: { in: ["article", "scribble", "course"] } }
+        }
       ) {
         edges {
           node {
@@ -20,6 +18,7 @@ const articlesQuery = async (graphql) => {
             fields {
               slug
               date
+              type
             }
             frontmatter {
               title
@@ -43,7 +42,7 @@ const getNextNode = (edges, index) => {
   return edges[i].node;
 };
 
-const getArticle = (edges, index) => {
+const getPiece = (edges, index) => {
   const { fields, fileAbsolutePath } = edges[index].node;
   return {
     number: index + 1,
@@ -52,16 +51,21 @@ const getArticle = (edges, index) => {
     fileAbsolutePath,
     previous: getPreviousNode(edges, index),
     next: getNextNode(edges, index),
+    type: fields.type, //TODO: is this correct?
   };
 };
 
+const getTemplate = (type) => {
+  return `./src/templates/${type}.js`;
+};
+
 const createThePage = (createPage, edges, index, reporter) => {
-  const { slug, date, previous, next } = getArticle(edges, index);
+  const { slug, date, previous, next, type } = getPiece(edges, index);
   const number = index + 1;
 
   createPage({
     path: slug,
-    component: path.resolve(template),
+    component: path.resolve(getTemplate(type)),
     context: {
       slug,
       date,
@@ -70,42 +74,27 @@ const createThePage = (createPage, edges, index, reporter) => {
       next,
     },
   });
-  reporter.success(`create article: [${number}] ${slug}`);
+  reporter.success(`create ${type}: [${number}] ${slug}`);
 };
 
-const createArticlePages = (createPage, result, reporter) => {
+const createContentPages = (createPage, result, reporter) => {
   const edges = result.data.allMarkdownRemark.edges;
   edges.forEach((_, index) => {
     createThePage(createPage, edges, index, reporter);
   });
 };
 
-const createLandingPage = (createPage, reporter) => {
-  const slug = landingPageSlug;
-  createPage({
-    path: slug,
-    component: path.resolve(landingPage),
-    context: {
-      slug,
-    },
-  });
-  reporter.success(`create article: [home] ${slug}`);
-};
-
 module.exports.create = async (actions, graphql, reporter) => {
   if (!createPages) {
-    reporter.warn(`off: create articles`);
+    reporter.warn(`off: create content`);
     return;
   }
   const { createPage } = actions;
-  await articlesQuery(graphql).then((result) => {
+  await contentQuery(graphql).then((result) => {
     if (result.errors) {
-      reporter.error(`create articles: ${result.errors}`);
+      reporter.error(`create content: ${result.errors}`);
       return;
     }
-
-    reporter.success('------------- Create all things articles:');
-    createArticlePages(createPage, result, reporter);
-    createLandingPage(createPage, reporter);
+    createContentPages(createPage, result, reporter);
   });
 };

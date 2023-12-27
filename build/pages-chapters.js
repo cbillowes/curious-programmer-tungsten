@@ -68,9 +68,7 @@ const createChapters = (createPage, course, chapters, totalPages, reporter) => {
       },
     });
 
-    reporter.success(
-      `create course chapter: [ ${slug}: ${page}/${totalPages} ]`,
-    );
+    reporter.success(`create course chapter [${page}/${totalPages} ]: ${slug}`);
   });
 };
 
@@ -95,10 +93,6 @@ module.exports.create = async (actions, graphql, reporter) => {
         course.node.fields.slug,
       );
       const totalPages = chapters.length;
-
-      reporter.success(
-        `------------- Create all things course [${course.node.fields.slug}] chapters [${totalPages}]:`,
-      );
       createChapters(createPage, course, chapters, totalPages, reporter);
     });
   });

@@ -15,5 +15,5 @@ module.exports.create = (actions, reporter) => {
       slug,
     },
   });
-  reporter.verbose(`pages: ${slug}`);
+  reporter.verbose(`create page: ${slug}`);
 };

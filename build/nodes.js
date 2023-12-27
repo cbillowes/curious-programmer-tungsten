@@ -97,6 +97,6 @@ exports.createFields = (node, createNodeField, reporter) => {
       value: type,
     });
 
-    reporter.success(`node [fields]: { ${type}: ${slug}, date: ${date} }`);
+    reporter.success(`node [${type}]: ${slug}`);
   }
 };

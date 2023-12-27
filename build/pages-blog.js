@@ -32,6 +32,5 @@ module.exports.create = async (actions, graphql, reporter) => {
   }
 
   const { createPage } = actions;
-  reporter.success('------------- Create all things blog pages:');
   createBlogPages(createPage, reporter);
 };

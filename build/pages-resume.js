@@ -6,8 +6,8 @@ const resumeQuery = async (graphql) => {
   return await graphql(`
     query ResumeBuildQuery {
       allMarkdownRemark(
-        sort: {frontmatter: {slug: ASC}}
-        filter: {fields: {type: {eq: "resume"}}}
+        sort: { frontmatter: { slug: ASC } }
+        filter: { fields: { type: { eq: "resume" } } }
       ) {
         edges {
           node {
@@ -15,10 +15,6 @@ const resumeQuery = async (graphql) => {
             excerpt
             frontmatter {
               slug
-              resume {
-                company
-                name
-              }
             }
           }
         }
@@ -40,9 +36,8 @@ module.exports.create = async (actions, graphql, reporter) => {
     }
 
     const edges = result.data.allMarkdownRemark.edges;
-    reporter.success(`------------- Create all things resume [${edges.length}]:`);
     edges.forEach(({ node }) => {
-      const { slug, resume } = node.frontmatter;
+      const { slug } = node.frontmatter;
 
       createPage({
         path: `/resume/${slug}`,
@@ -52,7 +47,7 @@ module.exports.create = async (actions, graphql, reporter) => {
         },
       });
 
-      reporter.success(`create resume:{ ${resume.company || resume.name}: ${slug} }`);
+      reporter.success(`create resume: ${slug}`);
     });
   });
 };
