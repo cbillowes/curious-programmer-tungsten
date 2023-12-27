@@ -45,8 +45,12 @@
     font-size: 0.875rem;
   }
 
-  p {
-    margin-bottom: 1.5rem;
+  p,
+  li {
+    margin-bottom: 2rem;
+    line-height: 2.25rem;
+    font-size: 1.5rem;
+    font-weight: 300;
   }
 
   pre {
@@ -78,6 +82,19 @@
 
   hr {
     margin-bottom: 2rem;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  strong {
+    font-weight: 800;
+  }
+
+  code {
+    font-size: 1.25rem;
+    padding: 0.25rem 0.5rem;
   }
 }
 
