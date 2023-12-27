@@ -68,7 +68,7 @@ const createChapters = (createPage, course, chapters, totalPages, reporter) => {
       },
     });
 
-    reporter.success(`create course chapter [${page}/${totalPages} ]: ${slug}`);
+    reporter.success(`create chapter [${page}/${totalPages}]: ${slug}`);
   });
 };
 
