@@ -14,7 +14,7 @@ const Achievements = () => {
       >
         This is what I’ve done so far
       </Kebab>
-      <div className={`${visible ? 'block' : 'hidden'}`}>
+      <div className={visible ? 'block max-w-screen-xl mx-auto' : 'hidden'}>
         <Cards data={achievements} />
       </div>
     </>

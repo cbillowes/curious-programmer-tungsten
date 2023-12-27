@@ -3,6 +3,37 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Anchor from '@components/anchor';
 import Ribbon from '@components/ribbon';
 
+const lewagon2023 = {
+  type: 'course',
+  link: '/blog/le-wagon-demo-day-the-smart-compliance-project/',
+  button: 'Read about it',
+  title: (
+    <Anchor to="/blog/le-wagon-demo-day-the-smart-compliance-project/" title="">
+      Completed the Data Science boot camp at Le Wagon Mauritius
+    </Anchor>
+  ),
+  blurb: (
+    <div>
+      An immersive learning experience with practical skills in facial
+      detection, verification, and OCR. It was a bouncy journey through the
+      intricacies of project development and collaboration.
+    </div>
+  ),
+  image: (
+    <StaticImage
+      src="../images/covers/lewagon-demo-day.webp"
+      alt="Le Wagon Demo Day"
+    />
+  ),
+  caption: (
+    <p>
+      Moments after conquering the stage (I was merely pressing the next button
+      on the slides), Amit turning our ideas and project into an applause.
+    </p>
+  ),
+  ribbon: <Ribbon>2023</Ribbon>,
+};
+
 const offerZenChromeDevTools2018 = {
   type: 'article',
   link: 'https://www.offerzen.com/blog/debugging-with-chrome-devtools-quick-front-end-fixes',
@@ -317,6 +348,7 @@ const microsoftProjects2007 = {
 };
 
 export const achievements = [
+  lewagon2023,
   offerZenChromeDevTools2018,
   girlCodeImpostorSyndrome2017,
   zaChatImpostor2017,

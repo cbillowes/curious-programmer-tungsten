@@ -3,7 +3,9 @@ import { FaMicrophoneAlt } from 'react-icons/fa';
 import { GrArticle } from 'react-icons/gr';
 import { GiPublicSpeaker } from 'react-icons/gi';
 import { BiCodeAlt } from 'react-icons/bi';
+import { IoSchool } from 'react-icons/io5';
 import Anchor from '@components/anchor';
+import classNames from 'classnames';
 
 const Icon = ({ isEven, type }) => {
   return (
@@ -12,6 +14,7 @@ const Icon = ({ isEven, type }) => {
         isEven ? 'float-left mr-3' : 'float-right ml-3'
       }`}
     >
+      {type === 'course' ? <IoSchool title="Course" /> : <></>}
       {type === 'article' ? <GrArticle title="Article" /> : <></>}
       {type === 'podcast' ? <FaMicrophoneAlt title="Podcast" /> : <></>}
       {type === 'talk' ? <GiPublicSpeaker title="Talk" /> : <></>}
@@ -36,28 +39,44 @@ const Card = ({
 
   return (
     <section
-      className={`relative mx-auto lg:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse ${
-        isEven ? 'xl:flex-row-reverse' : 'xl:flex-row'
-      } ${className}`}
+      key={index}
+      className={classNames(
+        'relative mx-auto max-w-full md:w-6/12 xl:w-screen md:mt-12 md:mb-16 p-5 flex justify-center flex-col-reverse',
+        isEven ? 'xl:flex-row-reverse' : 'xl:flex-row',
+      )}
     >
       <div
-        className={`border-color-3 border-none xl:border-dashed xl:w-1/4 xl:mx-8 ${
+        className={classNames(
+          `dark:border-gray-600 border-gray-300 border-none xl:border-dashed xl:w-1/2 xl:mx-8`,
           isEven
             ? 'xl:text-left xl:border-l xl:pl-8'
-            : 'xl:text-right xl:border-r xl:pr-8'
-        }`}
+            : 'xl:text-right xl:border-r xl:pr-8',
+        )}
       >
-        <h2 className="text-xl mt-8 xl:mt-0 md:text-2xl leading-loose font-semibold hover:text-color-1">
+        <h2
+          className={classNames(
+            'text-2xl mt-8 xl:mt-0 md:text-4xl font-semibold tracking-tight',
+            'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
+          )}
+        >
+          <Icon isEven={isEven} type={type} /><br/>
           {title}
         </h2>
         <div className="leading-loose mb-4">
           <div
-            className={`mt-2 text-left ${
-              isEven ? 'xl:text-left' : 'xl:text-right'
-            }`}
+            className={classNames(
+              'flex items-center mb-3 space-x-2',
+              isEven ? 'xl:justify-start' : 'xl:flex-row-reverse',
+            )}
           >
-            <Icon isEven={isEven} type={type} />
-            {blurb}
+            <p
+              className={classNames(
+                'mt-2 text-xl font-light',
+                isEven ? 'xl:text-left' : 'xl:text-right',
+              )}
+            >
+              {blurb}
+            </p>
           </div>
           {link && (
             <Anchor
@@ -69,12 +88,15 @@ const Card = ({
           )}
         </div>
       </div>
-      <div className="xl:w-1/4 relative">
+      <div
+        className={classNames(
+          'xl:w-1/2 relative',
+          isEven ? 'xl:text-right' : 'xl:text-left',
+        )}
+      >
         {ribbon}
         <div>
-          <div style={{ minHeight: '180px ' }}>
-            {image}
-          </div>
+          <div style={{ minHeight: '180px ' }}>{image}</div>
           <div className="leading-loose mt-1 text-center text-sm">
             {caption}
           </div>
