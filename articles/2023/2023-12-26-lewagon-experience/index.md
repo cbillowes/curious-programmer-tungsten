@@ -1,4 +1,5 @@
 ---
+featured: true
 title: My data science boot camp experience at Le Wagon Mauritius
 cover: lewagon.jpg
 date: 2023-12-26
