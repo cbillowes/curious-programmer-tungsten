@@ -49,7 +49,7 @@ const ExternalThumbnail = ({ to, alt, src, className, isHero }) => {
         width={1200}
         className={classNames(
           'relative object-cover w-full shadow-lg border border-gray-400 dark:border-gray-600',
-          isHero ? 'h-[350px] xl:h-[650px]' : 'w-96',
+          isHero ? 'h-[450px] xl:h-[750px]' : 'w-96',
           isHero ? '' : 'dark:border-gray-800',
         )}
       />
@@ -84,8 +84,8 @@ const Thumbnail = ({
     return (
       <span
         className={classNames(
-          'relative bg-no-repeat bg-center w-full block',
-          isHero ? 'xl:h-[650px] bg-cover' : 'bg-cover h-[350px]',
+          'relative bg-no-repeat bg-center w-full block bg-cover',
+          isHero ? 'h-[450px] xl:h-[750px]' : 'h-[350px]',
           isHero ? '' : 'border dark:border-gray-800',
         )}
         style={{
