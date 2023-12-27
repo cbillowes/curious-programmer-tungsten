@@ -196,6 +196,19 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 840,
+              showCaptions: true,
+              markdownCaptions: true,
+              backgroundColor: 'none',
+              quality: 80,
+              withAvif: true,
+              loading: "eager",
+              decoding: "async",
+              tracedSVG: {
+                color: siteMetadata.brand,
+              },
+            },
           },
           {
             resolve: `gatsby-remark-embed-youtube`,
