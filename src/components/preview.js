@@ -86,27 +86,32 @@ const Preview = ({
           </Anchor>
         </h2>
         <div className="leading-loose mb-4">
-          <div className="flex items-center mb-3 space-x-2">
+          <div
+            className={classNames(
+              'flex items-center mb-3 space-x-2',
+              isEven ? 'xl:justify-start' : 'xl:flex-row-reverse',
+            )}
+          >
             <StaticImage
-              className="w-8 h-8 rounded-full"
+              className={classNames(
+                'w-8 h-8 rounded-full',
+                isEven ? 'xl:mr-2' : 'xl:ml-4',
+              )}
               src="../images/avatar.png"
               alt="Clarice Bouwer"
             />
             <div className="font-medium dark:text-white">
               <div>Clarice Bouwer</div>
               <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                <Metadata
-                  date={date}
-                  timeToRead={timeToRead}
-                  type={type}
-                />
+                <Metadata date={date} timeToRead={timeToRead} type={type} />
               </div>
             </div>
           </div>
           <p
-            className={`mt-2 text-xl font-light ${
-              isEven ? 'xl:text-left' : 'xl:text-right'
-            }`}
+            className={classNames(
+              'mt-2 text-xl font-light',
+              isEven ? 'xl:text-left' : 'xl:text-right',
+            )}
           >
             {excerpt}
           </p>
