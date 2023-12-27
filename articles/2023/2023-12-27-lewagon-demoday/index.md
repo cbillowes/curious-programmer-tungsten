@@ -1,4 +1,5 @@
 ---
+featured: true
 title: Le Wagon demo day - the Smart Compliance project
 cover: lewagon-demo-day.webp
 date: 2023-12-27
