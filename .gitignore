@@ -68,5 +68,5 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-src/images/social-media/facebook
-src/images/social-media/twitter
+src/images/covers
+src/images/social-media
