@@ -102,10 +102,10 @@ const ResumeTemplate = ({ data }) => {
         )}
         {company && (
           <>
-            <h1 className="mt-4 mx-auto text-center mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+            <h1 className="mt-4 mx-auto text-center mb-4 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
               {jobTitle}
             </h1>
-            <h2 className="text-center font-bold max-w-screen-xl mx-auto text-3xl md:text-4xl mb-4 tracking-tight">
+            <h2 className="text-center font-bold max-w-screen-xl mx-auto text-3xl md:text-4xl mb-4 tracking-tighter">
               {company}
               <ResumeIcon
                 className="inline text-3xl ml-3"
@@ -124,7 +124,7 @@ const ResumeTemplate = ({ data }) => {
         )}
         {name && (
           <>
-            <h1 className="mt-4 mx-auto text-center mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+            <h1 className="mt-4 mx-auto text-center mb-4 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
               {name}
             </h1>
             <p className="text-center font-bold max-w-screen-xl mx-auto">

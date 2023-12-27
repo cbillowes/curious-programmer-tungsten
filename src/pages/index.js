@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
                 alt="Unicorn using a laptop"
               />
             </div>
-            <h1 className="max-w-2xl mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+            <h1 className="max-w-2xl mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl dark:text-white">
               Curiosity is the{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-green-400">
                 secret sauce
@@ -108,7 +108,7 @@ const IndexPage = ({ data }) => {
             alt="Clarice Bouwer"
             className="w-64 h-64 object-cover rounded-full"
           />
-          <h2 className="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-center text-white md:text-4xl">
+          <h2 className="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tighter leading-tight text-center text-white md:text-4xl">
             My name is Clarice Bouwer
           </h2>
           <p className="max-w-2xl mx-auto mb-8 lg:mb-16 text-center font-light md:text-lg lg:text-xl text-gray-50">
@@ -193,7 +193,7 @@ const IndexPage = ({ data }) => {
       <section className="bg-gray-100 dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
           <div className="max-w-screen-md mb-8 lg:mb-16">
-            <h2 className="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white md:text-4xl">
+            <h2 className="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tighter leading-tight text-gray-900 dark:text-white md:text-4xl">
               I share what I learn
             </h2>
             <p className="font-light text-gray-500 dark:text-gray-400 sm:text-xl">
@@ -598,7 +598,7 @@ const IndexPage = ({ data }) => {
                             </div>
                           </div>
                         </div>
-                        <h3 className="mb-2 text-xl font-bold tracking-tight text-gray-900 lg:text-2xl dark:text-white">
+                        <h3 className="mb-2 text-xl font-bold tracking-tighter text-gray-900 lg:text-2xl dark:text-white">
                           <Link to={node.fields.slug}>
                             {node.frontmatter.title}
                           </Link>

@@ -70,7 +70,7 @@ const BlogTemplate = ({ data, pageContext }) => {
     <Layout baseRoute="/blog" group="Blog">
       <section className="py-16 px-4">
         <Backdrop />
-        <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+        <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
           Blog<br/>{`< ${year} />`}
         </h1>
         <div className="mx-auto max-w-screen-xl">

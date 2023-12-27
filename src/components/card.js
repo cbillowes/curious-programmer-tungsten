@@ -55,7 +55,7 @@ const Card = ({
       >
         <h2
           className={classNames(
-            'text-2xl mt-8 xl:mt-0 md:text-4xl font-semibold tracking-tight',
+            'text-2xl mt-8 xl:mt-0 md:text-4xl font-semibold tracking-tighter',
             'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
           )}
         >

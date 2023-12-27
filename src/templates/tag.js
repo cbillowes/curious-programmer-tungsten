@@ -12,7 +12,7 @@ const TagTemplate = ({ data, pageContext }) => {
     <Layout group="Tags">
       <section className="py-8 lg:py-16 px-4 bg-gray-100 dark:bg-gray-900">
         <div className="relative border-gray-200 dark:border-gray-700 mx-auto max-w-screen-xl dark:text-gray-100 text-gray-900">
-          <h1 className="text-center text-5xl font-bold mb-0 mt-5 tracking-tight">
+          <h1 className="text-center text-5xl font-bold mb-0 mt-5 tracking-tighter">
             All things related to <span className="text-pink-600">{tag}</span>
           </h1>
           {edges.map((edge, index) => {

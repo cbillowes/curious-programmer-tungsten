@@ -34,7 +34,7 @@ const Courses = ({ edges }) => {
         >
           <h2
             className={classNames(
-              'text-2xl mt-8 xl:mt-0 md:text-4xl font-semibold tracking-tight',
+              'text-2xl mt-8 xl:mt-0 md:text-4xl font-semibold tracking-tighter',
               'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
               'hover:to-red-600 hover:from-violet-600',
             )}
@@ -101,7 +101,7 @@ const CoursesPage = ({ data }) => {
     <Layout baseRoute="/courses">
       <div className="py-16 px-4">
         <Backdrop />
-        <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+        <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
           Crash Courses
         </h1>
         <section>

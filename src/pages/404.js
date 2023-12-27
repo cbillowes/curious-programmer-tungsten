@@ -31,7 +31,7 @@ const NotFoundPage = ({ data }) => {
             <h1 className="mb-4 text-2xl font-extrabold text-primary-600 dark:text-primary-500">
               {'< 404 />'} Page not found
             </h1>
-            <p className="text-3xl tracking-tight font-bold md:text-4xl">
+            <p className="text-3xl tracking-tighter font-bold md:text-4xl">
               Sorry, this is not the page you were looking for.
             </p>
           </div>
@@ -42,7 +42,7 @@ const NotFoundPage = ({ data }) => {
         className="py-8 bg-white dark:bg-gray-700 antialiased border-t border-gray-200 dark:border-gray-800"
       >
         <div className="px-4 mx-auto w-full max-w-screen-xl">
-          <h2 className="mb-8 text-2xl font-bold tracking-tight">
+          <h2 className="mb-8 text-2xl font-bold tracking-tighter">
             Check these out instead
           </h2>
           <div>
@@ -73,7 +73,7 @@ const NotFoundPage = ({ data }) => {
                             </div>
                           </div>
                         </div>
-                        <h3 className="mb-2 text-xl font-bold tracking-tight text-gray-900 lg:text-2xl dark:text-white">
+                        <h3 className="mb-2 text-xl font-bold tracking-tighter text-gray-900 lg:text-2xl dark:text-white">
                           <Link to={node.fields.slug}>
                             {node.frontmatter.title}
                           </Link>

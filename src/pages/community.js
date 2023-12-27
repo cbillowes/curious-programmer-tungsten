@@ -12,7 +12,7 @@ const CommunityPage = ({ data }) => {
       <div className="max-w-screen-md mx-auto py-16 px-4">
         <Backdrop />
         <div className="guidelines">
-          <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+          <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
             Community guidelines
           </h1>
           <p>Essentially, words can hurt. Be nice but clear!</p>

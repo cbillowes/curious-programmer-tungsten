@@ -129,7 +129,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
                     next={next}
                     toggleToc={() => toggleToc(!showToc)}
                   />
-                  <h1 className="text-5xl font-extrabold tracking-tight lg:mb-6 lg:text-6xl text-center mx-auto max-w-5xl">
+                  <h1 className="text-5xl font-extrabold tracking-tighter lg:mb-6 lg:text-6xl text-center mx-auto max-w-5xl">
                     {frontmatter.title}
                   </h1>
                   <div className="text-center">
@@ -164,7 +164,7 @@ const ChaptersTemplate = ({ data, pageContext }) => {
                         >
                           Clarice Bouwer
                         </a>
-                        <p className="text-base text-gray-500 dark:text-gray-400">
+                        <p className="font-medium tracking-tight text-base text-gray-500 dark:text-gray-400">
                           Software Engineering Team Lead and Director of
                           Cloudsure
                         </p>

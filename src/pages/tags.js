@@ -33,7 +33,7 @@ const TagsPage = ({ data }) => {
     <Layout baseRoute="/tags">
       <div className="py-16 px-4">
         <Backdrop />
-        <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">
+        <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
           All the things
         </h1>
         <div className="max-w-screen-md mx-auto p-4">

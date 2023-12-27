@@ -202,7 +202,7 @@ const Meta = () => {
       <div className="hidden print:block print:text-2xl font-semibold">
         Resume
       </div>
-      <h1 className="mx-auto text-center mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl print:text-sm">
+      <h1 className="mx-auto text-center mb-4 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl print:text-sm">
         Clarice Bouwer
       </h1>
       <h2 className="text-xl mt-2 md:text-xl leading-loose font-alt-sans font-bold print:mt-0 print:text-sm">
