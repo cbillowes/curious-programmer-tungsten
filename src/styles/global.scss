@@ -46,11 +46,36 @@
   }
 
   p,
-  li {
+  li,
+  td,
+  th {
     margin-bottom: 2rem;
     line-height: 2.25rem;
     font-size: 1.5rem;
     font-weight: 300;
+  }
+
+  table {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: var(--color-2);
+    color: white;
+    text-align: left;
+  }
+
+  th,
+  td {
+    border: solid 1px var(--color-2);
+    padding: 0.25rem 0.5rem;
+
+    &:hover {
+      background-color: var(--color-2);
+      color: white;
+    }
   }
 
   pre {
