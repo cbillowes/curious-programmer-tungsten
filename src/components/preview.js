@@ -74,7 +74,7 @@ const Preview = ({
         </div>
         <h2
           className={classNames(
-            'text-2xl mt-8 xl:mt-0 md:text-4xl font-semibold tracking-tighter',
+            'text-2xl mt-8 xl:mt-0 md:text-4xl font-bold tracking-tighter',
             'hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r ',
             type === 'scribble' && 'hover:to-green-600 hover:from-blue-600',
             type === 'article' && 'hover:to-blue-600 hover:from-pink-600',
