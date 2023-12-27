@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Open Sans', 'ui-sans-serif', 'sans-serif'],
+        mono: ['Fira Code', 'monospace'],
+      },
       borderColor: {
         'color-1': 'var(--color-1)',
         'color-2': 'var(--color-2)',
