@@ -52,7 +52,7 @@ exports.applyNumbers = (nodes, createNodeField, reporter) => {
     });
 
     reporter.success(
-      `node [applyNumbers]: { ${number}, slug: ${node.fields.slug} }`,
+      `node [${number}]: ${node.fields.slug}`,
     );
   });
 };
