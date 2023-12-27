@@ -1,4 +1,5 @@
 ---
+featured: true
 title: Unveiling the Power of Myers-Briggs Type Indicator (MBTI) for Software Engineers
 cover: 'https://picsum.photos/1600/800/?image=103'
 date: 2023-12-22
