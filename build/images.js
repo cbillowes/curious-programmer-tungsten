@@ -65,8 +65,8 @@ const processHighRes = (sourcePath, reporter) => {
   const destPath = 'src/images/covers';
   const quality = 100;
   const destinationPath = toDestinationPath(destPath, sourcePath);
-  const width = 1920;
-  const height = 1080;
+  const width = 3840;
+  const height = 2160;
   const fit = sharp.fit.cover;
   const position = sharp.strategy.attention;
 
