@@ -1,5 +1,5 @@
 ---
-title: Interview question: The sorted square array algorithm
+title: Interview question - The sorted square array algorithm
 cover: bernoulli-numbers.jpg
 creditSource: Wikipedia
 date: 2024-08-05
