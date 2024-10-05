@@ -116,7 +116,7 @@ const ArticleTemplate = ({ data }) => {
                 </header>
                 <section
                   id="article"
-                  className="max-w-2xl mx-auto"
+                  className="max-w-3xl mx-auto"
                   // eslint-disable-next-line react/no-danger
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
