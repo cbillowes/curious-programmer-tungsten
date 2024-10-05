@@ -41,7 +41,7 @@ const Layout = ({ className, children, setTheme, theme, baseRoute, group }) => {
             name: 'Blog',
             items: [
               { to: '/blog', name: 'All' },
-              ...new Array(new Date().getFullYear() - 2016)
+              ...new Array(new Date().getFullYear() + 1 - 2016)
                 .fill(0)
                 .map((_, i) => ({ to: `/blog/${2016 + i}`, name: 2016 + i }))
                 .sort((a, b) => b.name - a.name),
