@@ -35,6 +35,7 @@ export const query = graphql`
         tags
         date
         abstract
+        description
       }
     }
     site {
@@ -142,7 +143,7 @@ export const Head = ({ location, params, data }) => {
       {...siteMetadata}
       pageTitle={frontmatter.title}
       siteTitle={siteMetadata.title}
-      description={frontmatter.abstract || excerpt || siteMetadata.description}
+      description={frontmatter.description || frontmatter.abstract || excerpt || siteMetadata.description}
       keywords={frontmatter.keywords || keywords}
       shareImage={fields.hero.image}
       pageType="article"
