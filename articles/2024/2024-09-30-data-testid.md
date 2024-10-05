@@ -1,5 +1,5 @@
 ---
-title: What is data-testid in automated testing?
+title: What is the data-testid attribute?
 cover: data-testid.webp
 creditSource: Wikipedia
 date: 2024-08-05
