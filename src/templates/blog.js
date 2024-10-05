@@ -38,6 +38,7 @@ export const query = graphql`
             cover
             title
             tags
+            description
             date(formatString: "dddd, DD MMMM YYYY")
           }
         }
@@ -93,6 +94,7 @@ const BlogTemplate = ({ data, pageContext }) => {
                 title={title}
                 date={date || frontmatter.date}
                 timeToRead={timeToRead}
+                description={frontmatter.description}
                 excerpt={excerpt}
                 tags={tags}
                 hero={hero}

@@ -6,9 +6,7 @@ const contentQuery = async (graphql) => {
     query ContentBuildQuery {
       allMarkdownRemark(
         sort: { frontmatter: { date: ASC } }
-        filter: {
-          fields: { type: { in: ["article", "scribble", "course"] } }
-        }
+        filter: { fields: { type: { in: ["article", "scribble", "course"] } } }
       ) {
         edges {
           node {
@@ -24,6 +22,7 @@ const contentQuery = async (graphql) => {
               title
               tags
               date
+              description
             }
           }
         }

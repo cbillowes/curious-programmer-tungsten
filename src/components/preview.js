@@ -14,6 +14,7 @@ const Preview = ({
   number,
   slug,
   title,
+  description,
   date,
   timeToRead,
   excerpt,
@@ -113,7 +114,7 @@ const Preview = ({
               isEven ? 'xl:text-left' : 'xl:text-right',
             )}
           >
-            {excerpt}
+            {description || excerpt}
           </p>
         </div>
         <div
