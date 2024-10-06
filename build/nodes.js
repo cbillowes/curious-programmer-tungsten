@@ -37,12 +37,8 @@ const canApplyNumbers = (node) => {
   return this.isArticle(node) || this.isScribble(node) || this.isCourse(node);
 };
 
-exports.applyNumbers = (nodes, createNodeField, reporter) => {
-  const selectedOrderedNodes = nodes
-    .filter((node) => canApplyNumbers(node))
-    .sort((a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date));
-
-  selectedOrderedNodes.forEach((node, index) => {
+const applyNumbersToNodes = (nodes, createNodeField, reporter) => {
+  nodes.forEach((node, index) => {
     const number = index + 1;
 
     createNodeField({
@@ -51,10 +47,38 @@ exports.applyNumbers = (nodes, createNodeField, reporter) => {
       value: number,
     });
 
-    reporter.success(
-      `node [${number}]: ${node.fields.slug}`,
-    );
+    reporter.success(`node [${number}]: ${node.fields.slug}`);
   });
+};
+
+const applyNumbersToArticles = (nodes, createNodeField, reporter) => {
+  reporter.info('Applying numbers to articles');
+  const articles = nodes
+    .filter((node) => this.isArticle(node))
+    .sort((a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date));
+  applyNumbersToNodes(articles, createNodeField, reporter);
+};
+
+const applyNumbersToScribbles = (nodes, createNodeField, reporter) => {
+  reporter.info('Applying numbers to scribbles');
+  const scribbles = nodes
+    .filter((node) => this.isScribble(node))
+    .sort((a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date));
+  applyNumbersToNodes(scribbles, createNodeField, reporter);
+};
+
+const applyNumbersToCourses = (nodes, createNodeField, reporter) => {
+  reporter.info('Applying numbers to courses');
+  const courses = nodes
+    .filter((node) => this.isCourse(node))
+    .sort((a, b) => toTimestamp(a.fields.date) - toTimestamp(b.fields.date));
+  applyNumbersToNodes(courses, createNodeField, reporter);
+};
+
+exports.applyNumbers = (nodes, createNodeField, reporter) => {
+  applyNumbersToArticles(nodes, createNodeField, reporter);
+  applyNumbersToScribbles(nodes, createNodeField, reporter);
+  applyNumbersToCourses(nodes, createNodeField, reporter);
 };
 
 const getDate = (date, path) => {

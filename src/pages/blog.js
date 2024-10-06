@@ -50,7 +50,7 @@ export const query = graphql`
   query BlogPageQuery {
     allMarkdownRemark(
       sort: { fields: { number: DESC } }
-      filter: { fields: { type: { in: ["article", "scribble", "course"] } } }
+      filter: { fields: { type: { in: ["article"] } } }
     ) {
       edges {
         node {

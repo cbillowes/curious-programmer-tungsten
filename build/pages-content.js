@@ -4,9 +4,55 @@ const createPages = true;
 const contentQuery = async (graphql) => {
   return await graphql(`
     query ContentBuildQuery {
-      allMarkdownRemark(
+      articles: allMarkdownRemark(
         sort: { frontmatter: { date: ASC } }
-        filter: { fields: { type: { in: ["article", "scribble", "course"] } } }
+        filter: { fields: { type: { in: ["article"] } } }
+      ) {
+        edges {
+          node {
+            html
+            excerpt
+            timeToRead
+            fields {
+              slug
+              date
+              type
+            }
+            frontmatter {
+              title
+              tags
+              date
+              description
+            }
+          }
+        }
+      }
+      scribbles: allMarkdownRemark(
+        sort: { frontmatter: { date: ASC } }
+        filter: { fields: { type: { in: ["scribble"] } } }
+      ) {
+        edges {
+          node {
+            html
+            excerpt
+            timeToRead
+            fields {
+              slug
+              date
+              type
+            }
+            frontmatter {
+              title
+              tags
+              date
+              description
+            }
+          }
+        }
+      }
+      courses: allMarkdownRemark(
+        sort: { frontmatter: { date: ASC } }
+        filter: { fields: { type: { in: ["course"] } } }
       ) {
         edges {
           node {
@@ -77,10 +123,22 @@ const createThePage = (createPage, edges, index, reporter) => {
 };
 
 const createContentPages = (createPage, result, reporter) => {
-  const edges = result.data.allMarkdownRemark.edges;
-  edges.forEach((_, index) => {
-    createThePage(createPage, edges, index, reporter);
+  const { articles, scribbles, courses } = result. data;
+
+  articles.edges.forEach((_, index) => {
+    createThePage(createPage, articles.edges, index, reporter);
   });
+  reporter.success(`created ${articles.edges.length} articles`);
+
+  scribbles.edges.forEach((_, index) => {
+    createThePage(createPage, scribbles.edges, index, reporter);
+  });
+  reporter.success(`created ${scribbles.edges.length} scribbles`);
+
+  courses.edges.forEach((_, index) => {
+    createThePage(createPage, courses.edges, index, reporter);
+  });
+  reporter.success(`created ${courses.edges.length} courses`);
 };
 
 module.exports.create = async (actions, graphql, reporter) => {

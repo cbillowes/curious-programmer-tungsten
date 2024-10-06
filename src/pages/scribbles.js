@@ -5,24 +5,8 @@ import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Articles from '@components/articles';
 
-const numberTheEdges = (edges) => {
-  return edges.map((edge, i) => {
-    return Object.assign(edge.node, {
-      node: {
-        ...edge.node,
-        fields: {
-          ...edge.node.fields,
-          number: edges.length - (i + 1),
-        },
-      },
-    });
-  });
-};
-
 const ScribblesPage = ({ data }) => {
   const { allMarkdownRemark } = data;
-  const edges = numberTheEdges(allMarkdownRemark.edges);
-
   return (
     <Layout baseRoute="/scribbles">
       <section className="py-16 px-4">
@@ -31,7 +15,7 @@ const ScribblesPage = ({ data }) => {
           Scribbles
         </h1>
         <div className="mx-auto max-w-screen-xl">
-          <Articles edges={edges} />
+          <Articles edges={allMarkdownRemark.edges} />
         </div>
       </section>
     </Layout>
@@ -52,6 +36,7 @@ export const query = graphql`
             slug
             date(formatString: "dddd, DD MMMM yyyy")
             type
+            number
             hero {
               component
               image
