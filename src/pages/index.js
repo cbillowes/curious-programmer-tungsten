@@ -21,7 +21,14 @@ const IndexPage = ({ data }) => {
   return (
     <Layout group="/" route="/">
       <div className="flex">
-        <Promo articles={latestArticles.edges} />
+        <div className="font-bold bg-pink-600 [writing-mode:vertical-lr] flex justify-center items-center text-white self-stretch">
+          Latest
+        </div>
+        <div className="w-full inline-flex flex-nowrap overflow-y-auto no-scrollbar">
+          <div className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none relative">
+            <Promo articles={latestArticles.edges} />
+          </div>
+        </div>
       </div>
       <section className="bg-gray-50 dark:bg-gray-900 py-5">
         <Backdrop />
@@ -649,7 +656,7 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   query IndexPageQuery {
     latestArticles: allMarkdownRemark(
-      limit: 9
+      limit: 15
       sort: { fields: { date: DESC } }
       filter: { fields: { type: { in: ["article", "scribble"] } } }
     ) {
