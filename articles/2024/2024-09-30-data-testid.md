@@ -1,14 +1,12 @@
 ---
 title: What is the data-testid attribute?
 cover: data-testid.webp
-creditSource: Wikipedia
 date: 2024-09-30
-creditLink: https://en.wikipedia.org/wiki/Algorithm#/media/File:Diagram_for_the_computation_of_Bernoulli_numbers.jpg
 tags:
   - Technical
   - Testing
   - Web Development
-description:
+abstract:
   Learn how the data-testid attribute improves automated testing by providing
   stable element identification in web apps, ensuring reliable tests even with
   evolving UI designs. Ideal for developers aiming to enhance
