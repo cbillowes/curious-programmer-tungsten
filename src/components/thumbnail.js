@@ -66,6 +66,7 @@ const Thumbnail = ({
   link,
   component,
   className,
+  dropCredit,
 }) => {
   if (component === 'url')
     return (
@@ -93,12 +94,14 @@ const Thumbnail = ({
           backgroundImage: `url(${src})`,
         }}
       >
-        <Credit
-          componentName={component}
-          source={source}
-          link={link}
-          text={credit}
-        />
+        {!dropCredit && (
+          <Credit
+            componentName={component}
+            source={source}
+            link={link}
+            text={credit}
+          />
+        )}
       </span>
     );
   } catch (e) {

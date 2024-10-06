@@ -23,8 +23,9 @@ const LatestArticles = ({ articles }) => {
           to={slug}
           alt={title}
           {...hero}
+          dropCredit
           className={classNames(
-            'h-40 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100',
+            '!h-28 filter grayscale hover:grayscale-0 opacity-50 hover:opacity-100',
           )}
         />
         {tooltip === number && (
