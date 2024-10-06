@@ -656,7 +656,7 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   query IndexPageQuery {
     latestArticles: allMarkdownRemark(
-      limit: 15
+      limit: 25
       sort: { fields: { date: DESC } }
       filter: { fields: { type: { in: ["article", "scribble"] } } }
     ) {
