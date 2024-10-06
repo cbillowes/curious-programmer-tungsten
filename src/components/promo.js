@@ -30,7 +30,7 @@ const LatestArticles = ({ articles }) => {
         {tooltip === number && (
           <div
             role="tooltip"
-            class="absolute z-10 inline-block px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-300 bg-white dark:bg-pink-900 border border-gray-200 dark:border-pink-800 rounded-sm shadow-sm"
+            class="absolute z-10 inline-block px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-300 bg-pink-400 dark:bg-pink-900 border border-pink-600 dark:border-pink-800 rounded-sm shadow-sm"
           >
             #{number} - {title}
             <div class="tooltip-arrow" data-popper-arrow></div>
@@ -44,7 +44,7 @@ const LatestArticles = ({ articles }) => {
 const Promo = ({ articles }) => {
   return (
     <>
-      <div className="font-bold bg-pink-600 [writing-mode:vertical-lr] flex justify-center items-center">
+      <div className="font-bold bg-pink-600 [writing-mode:vertical-lr] flex justify-center items-center text-white">
         Latest
       </div>
       <LatestArticles articles={articles} />
