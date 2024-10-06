@@ -35,7 +35,6 @@ export const query = graphql`
         tags
         date
         abstract
-        description
       }
     }
     site {
@@ -136,14 +135,15 @@ export const Head = ({ location, params, data }) => {
   const { site, markdownRemark } = data;
   const { siteMetadata } = site;
   const { excerpt, html, fields, frontmatter } = markdownRemark;
+  const { title, abstract } = frontmatter;
   const keywords = getKeywords(html);
 
   return (
     <Seo
       {...siteMetadata}
-      pageTitle={frontmatter.title}
+      pageTitle={title}
       siteTitle={siteMetadata.title}
-      description={frontmatter.description || frontmatter.abstract || excerpt || siteMetadata.description}
+      description={abstract || excerpt || siteMetadata.description}
       keywords={frontmatter.keywords || keywords}
       shareImage={fields.hero.image}
       pageType="article"

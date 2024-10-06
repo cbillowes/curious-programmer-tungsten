@@ -167,13 +167,14 @@ export default CourseTemplate;
 export const Head = ({ location, params, data }) => {
   const { siteMetadata } = data.site;
   const { excerpt, frontmatter } = data.markdownRemark;
+  const { abstract } = frontmatter;
   const keywords = getKeywords(excerpt);
   return (
     <Seo
       {...siteMetadata}
       pageTitle={frontmatter.title}
       siteTitle={siteMetadata.title}
-      description={excerpt || siteMetadata.description}
+      description={abstract || excerpt || siteMetadata.description}
       keywords={keywords}
       shareImage={frontmatter.cover}
       pageType="article"

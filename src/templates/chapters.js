@@ -262,6 +262,7 @@ export default ChaptersTemplate;
 export const Head = ({ location, params, data, pageContext }) => {
   const { siteMetadata } = data.site;
   const { excerpt, frontmatter } = data.markdownRemark;
+  const { abstract } = frontmatter;
   const { courseTitle } = pageContext;
   const keywords = getKeywords(excerpt);
   return (
@@ -269,7 +270,7 @@ export const Head = ({ location, params, data, pageContext }) => {
       {...siteMetadata}
       pageTitle={`${frontmatter.seoTitle || frontmatter.title} - ${courseTitle}`}
       siteTitle={siteMetadata.title}
-      description={excerpt || siteMetadata.description}
+      description={abstract || excerpt || siteMetadata.description}
       keywords={keywords}
       shareImage={frontmatter.cover}
       pageType="article"

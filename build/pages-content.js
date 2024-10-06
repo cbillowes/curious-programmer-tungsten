@@ -22,7 +22,7 @@ const contentQuery = async (graphql) => {
               title
               tags
               date
-              description
+              abstract
             }
           }
         }
@@ -45,7 +45,7 @@ const contentQuery = async (graphql) => {
               title
               tags
               date
-              description
+              abstract
             }
           }
         }
@@ -68,7 +68,7 @@ const contentQuery = async (graphql) => {
               title
               tags
               date
-              description
+              abstract
             }
           }
         }

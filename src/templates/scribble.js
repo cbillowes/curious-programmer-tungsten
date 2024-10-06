@@ -33,6 +33,7 @@ export const query = graphql`
         tags
         devTo
         cover
+        abstract
       }
     }
     site {
@@ -128,6 +129,7 @@ export default ScribblesTemplate;
 export const Head = ({ location, params, data }) => {
   const { markdownRemark, site } = data;
   const { excerpt, frontmatter } = markdownRemark;
+  const { abstract } = frontmatter;
   const { title, description } = site.siteMetadata;
   const { cover } = frontmatter;
   const keywords = getKeywords(excerpt);
@@ -136,7 +138,7 @@ export const Head = ({ location, params, data }) => {
       {...site.siteMetadata}
       pageTitle={frontmatter.title}
       siteTitle={title}
-      description={excerpt || description}
+      description={abstract || excerpt || description}
       keywords={keywords}
       pageType="article"
       shareImage={cover}

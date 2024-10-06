@@ -38,7 +38,7 @@ export const query = graphql`
             cover
             title
             tags
-            description
+            abstract
             date(formatString: "dddd, DD MMMM YYYY")
           }
         }
@@ -83,7 +83,7 @@ const BlogTemplate = ({ data, pageContext }) => {
           {edges.map((edge, index) => {
             const { node } = edge;
             const { frontmatter, fields, excerpt, timeToRead } = node;
-            const { title, tags } = frontmatter;
+            const { title, tags, abstract } = frontmatter;
             const { slug, number, hero, date, type } = fields;
             return (
               <Preview
@@ -94,7 +94,7 @@ const BlogTemplate = ({ data, pageContext }) => {
                 title={title}
                 date={date || frontmatter.date}
                 timeToRead={timeToRead}
-                description={frontmatter.description}
+                description={abstract}
                 excerpt={excerpt}
                 tags={tags}
                 hero={hero}
