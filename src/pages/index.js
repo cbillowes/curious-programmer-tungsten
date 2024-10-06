@@ -23,13 +23,13 @@ const IndexPage = ({ data }) => {
       <div className="flex">
         <Promo articles={latestArticles.edges} />
       </div>
-      <section className="bg-gray-50 dark:bg-gray-900 py-10">
+      <section className="bg-gray-50 dark:bg-gray-900 py-5">
         <Backdrop />
         <div className="px-4 sm:px-32 grid max-w-screen-xl xl:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
             <div className="lg:hidden">
               <StaticImage
-                src="../images/unicorn-laptop-xmas.webp"
+                src="../images/unicorn-laptop.webp"
                 className="w-32 h-32 object-cover"
                 alt="Unicorn using a laptop"
               />
@@ -96,7 +96,7 @@ const IndexPage = ({ data }) => {
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <StaticImage
-              src="../images/unicorn-laptop-xmas.webp"
+              src="../images/unicorn-laptop.webp"
               className="w-96 h-96 object-cover"
               alt="Unicorn using a laptop"
             />
