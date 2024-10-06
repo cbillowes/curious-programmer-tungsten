@@ -1,7 +1,6 @@
 ---
 title: Use React hooks inside an MDX story in Storybook
 date: 2022-01-13
-featured: true
 cover: storybook.png
 creditSource: storybook.js.org
 creditLink: https://storybook.js.org/

@@ -1,5 +1,4 @@
 ---
-featured: true
 title: Git aliases
 date: 2019-09-02 03:00:00 +0200
 cover: git.png

@@ -1,6 +1,5 @@
 ---
 title: How to reference a local Webpack npm package
-featured: true
 date: 2022-01-14
 cover: npm.png
 creditSource: Wikipedia

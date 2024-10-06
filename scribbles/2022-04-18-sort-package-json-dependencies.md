@@ -5,7 +5,6 @@ date: 2022-04-18
 cover: npm.png
 creditSource: Wikipedia
 creditLink: https://en.wikipedia.org/wiki/Npm_(software)#/media/File:Npm-logo.svg
-featured: true
 tags:
   - Technical
   - Tip
