@@ -12,7 +12,12 @@ const LatestArticles = ({ articles }) => {
     const { title } = node?.frontmatter;
     return (
       <Link
-        className="w-2/12 relative"
+        className={classNames(
+          "w-4/12 lg:w-2/12 relative",
+          {
+            "hidden lg:block": index >= 5,
+          }
+        )}
         to={slug}
         onMouseEnter={() => setTooltip(number)}
         onMouseLeave={() => setTooltip(null)}
@@ -31,7 +36,7 @@ const LatestArticles = ({ articles }) => {
         {tooltip === number && (
           <div
             role="tooltip"
-            class="absolute z-10 inline-block px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-300 bg-pink-400 dark:bg-pink-900 border border-pink-600 dark:border-pink-800 rounded-sm shadow-sm"
+            class="hidden lg:block absolute z-10 px-3 py-2 text-sm font-medium text-gray-900 dark:text-gray-300 bg-pink-400 dark:bg-pink-900 border border-pink-600 dark:border-pink-800 rounded-sm shadow-sm"
           >
             #{number} - {title}
             <div class="tooltip-arrow" data-popper-arrow></div>
