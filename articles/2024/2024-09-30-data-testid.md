@@ -6,6 +6,8 @@ tags:
   - Technical
   - Testing
   - Web Development
+creditSource: ChatGPT
+creditLink: https://chatgpt.com/
 abstract:
   Learn how the data-testid attribute improves automated testing by providing
   stable element identification in web apps, ensuring reliable tests even with
