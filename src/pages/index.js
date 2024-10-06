@@ -1,18 +1,18 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
+import { StaticImage } from 'gatsby-plugin-image';
 import Seo from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Thumbnail from '@components/thumbnail';
 import Metadata from '@components/metadata';
 import Ribbon from '@components/ribbon';
-import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
-import { StaticImage } from 'gatsby-plugin-image';
+import Promo from '@components/promo';
 
 const IndexPage = ({ data }) => {
-  const { allMarkdownRemark } = data;
-  const edges = allMarkdownRemark.edges;
+  const { featuredArticles, latestArticles } = data;
+  const edges = featuredArticles.edges;
   const groupedBy = 3;
   const groupedEdges = [];
   for (let i = 0; i < edges.length; i += groupedBy) {
@@ -20,7 +20,10 @@ const IndexPage = ({ data }) => {
   }
   return (
     <Layout group="/" route="/">
-      <section className="bg-gray-50 dark:bg-gray-900 py-32">
+      <div className="flex">
+        <Promo articles={latestArticles.edges} />
+      </div>
+      <section className="bg-gray-50 dark:bg-gray-900 py-10">
         <Backdrop />
         <div className="px-4 sm:px-32 grid max-w-screen-xl xl:px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
@@ -645,7 +648,32 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query IndexPageQuery {
-    allMarkdownRemark(
+    latestArticles: allMarkdownRemark(
+      limit: 9
+      sort: { fields: { date: DESC } }
+      filter: { fields: { type: { in: ["article", "scribble"] } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            number
+            hero {
+              component
+              image
+              credit
+              source
+              link
+            }
+          }
+          frontmatter {
+            title
+            tags
+          }
+        }
+      }
+    }
+    featuredArticles: allMarkdownRemark(
       limit: 9
       sort: { fields: { date: DESC } }
       filter: {

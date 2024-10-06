@@ -87,6 +87,7 @@ const Thumbnail = ({
           'relative bg-no-repeat bg-center w-full block bg-cover',
           isHero ? 'h-[450px] xl:h-[750px]' : 'h-[350px]',
           isHero ? '' : 'border dark:border-gray-800',
+          className,
         )}
         style={{
           backgroundImage: `url(${src})`,
