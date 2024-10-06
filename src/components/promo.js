@@ -15,7 +15,7 @@ const LatestArticles = ({ articles }) => {
           alt={title}
           {...hero}
           dropCredit
-          className="!h-32 filter grayscale hover:grayscale-0 opacity-90 hover:opacity-100"
+          className="!h-32 filter grayscale hover:grayscale-0 opacity-90 hover:opacity-100 bg-scroll"
         />
       </Link>
     );
