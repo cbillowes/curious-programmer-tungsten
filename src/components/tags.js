@@ -18,7 +18,7 @@ export const Tag = ({ tag, prefix, className, redirect }) => {
       className={className}
     >
       {prefix}
-      {tag.replace(/ /g, "")}
+      {tag}
     </Anchor>
   );
 };
