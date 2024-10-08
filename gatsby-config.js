@@ -203,11 +203,8 @@ module.exports = {
               backgroundColor: 'none',
               quality: 80,
               withAvif: true,
-              loading: "eager",
-              decoding: "async",
-              tracedSVG: {
-                color: siteMetadata.brand,
-              },
+              loading: 'eager',
+              decoding: 'async',
             },
           },
           {
