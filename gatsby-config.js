@@ -155,8 +155,9 @@ module.exports = {
       // Responsible for the indexing
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        appId: process.env.ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
         skipIndexing: process.env.ALGOLIA_DISABLED === 'true',
         continueOnFailure: true,
         enablePartialUpdates: true,
