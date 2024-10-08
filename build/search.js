@@ -1,7 +1,6 @@
 const escapeStringRegexp = require('escape-string-regexp');
 const pagePath = `blogs`;
 const indexName = `Pages`;
-const createPages = true;
 
 const pageQuery = `{
   pages: allMarkdownRemark(
