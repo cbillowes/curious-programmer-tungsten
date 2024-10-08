@@ -35,9 +35,7 @@ const pageQuery = `{
   }
 }`;
 
-function pageToAlgoliaRecord({
-  node: { id, frontmatter, fields, ...rest },
-}) {
+function pageToAlgoliaRecord({ node: { id, frontmatter, fields, ...rest } }) {
   return {
     objectID: id,
     ...frontmatter,
@@ -46,7 +44,7 @@ function pageToAlgoliaRecord({
   };
 }
 
-function pagesForAlgolia({ data: { pages, images } }) {
+function pagesForAlgolia({ pages, images }) {
   const imgs = images.edges.map(({ node }) => node.fixed);
   return pages.edges.map(({ node }) => {
     const { cover, share } = node.frontmatter;
