@@ -26,6 +26,7 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
+    'gatsby-remark-smartypants',
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
