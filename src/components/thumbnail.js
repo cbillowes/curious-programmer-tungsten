@@ -86,7 +86,7 @@ const Thumbnail = ({
       <span
         className={classNames(
           'relative bg-no-repeat bg-center w-full block bg-cover',
-          isHero ? 'h-[450px] xl:h-[750px]' : 'h-[350px]',
+          isHero ? 'h-[450px] xl:h-[600px]' : 'h-[350px]',
           isHero ? 'bg-fixed' : 'border dark:border-gray-800',
           className,
         )}
