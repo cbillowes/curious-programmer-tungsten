@@ -39,6 +39,7 @@
     line-height: 2.75rem;
     padding-bottom: 0.25rem;
 
+    // Color is defined src/styles/light.scss and src/styles/dark.scss
     &::after {
       content: '';
       display: block;
@@ -51,6 +52,15 @@
   h3 {
     font-size: 1.85rem;
     opacity: 0.8;
+
+    // Color is defined src/styles/light.scss and src/styles/dark.scss
+    &::after {
+      content: '';
+      display: block;
+      height: 0.15rem;
+      max-width: 30%;
+      margin-top: 0.5rem;
+    }
   }
 
   h4 {
