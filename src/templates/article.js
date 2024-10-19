@@ -74,7 +74,7 @@ const ArticleTemplate = ({ data }) => {
               <article className="mx-auto w-full format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
                 <header className="mb-2 lg:mb-4 not-format">
                   <Type type={fields.type} to="/blog" number={fields.number} />
-                  <h1 className="text-5xl font-extrabold tracking-tighter lg:mb-6 lg:text-6xl text-center dark:text-white mx-auto max-w-5xl">
+                  <h1 className="text-5xl font-extrabold tracking-tighter lg:mb-6 lg:text-7xl text-center dark:text-white mx-auto max-w-5xl">
                     {frontmatter.title}
                   </h1>
                   <div className="text-center">
