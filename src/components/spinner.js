@@ -6,7 +6,7 @@ const Spinner = () => {
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
         <img
           className="w-64 animate-bouncy mx-auto inline-block"
-          src={require('@images/unicorn-coffee.webp').default}
+          src={require('@images/unicorn-laptop.webp').default}
         />
         <br />
         Optimizing your experience
