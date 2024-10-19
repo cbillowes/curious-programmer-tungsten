@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const getTheme = () => {
   if (typeof window !== 'undefined') {
-    const preference = window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light';
+    const preference = 'dark';
     const theme = window.localStorage.getItem('theme');
     document.body.classList.remove('light');
     document.body.classList.remove('dark');
