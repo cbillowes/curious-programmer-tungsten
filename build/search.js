@@ -13,11 +13,14 @@ const pageQuery = `{
         id
         frontmatter {
           title
-          share
+          date
+          tags
           cover
+          share
         }
         fields {
           slug
+          type
         }
         excerpt(pruneLength: 5000)
       }
