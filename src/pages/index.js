@@ -125,11 +125,14 @@ const IndexPage = ({ data }) => {
               spam you.
             </p>
             <form
+              data-netlify="true"
+              netlify-honeypot="bot-field"
               netlify
               method="POST"
               name="newsletter"
               className="mx-auto max-w-screen-sm"
             >
+              <input type="hidden" name="form-name" value="newsletter"></input>
               <div className="flex items-center mb-3">
                 <div className="relative mr-3 w-full">
                   <label
@@ -155,11 +158,11 @@ const IndexPage = ({ data }) => {
                     type="email"
                     name="email"
                     id="email"
-                    required=""
+                    required
                   />
                 </div>
                 <div>
-                  <input
+                  <button
                     type="submit"
                     value={submitted ? 'Subscribed' : 'Subscribe'}
                     className={clsx(
@@ -171,7 +174,9 @@ const IndexPage = ({ data }) => {
                     name="submit"
                     id="submit"
                     onClick={() => setSubmitted(true)}
-                  />
+                  >
+                    Subscribe
+                  </button>
                 </div>
               </div>
               <div class="text-sm font-medium text-left text-gray-500 dark:text-gray-300">
