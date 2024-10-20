@@ -13,15 +13,17 @@ const Privacy = () => {
         <Backdrop />
         <div className="max-w-screen-md mx-auto py-16 px-4">
           <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
-            Privacy policy for Curious Programmer
+            Privacy Policy
           </h1>
           <p>
-            At Curious Programmer, accessible from
-            <strong>https://curiousprogrammer.dev</strong>, one of our main
+            At Curious Programmer, accessible via{' '}
+            <strong>www.curiousprogrammer.dev</strong>, one of our main
             priorities is the privacy of our visitors. This Privacy Policy
             document contains types of information that is collected and
             recorded by Curious Programmer and how we use it.
           </p>
+
+          <p>Last updated: 20 October 2024</p>
 
           <p>
             If you have additional questions or require more information about
@@ -51,16 +53,46 @@ const Privacy = () => {
 
           <h2>Information we collect</h2>
 
-          <p>We do not collect any personal information from you.</p>
+          <h3>Information you offer</h3>
           <p>
             If you contact us directly, we may receive information you provide
             about you such as your name, email address, the contents of the
             message and/or attachments you may send us, and any other
             information you may choose to provide.
           </p>
+          <h3>Information you provide</h3>
+          <p>
+            <strong>Marketing contact information</strong>: if you sign up for
+            our monthly newsletter, Curious Programmer may collect information
+            such as email address. This may be collected through the Website.
+          </p>
+          <h3>Information we collect automatically</h3>
+          <p>
+            <strong>Identifiers</strong>: when you access and use our Website,
+            we automatically collect information about your device, which may
+            include: device type, your device operating system, browser type and
+            version, IP address, hardware identifiers.
+          </p>
+          <p>
+            <strong>Website Usage Data</strong>: when you visit our Website, we
+            may automatically log information about how you interact with the
+            sites, such as the referring site, date and time of visit, and the
+            pages you have viewed or links you have clicked. This may change
+            depending on your choice regarding cookies.
+          </p>
+          <p>
+            <strong>Cookies and Tracking Technologies</strong>: Curious
+            Programmer uses cookies and similar tracking technologies to provide
+            functionality, such as storing your settings, and to recognize you
+            as you use our Services and our Website.
+          </p>
+          <p>
+            <strong>Preferences</strong>: Certain actions, like choosing the
+            dark or light more option are stored in your browser&apos;s local
+            storage.
+          </p>
 
           <h2>How we use your information</h2>
-
           <p>
             We use the information we collect in various ways, including to:
           </p>
@@ -73,29 +105,32 @@ const Privacy = () => {
           </ul>
 
           <h2>Commenting</h2>
-
           <p>
             When you provide a comment on the Website, your comment will be
-            entered through a commenting platform provided by Disqus, Inc.
-            (“Disqus”), a third party commenting platform. You will need to
-            register through Disqus to comment on an article through the Website
-            and all comments and other content entered onto the Website are
-            subject to these Terms of Use as well as the Disqus terms of use and
-            privacy policy. You should familiarize yourself with the Disqus
+            entered through a commenting platform brought to you by Utterances{' '}
             <Anchor
-              to="https://help.disqus.com/customer/portal/articles/466260-terms-of-service"
+              to="https://utteranc.es "
               useMarkdownStyles={true}
               newTabIndicator={true}
             >
-              Terms of Use
+              https://utteranc.es
             </Anchor>
-            and the
+            . Utterances does not collect any personal information, does not
+            log, write or retain any data, sets a cookie to store the github api
+            token. Utterances may employ third-party companies and individuals
+            due to the following reasons:
+            <ul>
+              <li>
+                Utterances uses GitHub issues to store issues and comments.
+              </li>
+            </ul>
+            To read their latest privacy policy, please visit their{' '}
             <Anchor
-              to="https://help.disqus.com/customer/portal/articles/466259-privacy-policy"
+              to="https://github.com/utterance/utterances/blob/master/PRIVACY-POLICY.md"
               useMarkdownStyles={true}
               newTabIndicator={true}
             >
-              Privacy Policy
+              GitHub repository
             </Anchor>
             .
           </p>
@@ -188,10 +223,19 @@ const Privacy = () => {
             <li>
               <Anchor
                 newTabIndicator={true}
-                to="https://help.disqus.com/en/collections/191787-terms-and-policies"
+                to="https://github.com/utterance/utterances/blob/master/PRIVACY-POLICY.md"
                 useMarkdownStyles={true}
               >
-                Disqus
+                Utterances
+              </Anchor>
+            </li>
+            <li>
+              <Anchor
+                newTabIndicator={true}
+                to="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                useMarkdownStyles={true}
+              >
+                GitHub
               </Anchor>
             </li>
           </ul>
