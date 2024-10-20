@@ -17,6 +17,7 @@ const pageQuery = `{
           tags
           cover
           share
+          abstract
         }
         fields {
           slug
