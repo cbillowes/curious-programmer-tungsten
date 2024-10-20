@@ -1,6 +1,7 @@
 ---
 title: How to reframe your inner imposter
 cover: good-enough.webp
+featured: true
 date: 2024-10-11
 tags:
   - Comfort Zone
