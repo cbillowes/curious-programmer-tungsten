@@ -21,8 +21,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout group="/" route="/">
       <div className="flex">
-        <div className="font-bold bg-pink-600 [writing-mode:vertical-lr] flex justify-center items-center text-white self-stretch">
-          Latest
+        <div className="font-bold bg-pink-600 flex justify-center items-center text-white self-stretch">
+          <Link to="/blog">Articles</Link>
         </div>
         <div className="w-full inline-flex flex-nowrap overflow-y-auto no-scrollbar">
           <div className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none relative">
