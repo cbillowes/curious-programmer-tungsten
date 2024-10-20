@@ -1,5 +1,5 @@
 ---
-title: Belonging in remote teams - Overcoming Obstacles and Building Connections
+title: Belonging in remote teams - Overcoming obstacles and building connections
 cover: belonging-challenges.webp
 date: 2024-10-19
 tags:
