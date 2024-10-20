@@ -11,6 +11,7 @@ import {
 import Seo from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
+import Type from '@components/type';
 
 const indexName = 'Pages';
 
@@ -31,7 +32,7 @@ const Hit = ({ hit }) => (
         className="text-lg font-semibold cursor-pointer"
         onClick={() => navigate(hit.slug)}
       >
-        {hit.title}
+        <Type type={hit.type} inline /> {hit.title}
       </h2>
       <p>
         {hit?.tags?.map((tag) => (
@@ -54,7 +55,7 @@ const Search = () => {
         <SearchBox translations={{ placeholder: 'Search for content...' }} />
 
         <div className="flex flex-row gap-8 mt-8">
-          <div className="hidden lg:w-1/5">
+          <div className="hidden lg:block w-1/5">
             <h3 className="font-semibold mb-4">Tags</h3>
             <RefinementList
               attribute="tags"
@@ -84,7 +85,6 @@ const Search = () => {
             />
           </div>
 
-          {/* Search Hits */}
           <div className="w-full lg:w-4/5">
             <Hits hitComponent={Hit} />
             <Pagination
