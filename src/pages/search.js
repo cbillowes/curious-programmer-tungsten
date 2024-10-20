@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, navigate } from 'gatsby';
+import { Link, graphql, navigate } from 'gatsby';
 import { liteClient as algoliasearch } from 'algoliasearch/lite';
 import {
   InstantSearch,
@@ -20,17 +20,27 @@ const searchClient = algoliasearch(
 );
 
 const Hit = ({ hit }) => (
-  <div
-    className="cursor-pointer my-8 rounded-lg shadow-lg flex items-center bg-gray-50 dark:bg-slate-800 hover:scale-110"
-    onClick={() => navigate(hit.slug)}
-  >
-    <img src={hit.imageUrl} className="h-24" />
+  <div className="my-8 rounded-lg shadow-lg flex items-center bg-gray-50 dark:bg-slate-800 hover:scale-110">
+    <img
+      src={hit.imageUrl}
+      className="h-24 cursor-pointer"
+      onClick={() => navigate(hit.slug)}
+    />
     <div className="ml-4">
-      <h2 className="text-lg font-semibold">{hit.title}</h2>
+      <h2
+        className="text-lg font-semibold cursor-pointer"
+        onClick={() => navigate(hit.slug)}
+      >
+        {hit.title}
+      </h2>
       <p>
-        {hit.type} |{' '}
         {hit?.tags?.map((tag) => (
-          <span className="mx-1">{tag}</span>
+          <Link
+            to={`/tag/${tag.toLowerCase().replace(' ', '-')}`}
+            className="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300"
+          >
+            {tag}
+          </Link>
         ))}
       </p>
     </div>
@@ -44,7 +54,7 @@ const Search = () => {
         <SearchBox translations={{ placeholder: 'Search for content...' }} />
 
         <div className="flex flex-row gap-8 mt-8">
-          <div className="w-1/5">
+          <div className="hidden lg:w-1/5">
             <h3 className="font-semibold mb-4">Tags</h3>
             <RefinementList
               attribute="tags"
@@ -75,7 +85,7 @@ const Search = () => {
           </div>
 
           {/* Search Hits */}
-          <div className="w-4/5">
+          <div className="w-full lg:w-4/5">
             <Hits hitComponent={Hit} />
             <Pagination
               classNames={{
