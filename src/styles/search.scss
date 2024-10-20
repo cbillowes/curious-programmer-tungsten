@@ -1,0 +1,54 @@
+.ais-SearchBox-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  .ais-SearchBox-input {
+    width: 100%;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .ais-SearchBox-submit {
+    width: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-content: space-around;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.25rem;
+  }
+
+  .ais-SearchBox-submitIcon {
+    scale: 150%;
+  }
+}
+
+.light .ais-SearchBox-submit,
+.light .ais-SearchBox-input {
+  color: #111827;
+  background-color: #ffffff;
+  border-color: #ececec;
+}
+
+.dark .ais-SearchBox-submit,
+.dark .ais-SearchBox-input {
+  color: #ffffff;
+  border-color: #4b5563;
+  background-color: #374151;
+}
+
+.dark .ais-SearchBox-submitIcon {
+  fill: #ffffff;
+}
+
+.light .ais-SearchBox-submit:hover,
+.dark .ais-SearchBox-submit:hover {
+  background-color: #d61f69;
+  border-color: #fad1e8;
+  fill: #fad1e8;
+}

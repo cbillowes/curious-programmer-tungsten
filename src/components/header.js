@@ -1,5 +1,5 @@
 import React from 'react';
-// import Search from '@components/search';
+import Search from '@components/search';
 import Logo from '@components/logo';
 import ThemeSwitcher from '@components/theme-switcher';
 
@@ -60,7 +60,7 @@ const Header = ({
               <Logo to="/" logo={logo.image} alt={logo.alt} />
             </div>
             <div className="flex items-center">
-              {/* <Search /> */}
+              <Search />
               <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
             </div>
           </div>
