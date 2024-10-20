@@ -177,6 +177,13 @@ module.exports = {
             },
           },
           {
+            resolve: 'gatsby-transform-link',
+            options: {
+              prefix: '',
+              suffix: '?utm_source=curiousprogrammer.com&utm_medium=link',
+            },
+          },
+          {
             resolve: `gatsby-remark-interactive-gifs`,
             options: {
               root: `${__dirname}`,
