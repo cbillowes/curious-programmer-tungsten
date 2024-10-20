@@ -41,7 +41,7 @@ npm run develop
 If you have issues with the image processor, try
 
 ```bash
-npm run clean && GATSBY_CPU_COUNT=8 npm run build:images
+npm run clean && GATSBY_CPU_COUNT=8 npm run build
 ```
 
 ## 🧐 What's inside?
