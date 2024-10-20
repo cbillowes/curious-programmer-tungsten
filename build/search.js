@@ -35,7 +35,7 @@ const pageQuery = `{
   }
 }`;
 
-function pageToAlgoliaRecord({ node: { id, frontmatter, fields, ...rest } }) {
+function pageToAlgoliaRecord({ id, frontmatter, fields, ...rest }) {
   return {
     objectID: id,
     ...frontmatter,

@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
