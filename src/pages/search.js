@@ -21,19 +21,20 @@ const searchClient = algoliasearch(
 );
 
 const Hit = ({ hit }) => (
-  <div className="my-8 rounded-lg shadow-lg flex items-center bg-gray-50 dark:bg-slate-800 hover:scale-110">
+  <div className="my-8 rounded-lg shadow-lg flex flex-col lg:flex-row items-center bg-gray-50 dark:bg-slate-800 hover:scale-110">
     <img
       src={hit.imageUrl}
-      className="h-24 cursor-pointer"
+      className="w-full lg:w-auto lg:h-60 cursor-pointer"
       onClick={() => navigate(hit.slug)}
     />
-    <div className="ml-4">
+    <div className="ml-4 p-4">
       <h2
         className="text-lg font-semibold cursor-pointer"
         onClick={() => navigate(hit.slug)}
       >
         <Type type={hit.type} inline /> {hit.title}
       </h2>
+      <p>{hit.abstract}</p>
       <p>
         {hit?.tags?.map((tag) => (
           <Link
