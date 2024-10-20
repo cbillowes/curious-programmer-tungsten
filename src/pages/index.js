@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import { FaGithub, FaLinkedin, FaStackOverflow } from 'react-icons/fa';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -9,8 +9,10 @@ import Thumbnail from '@components/thumbnail';
 import Metadata from '@components/metadata';
 import Ribbon from '@components/ribbon';
 import Promo from '@components/promo';
+import clsx from 'classnames';
 
 const IndexPage = ({ data }) => {
+  const [submitted, setSubmitted] = useState(false);
   const { featuredArticles, latestArticles } = data;
   const edges = featuredArticles.edges;
   const groupedBy = 3;
@@ -122,18 +124,23 @@ const IndexPage = ({ data }) => {
               courses. I promise to keep the emails short and sweet, and never
               spam you.
             </p>
-            <form netlify name="newsletter" class="mx-auto max-w-screen-sm">
-              <div class="flex items-center mb-3">
-                <div class="relative mr-3 w-full">
+            <form
+              netlify
+              method="POST"
+              name="newsletter"
+              className="mx-auto max-w-screen-sm"
+            >
+              <div className="flex items-center mb-3">
+                <div className="relative mr-3 w-full">
                   <label
                     for="email"
-                    class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    className="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                   >
                     Email address
                   </label>
                   <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <svg
-                      class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                      className="w-5 h-5 text-gray-500 dark:text-gray-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +150,7 @@ const IndexPage = ({ data }) => {
                     </svg>
                   </div>
                   <input
-                    class="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Enter your email address"
                     type="email"
                     name="email"
@@ -154,10 +161,16 @@ const IndexPage = ({ data }) => {
                 <div>
                   <input
                     type="submit"
-                    value="Subscribe"
-                    class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg cursor-pointer bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                    value={submitted ? 'Subscribed' : 'Subscribe'}
+                    className={clsx(
+                      'py-3 px-5 text-sm font-medium text-center text-white rounded-lg cursor-pointer focus:ring-4',
+                      submitted
+                        ? 'bg-green-700 hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'
+                        : 'bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800',
+                    )}
                     name="submit"
                     id="submit"
+                    onClick={() => setSubmitted(true)}
                   />
                 </div>
               </div>
