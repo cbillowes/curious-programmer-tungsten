@@ -31,13 +31,17 @@ npm install
 ```
 
 ```bash
+npm run build:images
+```
+
+```bash
 npm run develop
 ```
 
 If you have issues with the image processor, try
 
 ```bash
-npm run clean && GATSBY_CPU_COUNT=8 npm run develop
+npm run clean && GATSBY_CPU_COUNT=8 npm run build:images
 ```
 
 ## 🧐 What's inside?
