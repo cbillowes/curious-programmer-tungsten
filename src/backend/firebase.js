@@ -1,6 +1,9 @@
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
-const serviceAccount = require('../../keys/firebase.json');
+const serviceAccount =
+  process.env.NODE_ENV === 'production'
+    ? process.env.FIREBASE_SERVICE_ACCOUNT
+    : require('../../keys/firebase.json');
 
 initializeApp({
   credential: cert(serviceAccount),
