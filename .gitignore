@@ -70,3 +70,8 @@ yarn-error.log
 
 src/images/covers
 src/images/social-media
+# Local Netlify folder
+.netlify
+
+# Auth keys (like service accounts)
+keys/

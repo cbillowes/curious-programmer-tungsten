@@ -8,22 +8,29 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "netlify dev --port 8888",
     "start": "gatsby develop",
     "build": "npm run build:images && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "firebase:deploy": "firebase deploy",
+    "firebase:emulators": "firebase emulators:start",
     "build:images": "node -e 'require(\"./build/images.js\").bulk()'"
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.0",
+    "@netlify/functions": "^2.8.2",
+    "@types/node": "^20.16.13",
     "@uidotdev/usehooks": "^2.4.1",
     "algoliasearch": "^5.9.1",
     "autoprefixer": "^10.4.16",
     "classnames": "^2.3.2",
+    "firebase": "^10.14.1",
+    "firebase-admin": "^12.6.0",
     "flowbite": "^2.5.2",
     "flowbite-react": "^0.10.2",
+    "fs": "^0.0.1-security",
     "gatsby": "^5.12.12",
     "gatsby-plugin-algolia": "^1.0.3",
     "gatsby-plugin-disqus": "^1.2.6",
@@ -51,6 +58,8 @@
     "gatsby-transform-link": "^0.1.2",
     "gatsby-transformer-remark": "^6.13.0",
     "gatsby-transformer-sharp": "^5.12.3",
+    "mustache": "^4.2.0",
+    "nodemailer": "^6.9.15",
     "path-browserify": "^1.0.1",
     "postcss": "^8.4.47",
     "prismjs": "^1.29.0",
@@ -61,6 +70,12 @@
     "react-instantsearch": "^7.13.4",
     "react-tagcloud": "^2.3.3",
     "tailwindcss": "^3.4.13",
-    "typewriter-effect": "^2.21.0"
+    "typescript": "^4.9.5",
+    "typewriter-effect": "^2.21.0",
+    "uuidv7": "^1.0.2"
+  },
+  "devDependencies": {
+    "netlify": "^13.1.21",
+    "netlify-cli": "^17.37.1"
   }
 }

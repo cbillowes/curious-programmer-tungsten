@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link } from 'gatsby';
-import Seo from '@components/head';
 import Layout from '@components/layout';
 import Backdrop from '@components/backdrop';
 import Thumbnail from '@components/thumbnail';
@@ -9,27 +8,26 @@ import Metadata from '@components/metadata';
 import Ribbon from '@components/ribbon';
 import { StaticImage } from 'gatsby-plugin-image';
 
-const NotFoundPage = ({ data }) => {
+const SubscribedPage = ({ data }) => {
   const { allMarkdownRemark } = data;
   const edges = allMarkdownRemark.edges;
   return (
-    <Layout baseRoute="/404">
-      <section className="bg-gray-50 dark:bg-gray-900 py-32">
+    <Layout baseRoute="/search">
+      <section className="py-16 px-4">
         <Backdrop />
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
-          <div className="mx-auto max-w-screen-sm text-center">
-            <StaticImage
-              className="mx-auto mb-4 w-96"
-              src="../images/unicorn-thinking.webp"
-              alt="404 Not Found"
-            />
-            <h1 className="mb-4 text-2xl font-extrabold text-primary-600 dark:text-primary-500">
-              {'< 404 />'} Page not found
-            </h1>
-            <p className="text-3xl tracking-tighter font-bold md:text-4xl">
-              Sorry, this is not the page you were looking for.
-            </p>
-          </div>
+        <div className="max-w-screen-md mx-auto py-16 px-4">
+          <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
+            Sorry to See You Go! 💔
+          </h1>
+          <p>
+            You’ve officially been unsubscribed from Curious Programmer. We’re
+            sad to see you go, but we totally understand! 😔
+          </p>
+          <p>
+            If you change your mind (and we hope you do!), you can always
+            resubscribe. Our door is always open, and there will be plenty of
+            fresh content waiting for you!
+          </p>
         </div>
       </section>
       <aside
@@ -38,7 +36,7 @@ const NotFoundPage = ({ data }) => {
       >
         <div className="px-4 mx-auto w-full max-w-screen-xl">
           <h2 className="mb-8 text-2xl font-bold tracking-tighter">
-            Check these out instead:
+            Now spilt milk, let’s get back to the good stuff! 🥛:
           </h2>
           <div>
             <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-stretch gap-4">
@@ -113,7 +111,7 @@ const NotFoundPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query NotFoundPageQuery {
+  query SubscribedPageQuery {
     allMarkdownRemark(
       limit: 9
       sort: { fields: { date: DESC } }
@@ -146,36 +144,7 @@ export const query = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        author {
-          name
-          url
-          twitter
-        }
-        brand
-        description
-        keywords
-        lang
-        title
-        siteUrl
-      }
-    }
   }
 `;
 
-export default NotFoundPage;
-
-export const Head = ({ location, params, data }) => {
-  const { siteMetadata } = data.site;
-  return (
-    <Seo
-      {...siteMetadata}
-      pageTitle="Not the page you were looking for"
-      siteTitle={siteMetadata.title}
-      shareImage="unicorn-thinking.webp"
-      location={location}
-      params={params}
-    />
-  );
-};
+export default SubscribedPage;
