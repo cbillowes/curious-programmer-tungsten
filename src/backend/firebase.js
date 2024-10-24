@@ -5,6 +5,8 @@ const serviceAccount =
     ? process.env.FIREBASE_SERVICE_ACCOUNT
     : require('../../keys/firebase.json');
 
+console.log("NODE_ENV: ", process.env.NODE_ENV);
+
 initializeApp({
   credential: cert(serviceAccount),
 });
