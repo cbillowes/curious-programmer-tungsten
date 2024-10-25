@@ -10,11 +10,16 @@ module.exports.subscribe = async (email) => {
   const subscriber = await subscriberRef.get();
   let token;
   if (subscriber.exists) {
-    await subscriberRef.update({ updated: new Date() });
+    await subscriberRef.update({ status: 'subscribed', updated: new Date() });
     token = subscriber.data().token;
   } else {
     token = uuidv7();
-    await subscriberRef.set({ email, token, created: new Date() });
+    await subscriberRef.set({
+      status: 'subscribed',
+      email,
+      token,
+      created: new Date(),
+    });
   }
   await sendEmailFromTemplate(
     email,

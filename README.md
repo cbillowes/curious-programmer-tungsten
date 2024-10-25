@@ -11,18 +11,7 @@
 
 ## 🕵️ Environment variables
 
-Add the following (with their respective values) to your `.env` file in the root of the codebase.
-You could also duplicate `.env.example`.
-
-```text
-# https://www.algolia.com/
-ALGOLIA_ADMIN_KEY=
-ALGOLIA_API_KEY=
-ALGOLIA_BASE_URL=
-ALGOLIA_DISABLED=false
-GATSBY_ALGOLIA_APP_ID=
-GATSBY_ALGOLIA_SEARCH_KEY=
-```
+Reference `.env.example` for the environment variables.
 
 ## 🚀 Run the website
 
@@ -32,6 +21,16 @@ npm install
 
 ```bash
 npm run build:images
+```
+
+```bash
+# Deploy all static files that need to be used by the website and its corresponding Netlify functions.
+npm run deploy:files
+```
+
+```bash
+# Run this to start up the firebase emulators so that you don't have to interact with production.
+npm run firebase:emulators
 ```
 
 ```bash

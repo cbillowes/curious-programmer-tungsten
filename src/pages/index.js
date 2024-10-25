@@ -23,9 +23,13 @@ const Newsletter = () => {
     e.preventDefault();
     try {
       setSubmitting(true);
-      const message = await subscribe(email);
+      const { success, message } = await subscribe(email);
+      if (success) {
+        setSuccess(message);
+      } else {
+        setError(message);
+      }
       setSubmitted(true);
-      setSuccess(message);
     } catch (error) {
       console.error(error);
       setError('Oops! Something went wrong. Please try again, later.');
@@ -33,7 +37,7 @@ const Newsletter = () => {
       setSubmitting(false);
       setTimeout(() => {
         setSubmitted(false);
-        // setEmail('');
+        setEmail('');
         setSuccess('');
         setError('');
       }, 10000);
@@ -84,6 +88,7 @@ const Newsletter = () => {
             name="submit"
             id="submit"
             onClick={handleSubmit}
+            disabled={submitting}
           >
             {submitting && (
               <svg

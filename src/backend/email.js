@@ -5,6 +5,7 @@ const Mustache = require('mustache');
 
 const EMAIL_UNAME = process.env.EMAIL_UNAME;
 const EMAIL_PWD = process.env.EMAIL_PWD;
+const ABSOLUTE_FS_PATH_TO_NETLIFY_FUNCTIONS = process.env.ABSOLUTE_FS_PATH_TO_NETLIFY_FUNCTIONS;
 
 const sendEmail = async (email, subject, text, html) => {
   const transporter = nodemailer.createTransport({
@@ -37,11 +38,11 @@ module.exports.sendEmailFromTemplate = async (
   data,
 ) => {
   const htmlTemplate = fs.readFileSync(
-    path.join(__dirname, './emails/_template.html'),
+    path.join(ABSOLUTE_FS_PATH_TO_NETLIFY_FUNCTIONS, './emails/_template.html'),
     'utf8',
   );
   const htmlBody = fs.readFileSync(
-    path.join(__dirname, './emails/', template),
+    path.join(ABSOLUTE_FS_PATH_TO_NETLIFY_FUNCTIONS, './emails/', template),
     'utf8',
   );
   const body = Mustache.render(htmlBody, data);

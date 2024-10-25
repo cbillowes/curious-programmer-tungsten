@@ -1,13 +1,21 @@
-export const subscribe = async (email) => {
+export const unsubscribe = async (email) => {
   try {
     return await fetch('/.netlify/functions/request-unsubscribe', {
       method: 'POST',
       body: JSON.stringify({ email }),
     }).then((response) => {
       if (response.successful) {
-        return 'Sorry to see you go. You will receive a confirmation email shortly.';
+        return {
+          success: true,
+          message:
+            'Sorry to see you go. You will receive a confirmation email shortly.',
+        };
       } else {
-        return 'You cannot be unsubscribed at this time. Please try again later. If problems persist, please reach out so that we can manually intervene.';
+        return {
+          success: false,
+          message:
+            'You cannot be unsubscribed at this time. Please try again later. If problems persist, please reach out so that we can manually intervene.',
+        };
       }
     });
   } catch (e) {

@@ -1,4 +1,9 @@
 rules_version = '2';
 
 service cloud.firestore {
+  match /databases/(default)/documents {
+    match /subscribers/{subscriber} {
+      allow write: if request.resource.data.keys().hasOnly(['token', 'email', 'created', 'updated', 'message', 'status']);
+    }
+  }
 }

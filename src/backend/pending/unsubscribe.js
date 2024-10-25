@@ -5,14 +5,24 @@ const { sendEmailFromTemplate } = require('../email');
 
 const DOMAIN = process.env.DOMAIN;
 
-module.exports.subscribe = async (email) => {
+module.exports.subscribe = async (email, message) => {
   const subscriberRef = db.collection('subscribers').doc(email);
   const subscriber = await subscriberRef.get();
   if (subscriber.exists) {
-    await subscriberRef.update({ updated: new Date() });
+    await subscriberRef.update({
+      status: 'unsubscribed',
+      message,
+      updated: new Date(),
+    });
   } else {
     const token = uuidv7();
-    await subscriberRef.set({ email, token, created: new Date() });
+    await subscriberRef.set({
+      status: 'unsubscribed',
+      message,
+      email,
+      token,
+      created: new Date(),
+    });
   }
   await sendEmailFromTemplate(
     email,

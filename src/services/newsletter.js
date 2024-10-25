@@ -5,9 +5,17 @@ export const subscribe = async (email) => {
       body: JSON.stringify({ email }),
     }).then((response) => {
       if (response.successful) {
-        return 'Thank you for subscribing. You will receive a confirmation email shortly.';
+        return {
+          success: true,
+          message:
+            'Thank you for subscribing. You will receive a confirmation email shortly.',
+        };
       } else {
-        return 'Thank you for subscribing.';
+        return {
+          success: false,
+          message:
+            "We couldn't subscribe you at this time. Please try again later.",
+        };
       }
     });
   } catch (e) {
