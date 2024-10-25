@@ -10,11 +10,10 @@
   "scripts": {
     "develop": "netlify dev --port 8888",
     "start": "gatsby develop",
-    "build": "npm run files:deploy && npm run build:images && gatsby build",
+    "build": "npm run build:images && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
-    "files:deploy": "for dir in ./functions/*; do cp -r ./emails \"$dir\"; done",
     "firebase:deploy": "firebase deploy",
     "firebase:emulators": "firebase emulators:start",
     "build:images": "node -e 'require(\"./build/images.js\").bulk()'"

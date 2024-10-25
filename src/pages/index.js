@@ -81,7 +81,7 @@ const Newsletter = () => {
             type="submit"
             className={clsx(
               'inline-flex items-center py-3 px-5 text-sm font-medium text-center text-white rounded-lg cursor-pointer focus:ring-4',
-              submitted
+              submitted && success
                 ? 'bg-green-700 hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'
                 : 'bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800',
             )}
@@ -109,7 +109,7 @@ const Newsletter = () => {
                 />
               </svg>
             )}
-            {submitted ? 'Subscribed' : 'Subscribe'}
+            {submitted && success ? 'Subscribed' : 'Subscribe'}
           </button>
         </div>
       </div>

@@ -186,7 +186,7 @@ const Footer = () => {
                                   type="submit"
                                   className={clsx(
                                     'inline-flex items-center py-3 px-5 text-sm font-medium text-center text-white rounded-lg cursor-pointer focus:ring-4',
-                                    submitted
+                                    submitted && success
                                       ? 'bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800'
                                       : 'bg-gray-700 hover:bg-gray-800 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800',
                                   )}
@@ -214,7 +214,7 @@ const Footer = () => {
                                       />
                                     </svg>
                                   )}
-                                  {submitted ? "Yes, I'm sure" : 'Unsubscribed'}
+                                  {submitted && success ? "Yes, I'm sure" : 'Unsubscribed'}
                                 </button>
                                 <button
                                   onClick={() => showUnsubscribe(false)}
