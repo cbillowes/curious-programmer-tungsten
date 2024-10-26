@@ -5,4 +5,4 @@ functions = "functions"
 
 [functions]
 node_bundler = "esbuild"
-included_files = ["src/backend/emails/*"]
+included_files = ["emails/"]
