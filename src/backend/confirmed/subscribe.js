@@ -33,11 +33,11 @@ const subscribeToSender = async (token, email) => {
   }
 };
 
-const sendConfirmationEmail = async (token, email) => {
+const sendConfirmationEmail = async (config, token, email) => {
   await sendEmailFromTemplate(
+    config,
     email,
     '🚀 You’re in! Welcome to Curious Programmer. 🎉',
-    '../emails/subscribe-success.html',
     'Monthly emails and exclusive content will be on there way. 💌',
     {
       domain: DOMAIN,
@@ -46,14 +46,14 @@ const sendConfirmationEmail = async (token, email) => {
   );
 };
 
-module.exports.subscribe = async (token) => {
+module.exports.subscribe = async (token, config) => {
   const subscriberRef = db.collection('subscribers').doc(token);
   const subscriber = await subscriberRef.get();
   if (subscriber.exists) {
     await subscriberRef.update({ status: 'Subscribed', updated: new Date() });
     const email = subscriber.data().email;
     await subscribeToSender(token, email);
-    await sendConfirmationEmail(token, email);
+    await sendConfirmationEmail(config, token, email);
   }
 
   return {

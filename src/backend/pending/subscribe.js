@@ -6,7 +6,7 @@ const { sendEmailFromTemplate } = require('../email');
 const DOMAIN = process.env.DOMAIN;
 const status = 'Requested to subscribe';
 
-module.exports.subscribe = async (email) => {
+module.exports.subscribe = async (email, config) => {
   const subscriberRef = db.collection('subscribers').doc(email);
   const subscriber = await subscriberRef.get();
   let token;
@@ -23,9 +23,9 @@ module.exports.subscribe = async (email) => {
     });
   }
   await sendEmailFromTemplate(
+    config,
     email,
     'Confirm Your Subscription to Curious Programmer.',
-    'subscribe-confirm.html',
     'Awesome! 🎈 Just to be sure it’s really you, we need to confirm your email address.',
     {
       domain: DOMAIN,

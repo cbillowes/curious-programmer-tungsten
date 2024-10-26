@@ -6,7 +6,7 @@ const { sendEmailFromTemplate } = require('../email');
 const DOMAIN = process.env.DOMAIN;
 const status = 'Requested to unsubscribe';
 
-module.exports.unsubscribe = async (email, message) => {
+module.exports.unsubscribe = async (email, message, config) => {
   const subscriberRef = db.collection('subscribers').doc(email);
   const subscriber = await subscriberRef.get();
   if (subscriber.exists) {
@@ -26,9 +26,9 @@ module.exports.unsubscribe = async (email, message) => {
     });
   }
   await sendEmailFromTemplate(
+    config,
     email,
     'Sorry to See You Go! 💔',
-    'unsubscribe-confirm.html',
     'Just to be sure it’s really you, we need to confirm your email address.',
     {
       domain: DOMAIN,

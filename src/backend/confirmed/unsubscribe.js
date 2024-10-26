@@ -33,11 +33,11 @@ const unsubscribeFromSender = async (token, email) => {
   }
 };
 
-const sendConfirmationEmail = async (token, email) => {
+const sendConfirmationEmail = async (config, token, email) => {
   await sendEmailFromTemplate(
+    config,
     email,
     'Sorry to See You Go! 💔',
-    '../emails/subscribe-success.html',
     'You have been unsubscribed from the Curious Programmer newsletter. 😢',
     {
       domain: DOMAIN,
@@ -46,14 +46,14 @@ const sendConfirmationEmail = async (token, email) => {
   );
 };
 
-module.exports.unsubscribe = async (token) => {
+module.exports.unsubscribe = async (token, config) => {
   const subscriberRef = db.collection('subscribers').doc(token);
   const subscriber = await subscriberRef.get();
   if (subscriber.exists) {
     await subscriberRef.update({ status: 'Unsubscribed', updated: new Date() });
     const email = subscriber.data().email;
     await unsubscribeFromSender(token, email);
-    await sendConfirmationEmail(token, email);
+    await sendConfirmationEmail(config, token, email);
   }
 
   return {

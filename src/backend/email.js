@@ -32,21 +32,17 @@ const sendEmail = async (email, subject, text, html) => {
 };
 
 module.exports.sendEmailFromTemplate = async (
+  config,
   email,
   subject,
-  template,
   previewText,
   data,
 ) => {
-  const htmlTemplatePath = path.resolve(__dirname, 'emails/_template.html');
-  const htmlTemplate = fs.readFileSync(htmlTemplatePath, 'utf8');
-  const htmlPath = path.resolve(__dirname, 'emails/', template);
-  const htmlBody = fs.readFileSync(htmlPath, 'utf8');
-  const body = Mustache.render(htmlBody, data);
-  const html = Mustache.render(htmlTemplate, {
+  const { template, body } = config;
+  const html = Mustache.render(template, {
     title: subject,
     preview: previewText,
-    body,
+    body: Mustache.render(body, data),
   });
   const text = html.replace(/(<([^>]+)>)/gi, '');
   return await sendEmail(email, subject, text, html);
