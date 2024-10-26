@@ -21,8 +21,8 @@ const SubscribedPage = ({ data }) => {
           <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
             You are subscribed!
           </h1>
-          <p>
-            Woohoo! 🎉 Thank you for confirming your subscription to Curious
+          <p className="mx-auto max-w-sm text-center">
+            Woo-hoo! 🎉 Thank you for confirming your subscription to Curious
             Programmer. I’m so excited to have you in the loop!
           </p>
         </div>
