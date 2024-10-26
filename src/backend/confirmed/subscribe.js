@@ -47,13 +47,20 @@ const sendConfirmationEmail = async (config, token, email) => {
 };
 
 module.exports.subscribe = async (token, config) => {
-  const subscriberRef = db.collection('subscribers').where('token', '==', token);
-  const subscriber = await subscriberRef.get();
-  if (subscriber.exists) {
-    await subscriberRef.update({ status: 'Subscribed', updated: new Date() });
-    const email = subscriber.data().email;
-    await subscribeToSender(token, email);
-    await sendConfirmationEmail(config, token, email);
+  const subscriberRef = await db
+    .collection('subscribers')
+    .where('token', '==', token)
+    .get();
+  const doc = subscriberRef.docs[0];
+  const data = doc?.data();
+  if (data) {
+    await db
+      .collection('subscribers')
+      .doc(doc.id)
+      .update({ status: 'Subscribed', updated: new Date() });
+    await subscribeToSender(token, data.email);
+    await sendConfirmationEmail(config, token, data.email);
+    return data;
   }
   throw new Error('Invalid token.');
 };
