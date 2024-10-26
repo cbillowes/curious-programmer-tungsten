@@ -38,14 +38,10 @@ module.exports.sendEmailFromTemplate = async (
   previewText,
   data,
 ) => {
-  const htmlTemplate = fs.readFileSync(
-    path.resolve(__dirname, 'emails/_template.html'),
-    'utf8',
-  );
-  const htmlBody = fs.readFileSync(
-    path.resolve(__dirname, 'emails/', template),
-    'utf8',
-  );
+  const htmlTemplatePath = path.resolve(__dirname, 'emails/_template.html');
+  const htmlTemplate = fs.readFileSync(htmlTemplatePath, 'utf8');
+  const htmlPath = path.resolve(__dirname, 'emails/', template);
+  const htmlBody = fs.readFileSync(htmlPath, 'utf8');
   const body = Mustache.render(htmlBody, data);
   const html = Mustache.render(htmlTemplate, {
     title: subject,
