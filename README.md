@@ -104,3 +104,8 @@ Looking for more guidance about Gatsby? Full documentation for Gatsby lives [on 
 ## 💫 Deploy
 
 Push to main and Netlify will build and deploy automatically.
+
+## Sender
+
+Create subscriber: https://api.sender.net/subscribers/add-subscriber/
+Delete subscriber: https://api.sender.net/subscribers/delete-subscriber/
