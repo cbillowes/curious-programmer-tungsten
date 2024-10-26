@@ -5,7 +5,8 @@ const { subscribe } = require('../../src/backend/confirmed/subscribe');
 // netlify functions:invoke subscribe --payload '{"token": ""}' --port 8888
 
 module.exports.handler = async (event, context) => {
-  const token = event.QueryStringParameters['token'];
+  console.log(event)
+  const token = event.queryStringParameters.token;
   const template = fs.readFileSync(
     path.resolve(__dirname, '../emails/_template.html'),
     'utf8',

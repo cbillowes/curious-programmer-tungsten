@@ -5,7 +5,7 @@ const { unsubscribe } = require('../../src/backend/confirmed/unsubscribe');
 // netlify functions:invoke unsubscribe --payload '{"token": ""}' --port 8888
 
 module.exports.handler = async (event, context) => {
-  const token = event.QueryStringParameters['token'];
+  const token = event.queryStringParameters.token;
   const template = fs.readFileSync(
     path.resolve(__dirname, '../emails/_template.html'),
     'utf8',
