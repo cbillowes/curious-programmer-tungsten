@@ -7,6 +7,7 @@ import Thumbnail from '@components/thumbnail';
 import Metadata from '@components/metadata';
 import Ribbon from '@components/ribbon';
 import { StaticImage } from 'gatsby-plugin-image';
+import ConfettiExplosion from 'react-confetti-explosion';
 
 const SubscribedPage = ({ data }) => {
   const { allMarkdownRemark } = data;
@@ -15,6 +16,7 @@ const SubscribedPage = ({ data }) => {
     <Layout baseRoute="/search">
       <section className="py-16 px-4">
         <Backdrop />
+        <ConfettiExplosion />
         <div className="max-w-screen-md mx-auto py-16 px-4">
           <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
             You are subscribed!
@@ -36,7 +38,10 @@ const SubscribedPage = ({ data }) => {
           <div>
             <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-stretch gap-4">
               {edges.map(({ node }, index) => (
-                <div key={index} className="bg-white duration-700 ease-in-out dark:bg-gray-700 mb-4">
+                <div
+                  key={index}
+                  className="bg-white duration-700 ease-in-out dark:bg-gray-700 mb-4"
+                >
                   <article className="relative p-4 mx-auto w-full bg-white rounded-lg shadow-md border border-gray-200 dark:border-gray-800 dark:bg-gray-800">
                     <Ribbon>#{node.fields.number}</Ribbon>
                     <Link to={node.fields.slug}>
