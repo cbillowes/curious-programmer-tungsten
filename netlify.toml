@@ -4,5 +4,4 @@ publish = "public/"
 functions = "functions"
 
 [functions]
-node_bundler = "esbuild"
-included_files = ["emails/"]
+included_files = ["functions/emails/*"]
