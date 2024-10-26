@@ -19,15 +19,17 @@ const SubscribedPage = ({ data }) => {
           <h1 className="mx-auto text-center mb-8 text-4xl font-extrabold tracking-tighter leading-none md:text-5xl xl:text-6xl">
             Sorry to See You Go! 💔
           </h1>
-          <p>
-            You’ve officially been unsubscribed from Curious Programmer. We’re
-            sad to see you go, but we totally understand! 😔
-          </p>
-          <p>
-            If you change your mind (and we hope you do!), you can always
-            resubscribe. Our door is always open, and there will be plenty of
-            fresh content waiting for you!
-          </p>
+          <div className="mx-auto max-w-md text-center">
+            <p className="mb-4">
+              You’ve officially been unsubscribed from Curious Programmer. We’re
+              sad to see you go, but we totally understand! 😔
+            </p>
+            <p>
+              If you change your mind (and we hope you do!), you can always
+              resubscribe. Our door is always open, and there will be plenty of
+              fresh content waiting for you!
+            </p>
+          </div>
         </div>
       </section>
       <aside
