@@ -141,7 +141,37 @@ export const query = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        author {
+          name
+          url
+          twitter
+        }
+        brand
+        description
+        keywords
+        lang
+        title
+        siteUrl
+      }
+    }
   }
 `;
 
 export default SubscribedPage;
+
+export const Head = ({ location, params, data }) => {
+  const { site } = data;
+  const siteMetadata = site.siteMetadata;
+  return (
+    <Seo
+      {...siteMetadata}
+      pageTitle="Subscribed 💪"
+      siteTitle={siteMetadata.title}
+      shareImage="unicorn-bubble-tea.webp"
+      location={location}
+      params={params}
+    />
+  );
+};

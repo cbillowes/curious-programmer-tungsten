@@ -8,7 +8,7 @@ import Metadata from '@components/metadata';
 import Ribbon from '@components/ribbon';
 import { StaticImage } from 'gatsby-plugin-image';
 
-const SubscribedPage = ({ data }) => {
+const UnsubscribedPage = ({ data }) => {
   const { allMarkdownRemark } = data;
   const edges = allMarkdownRemark.edges;
   return (
@@ -146,7 +146,37 @@ export const query = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        author {
+          name
+          url
+          twitter
+        }
+        brand
+        description
+        keywords
+        lang
+        title
+        siteUrl
+      }
+    }
   }
 `;
 
-export default SubscribedPage;
+export default UnsubscribedPage;
+
+export const Head = ({ location, params, data }) => {
+  const { site } = data;
+  const siteMetadata = site.siteMetadata;
+  return (
+    <Seo
+      {...siteMetadata}
+      pageTitle="Unsubscribed 💔"
+      siteTitle={siteMetadata.title}
+      shareImage="unicorn-bubble-tea.webp"
+      location={location}
+      params={params}
+    />
+  );
+};
