@@ -11,7 +11,7 @@ module.exports.handler = async (event, context) => {
     'utf8',
   );
   const body = fs.readFileSync(
-    path.resolve(__dirname, '../emails/', 'unsubscribe-confirm.html'),
+    path.resolve(__dirname, '../emails/unsubscribe-confirm.html'),
     'utf8',
   );
   return await unsubscribe(email, message, { template, body });
