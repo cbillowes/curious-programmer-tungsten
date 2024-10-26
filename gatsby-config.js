@@ -57,8 +57,8 @@ module.exports = {
         icon: 'src/images/icon-light.webp',
       },
     },
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
