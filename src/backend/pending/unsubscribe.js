@@ -30,7 +30,7 @@ module.exports.unsubscribe = async (email, message, config) => {
   await sendEmailFromTemplate(
     config,
     email,
-    'Sorry to See You Go! 💔',
+    'Are You Sure? 💔',
     'Just to be sure it’s really you, we need to confirm your email address.',
     {
       domain: DOMAIN,
