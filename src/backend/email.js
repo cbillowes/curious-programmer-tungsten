@@ -5,10 +5,10 @@ const Mustache = require('mustache');
 
 const EMAIL_UNAME = process.env.EMAIL_UNAME;
 const EMAIL_PWD = process.env.EMAIL_PWD;
-const PATH_RELATIVE_TO_NETLIFY_FUNCTIONS =
-  process.env.PATH_RELATIVE_TO_NETLIFY_FUNCTIONS;
 
 const sendEmail = async (email, subject, text, html) => {
+  console.log(`Sending ${subject}...`);
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -39,11 +39,11 @@ module.exports.sendEmailFromTemplate = async (
   data,
 ) => {
   const htmlTemplate = fs.readFileSync(
-    path.join(__dirname, 'emails/_template.html'),
+    path.resolve(__dirname, 'emails/_template.html'),
     'utf8',
   );
   const htmlBody = fs.readFileSync(
-    path.join(__dirname, 'emails/', template),
+    path.resolve(__dirname, 'emails/', template),
     'utf8',
   );
   const body = Mustache.render(htmlBody, data);

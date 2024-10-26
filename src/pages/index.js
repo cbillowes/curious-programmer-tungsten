@@ -23,7 +23,7 @@ const Newsletter = () => {
     e.preventDefault();
     try {
       setSubmitting(true);
-      const { success, message } = await subscribe(email);
+      const { success, message } = await subscribe({ email });
       if (success) {
         setSuccess(message);
       } else {
@@ -80,10 +80,14 @@ const Newsletter = () => {
           <button
             type="submit"
             className={clsx(
-              'inline-flex items-center py-3 px-5 text-sm font-medium text-center text-white rounded-lg cursor-pointer focus:ring-4',
-              submitted && success
-                ? 'bg-green-700 hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800'
-                : 'bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800',
+              'inline-flex items-center py-3 px-5 text-sm font-medium text-center text-white rounded-lg focus:ring-4',
+              'bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800',
+              submitted &&
+                success &&
+                'bg-green-700 hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',
+              submitting
+                ? 'bg-primary-400 dark:bg-primary-500 hover:bg-primary-400 hover:dark:bg-primary-500 cursor-not-allowed'
+                : 'cursor-pointer',
             )}
             name="submit"
             id="submit"
@@ -115,12 +119,24 @@ const Newsletter = () => {
       </div>
       {error && (
         <p className="text-pink-600 my-4 text-left">
-          <button onClick={() => setError(null)}>&times;</button> {error}
+          <button
+            onClick={() => setError(null)}
+            className="bg-pink-100 text-pink-800 text-xs font-medium px-1.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300"
+          >
+            &times;
+          </button>{' '}
+          {error}
         </p>
       )}
       {success && (
         <p className="text-green-500 my-4 text-left">
-          <button onClick={() => setSuccess(null)}>&times;</button> {success}
+          <button
+            onClick={() => setSuccess(null)}
+            className="bg-green-100 text-green-800 text-xs font-medium px-1.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300"
+          >
+            &times;
+          </button>{' '}
+          {success}
         </p>
       )}
       <div className="text-sm font-medium text-left text-gray-500 dark:text-gray-300">

@@ -4,18 +4,19 @@ const { db } = require('../firebase');
 const { sendEmailFromTemplate } = require('../email');
 
 const DOMAIN = process.env.DOMAIN;
+const status = 'Requested to subscribe';
 
 module.exports.subscribe = async (email) => {
   const subscriberRef = db.collection('subscribers').doc(email);
   const subscriber = await subscriberRef.get();
   let token;
   if (subscriber.exists) {
-    await subscriberRef.update({ status: 'subscribed', updated: new Date() });
+    await subscriberRef.update({ status, updated: new Date() });
     token = subscriber.data().token;
   } else {
     token = uuidv7();
     await subscriberRef.set({
-      status: 'subscribed',
+      status,
       email,
       token,
       created: new Date(),

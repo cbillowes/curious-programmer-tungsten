@@ -50,6 +50,7 @@ module.exports.subscribe = async (token) => {
   const subscriberRef = db.collection('subscribers').doc(token);
   const subscriber = await subscriberRef.get();
   if (subscriber.exists) {
+    await subscriberRef.update({ status: 'Subscribed', updated: new Date() });
     const email = subscriber.data().email;
     await subscribeToSender(token, email);
     await sendConfirmationEmail(token, email);

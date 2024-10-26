@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import clsx from 'classnames';
+import { unsubscribe } from '@services/unsubscribe';
 
 const Footer = () => {
-  const [unsubscribe, showUnsubscribe] = useState(false);
+  const [modal, showModal] = useState(false);
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -16,10 +17,10 @@ const Footer = () => {
     e.preventDefault();
     try {
       setSubmitting(true);
-      const { success, message: responseMessage } = await unsubscribe(
+      const { success, message: responseMessage } = await unsubscribe({
         email,
         message,
-      );
+      });
       if (success) {
         setSuccess(responseMessage);
       } else {
@@ -34,6 +35,7 @@ const Footer = () => {
       setTimeout(() => {
         setSubmitted(false);
         setEmail('');
+        setMessage('');
         setSuccess('');
         setError('');
       }, 10000);
@@ -101,10 +103,8 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <button onClick={() => showUnsubscribe(!unsubscribe)}>
-                Unsubscribe
-              </button>
-              {unsubscribe && (
+              <button onClick={() => showModal(!modal)}>Unsubscribe</button>
+              {modal && (
                 <div className="fixed top-0 bottom-0 left-0 right-0 bg-black/80 z-[9999]">
                   <div
                     id="unsubscribe"
@@ -118,7 +118,7 @@ const Footer = () => {
                         <button
                           type="button"
                           className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                          onClick={() => showUnsubscribe(false)}
+                          onClick={() => showModal(false)}
                         >
                           <svg
                             className="w-3 h-3"
@@ -137,7 +137,7 @@ const Footer = () => {
                           </svg>
                           <span className="sr-only">Close modal</span>
                         </button>
-                        <div className="pt-10 px-4">
+                        <div className="pt-10 pb-5 px-4">
                           <form
                             method="POST"
                             name="unsubscribe"
@@ -169,6 +169,8 @@ const Footer = () => {
                                 <input
                                   className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                   placeholder="Enter your email address"
+                                  onChange={(e) => setEmail(e.target.value)}
+                                  value={email}
                                   type="email"
                                   name="email"
                                   id="email"
@@ -178,17 +180,24 @@ const Footer = () => {
                               <textarea
                                 id="message"
                                 rows="4"
-                                class="mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Care to share why you're leaving?"
-                              ></textarea>
+                                onChange={(e) => setMessage(e.target.value)}
+                              >
+                                {message}
+                              </textarea>
                               <div className="p-4 md:p-5 text-center">
                                 <button
                                   type="submit"
                                   className={clsx(
-                                    'inline-flex items-center py-3 px-5 text-sm font-medium text-center text-white rounded-lg cursor-pointer focus:ring-4',
-                                    submitted && success
-                                      ? 'bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800'
-                                      : 'bg-gray-700 hover:bg-gray-800 focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800',
+                                    'inline-flex items-center py-3 px-5 text-sm font-medium text-center text-white rounded-lg focus:ring-4',
+                                    'bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800',
+                                    submitted &&
+                                      success &&
+                                      'bg-green-700 hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',
+                                    submitting
+                                      ? 'bg-primary-400 dark:bg-primary-500 hover:bg-primary-400 hover:dark:bg-primary-500 cursor-not-allowed'
+                                      : 'cursor-pointer',
                                   )}
                                   name="submit"
                                   id="submit"
@@ -199,7 +208,7 @@ const Footer = () => {
                                     <svg
                                       aria-hidden="true"
                                       role="status"
-                                      className="inline w-4 h-4 me-3 text-white animate-spin"
+                                      className="inline w-3 h-3 me-3 text-white animate-spin"
                                       viewBox="0 0 100 101"
                                       fill="none"
                                       xmlns="http://www.w3.org/2000/svg"
@@ -214,10 +223,12 @@ const Footer = () => {
                                       />
                                     </svg>
                                   )}
-                                  {submitted && success ? "Yes, I'm sure" : 'Unsubscribed'}
+                                  {submitted && success
+                                    ? 'Unsubscribed'
+                                    : "Yes, I'm sure"}
                                 </button>
                                 <button
-                                  onClick={() => showUnsubscribe(false)}
+                                  onClick={() => showModal(false)}
                                   type="button"
                                   className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                                 >
@@ -227,16 +238,22 @@ const Footer = () => {
                             </div>
                           </form>
                           {error && (
-                            <p className="text-pink-600 my-4 text-left">
-                              <button onClick={() => setError(null)}>
+                            <p className="text-pink-400 my-4 text-left">
+                              <button
+                                onClick={() => setError(null)}
+                                className="bg-pink-100 text-pink-800 text-xs px-1.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300 font-bold"
+                              >
                                 &times;
                               </button>{' '}
                               {error}
                             </p>
                           )}
                           {success && (
-                            <p className="text-green-500 my-4 text-left">
-                              <button onClick={() => setSuccess(null)}>
+                            <p className="text-green-400 my-4 text-left">
+                              <button
+                                onClick={() => setSuccess(null)}
+                                className="bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 font-bold"
+                              >
                                 &times;
                               </button>{' '}
                               {success}

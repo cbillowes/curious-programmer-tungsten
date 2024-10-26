@@ -46,10 +46,11 @@ const sendConfirmationEmail = async (token, email) => {
   );
 };
 
-module.exports.subscribe = async (token) => {
+module.exports.unsubscribe = async (token) => {
   const subscriberRef = db.collection('subscribers').doc(token);
   const subscriber = await subscriberRef.get();
   if (subscriber.exists) {
+    await subscriberRef.update({ status: 'Unsubscribed', updated: new Date() });
     const email = subscriber.data().email;
     await unsubscribeFromSender(token, email);
     await sendConfirmationEmail(token, email);

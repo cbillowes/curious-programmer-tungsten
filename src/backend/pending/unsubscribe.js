@@ -4,20 +4,21 @@ const { db } = require('../firebase');
 const { sendEmailFromTemplate } = require('../email');
 
 const DOMAIN = process.env.DOMAIN;
+const status = 'Requested to unsubscribe';
 
-module.exports.subscribe = async (email, message) => {
+module.exports.unsubscribe = async (email, message) => {
   const subscriberRef = db.collection('subscribers').doc(email);
   const subscriber = await subscriberRef.get();
   if (subscriber.exists) {
     await subscriberRef.update({
-      status: 'unsubscribed',
+      status,
       message,
       updated: new Date(),
     });
   } else {
     const token = uuidv7();
     await subscriberRef.set({
-      status: 'unsubscribed',
+      status,
       message,
       email,
       token,
