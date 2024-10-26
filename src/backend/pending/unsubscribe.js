@@ -9,14 +9,16 @@ const status = 'Requested to unsubscribe';
 module.exports.unsubscribe = async (email, message, config) => {
   const subscriberRef = db.collection('subscribers').doc(email);
   const subscriber = await subscriberRef.get();
+  let token;
   if (subscriber.exists) {
     await subscriberRef.update({
       status,
       message,
       updated: new Date(),
     });
+    token = subscriber.data().token;
   } else {
-    const token = uuidv7();
+    token = uuidv7();
     await subscriberRef.set({
       status,
       message,
@@ -32,7 +34,7 @@ module.exports.unsubscribe = async (email, message, config) => {
     'Just to be sure it’s really you, we need to confirm your email address.',
     {
       domain: DOMAIN,
-      token: subscriber.data().token,
+      token,
     },
   );
   return {
