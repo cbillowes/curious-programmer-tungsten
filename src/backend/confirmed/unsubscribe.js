@@ -46,7 +46,7 @@ const sendConfirmationEmail = async (config, token, email) => {
   );
 };
 
-module.exports.subscribe = async (token, config) => {
+module.exports.unsubscribe = async (token, config) => {
   const subscriberRef = await db
     .collection('subscribers')
     .where('token', '==', token)
