@@ -14,11 +14,20 @@ module.exports.handler = async (event, context) => {
     path.resolve(__dirname, '../emails/subscribe-success.html'),
     'utf8',
   );
-  await subscribe(token, { template, body });
-  return {
-    statusCode: 302,
-    headers: {
-      Location: `${process.env.URL}/subscribed`,
-    },
-  };
+  try {
+    await subscribe(token, { template, body });
+    return {
+      statusCode: 302,
+      headers: {
+        Location: `${process.env.URL}/subscribed`,
+      },
+    };
+  } catch (e) {
+    return {
+      statusCode: 302,
+      headers: {
+        Location: `${process.env.URL}/error`,
+      },
+    };
+  }
 };

@@ -14,11 +14,20 @@ module.exports.handler = async (event, context) => {
     path.resolve(__dirname, '../emails/unsubscribe-success.html'),
     'utf8',
   );
-  await unsubscribe(token, { template, body });
-  return {
-    statusCode: 302,
-    headers: {
-      Location: `${process.env.URL}/unsubscribed`,
-    },
-  };
+  try {
+    await unsubscribe(token, { template, body });
+    return {
+      statusCode: 302,
+      headers: {
+        Location: `${process.env.URL}/unsubscribed`,
+      },
+    };
+  } catch (e) {
+    return {
+      statusCode: 302,
+      headers: {
+        Location: `${process.env.URL}/error`,
+      },
+    };
+  }
 };

@@ -47,7 +47,7 @@ const sendConfirmationEmail = async (config, token, email) => {
 };
 
 module.exports.unsubscribe = async (token, config) => {
-  const subscriberRef = db.collection('subscribers').doc(token);
+  const subscriberRef = db.collection('subscribers').where('token', '==', token);
   const subscriber = await subscriberRef.get();
   if (subscriber.exists) {
     await subscriberRef.update({ status: 'Unsubscribed', updated: new Date() });
@@ -55,9 +55,5 @@ module.exports.unsubscribe = async (token, config) => {
     await unsubscribeFromSender(token, email);
     await sendConfirmationEmail(config, token, email);
   }
-
-  return {
-    statusCode: 400,
-    data: { reason: 'Invalid token.' },
-  };
+  throw new Error('Invalid token.');
 };
