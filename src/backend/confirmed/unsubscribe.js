@@ -7,7 +7,7 @@ const SENDER_TOKEN = process.env.SENDER_TOKEN;
 const NEWSLETTER_GROUP_ID = 'avDxqL';
 const ENDPOINT = new URL('https://api.sender.net/v2/subscribers');
 
-const unsubscribeFromSender = async (token, email) => {
+const unsubscribeFromSender = async (email) => {
   let headers = {
     Authorization: `Bearer ${SENDER_TOKEN}`,
     'Content-Type': 'application/json',
@@ -15,9 +15,7 @@ const unsubscribeFromSender = async (token, email) => {
   };
 
   let data = {
-    email,
-    groups: [NEWSLETTER_GROUP_ID],
-    fields: { token },
+    subscribers: [email],
   };
 
   const response = await fetch(ENDPOINT, {
@@ -27,6 +25,7 @@ const unsubscribeFromSender = async (token, email) => {
   });
 
   const json = await response.json();
+  console.log(json);
 
   if (json.message === 'Unauthenticated.') {
     throw new Error('Could not authenticate with the newsletter service.');
@@ -58,7 +57,7 @@ module.exports.unsubscribe = async (token, config) => {
       .collection('subscribers')
       .doc(doc.id)
       .update({ status: 'Unsubscribed', updated: new Date() });
-    await unsubscribeFromSender(token, data.email);
+    await unsubscribeFromSender(data.email);
     await sendConfirmationEmail(config, token, data.email);
     return data;
   }
