@@ -19,18 +19,6 @@ const Layout = ({ className, children, setTheme, theme, baseRoute, group }) => {
 
   return (
     <Flowbite theme={{ dark: theme === 'dark', theme: flowbiteTheme }}>
-      <Script
-        data-name="BMC-Widget"
-        data-cfasync="false"
-        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-        data-id="cbillowes"
-        data-description="Support me on Buy me a coffee!"
-        data-message="Thanks for stopping by! If you’re enjoying the content, why not fuel my next creative burst with a coffee? Your support helps keep the unicorn magic alive! ☕🦄"
-        data-color="#BD5FFF"
-        data-position="Right"
-        data-x_margin="18"
-        data-y_margin="18"
-      ></Script>
       <Header
         isSidebarOpen={isSidebarOpen}
         theme={theme}
