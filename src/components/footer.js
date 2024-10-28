@@ -143,9 +143,12 @@ const Footer = () => {
                             name="unsubscribe"
                             className="mx-auto max-w-screen-sm"
                           >
+                            <h2 className="mb-2 font-bold text-lg">
+                              Unsubscribe 💔
+                            </h2>
                             <h3 className="mb-5 text-gray-500 dark:text-gray-400">
-                              There&apos;s no hard feelings. Are you sure you
-                              want to unsubscribe from all the things, though?
+                              There&apos;s no hard feelings though, but are you
+                              sure you want to unsubscribe from all the things?
                             </h3>
                             <div className="grid grid-2 items-center mb-3">
                               <div className="relative mr-3 w-full">
@@ -181,11 +184,10 @@ const Footer = () => {
                                 id="message"
                                 rows="4"
                                 className="mt-2 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Care to share why you're leaving?"
+                                placeholder="Care to share why you're leaving? That way we can make improvements."
                                 onChange={(e) => setMessage(e.target.value)}
-                              >
-                                {message}
-                              </textarea>
+                                value={message}
+                              ></textarea>
                               <div className="p-4 md:p-5 text-center">
                                 <button
                                   type="submit"
@@ -232,13 +234,13 @@ const Footer = () => {
                                   type="button"
                                   className="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                                 >
-                                  No, cancel
+                                  {submitted ? 'Close' : 'No, cancel'}
                                 </button>
                               </div>
                             </div>
                           </form>
                           {error && (
-                            <p className="text-pink-400 my-4 text-left">
+                            <p className="text-pink-400 my-4 text-center">
                               <button
                                 onClick={() => setError(null)}
                                 className="bg-pink-100 text-pink-800 text-xs px-1.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300 font-bold"
@@ -249,7 +251,7 @@ const Footer = () => {
                             </p>
                           )}
                           {success && (
-                            <p className="text-green-400 my-4 text-left">
+                            <p className="text-green-400 my-4 text-center">
                               <button
                                 onClick={() => setSuccess(null)}
                                 className="bg-green-100 text-green-800 text-xs px-1.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 font-bold"
