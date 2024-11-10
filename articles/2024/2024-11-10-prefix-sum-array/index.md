@@ -175,6 +175,10 @@ The journey taught Alex that sometimes, the solutions to our most perplexing pro
 
 _"In programming, as in life, accumulating wisdom saves time in the long run,"_ Alex concluded, satisfied with the quest's outcome.
 
+### Complexities
+
+It is important to note that the prefix sum array approach has a time complexity of `(O(n + q))`, where `(O(n))` is required to build the prefix sum array by making a single pass through the original array, and `(O(q))` is for answering `(q)` range sum queries, each in constant time `(O(1))` due to simple lookup operations. The space complexity is `(O(n))`, as an additional array of size `(n)` is needed to store the prefix sums. This approach is efficient for scenarios with frequent range sum queries on static data, as the preprocessing step is linear, and queries are answered in constant time.
+
 ## Practical Applications
 
 ### **Efficient Range Sum Queries in Financial Analysis**
