@@ -37,6 +37,12 @@ const Layout = ({ className, children, setTheme, theme, baseRoute, group }) => {
           { to: '/', name: 'Home' },
           { to: '/about', name: 'About' },
           { to: '/resume', name: 'Resume' },
+          { name: 'Daily.dev',
+            items: [
+              { to: 'https://dly.to/LD032K64hKq', name: 'Register' },
+              { to: 'https://dly.to/1L0EwBOqg4w', name: 'Follow'},
+            ]
+           },
           {
             to: '/blog',
             name: 'Blog',
@@ -51,7 +57,6 @@ const Layout = ({ className, children, setTheme, theme, baseRoute, group }) => {
           { to: '/scribbles', name: 'Scribbles' },
           { to: '/courses', name: 'Courses' },
           { to: '/tags', name: 'Tags' },
-          { to: 'https://cal.com/clarice-bouwer', name: 'Schedule a chat' },
           {
             name: 'Legalities',
             items: [
