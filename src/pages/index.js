@@ -189,7 +189,9 @@ const IndexPage = ({ data }) => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-green-400">
                 secret sauce
               </span>{' '}
-              for Software Engineers
+              for my
+              <br />
+              adventure
               <StaticImage
                 src="../images/rocket.png"
                 alt="Rocket emoji"
@@ -197,9 +199,9 @@ const IndexPage = ({ data }) => {
               />
             </h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">
-              Passionate developers, fueled by an insatiable thirst for
-              knowledge, boldly tinker with new tech, unraveling mysteries of
-              code and algorithms.
+              I'm a passionate developer, fueled by an insatiable thirst for
+              knowledge, boldly tinkering with new tech, diving in to best
+              practices, and unraveling mysteries of code and algorithms.
             </p>
             <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-300">
               It's not just about zeros and ones; it's a journey of perpetual
@@ -280,11 +282,19 @@ const IndexPage = ({ data }) => {
           <h2 className="mt-8 mb-4 lg:mb-8 text-3xl font-extrabold tracking-tighter leading-tight text-center text-white md:text-4xl">
             My name is Clarice Bouwer
           </h2>
-          <p className="max-w-2xl mx-auto mb-8 lg:mb-16 text-center font-light md:text-lg lg:text-xl text-gray-50">
-            Software Engineering Team Lead at Cloudsure Limited in Mauritius
-            (born in South Africa). Obsessively passionate about
-            Clojure(Script), Gatsby, and Git, I navigate the realms of financial
-            services and code innovation.
+          <p className="max-w-4xl mx-auto mb-4 text-center font-light md:text-lg lg:text-xl text-gray-50">
+            Software Engineering Team Lead & Director at Cloudsure Limited in
+            Mauritius (born in South Africa), absolutely loving the art of
+            sharing knowledge dishing out byte-sized chunks of wisdom to the
+            development community and essays where my mind tends to wander.
+          </p>
+          <p className="max-w-4xl mx-auto mb-8 lg:mb-16 text-center font-light md:text-lg lg:text-xl text-gray-50">
+            With a passion for Clojure(Script), Git, GCP, TypeScript, Next.js,
+            Gatsby, DevTools, and more, I navigate the tech landscape like a pro
+            in the making. But it’s not all solo scripting—I thrive on working
+            with people and leading by example, making collaboration as
+            thrilling as successful debugging. Always eager to explore and
+            enlighten, I try to embody the spirit of a true tech enthusiast!
           </p>
           <div className="grid grid-cols-4 gap-8 text-5xl text-gray-500 sm:gap-12 lg:grid-cols-8 dark:text-gray-400">
             <a
@@ -306,14 +316,40 @@ const IndexPage = ({ data }) => {
               <FaStackOverflow className="text-white" />
             </a>
             <a
-              href="https://www.buymeacoffee.com/cbillowes"
+              href="https://dly.to/1L0EwBOqg4w"
               className="flex justify-center items-center hover:scale-125 transition-all duration-300"
             >
-              <StaticImage
-                src="../images/coffee.svg"
-                alt="Buy me a coffee"
-                className="h-11 w-11"
-              />
+              <svg
+                viewBox="0 0 32 18"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-logo"
+              >
+                <g className="fill-white" fill-rule="nonzero">
+                  <path
+                    d="M26.633 8.69l-3.424-3.431 1.711-3.43 5.563 5.575c.709.71.709 1.861 0 2.572l-6.847 6.86c-.709.711-1.858.711-2.567 0a1.821 1.821 0 010-2.571l5.564-5.575z"
+                    fill-opacity="0.64"
+                  ></path>
+                  <path d="M21.07.536a1.813 1.813 0 012.568 0l1.283 1.286L9.945 16.83c-.709.71-1.858.71-2.567 0l-1.284-1.287L21.071.536zm-6.418 4.717l-2.567 2.572-3.424-3.43-4.28 4.288 3.424 3.43-1.71 3.43L.531 9.97a1.821 1.821 0 010-2.572L7.378.537A1.813 1.813 0 019.945.535l4.707 4.717z"></path>
+                </g>
+              </svg>
+              <svg
+                viewBox="0 0 72 18"
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-1 h-logo"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <path
+                    d="M2.636 5.892v5.827h3.201l.678 1.943H2.636A1.94 1.94 0 01.7 11.719V5.892A1.94 1.94 0 012.636 3.95h3.201v1.942h.678V2.007a.97.97 0 01.97-.971h.969v11.655a.97.97 0 01-.97.97h-.969V5.893H2.636zm9.692 7.77a1.94 1.94 0 01-1.936-1.943V9.777a1.94 1.94 0 011.936-1.942h3.201v1.942h.678V5.892h-5.33v-.971a.97.97 0 01.967-.971h4.363c1.071 0 1.939.87 1.939 1.942v6.799a.97.97 0 01-.97.97h-.969V9.778h-3.879v1.942h3.201l.678 1.943h-3.879zm7.756 0V4.92a.97.97 0 01.968-.971h.968v8.74a.97.97 0 01-.968.972h-.968zM22.02 2.014c0 .27-.093.499-.278.685a.927.927 0 01-.683.28c-.27 0-.5-.094-.69-.28a.923.923 0 01-.285-.685c0-.28.095-.513.285-.699.19-.186.42-.279.69-.279.27 0 .497.093.683.28a.95.95 0 01.278.698zm1.941 11.648V2.007a.97.97 0 01.968-.971h.968v11.655a.97.97 0 01-.968.97h-.968zm6.532.004l-2.613-8.22a.976.976 0 01.65-1.212l.92-.284 2.132 6.98 1.92-6.293a.96.96 0 011.201-.645l.888.284L32.3 15.201c-.248.816-1 1.374-1.85 1.374h-1.601a.97.97 0 01-.968-.97v-.972h1.609c.533 0 1.002-.432 1.004-.967z"
+                    className="fill-white"
+                  ></path>
+                  <path
+                    d="M38.75 13.788v-1.372h-1.408v1.372h1.407zm4.21.09c.683 0 1.261-.17 1.735-.513.473-.342.804-.8.992-1.372v1.795h1.165V4.297h-1.165v4.245a2.674 2.674 0 00-.992-1.372c-.474-.342-1.052-.513-1.734-.513-.623 0-1.178.145-1.664.436-.487.29-.869.71-1.146 1.257-.277.547-.416 1.189-.416 1.924 0 .735.139 1.374.416 1.917.277.543.66.96 1.146 1.251.486.29 1.04.436 1.664.436zm.333-1.026c-.716 0-1.29-.229-1.721-.686-.431-.458-.647-1.088-.647-1.892 0-.804.216-1.434.647-1.892.43-.457 1.005-.686 1.721-.686.461 0 .873.105 1.235.314.363.21.647.511.852.904.204.394.307.847.307 1.36 0 .513-.103.964-.307 1.353a2.23 2.23 0 01-.852.904c-.362.214-.774.321-1.235.321zm8.525 1.026c.589 0 1.118-.107 1.587-.32.47-.214.851-.514 1.146-.898a2.96 2.96 0 00.57-1.309h-1.242a1.777 1.777 0 01-.698 1.148c-.38.287-.851.43-1.414.43-.623 0-1.15-.201-1.581-.603-.431-.402-.66-1.005-.685-1.808h5.62c.033-.18.05-.394.05-.642a3.29 3.29 0 00-.403-1.616 3 3 0 00-1.165-1.167c-.507-.29-1.103-.436-1.785-.436-.674 0-1.272.145-1.792.436-.52.29-.928.71-1.222 1.257-.295.547-.442 1.189-.442 1.924 0 .735.147 1.374.442 1.917.294.543.701.96 1.222 1.251.52.29 1.118.436 1.792.436zm2.176-3.925H49.5c.034-.77.269-1.353.704-1.75.435-.398.973-.597 1.613-.597.4 0 .772.086 1.113.257.342.17.61.431.807.782.196.35.281.787.256 1.308zm6.105 3.835l2.752-7.041h-1.254l-2.176 5.797-2.202-5.797h-1.254l2.752 7.041h1.382z"
+                    fill-opacity="0.64"
+                    className="fill-white"
+                    fill-rule="nonzero"
+                  ></path>
+                </g>
+              </svg>
             </a>
             <a
               href="https://www.cloudsure.mu"
@@ -371,7 +407,7 @@ const IndexPage = ({ data }) => {
               the real magic! ✨
             </p>
           </div>
-          <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0">
+          <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 xl:gap-12 md:space-y-0">
             <div>
               <div className="flex justify-center items-center mb-4 w-10 h-10 bg-primary-100 rounded dark:bg-primary-900 lg:h-16 lg:w-16">
                 <svg
@@ -720,6 +756,13 @@ const IndexPage = ({ data }) => {
                   </span>
                 </li>
               </ul>
+            </div>
+            <div>
+              <StaticImage
+                src="../images/dailydev.webp"
+                alt="Register for daily.dev"
+                className="h-[270px] w-[205px] bg-white rounded-lg dark:bg-gray-800 border-8 border-white"
+              />
             </div>
           </div>
         </div>
