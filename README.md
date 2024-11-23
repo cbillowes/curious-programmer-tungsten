@@ -25,7 +25,7 @@ npm run build:images
 
 ```bash
 # Deploy all static files that need to be used by the website and its corresponding Netlify functions.
-npm run deploy:files
+netlify deploy --prod
 ```
 
 ```bash
