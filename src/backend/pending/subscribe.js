@@ -17,6 +17,7 @@ module.exports.subscribe = async (email, referrer, config) => {
     token = uuidv7();
     await subscriberRef.set({
       status,
+      referrer,
       email,
       token,
       created: new Date(),
