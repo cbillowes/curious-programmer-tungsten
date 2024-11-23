@@ -41,7 +41,7 @@ const withTheme = (WrappedComponent) => {
       <WrappedComponent {...props} theme={theme} setTheme={setTheme}>
         {props.children}
         {props.showComments && (
-          <div className="border-t border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800">
+          <div className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 py-8">
             <div className="max-w-2xl mx-auto" ref={commentBox} />
           </div>
         )}

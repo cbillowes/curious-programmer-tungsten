@@ -1,8 +1,8 @@
-export const subscribe = async ({ email }) => {
+export const subscribe = async ({ email, referrer }) => {
   try {
     return await fetch('/.netlify/functions/request-subscribe', {
       method: 'POST',
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, referrer }),
     }).then((response) => {
       if (response.status === 200) {
         return {

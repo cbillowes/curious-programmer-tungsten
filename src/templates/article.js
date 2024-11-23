@@ -7,6 +7,7 @@ import Tags from '@components/tags';
 import Metadata from '@components/metadata';
 import Type from '@components/type';
 import Backdrop from '@components/backdrop';
+import Subscribe from '@components/subscribe';
 import { getKeywords } from '@common/seo';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -125,6 +126,22 @@ const ArticleTemplate = ({ data }) => {
           </div>
         </div>
       </div>
+      <hr className="border-gray-200 dark:border-gray-700" />
+      <section id="subscribe" className="bg-gray-100 dark:bg-gray-800">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
+          <div className="mx-auto max-w-screen-md text-center">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              Subscribe to my newsletter
+            </h2>
+            <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+              Get notified monthly about any new articles, tutorials, and
+              courses. I promise to keep the emails short and sweet, and never
+              spam you.
+            </p>
+            <Subscribe referrer={frontmatter.title} />
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };

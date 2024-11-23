@@ -6,12 +6,12 @@ const { sendEmailFromTemplate } = require('../email');
 const DOMAIN = process.env.DOMAIN;
 const status = 'Requested to subscribe';
 
-module.exports.subscribe = async (email, config) => {
+module.exports.subscribe = async (email, referrer, config) => {
   const subscriberRef = db.collection('subscribers').doc(email);
   const subscriber = await subscriberRef.get();
   let token;
   if (subscriber.exists) {
-    await subscriberRef.update({ status, updated: new Date() });
+    await subscriberRef.update({ status, referrer, updated: new Date() });
     token = subscriber.data().token;
   } else {
     token = uuidv7();
