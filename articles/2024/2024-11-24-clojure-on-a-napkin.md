@@ -104,6 +104,27 @@ Spend time experimenting in the Clojure REPL with code snippets to get hands-on 
 
 Use an editor with REPL integration for seamless interactive development. Tools like CIDER (for Emacs), Calva (for VS Code), or Cursive (for IntelliJ) let you send code directly to the REPL from your editor. This approach is a cornerstone of Clojure's workflow, enabling quick feedback and an iterative development process.
 
+### Maintain Good Code Hygiene
+
+```clojure
+(defn y [x] (->> x ((fn [n] (* n n))) ((fn [n] (+ n 10))) ((fn [n] (/ n 2))) ((fn [n] (- n 5)))))
+```
+
+The above is valid Clojure code but you need to be a Demigod to understand it. It is important to maintain good code hygiene by writing clean, readable, and idiomatic Clojure code. Follow the [Clojure style guide](https://github.com/bbatsov/clojure-style-guide) to ensure consistency in your codebase. Here is a somewhat better refactor:
+
+```clojure
+(defn nested-calculation
+  "Perform a series of calculations on the input value x that calculates the answer to the universe and everything."
+  [x]
+  (->> x
+       ((fn [n] (* n n)))
+       ((fn [n] (+ n 10)))
+       ((fn [n] (/ n 2)))
+       ((fn [n] (- n 5)))))
+```
+
+Use appropriate indentation, meaningful names for functions and variables, and write clear docstrings to explain the purpose of your code. Break down complex expressions into smaller, more manageable parts, and use threading macros (`->`, `->>`) to improve readability and maintainability. Write tests for your code using `clojure.test` or other testing libraries to ensure correctness and reliability. Use linting tools like `clj-kondo` to catch common mistakes and enforce best practices in your code.
+
 ### Solve Real Problems
 
 Familiarize yourself with the tools commonly used in Clojure projects, such as Leiningen or `deps.edn`. Learn to organize namespaces effectively to separate functionality and maintain clean code. Additionally, explore dependency management and build tools like `tools.build` to streamline your project workflows.
@@ -143,3 +164,4 @@ By tackling these steps, you’ll not only grow more comfortable with Clojure bu
 - [Exercism Clojure Track](https://exercism.io/tracks/clojure) - Practice exercises for Clojure learners
 - [ClojureVerse](https://clojureverse.org/) - Community discussion forum
 - [Practicalli Clojure](https://practical.li/) - Practical guide to Clojure and ClojureScript development
+```
