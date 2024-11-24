@@ -86,7 +86,7 @@ const Thumbnail = ({
       <span
         className={twMerge(
           'relative bg-no-repeat bg-center bg-cover w-full block',
-          isHero ? 'h-[450px] xl:h-[600px] 2xl:h-[70vh]' : 'h-[350px]',
+          isHero ? 'h-[450px] xl:h-[600px] 2xl:h-[80vh]' : 'h-[350px]',
           isHero ? 'bg-scroll' : 'border dark:border-gray-800',
           className,
         )}
