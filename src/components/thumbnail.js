@@ -2,7 +2,7 @@ import React from 'react';
 import DownloadLogo from '@images/svgs/download.svg';
 import UnsplashLogo from '@images/svgs/unsplash.svg';
 import Anchor from '@components/anchor';
-import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
 
 const getCreditTitle = (source, attribute) => {
   if (!source && !attribute) return '';
@@ -42,12 +42,12 @@ const Credit = ({ source, link, text }) => {
 
 const ExternalThumbnail = ({ to, alt, src, className, isHero }) => {
   return (
-    <Anchor to={to} title={alt} className={classNames('flex', className)}>
+    <Anchor to={to} title={alt} className={twMerge('flex', className)}>
       <img
         alt={alt}
         src={src}
         width={1200}
-        className={classNames(
+        className={twMerge(
           'relative object-cover w-full shadow-lg border border-gray-400 dark:border-gray-600',
           isHero ? 'h-[450px] xl:h-[750px]' : 'w-96',
           isHero ? '' : 'dark:border-gray-800',
@@ -84,10 +84,10 @@ const Thumbnail = ({
     const src = require(`@images/covers/${image}`).default;
     return (
       <span
-        className={classNames(
-          'relative bg-no-repeat bg-center w-full block bg-cover',
+        className={twMerge(
+          'relative bg-no-repeat bg-center bg-cover w-full block',
           isHero ? 'h-[450px] xl:h-[600px] 2xl:h-[70vh]' : 'h-[350px]',
-          isHero ? 'bg-fixed' : 'border dark:border-gray-800',
+          isHero ? 'bg-scroll' : 'border dark:border-gray-800',
           className,
         )}
         style={{
