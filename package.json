@@ -16,7 +16,8 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "firebase:deploy": "firebase deploy",
     "firebase:emulators": "firebase emulators:start",
-    "build:images": "node -e 'require(\"./build/images.js\").bulk()'"
+    "build:images": "node -e 'require(\"./build/images.js\").bulk()'",
+    "deploy": "npm run clean && npm run build && netlify deploy --prod && npm run firebase:deploy"
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.0",
