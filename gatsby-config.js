@@ -180,10 +180,13 @@ module.exports = {
             },
           },
           {
+            resolve: 'gatsby-remark-external-links',
+          },
+          {
             resolve: 'gatsby-transform-link',
             options: {
               prefix: '',
-              suffix: '?utm_source=curiousprogrammer.com&utm_medium=link',
+              suffix: '?utm_source=curiousprogrammer.dev&utm_medium=link',
             },
           },
           {
