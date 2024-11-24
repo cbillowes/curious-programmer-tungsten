@@ -10,7 +10,7 @@ tags:
   - Personal Development
   - Clojure
 creditSource: ChatGPT
-creditLink:
+creditLink: https://chat.openai.com/
 abstract: I went from a .NET comfort zone to Clojure’s minimalist world, embracing challenges and growth. It was humbling yet rewarding—proof that change leads to incredible opportunities.
 ---
 
