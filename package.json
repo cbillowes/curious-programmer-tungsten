@@ -8,9 +8,9 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "netlify dev --port 8888",
+    "develop": "GATSBY_CPU_COUNT=8 netlify dev --port 8888",
     "start": "gatsby develop",
-    "build": "npm run build:images && gatsby build",
+    "build": "GATSBY_CPU_COUNT=8 npm run build:images && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
