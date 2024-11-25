@@ -40,9 +40,16 @@ const Credit = ({ source, link, text }) => {
   );
 };
 
-const ExternalThumbnail = ({ to, alt, src, className, isHero, dropBorder }) => {
+const ExternalThumbnail = ({
+  to,
+  alt,
+  src,
+  className,
+  isHero = false,
+  dropBorder = false,
+}) => {
   return (
-    <Anchor to={to} title={alt} className={twMerge('flex', className)}>
+    <Anchor to={to} title={alt} className="flex">
       <img
         alt={alt}
         src={src}
@@ -51,7 +58,8 @@ const ExternalThumbnail = ({ to, alt, src, className, isHero, dropBorder }) => {
           'relative object-cover w-full shadow-lg border border-gray-400 dark:border-gray-600',
           isHero ? 'h-[450px] xl:h-[750px]' : 'h-[350px]',
           isHero ? '' : 'border-8 dark:border-gray-800',
-          dropBorder && 'border-0',
+          dropBorder ? 'border-0' : '',
+          className,
         )}
       />
     </Anchor>
@@ -67,8 +75,8 @@ const Thumbnail = ({
   link,
   component,
   className,
-  dropCredit,
-  dropBorder,
+  dropCredit = false,
+  dropBorder = false,
 }) => {
   if (component === 'url')
     return (
@@ -79,6 +87,7 @@ const Thumbnail = ({
         title={alt}
         className={className}
         isHero={isHero}
+        dropBorder={dropBorder}
       />
     );
 
