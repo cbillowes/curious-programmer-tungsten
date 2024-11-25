@@ -40,7 +40,7 @@ const Credit = ({ source, link, text }) => {
   );
 };
 
-const ExternalThumbnail = ({ to, alt, src, className, isHero }) => {
+const ExternalThumbnail = ({ to, alt, src, className, isHero, dropBorder }) => {
   return (
     <Anchor to={to} title={alt} className={twMerge('flex', className)}>
       <img
@@ -49,8 +49,9 @@ const ExternalThumbnail = ({ to, alt, src, className, isHero }) => {
         width={1200}
         className={twMerge(
           'relative object-cover w-full shadow-lg border border-gray-400 dark:border-gray-600',
-          isHero ? 'h-[450px] xl:h-[750px]' : 'w-96',
-          isHero ? '' : 'dark:border-gray-800',
+          isHero ? 'h-[450px] xl:h-[750px]' : 'h-[350px]',
+          isHero ? '' : 'border-8 dark:border-gray-800',
+          dropBorder && 'border-0',
         )}
       />
     </Anchor>
@@ -67,6 +68,7 @@ const Thumbnail = ({
   component,
   className,
   dropCredit,
+  dropBorder,
 }) => {
   if (component === 'url')
     return (
@@ -87,7 +89,8 @@ const Thumbnail = ({
         className={twMerge(
           'relative bg-no-repeat bg-center bg-cover w-full block',
           isHero ? 'h-[450px] xl:h-[600px] 2xl:h-[80vh]' : 'h-[350px]',
-          isHero ? 'bg-scroll' : 'border dark:border-gray-800',
+          isHero ? 'bg-scroll' : 'border-8 dark:border-gray-800',
+          dropBorder && 'border-0',
           className,
         )}
         style={{
