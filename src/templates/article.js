@@ -137,8 +137,8 @@ const ArticleTemplate = ({ data }) => {
               </article>
             </div>
             <section className="mt-8 p-8">
-              <h2 className="mb-4 mx-2 text-center">Share this article on…</h2>
-              <ul className="flex gap-6 justify-center items-center flex-wrap w-full">
+              <h2 className="mb-8 mx-2 text-center">Share this article on…</h2>
+              <ul className="flex gap-8 justify-center items-center flex-wrap w-full">
                 <li>
                   <a
                     href={`https://tootpick.org/#text=${encodedTitle}%20-%20${encodedUrl}`}
