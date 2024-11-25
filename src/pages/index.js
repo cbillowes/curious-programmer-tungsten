@@ -14,11 +14,7 @@ import Subscribe from '@components/subscribe';
 const IndexPage = ({ data }) => {
   const { featuredArticles, latestArticles } = data;
   const edges = featuredArticles.edges;
-  const groupedBy = 3;
-  const groupedEdges = [];
-  for (let i = 0; i < edges.length; i += groupedBy) {
-    groupedEdges.push(edges.slice(i, i + groupedBy));
-  }
+
   return (
     <Layout group="/" route="/">
       <div className="flex">
@@ -636,75 +632,70 @@ const IndexPage = ({ data }) => {
           </h2>
           <div>
             <div className="relative">
-              {groupedEdges.map((group, index) => (
-                <div
-                  key={index}
-                  className="bg-white duration-700 ease-in-out dark:bg-gray-900 mb-4"
-                >
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-                    {group.map(({ node }) => (
-                      <article
-                        key={node.fields.slug}
-                        className="relative p-4 mx-auto w-full bg-white rounded-lg shadow-md border border-gray-200 dark:border-gray-800 dark:bg-gray-800"
-                      >
-                        <Ribbon>#{node.fields.number}</Ribbon>
-                        <Link to={node.fields.slug}>
-                          <Thumbnail {...node.fields.hero} />
-                        </Link>
-                        <div className="flex items-center mb-3 space-x-2">
-                          <StaticImage
-                            className="w-8 h-8 rounded-full"
-                            src="../images/avatar.png"
-                            alt="Clarice Bouwer"
-                          />
-                          <div className="font-medium dark:text-white">
-                            <div>Clarice Bouwer</div>
-                            <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                              <Metadata
-                                date={node.fields.date}
-                                timeToRead={node.timeToRead}
-                                type={node.fields.type}
-                              />
-                            </div>
+              <div className="bg-white duration-700 ease-in-out dark:bg-gray-900 mb-4">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                  {edges.map(({ node }) => (
+                    <article
+                      key={node.fields.slug}
+                      className="relative p-4 mx-auto w-full bg-white rounded-lg shadow-md border border-gray-200 dark:border-gray-800 dark:bg-gray-800"
+                    >
+                      <Ribbon>#{node.fields.number}</Ribbon>
+                      <Link to={node.fields.slug}>
+                        <Thumbnail {...node.fields.hero} />
+                      </Link>
+                      <div className="flex items-center mb-3 space-x-2">
+                        <StaticImage
+                          className="w-8 h-8 rounded-full"
+                          src="../images/avatar.png"
+                          alt="Clarice Bouwer"
+                        />
+                        <div className="font-medium dark:text-white">
+                          <div>Clarice Bouwer</div>
+                          <div className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                            <Metadata
+                              date={node.fields.date}
+                              timeToRead={node.timeToRead}
+                              type={node.fields.type}
+                            />
                           </div>
                         </div>
-                        <h3 className="mb-2 text-xl font-bold tracking-tighter text-gray-900 lg:text-2xl dark:text-white">
-                          <Link to={node.fields.slug}>
-                            {node.frontmatter.title}
-                          </Link>
-                        </h3>
-                        <p className="mb-3 text-gray-500 dark:text-gray-400">
-                          {node.excerpt}
-                        </p>
-                        <Link
-                          to={node.fields.slug}
-                          className="inline-flex items-center font-medium
+                      </div>
+                      <h3 className="mb-2 text-xl font-bold tracking-tighter text-gray-900 lg:text-2xl dark:text-white">
+                        <Link to={node.fields.slug}>
+                          {node.frontmatter.title}
+                        </Link>
+                      </h3>
+                      <p className="mb-3 text-gray-500 dark:text-gray-400">
+                        {node.excerpt}
+                      </p>
+                      <Link
+                        to={node.fields.slug}
+                        className="inline-flex items-center font-medium
                           text-primary-600 hover:text-blue-800
                           dark:text-primary-500 hover:dark:text-blue-600 hover:no-underline"
+                      >
+                        {' '}
+                        Read more{' '}
+                        <svg
+                          className="mt-px ml-1 w-3 h-3"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 14 10"
                         >
-                          {' '}
-                          Read more{' '}
-                          <svg
-                            className="mt-px ml-1 w-3 h-3"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 14 10"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M1 5h12m0 0L9 1m4 4L9 9"
-                            />
-                          </svg>
-                        </Link>
-                      </article>
-                    ))}
-                  </div>
+                          <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9"
+                          />
+                        </svg>
+                      </Link>
+                    </article>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
