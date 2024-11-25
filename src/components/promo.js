@@ -8,7 +8,7 @@ const LatestArticles = ({ articles }) => {
     const { slug, number, hero } = node?.fields;
     const { title } = node?.frontmatter;
     return (
-      <Link className="relative w-[200px]" to={slug} key={slug}>
+      <Link className="relative w-[200px] mt-4" to={slug} key={slug}>
         <Thumbnail
           number={number}
           to={slug}
