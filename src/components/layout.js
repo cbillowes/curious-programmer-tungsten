@@ -6,7 +6,6 @@ import Header from '@components/header';
 import Footer from '@components/footer';
 import Sidebar from '@components/sidebar';
 import classNames from 'classnames';
-import { Script } from 'gatsby';
 
 const Layout = ({ className, children, setTheme, theme, baseRoute, group }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -37,12 +36,6 @@ const Layout = ({ className, children, setTheme, theme, baseRoute, group }) => {
           { to: '/', name: 'Home' },
           { to: '/about', name: 'About' },
           { to: '/resume', name: 'Resume' },
-          { name: 'Daily.dev',
-            items: [
-              { to: 'https://dly.to/LD032K64hKq', name: 'Register' },
-              { to: 'https://dly.to/1L0EwBOqg4w', name: 'Follow'},
-            ]
-           },
           {
             to: '/blog',
             name: 'Blog',
@@ -57,6 +50,27 @@ const Layout = ({ className, children, setTheme, theme, baseRoute, group }) => {
           { to: '/scribbles', name: 'Scribbles' },
           { to: '/courses', name: 'Courses' },
           { to: '/tags', name: 'Tags' },
+          { to: 'https://dly.to/LD032K64hKq', name: 'Daily.dev' },
+          {
+            name: 'Connect with me',
+            items: [
+              { to: 'https://www.linkedin.com/in/cbouwer/', name: 'LinkedIn' },
+              { to: 'https://github.com/cbillowes', name: 'GitHub' },
+              { to: 'https://dly.to/1L0EwBOqg4w', name: 'Daily.dev' },
+              {
+                to: 'https://mastodon.social/@curiousprogrammer',
+                name: 'Mastodon',
+              },
+              {
+                to: 'https://techhub.social/@curiousprogrammer',
+                name: 'Techhub',
+              },
+              {
+                to: 'https://bsky.app/profile/curiousprogrammer.bsky.social',
+                name: 'Bluesky',
+              },
+            ],
+          },
           {
             name: 'Legalities',
             items: [
