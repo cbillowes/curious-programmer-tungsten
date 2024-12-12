@@ -2,7 +2,7 @@
 title: 'Owning the Chaos: A Simple Guide to Tackling Obscure Errors'
 cover: errors.webp
 featured: true
-date: 2024-11-24
+date: 2024-12-12
 tags:
   - Communication
   - Continuous Learning
