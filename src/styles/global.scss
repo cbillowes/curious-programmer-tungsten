@@ -65,7 +65,7 @@
   }
 
   h4 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   h5 {
@@ -73,10 +73,16 @@
   }
 
   p,
-  li,
   td,
   th {
     margin-bottom: 2rem;
+    line-height: 2.25rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  li {
+    margin-bottom: 0.1rem;
     line-height: 2.25rem;
     font-size: 1.5rem;
     font-weight: 300;
@@ -118,13 +124,20 @@
   ul,
   ol {
     margin-bottom: 1.5rem;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
     list-style-type: disc;
 
     li {
-      margin-bottom: 0.5rem;
       padding-left: 0.5rem;
+
+      p {
+        margin-bottom: 0;
+      }
     }
+  }
+
+  ol {
+    list-style-type: decimal;
   }
 
   blockquote {
