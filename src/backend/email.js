@@ -4,7 +4,7 @@ const Mustache = require('mustache');
 const EMAIL_UNAME = process.env.EMAIL_UNAME;
 const EMAIL_PWD = process.env.EMAIL_PWD;
 
-module.exports.sendEmail = async (email, subject, text, html) => {
+const send = async (email, subject, text, html) => {
   console.log(`Sending ${subject}...`);
 
   const transporter = nodemailer.createTransport({
@@ -29,6 +29,10 @@ module.exports.sendEmail = async (email, subject, text, html) => {
   return info;
 };
 
+module.exports.sendEmail = async (email, subject, text, html) => {
+  send(email, subject, text, html);
+};
+
 module.exports.sendEmailFromTemplate = async (
   config,
   email,
@@ -43,5 +47,5 @@ module.exports.sendEmailFromTemplate = async (
     body: Mustache.render(body, data),
   });
   const text = html.replace(/(<([^>]+)>)/gi, '');
-  return await sendEmail(email, subject, text, html);
+  return await send(email, subject, text, html);
 };
