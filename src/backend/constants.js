@@ -1,8 +1,4 @@
-require('dotenv').parse(".env");
-
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').parse(".env.production")
-}
+require('dotenv').config();
 
 module.exports.DOMAIN = process.env.DOMAIN;
 module.exports.SENDER_TOKEN = process.env.SENDER_TOKEN;
