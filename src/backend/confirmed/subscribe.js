@@ -1,11 +1,11 @@
-require('dotenv').config();
 const { db } = require('../firebase');
 const { sendEmailFromTemplate } = require('../email');
-
-const DOMAIN = process.env.DOMAIN;
-const SENDER_TOKEN = process.env.SENDER_TOKEN;
-const NEWSLETTER_GROUP_ID = 'avDxqL';
-const ENDPOINT = new URL('https://api.sender.net/v2/subscribers');
+const {
+  DOMAIN,
+  SENDER_TOKEN,
+  NEWSLETTER_GROUP_ID,
+  NEWSLETTER_ENDPOINT,
+} = require('../constants');
 
 const subscribeToSender = async (token, email) => {
   let headers = {
@@ -20,7 +20,7 @@ const subscribeToSender = async (token, email) => {
     fields: { token },
   };
 
-  const response = await fetch(ENDPOINT, {
+  const response = await fetch(NEWSLETTER_ENDPOINT, {
     method: 'POST',
     headers,
     body: JSON.stringify(data),

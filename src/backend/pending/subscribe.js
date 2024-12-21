@@ -2,8 +2,8 @@ require('dotenv').config();
 const { uuidv7 } = require('uuidv7');
 const { db } = require('../firebase');
 const { sendEmailFromTemplate } = require('../email');
+const { DOMAIN } = require('../constants');
 
-const DOMAIN = process.env.DOMAIN;
 const status = 'Requested to subscribe';
 
 module.exports.subscribe = async (email, referrer, config) => {
