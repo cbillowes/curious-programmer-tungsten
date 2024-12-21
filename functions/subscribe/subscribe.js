@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { subscribe } = require('../../src/backend/confirmed/subscribe');
+const { report } = require('../../src/backend/error');
 
 // netlify functions:invoke subscribe --payload '{"token": ""}' --port 8888
 
@@ -23,7 +24,7 @@ module.exports.handler = async (event, context) => {
       },
     };
   } catch (e) {
-    console.error(e);
+    await report(e);
     return {
       statusCode: 302,
       headers: {
