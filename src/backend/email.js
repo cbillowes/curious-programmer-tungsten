@@ -4,7 +4,7 @@ const Mustache = require('mustache');
 const EMAIL_UNAME = process.env.EMAIL_UNAME;
 const EMAIL_PWD = process.env.EMAIL_PWD;
 
-const sendEmail = async (email, subject, text, html) => {
+module.exports.sendEmail = async (email, subject, text, html) => {
   console.log(`Sending ${subject}...`);
 
   const transporter = nodemailer.createTransport({
