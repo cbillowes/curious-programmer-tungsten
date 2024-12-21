@@ -4,8 +4,8 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').parse(".env.production")
 }
 
-export const DOMAIN = process.env.DOMAIN;
-export const SENDER_TOKEN = process.env.SENDER_TOKEN;
-export const NEWSLETTER_GROUP_ID = 'avDxqL';
-export const NEWSLETTER_ENDPOINT = new URL('https://api.sender.net/v2/subscribers');
+module.exports.DOMAIN = process.env.DOMAIN;
+module.exports.SENDER_TOKEN = process.env.SENDER_TOKEN;
+module.exports.NEWSLETTER_GROUP_ID = 'avDxqL';
+module.exports.NEWSLETTER_ENDPOINT = new URL('https://api.sender.net/v2/subscribers');
 
