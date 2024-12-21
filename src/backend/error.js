@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { uuidv7 } = require('uuidv7');
-const { db } = require('../firebase');
+const { db } = require('./firebase');
 
 module.exports.report = async (error) => {
   const id = uuidv7();
