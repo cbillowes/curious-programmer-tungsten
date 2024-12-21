@@ -8,7 +8,7 @@ module.exports.report = async (error) => {
   const errorRef = db.collection('errors').doc(id);
   await errorRef.set({
     message: error.message,
-    error: error.toString(),
+    error: error.stack,
     created: new Date(),
   });
   return id;
