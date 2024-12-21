@@ -1,6 +1,4 @@
 const nodemailer = require('nodemailer');
-const fs = require('fs');
-const path = require('path');
 const Mustache = require('mustache');
 
 const EMAIL_UNAME = process.env.EMAIL_UNAME;
