@@ -19,6 +19,7 @@ import {
   FaWhatsappSquare,
 } from 'react-icons/fa';
 import { FaBluesky, FaSquareThreads, FaTelegram } from 'react-icons/fa6';
+import 'katex/dist/katex.min.css';
 
 export const query = graphql`
   query ArticleTemplateQuery($slug: String!) {
