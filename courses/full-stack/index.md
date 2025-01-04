@@ -62,4 +62,4 @@ or simply create a [Pull Request][pr] on GitHub.
 - [Pull Request][pr] - This website on GitHub
 
 [full-stack-repo]: https://github.com/cbillowes/stargazers
-[pr]: https://github.com/cbillowes/curious-programmer-copernicium
+[pr]: https://github.com/cbillowes/curious-programmer-tungsten

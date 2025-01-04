@@ -53,4 +53,4 @@ or simply create a [Pull Request][pr] on GitHub.
 [netlify]: https://docs.netlify.com/get-started/
 [final-product]: https://my-primitive-todo-app.netlify.app/
 [todo-repo]: https://github.com/cbillowes/my-primitive-todo-app
-[pr]: https://github.com/cbillowes/curious-programmer-copernicium
+[pr]: https://github.com/cbillowes/curious-programmer-tungsten
