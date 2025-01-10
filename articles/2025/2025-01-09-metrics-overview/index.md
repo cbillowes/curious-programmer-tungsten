@@ -10,7 +10,6 @@ tags:
   - Process
 creditSource: GPT-4o
 creditLink: https://chatgpt.com/
-abstract:
 ---
 
 Do you see the light at the end of your backlog?
