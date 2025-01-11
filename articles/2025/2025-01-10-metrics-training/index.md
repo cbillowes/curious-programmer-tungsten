@@ -16,9 +16,9 @@ In the [previous](/blog/optimizing-software-delivery-the-power-of-metrics-and-le
 
 John joins and is immediately drowning in the a swirl of perpetual chaos. Onboarding is an afterthought, the code is in bits and pieces here and there with no (or at least, outdated) documentation, and the team is too busy to help effectively. He is left to fend for himself, trying to piece together the system and the processes.
 
-Little by little, we will chip away at the challenges Extreme Z faces and try to bring order to the chaos.
+Little by little, we attempt to chip away at the challenges Extreme Z faces and try to bring order to the chaos.
 
-A quick recap. We outlined 7 phases of their entire end-to-end software delivery process for Extreme Z:
+A quick recap though. We outlined 7 phases of their entire end-to-end software delivery process:
 
 1. Training
 2. Design
@@ -28,22 +28,28 @@ A quick recap. We outlined 7 phases of their entire end-to-end software delivery
 6. Monitoring
 7. Support
 
-In this article, we’ll zoom into the metrics deduced in the training phase. We’ll explore how to reduce waste, build clarity, and measure impact.
+In this article, we’ll zoom into the metrics dedicated to the training phase. We’ll explore how to reduce waste, build clarity, and measure impact.
 
-> **Crucially important.** I'm no expert on this topic. I'm simply curious about the data. What should we be tracking and how do we get that information? This thought experiment is my way of exploring the possibilities. Any input is gratefully welcomed.
+> **Crucially important.** I'm no expert on this. I'm simply curious about the process and how to get to the juicy data bits. This thought experiment is my way of exploring the possibilities - not a conclusive guide to solving these complex problems. All input is welcomed.
 
-## The Why?!
+## The Process
 
 Training is important to build and invest in skills, share knowledge with the team and onboard new talent.
-We want to empower people to obtain & retain skills (invest in themselves) which get them to do their jobs well, work autonomously, eliminate key-person dependencies and reduce the time it takes for new hires to become productive. This is a constructive and healthy part of the culture geared to delivering value to the business and the customer.
+We want to empower people to obtain & retain skills, invest in them, so they can do better in their jobs, work autonomously, eliminate key-person dependencies and reduce the time it takes for new hires to become productive. This is a constructive and healthy part of the culture geared to delivering value to the business and the customer.
+
+The problem is that Extreme Z is not doing this effectively. They are not investing in training, onboarding is a mess, and the team is too busy to help. This is leading to high churn rates, low productivity, high defect rates and complete burn out.
 
 ## Reduce Waste
 
-All waste in this phase has a ripple effect into other phases of the process as they interconnect with productivity and quality. Waste is anything that doesn't add value to the customer or the business. In this case, the customer is the development team and the talent being trained or up-skilled are supposed to be the value-add.
+What is waste? Waste is anything that doesn't add value to the customer or the business. The engineering team is a service provider to the business. The team should be productive releasing quality features to the customer to bring in money to the business. This waste ripples through the entire development process resulting in the problems mentioned before.
+
+What could we potentially do to reduce waste in the training phase?
 
 ### Create a Clear Learning Path
 
-Not having a clear path for onboarding or up-skilling will waste time, money and energy on curating or buying course material that doesn't equip the person with the essential skills they need for the job. Curate the essentials and keep building, like with Lego, on top of that.
+Know the essential skills required for each position in the team. Curate or buy learning material to train, up-skill or revise these skills.
+
+You could write living documentation describing the domain, system, architecture, and processes. This can be in the form of wikis, READMEs, internal documentation developed using tools like [Docusaurus](https://docusaurus.io/), [road maps](https://roadmap.sh) and media-rich training material using platforms like [Teachify](https://teachify.com/).
 
 ### Pay as You Go
 
@@ -54,10 +60,6 @@ Subscription-based learning can lead to high volumes of waste as people's schedu
 ### Dedicated Learning Blocks
 
 Dedicate learning time for each person a day. This could be in the form of a "learning hour" or "learning day" where the person can focus on their training without interruptions.
-
-### Create Your Own Material
-
-Write effective documentation describing the domain, system, architecture, and processes. This can be in the form of a wiki, READMEs, or internal documentation. Create onboarding or up-skilling road maps ([roadmap.sh](https://roadmap.sh)) and media-rich training material geared for both new and existing talent.
 
 ### Pair/Mob Program on Features
 
