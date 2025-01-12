@@ -12,11 +12,11 @@ creditSource: GPT-4o
 creditLink: https://chatgpt.com/
 ---
 
-In the [previous](/blog/optimizing-software-delivery-the-power-of-metrics-and-lean-six-sigma/) article, we conducted the beginning of a thought experiment for a team working in serious chaos. We'll refer to the team as Extreme Z.
+In my [previous](/blog/optimizing-software-delivery-the-power-of-metrics-and-lean-six-sigma/) article, we conducted the beginning of my thought experiment for a team working in serious chaos. We'll refer to the team as Extreme Z.
 
 John joins and is immediately drowning in the a swirl of perpetual chaos. Onboarding is an afterthought, the code is in bits and pieces here and there with no (or at least, outdated) documentation, and the team is too busy to help effectively. He is left to fend for himself, trying to piece together the system and the processes.
 
-Little by little, we attempt to chip away at the challenges Extreme Z faces and try to bring order to the chaos.
+Little by little, we attempt to chip away at the challenges Extreme Z faces and try to bring order to the chaos using the bits we know about Lean Six Sigma.
 
 A quick recap though. We outlined 7 phases of their entire end-to-end software delivery process:
 
@@ -30,24 +30,64 @@ A quick recap though. We outlined 7 phases of their entire end-to-end software d
 
 In this article, we’ll zoom into the metrics dedicated to the training phase. We’ll explore how to reduce waste, build clarity, and measure impact.
 
-> **Crucially important.** I'm no expert on this. I'm simply curious about the process and how to get to the juicy data bits. This thought experiment is my way of exploring the possibilities - not a conclusive guide to solving these complex problems. All input is welcomed.
+> **Crucially important.** I'm no expert on this. I'm simply curious about the process and how to get to the juicy data bits so that we can measure improvements. This thought experiment is my way of exploring the possibilities - not a conclusive guide to solving these complex problems. Your input is very much welcomed.
 
-## The Process
+## Training as a Process
 
-Training is important to build and invest in skills, share knowledge with the team and onboard new talent.
-We want to empower people to obtain & retain skills, invest in them, so they can do better in their jobs, work autonomously, eliminate key-person dependencies and reduce the time it takes for new hires to become productive. This is a constructive and healthy part of the culture geared to delivering value to the business and the customer.
+It might sound strange that training is a process on its own but it is an essential step to build and invest in skills, share knowledge with the team and onboard new talent. This phase forms part of the life cycle of new hires and people in the team who wish to up-skill or revise their skills.
+
+We want to empower talent in the team to obtain & retain skills, invest in them so they can do better in their jobs, work autonomously, eliminate key-person dependencies and reduce the time it takes for new hires to become productive. This is a constructive and healthy part of the culture that directly delivers value to the team and business.
+
+## The Problem
 
 The problem is that Extreme Z is not doing this effectively. They are not investing in training, onboarding is a mess, and the team is too busy to help. This is leading to high churn rates, low productivity, high defect rates and complete burn out.
 
-## Reduce Waste
+## Waste
 
-What is waste? Waste is anything that doesn't add value to the customer or the business. The engineering team is a service provider to the business. The team should be productive releasing quality features to the customer to bring in money to the business. This waste ripples through the entire development process resulting in the problems mentioned before.
+Waste refers to any activity, process, or resource that consumes time, effort, or money but does not add value to the customer or the business. In Lean Six Sigma (LSS), there are 8 types of waste (**TIMWOODS**):
 
-What could we potentially do to reduce waste in the training phase?
+### Transportation
+
+> The unnecessary movement of materials, tools, or information between locations.
+
+Waste exists if people have to constantly move between places to get access to information like Jira, GitHub, Slack, Teams etc. This jagged experience wastes time trying to find information and the overhead of context switching is disorienting and overwhelming. Consider consolidating everything into a single entry point with easy access, even if it's just a page with a list of links to start off with.
+
+### Inventory
+
+> Too much or unused resources and content.
+
+If you have information that is still documented that is now outdated or irrelevant to your team then this waste can be eliminated by regularly auditing and purging unnecessary information.
+
+Keep your documentation living. Make sure it describes the domain, system, architecture, and processes. Define a glossary of ubitiquous language. You can create Wikis, READMEs, internal documentation developed using tools like [Docusaurus](https://docusaurus.io/), [road maps](https://roadmap.sh) and media-rich training material using platforms like [Teachify](https://teachify.com/) but keep it alive.
+
+### Motion
+
+> The unnecessary movement of people or processes during a task.
+
+
+
+### Waiting
+
+Reduce key person dependencies by sharing knowledge and skills across the team.
+
+### Overproduction
+
+Streamline your material catering only for essential skills to the team.
+
+
+### Over-processing
+
+### Defects
+
+### Skills
+
+Quality control documentation.
+
+
+
 
 ### Create a Clear Learning Path
 
-Know the essential skills required for each position in the team. Curate or buy learning material to train, up-skill or revise these skills.
 
 You could write living documentation describing the domain, system, architecture, and processes. This can be in the form of wikis, READMEs, internal documentation developed using tools like [Docusaurus](https://docusaurus.io/), [road maps](https://roadmap.sh) and media-rich training material using platforms like [Teachify](https://teachify.com/).
 
