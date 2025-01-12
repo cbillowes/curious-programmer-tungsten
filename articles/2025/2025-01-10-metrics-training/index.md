@@ -44,29 +44,37 @@ The problem is that Extreme Z is not doing this effectively. They are not invest
 
 ## Waste
 
-Waste refers to any activity, process, or resource that consumes time, effort, or money but does not add value to the customer or the business. In Lean Six Sigma (LSS), there are 8 types of waste (**TIMWOODS**):
+Waste refers to any activity, process, or resource that consumes time, effort, or money but does not add value to the customer or the business. In Lean Six Sigma (LSS), there are 8 types of waste (referred to as **TIMWOODS** or **DOWNTIME**). Let's break each category into pieces associated with our training context:
 
 ### Transportation
 
 > The unnecessary movement of materials, tools, or information between locations.
 
-Waste exists if people have to constantly move between places to get access to information like Jira, GitHub, Slack, Teams etc. This jagged experience wastes time trying to find information and the overhead of context switching is disorienting and overwhelming. Consider consolidating everything into a single entry point with easy access, even if it's just a page with a list of links to start off with.
+Think of the jagged experience of hopping between tools or platforms like email, Jira, GitHub, Slack, Teams etc to access information. It takes time to remember or figure out where things are and how to access them. It can also be overwhelming and disorienting, especially during onboarding.
+
+Why not consolidate everything into a single entry point with easy access? Even if it's just a simple "Getting Started" page with a list of links to start off with.
 
 ### Inventory
 
-> Too much or unused resources and content.
+> Accumulation of materials, information and resources that are not actively used or processed.
 
-If you have information that is still documented that is now outdated or irrelevant to your team then this waste can be eliminated by regularly auditing and purging unnecessary information.
+Imagine all the effort you have put into onboarding a new hire but over time the documentation is not kept up to date, or there is so much information that it's too overwhelming to maintain or process.
 
-Keep your documentation living. Make sure it describes the domain, system, architecture, and processes. Define a glossary of ubitiquous language. You can create Wikis, READMEs, internal documentation developed using tools like [Docusaurus](https://docusaurus.io/), [road maps](https://roadmap.sh) and media-rich training material using platforms like [Teachify](https://teachify.com/) but keep it alive.
+Consider a clear learning path focusing on essential skills and requirements. You can create Wikis, READMEs, internal documentation developed using tools like [Docusaurus](https://docusaurus.io/), [road maps](https://roadmap.sh) and media-rich training material using platforms like [Teachify](https://teachify.com/) but have a consolidated place to access it all.
+
+Audit the documentation regularly. Fix what is outdated or irrelevant. Bake changes to documentation into user stories to keep the documentation living. Be sure to have described the domain, system, architecture, and processes. Define a glossary of ubitiquous language.
 
 ### Motion
 
 > The unnecessary movement of people or processes during a task.
 
+Moving a new hire to a task that is more complicated than they can handle could be a recipe for disaster. Why not move people in the team around to focus on cross-pollination of skills instead? Pair or mob programming is process where two or more people work on the same feature or bug together. This is excellent for knowledge sharing, learning and new hires.
 
+Systems can get complex and it's important to have more than one person who understands how it works. You can pair up more "senior" team members with "junior" team members to guide them through the process. The level of seniority can be loosely based on experience in the system, not necessarily age or experience in the field.
 
 ### Waiting
+
+> Idle time when a person, process, or task is delayed due to dependencies or inefficiencies.
 
 Reduce key person dependencies by sharing knowledge and skills across the team.
 
@@ -85,12 +93,6 @@ Quality control documentation.
 
 
 
-
-### Create a Clear Learning Path
-
-
-You could write living documentation describing the domain, system, architecture, and processes. This can be in the form of wikis, READMEs, internal documentation developed using tools like [Docusaurus](https://docusaurus.io/), [road maps](https://roadmap.sh) and media-rich training material using platforms like [Teachify](https://teachify.com/).
-
 ### Pay as You Go
 
 Formal course material like certified training courses, like Google Cloud Certifications, or courses with completion certificates, like [Udemy](https://www.udemy.com) or [Pluralsight](https://pluralsight.com) courses show an investment in individual skills and is also nice to add to a resume - which should be encouraged.
@@ -103,7 +105,7 @@ Dedicate learning time for each person a day. This could be in the form of a "le
 
 ### Pair/Mob Program on Features
 
-An excellent form of cross-pollination and learning opportunity comes for free in the form of pair or mob programming. This is where two or more people work on the same feature or bug together. Systems can get complex and it's important to have more than one person who understands how it works. You can pair up more "senior" team members with "junior" team members to guide them through the process. The level of seniority can be loosely based on experience in the system, not necessarily age or experience in the field.
+
 
 ### Run Informal Sessions
 
