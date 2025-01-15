@@ -34,83 +34,67 @@ In this article, we’ll zoom into the metrics dedicated to the training phase. 
 
 ## Training as a Process
 
-It might sound strange that training is a process on its own but it is an essential step to build and invest in skills, share knowledge with the team and onboard new talent. This phase forms part of the life cycle of new hires and people in the team who wish to up-skill or revise their skills.
+It feels awkward that training is a process on its own but it is an essential step in the flow to build and invest in skills, share knowledge with the team and onboard new talent. It impacts new hires and up-skilling for new features.
 
-We want to empower talent in the team to obtain & retain skills, invest in them so they can do better in their jobs, work autonomously, eliminate key-person dependencies and reduce the time it takes for new hires to become productive. This is a constructive and healthy part of the culture that directly delivers value to the team and business.
+The team wants to obtain, invest and retain talent. People can do their jobs better, work autonomously, eliminate key-person dependencies and reduce the time to take to become productive.
 
 ## The Problem
 
-The problem is that Extreme Z is not doing this effectively. They are not investing in training, onboarding is a mess, and the team is too busy to help. This is leading to high churn rates, low productivity, high defect rates and complete burn out.
+The problem is that Extreme Z is not doing this effectively. They are not investing in training, onboarding is a mess, and the team is too busy to help. This is leading to high churn rates, low productivity, low morale, high defect rates and burn out.
 
-## Waste
+## Understand Waste
 
-Waste refers to any activity, process, or resource that consumes time, effort, or money but does not add value to the customer or the business. In Lean Six Sigma (LSS), there are 8 types of waste (referred to as **TIMWOODS** or **DOWNTIME**). Let's break each category into pieces associated with our training context:
+In Lean Six Sigma, there are 8 types of waste (referred to as **TIMWOODS** or **DOWNTIME**). They mean the same but with differently phrased words.
+Waste refers to anything (activity, process, or resource) that consumes time, effort, or money but does not add value to the customer or the business.
 
-### Transportation
+The categories are:
 
-> The unnecessary movement of materials, tools, or information between locations.
+1. **Transportation**: The unnecessary movement of materials, tools, or information between locations.
+2. **Inventory**: Accumulation of materials, information and resources that are not actively used or processed.
+3. **Motion**: The unnecessary movement of people or processes during a task.
+4. **Waiting**: Idle time when a person, process, or task is delayed due to dependencies or inefficiencies.
+5. **Overproduction**: Producing more than what is needed or producing too early.
+6. **Over-processing (Excessive processing)**: Doing more work than what is required to complete a task.
+7. **Defects**: Errors, rework, or mistakes that require additional time, effort, or resources to fix.
+8. **Skills (Non-utilized talent)**: Under-utilization of skills, knowledge, or experience within the team.
 
-Think of the jagged experience of hopping between tools or platforms like email, Jira, GitHub, Slack, Teams etc to access information. It takes time to remember or figure out where things are and how to access them. It can also be overwhelming and disorienting, especially during onboarding.
+## Reduce Waste
 
-Why not consolidate everything into a single entry point with easy access? Even if it's just a simple "Getting Started" page with a list of links to start off with.
+### Consolidate the User Experience
 
-### Inventory
+Reduce the jagged experience of hopping between tools, platforms and asking people to get information when onboarding or trying to find information for up-skilling. Create a single entry point that is easily accessible and points to different places where information is stored if you can't host everything on the same platform.
 
-> Accumulation of materials, information and resources that are not actively used or processed.
+### Create Clear Learning Paths
 
-Imagine all the effort you have put into onboarding a new hire but over time the documentation is not kept up to date, or there is so much information that it's too overwhelming to maintain or process.
+Know what you want people to learn about the system and the skills they need to work on the system.
 
-Consider a clear learning path focusing on essential skills and requirements. You can create Wikis, READMEs, internal documentation developed using tools like [Docusaurus](https://docusaurus.io/), [road maps](https://roadmap.sh) and media-rich training material using platforms like [Teachify](https://teachify.com/) but have a consolidated place to access it all.
+### Keep Living Documentation
+
+This is not a one-person job. This requires team effort. Everyone should be responsible for keeping documentation up to date. You can choose to create Wikis, READMEs, internal documentation developed using tools like [Docusaurus](https://docusaurus.io/), [road maps](https://roadmap.sh) and media-rich training material using platforms like [Teachify](https://teachify.com/). Whatever you choose, keep it simple and easy to maintain.
 
 Audit the documentation regularly. Fix what is outdated or irrelevant. Bake changes to documentation into user stories to keep the documentation living. Be sure to have described the domain, system, architecture, and processes. Define a glossary of ubitiquous language.
 
-### Motion
+### Cross-Pollinate Skills
 
-> The unnecessary movement of people or processes during a task.
+Move people around to focus on cross-pollination of skills. Pair or mob programming is a process where two or more people work on the same feature or bug together. This is excellent for knowledge sharing, learning, and new hires.
 
-Moving a new hire to a task that is more complicated than they can handle could be a recipe for disaster. Why not move people in the team around to focus on cross-pollination of skills instead? Pair or mob programming is process where two or more people work on the same feature or bug together. This is excellent for knowledge sharing, learning and new hires.
+This gives people with younger skill levels a chance to learn from more experienced (in domain or skill) team members. It also helps to reduce key person dependencies by sharing knowledge and skills across the team.
 
-Systems can get complex and it's important to have more than one person who understands how it works. You can pair up more "senior" team members with "junior" team members to guide them through the process. The level of seniority can be loosely based on experience in the system, not necessarily age or experience in the field.
+## Create Visibility
 
-### Waiting
+It's hard to cram a complex system in one head so it's essential to have visibility into all the things in the system. This includes process charts, system diagrams, and data flow diagrams. This can be done using tools like [Lucidchart](https://www.lucidchart.com/), [Draw.io](https://draw.io/), [Miro](https://miro.com/) or [Whimsical](https://whimsical.com/). They will form part of the documentation you create and keep watering.
 
-> Idle time when a person, process, or task is delayed due to dependencies or inefficiencies.
+### Pay as You Go Training
 
-Reduce key person dependencies by sharing knowledge and skills across the team.
-
-### Overproduction
-
-Streamline your material catering only for essential skills to the team.
-
-
-### Over-processing
-
-### Defects
-
-### Skills
-
-Quality control documentation.
-
-
-
-### Pay as You Go
-
-Formal course material like certified training courses, like Google Cloud Certifications, or courses with completion certificates, like [Udemy](https://www.udemy.com) or [Pluralsight](https://pluralsight.com) courses show an investment in individual skills and is also nice to add to a resume - which should be encouraged.
-
-Subscription-based learning can lead to high volumes of waste as people's schedules fill up. Work and life get in the way and the courses get put on the back burner. This leads to course incompletion.
+Subscription-based learning can lead to high volumes of waste as people's schedules fill up. Work and life get in the way and the courses get put on the back burner. This leads to course incompletion. Yet, formal courses like certified training with Google Cloud Certifications, or courses with completion certificates with [Udemy](https://www.udemy.com) is very rewarding.
 
 ### Dedicated Learning Blocks
 
 Dedicate learning time for each person a day. This could be in the form of a "learning hour" or "learning day" where the person can focus on their training without interruptions.
 
-### Pair/Mob Program on Features
-
-
-
 ### Run Informal Sessions
 
 "Brown bags" or "Show and Tells" are informal training sessions where team members can present on a topic they are passionate about or for sharing knowledge of a skill they're recently picked up or need to share within the team. This can be in the form of a conversation, presentation, a demo, or a workshop.
-
 
 ## Metrics
 
