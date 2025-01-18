@@ -36,9 +36,9 @@ A quick recap though. We outlined 7 phases of their entire end-to-end software d
 
 In this article, we’ll zoom into the training "phase" (I use this term loosely because it is actually an ongoing parallel by nature). We’ll explore potential ways to reduce waste, build clarity, and measure impact. In Lean Six Sigma, we are to reduce variation and eliminate waste.
 
-## Training as a Process
+## Goals
 
-Training will comprise of the following sub-processes:
+Training will comprise of the following sub-processes, each with their own goals:
 
 1. **Onboarding new hires**: The goal here is to get hires to become productive as soon as possible. The team needs to get them up to speed with the business, domain, system, processes, and tools.
 
@@ -47,6 +47,8 @@ Training will comprise of the following sub-processes:
 3. **Sharing knowledge and skills within the team**: The goal here is to reduce key-person dependencies, increase collaboration, and build a culture of learning and sharing. This is about cross-pollination of skills and knowledge.
 
 4. **Training on new features**: The goal here is to fill in any gaps there might be in the team members' knowledge and skills prior to working on a task.
+
+## Focus Areas
 
 ## Problem
 
