@@ -1,7 +1,7 @@
 ---
 title: "The Power of Metrics and Lean Six Sigma in the Training Phase"
 cover: training.webp
-date: 2025-01-10 00:00:00
+date: 2025-01-18 00:00:00
 tags:
   - Mindset
   - Problem Solving
@@ -14,9 +14,15 @@ creditLink: https://chatgpt.com/
 
 In my [previous](/blog/optimizing-software-delivery-the-power-of-metrics-and-lean-six-sigma/) article, we conducted the beginning of my thought experiment for a team working in serious chaos. We'll refer to the team as Extreme Z.
 
-John joins and is immediately drowning in the a swirl of perpetual chaos. Onboarding is an afterthought, the code is in bits and pieces here and there with no (or at least, outdated) documentation, and the team is too busy to help effectively. He is left to fend for himself, trying to piece together the system and the processes.
+John joins and is immediately drowning in a swirl of perpetual chaos. Onboarding is an afterthought, the code is in bits and pieces here and there with no (or at least, outdated) documentation, and the team is too busy to help effectively. He is left to fend for himself, trying to piece together the system and the processes.
 
-Little by little, we attempt to chip away at the challenges Extreme Z faces and try to bring order to the chaos using the bits we know about Lean Six Sigma.
+Sarah, on the other hand, has been part of the team for some time now. Due to her poor onboarding and lack of training, she is struggling to keep up with understanding the domain and the system, let alone the pace and pressure.
+
+Edward is the team lead and he knows his stuff. Problem is, he is a key-person dependency and is stagnating in his career. He is too busy to trying to help where he can in the team and is constantly firefighting.
+
+Everyone means well and is definitely trying. Where can they improve? So, in this serious, little by little, we attempt to chip away at the challenges that Extreme Z are facing to try bring order to the chaos.
+
+> **Crucially important.** I'm no expert on this. This thought experiment is my way of exploring potential improvements using what I am learning in my Lean Six Sigma courses - not a conclusive guide to solving these complex problems.
 
 A quick recap though. We outlined 7 phases of their entire end-to-end software delivery process:
 
@@ -28,17 +34,21 @@ A quick recap though. We outlined 7 phases of their entire end-to-end software d
 6. Monitoring
 7. Support
 
-In this article, we’ll zoom into the metrics dedicated to the training phase. We’ll explore how to reduce waste, build clarity, and measure impact.
-
-> **Crucially important.** I'm no expert on this. I'm simply curious about the process and how to get to the juicy data bits so that we can measure improvements. This thought experiment is my way of exploring the possibilities - not a conclusive guide to solving these complex problems. Your input is very much welcomed.
+In this article, we’ll zoom into the training "phase" (I use this term loosely because it is actually an ongoing parallel by nature). We’ll explore potential ways to reduce waste, build clarity, and measure impact. In Lean Six Sigma, we are to reduce variation and eliminate waste.
 
 ## Training as a Process
 
-It feels awkward that training is a process on its own but it is an essential step in the flow to build and invest in skills, share knowledge with the team and onboard new talent. It impacts new hires and up-skilling for new features.
+Training will comprise of the following sub-processes:
 
-The team wants to obtain, invest and retain talent. People can do their jobs better, work autonomously, eliminate key-person dependencies and reduce the time to take to become productive.
+1. **Onboarding new hires**: The goal here is to get hires to become productive as soon as possible. The team needs to get them up to speed with the business, domain, system, processes, and tools.
 
-## The Problem
+2. **Learning new skills and knowledge**: The goal here is to enable and empower innovation, creativity, and autonomy. Invest to build skills and knowledge to grow the different parts of the system.
+
+3. **Sharing knowledge and skills within the team**: The goal here is to reduce key-person dependencies, increase collaboration, and build a culture of learning and sharing. This is about cross-pollination of skills and knowledge.
+
+4. **Training on new features**: The goal here is to fill in any gaps there might be in the team members' knowledge and skills prior to working on a task.
+
+## Problem
 
 The problem is that Extreme Z is not doing this effectively. They are not investing in training, onboarding is a mess, and the team is too busy to help. This is leading to high churn rates, low productivity, low morale, high defect rates and burn out.
 
@@ -136,4 +146,3 @@ Determine what skills (language, tools, principles, practices) are in the team a
 - **Retention Rate:** Track the retention rate of the team. This can be done by tracking the number of people who stay in the team over time. This can be done using a spreadsheet.
 
 ## Conclusion
-
