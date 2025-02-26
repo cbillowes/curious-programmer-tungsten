@@ -1,7 +1,7 @@
 const path = require('path');
 const template = `./src/templates/blog.js`;
 const createPages = true;
-const startAtYear = 2016;
+const startAtYear = 2015;
 
 const createThePage = (createPage, year, reporter) => {
   createPage({
