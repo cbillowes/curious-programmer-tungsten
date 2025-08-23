@@ -8,8 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "GATSBY_CPU_COUNT=8 netlify dev --port 8888",
-    "start": "gatsby develop",
+    "develop": "GATSBY_CPU_COUNT=8 gatsby develop",
     "build": "GATSBY_CPU_COUNT=8 npm run build:images && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
