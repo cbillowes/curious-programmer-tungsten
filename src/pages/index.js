@@ -9,7 +9,6 @@ import Thumbnail from '@components/thumbnail';
 import Metadata from '@components/metadata';
 import Ribbon from '@components/ribbon';
 import Promo from '@components/promo';
-import Subscribe from '@components/subscribe';
 
 const IndexPage = ({ data }) => {
   const { featuredArticles, latestArticles } = data;
@@ -106,22 +105,6 @@ const IndexPage = ({ data }) => {
               className="w-96 h-96 object-cover"
               alt="Unicorn using a laptop"
             />
-          </div>
-        </div>
-      </section>
-      <hr className="border-gray-300 dark:border-gray-800" />
-      <section id="subscribe" className="bg-white dark:bg-gray-900">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
-          <div className="mx-auto max-w-screen-md text-center">
-            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Subscribe to my newsletter
-            </h2>
-            <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-              Get notified monthly about any new articles, tutorials, and
-              courses. I promise to keep the emails short and sweet, and never
-              spam you.
-            </p>
-            <Subscribe referrer="Home" />
           </div>
         </div>
       </section>
