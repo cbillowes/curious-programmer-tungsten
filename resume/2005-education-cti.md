@@ -1,5 +1,5 @@
 ---
-slug: education-cti-computer-science
+slug: education-cti-information-systems
 share: cti.webp
 resume:
   category: Education
@@ -9,8 +9,8 @@ resume:
   type: Full-Time
   location: Bedfordview, South Africa
   arrangement: Onsite
-  start: 2004-01-01
-  end: 2004-12-31
+  start: 2005-01-01
+  end: 2005-12-31
   tech:
     - C#
     - VB.NET
@@ -22,7 +22,7 @@ resume:
 
 # Description
 
-Completed a Diploma in Computer Science: Internet Development with an 86% average, gaining a comprehensive foundation in full-stack web development principles. This program equipped me with the skills to design, develop, and deploy web applications, and provided a strong understanding of software development methodologies
+Completed diploma with an 83% average, earning a bursary for further study. Developed a strong foundation in software development principles, including software engineering, program design, and relational database modeling (SQL Server 2000). Gained practical experience with Java, XML, and web technologies such as DHTML and Perl, enabling the creation of dynamic web applications. Proficient in Linux and fundamental computing concepts.
 
 ## Skills
 

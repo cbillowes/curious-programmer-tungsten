@@ -23,7 +23,9 @@ resume:
     the school's IT college.
 ---
 
-To whom it may concern,
+# Description
+
+## Letter from the Principal
 
 I, the undersigned, hereby testify that Clarice Billowes was a registered pupil of the above school from January 1999 until December 2003.
 

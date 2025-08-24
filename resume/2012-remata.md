@@ -6,39 +6,41 @@ resume:
   company: Remata Cross Media Solutions
   jobTitle: Senior Software Developer
   type: Full-Time
+  arrangement: Hybrid
   location: Midrand, South Africa
   start: 2012-07-01
   end: 2014-03-31
+  website: https://www.remata.co.za
   os: windows
   tech:
+    - Web Development
+    - Object-Oriented Programming
     - C#
     - SQL
     - jQuery
     - Bootstrap
-    - Payment Integration
-    - XMPie Integration
+    - XMPie
   summary:
-    In the Cross Media Solutions department, I was responsible for the development and
-    maintenance of automated processes and custom development integration with XMPie for
-    on-demand variable data printing solutions.
+    Collaborated with stakeholders to translate complex printing requirements into automated software solutions, developing features with C#, SQL, and Visual Studio that streamlined processes and boosted efficiency. By integrating with XMPie for on-demand variable data printing, enhanced personalization for clients and reduced turnaround times.
 ---
 
-I was responsible for the development and maintenance of automated processes and custom development integration with XMPie for on-demand variable data printing solutions.
+# Description
 
-## Nashua Mobile
+Remata offers digital and litho printing, point-of-sale materials, packaging, variable-data and cross-channel marketing, design/layout services and a unique Web-2-print online storefront.
 
-Built a cross media solution for Nashua Mobile agents to send personalized prospectus brochures to print for their prospective business clients.
+- Collaborated with stakeholders to understand printing process requirements and translate them into automated software solutions.
+- Developed and implemented features for printing processes using C#, SQL, and Visual Studio, significantly reducing manual intervention and improving efficiency.
+- Integrated software solutions with XMPie to enable on-demand variable data printing, enhancing personalization capabilities for clients and leading to faster turnaround times.
+- Applied technical expertise to existing solutions.
 
-![Nashua Mobile](https://media-exp2.licdn.com/dms/image/C4E2DAQHanT1rvd_6JQ/profile-treasury-image-shrink_800_800/0/1602128229294?e=1654876800&v=beta&t=Vf9CGM80jif04aCwaXT6iaqEMYtFsYIiHqFC-Qx-Az8 'Nashua Mobile')
+## Skills
 
-## Platinum Life
+`tags:C#, SQL, jQuery, Bootstrap, Object-Oriented Programming, XMPie Integration, iVeri Nedbank Payment Integration, Windows, Visual Studio`
 
-Built an automation service which imports data, provides it to a personalization component and sends it for print. Jobs were handled concurrently.
+`tags: Communication, Problem Solving, Critical Thinking, Adaptability, Time Management`
 
-![Platinum Life](https://media-exp2.licdn.com/dms/image/C4E2DAQFqxCxU10peyA/profile-treasury-image-shrink_1920_1920/0/1601695103520?e=1654876800&v=beta&t=x5eolxiX3p0SVtCiA9KbyNlABeau9m8MV1YFEx7NrX8 'Platinum Life')
+## Projects
 
-## Photo2Print
-
-Integrate with the Photo2Print services.
-
-![Photo2Print](https://media-exp2.licdn.com/dms/image/C4E2DAQE65Rn2dEAo0Q/profile-treasury-image-shrink_800_800/0/1601338406432?e=1654876800&v=beta&t=OK34PE7BY6i8MBorm-0aPC11noy3JxwH59WNGUWWuSs 'Photo2Print')
+- **Nashua Mobile**: Built a cross media solution for Nashua Mobile agents to send personalized prospectus brochures to print for their prospective business clients.
+- **Platinum Life**: Built an automation service which imports data, provides it to a personalization component and sends it for print. Jobs were handled concurrently.
+- **Photo2Print**: Integrate with the Photo2Print services.
