@@ -17,12 +17,9 @@ import {
   FaSpider,
   FaWindows,
   FaCheckCircle,
-  FaGrinHearts,
-  FaScroll,
 } from 'react-icons/fa';
 import { SiLevelsdotfyi } from 'react-icons/si';
 import { GiDramaMasks } from 'react-icons/gi';
-import { GrGrow } from 'react-icons/gr';
 import '@styles/print.scss';
 import classNames from 'classnames';
 
@@ -54,6 +51,7 @@ const Timeline = ({
       company,
       jobTitle,
       type,
+      arrangement,
       location,
       start,
       end,
@@ -82,7 +80,7 @@ const Timeline = ({
         >
           <ResumeIcon category={category} />
         </div>
-        <div className="border-color-3 border-none xl:border-dashed xl:w-1/4 xl:mx-8 xl:text-right xl:border-r xl:pr-8">
+        <div className="border-color-3 border-none xl:border-dashed xl:w-1/2 xl:mx-8 xl:text-right xl:border-r xl:pr-8">
           {company && (
             <h2 className="text-xl mt-2 xl:mt-0 md:text-2xl leading-loose font-semibold font-alt-sans print:mt-0 print:text-sm">
               <ResumeIcon
@@ -92,6 +90,7 @@ const Timeline = ({
               <Anchor
                 to={`/resume/${slug}`}
                 title={`${jobTitle} at ${company}`}
+                className="font-bold"
               >
                 <span className={color[category].heading}>{jobTitle}</span> at{' '}
                 <span>{company}</span>
@@ -111,22 +110,25 @@ const Timeline = ({
                   {name}
                 </Anchor>
               </h2>
-              <h3 className="font-semibold font-alt-sans">{jobTitle}</h3>
+              <h3 className="font-black font-alt-sans">{jobTitle}</h3>
             </>
           )}
           <div className="leading-loose mb-4 print:text-sm print:mb-0">
-            {(category === 'Career' || category === 'Education') && (
-              <div className="font-bold">
-                {location} &middot; {type} &middot;
-                <span className="pl-1 text-neutral">
-                  {os === 'windows' && <FaWindows className="inline" />}
-                  {os === 'macOS' && <FaApple className="inline" />}
-                  {os === 'linux' && <FaLinux className="inline" />}
-                </span>
-                <br />
-                <ResumeDates start={start} end={end} />
-              </div>
-            )}
+            <div className="flex flex-col space-x-2 space-y-0 justify-end">
+              {(category === 'Career' || category === 'Education') && (
+                <>
+                  <ResumeDates start={start} end={end} className="flex gap-2 justify-end opacity-80" />
+                  <div className="opacity-80">
+                    {location} &middot; {type} &middot; {arrangement} &middot;
+                    <span className="pl-1 text-neutral">
+                      {os === 'windows' && <FaWindows className="inline" />}
+                      {os === 'macOS' && <FaApple className="inline" />}
+                      {os === 'linux' && <FaLinux className="inline" />}
+                    </span>
+                  </div>
+                </>
+              )}
+            </div>
             {category === 'Testimonial' && (
               <>
                 <h4 className="font-bold">{description}</h4>
@@ -156,16 +158,15 @@ const Timeline = ({
             </Anchor>
           </div>
         </div>
-        <div className="hidden xl:flex xl:w-1/4 relative items-center justify-center xl:justify-start xl:text-right print:hidden">
+        <div className="hidden xl:flex xl:w-1/2 relative items-center justify-center xl:justify-start xl:text-right print:hidden">
           <div className="text-center">
             <div className="w-20 xl:w-48 pr-3 pt-3">
               {logo && (
                 <img
                   src={getLogo(logo)}
                   alt={company || name}
-                  className={`mx-auto ${
-                    category === 'Testimonial' ? 'rounded-full' : ''
-                  }`}
+                  className={`mx-auto bg-white rounded-lg px-6 py-4 ${category === 'Testimonial' ? 'rounded-full' : ''
+                    }`}
                 />
               )}
             </div>
@@ -206,32 +207,32 @@ const Meta = () => {
         Clarice Bouwer
       </h1>
       <h2 className="text-xl mt-2 md:text-xl leading-loose font-alt-sans font-bold print:mt-0 print:text-sm">
-        Senior Software Engineer and Director at Cloudsure
+        Software Engineer Team Lead at Cloudsure Limited
       </h2>
       <p className="px-6 mt-2 leading-loose print:text-sm print:mt-0">
         <Anchor to="mailto:clarice@bouwer.dev" title="Email address">
           <FaEnvelope className="inline" /> clarice@bouwer.dev
-        </Anchor>{' '}
-        &middot;{' '}
+        </Anchor>
+        <span className="px-3"></span>
         <Anchor
           to="https://curiousprogrammer.dev"
           title="Curious Programmer website"
         >
           <FaSpider className="inline" /> curiousprogrammer.dev
-        </Anchor>{' '}
-        &middot;{' '}
+        </Anchor>
+        <span className="px-3"></span>
         <Anchor to="https://github.com/cbillowes" title="GitHub profile">
           <FaGithub className="inline" /> github.com/cbillowes
         </Anchor>
-        &middot;{' '}
+        <span className="px-3"></span>
         <Anchor
           to="https://www.linkedin.com/in/cbouwer/"
           title="LinkedIn profile"
         >
           <FaLinkedin className="inline" /> linkedin.com/in/cbouwer
-        </Anchor>{' '}
+        </Anchor>
         <br />
-        Remote &middot; Mauritius
+        Moka, Mauritius &middot; Hybrid
       </p>
     </div>
   );
@@ -279,12 +280,15 @@ const Pillar = ({ icon, title, items, className }) => {
 const CoverLetter = () => {
   return (
     <div className="text-left max-w-6xl mx-auto mb-4 leading-relaxed print:text-left print:text-md">
-      <p className="max-w-4xl text-center mx-auto mb-16 text-xl">
-        My unwavering commitment to driving quantifiable results through{' '}
-        {new Date().getFullYear() - 2006} years of professional expertise in
-        developing cutting-edge, user-centric web products positions me as a
-        dynamic asset. I am fueled by a passion for continuous learning and have
-        a proven track record of achieving impactful outcomes.
+      <p className="max-w-4xl text-center mx-auto mb-3 text-xl leading-relaxed">
+        A seasoned polyglot full-stack software engineer specializing in web development with {new Date().getFullYear() - 2005}{" "}
+        years of experience delivering digital solutions across industries such as media, event registration, cloud, virtualization, and InsureTech.
+      </p>
+      <p className="max-w-4xl text-center mx-auto mb-16 text-lg leading-loose">
+        Currently co-leads a remote team of 15 at Cloudsure Limited and Simply Financial Services, building a next-generation
+        digital life insurance platform on a Clojure-based Polylith architecture spanning more than 15 repositories.
+        Proven track record highlights innovation, systems thinking, and empathetic leadership in guiding high-performing teams.
+        Dedicated to writing elegant code, fostering strong development practices, and creating exceptional user experiences.
       </p>
       <div className="mb-12 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-12 md:space-y-0 text-md">
         <Pillar
@@ -292,12 +296,12 @@ const CoverLetter = () => {
           icon={<SiLevelsdotfyi />}
           className="text-pink-600 ring-pink-400 ring-2 rounded-full"
           items={[
-            `${
-              new Date().getFullYear() - 2006
-            } years of professional experience.`,
-            `Develops aesthetically pleasing and user-friendly web products.`,
-            `Creates features that cater to both users and developers.`,
-            `Thrives in a collaborative team environment, working across different competencies.`,
+            `${new Date().getFullYear() - 2005
+            } years of professional experience`,
+            `Diverse skill set and industry exposure in web development`,
+            `UX & DevX centric approach to building products`,
+            `Team collaboration and leadership`,
+            `Strong communication, problem-solving and analytical skills`,
           ]}
         />
         <Pillar
@@ -305,54 +309,24 @@ const CoverLetter = () => {
           icon={<FaCheckCircle />}
           className="text-green-600 ring-green-400 ring-2 rounded-full"
           items={[
-            `Curious and considers the bigger picture.`,
-            `Empathetic decision-maker.`,
-            `Values open and honest communication.`,
-            `Works well with others to create a safe and cohesive environment.`,
+            `Curious, adaptable, and quick learner`,
+            `Creative problem solver with a growth mindset`,
+            `Committed to continuous learning and improvement`,
+            `People-first culture and team player`,
+            `Empathetic leader and mentor`,
+            `Accountable and takes ownership`,
           ]}
         />
         <Pillar
-          title="Culture"
+          title="Values"
           icon={<GiDramaMasks />}
           className="text-blue-600 ring-blue-400 ring-2 rounded-full"
           items={[
-            `Thrives in a collaborative, people-first culture.`,
-            `Values constructive conversations and a willingness to help.`,
-            `Enjoys pair/mob programming, code reviews, and mentoring.`,
-            `Committed to continuous improvement.`,
-          ]}
-        />
-        <Pillar
-          title="Interests"
-          icon={<FaGrinHearts />}
-          className="text-orange-600 ring-orange-400 ring-2 rounded-full"
-          items={[
-            `Passionate about coding and continuous learning.`,
-            `Enjoys problem-solving.`,
-            `Collects e-books and engages in reading.`,
-            `Appreciates anime and music.`,
-            `Values breaking free from the comfort zone.`,
-          ]}
-        />
-        <Pillar
-          title="Philosophy"
-          icon={<FaScroll />}
-          className="text-indigo-600 ring-indigo-400 ring-2 rounded-full"
-          items={[
-            `Believes in keeping people informed through open and honest communication.`,
-            `Values a collaborative and inclusive work environment.`,
-            `Recognizes and values the importance of time and punctuality.`,
-            `Works for purpose and not for the sake of working.`,
-          ]}
-        />
-        <Pillar
-          title="Growth"
-          icon={<GrGrow />}
-          className="text-yellow-600 ring-yellow-400 ring-2 rounded-full"
-          items={[
-            `Actively engages to expand knowledge through various sources like reading and watching videos.`,
-            `Enrolls in courses to enhance skills and acquire new knowledge.`,
-            `Demonstrates a commitment to personal and professional growth through continuous learning practices.`,
+            `Deliver high-value solutions while reducing waste`,
+            `Full ownership of work, accountability and exceed expectations`,
+            `Open, honest, and respectful communication`,
+            `Lead by listening, fostering collaboration and inspiring innovation`,
+            `Reduce costs and build user-centric products and features`
           ]}
         />
       </div>
@@ -390,11 +364,11 @@ const ResumePage = ({ data }) => {
   }
 
   const { allMarkdownRemark } = data;
-  const [education, setEducation] = useState(true);
+  const [education, setEducation] = useState(false);
   const [career, setCareer] = useState(true);
-  const [testimonials, setTestimonials] = useState(true);
-  const [podcasts, setPodcasts] = useState(true);
-  const [publications, setPublications] = useState(true);
+  const [testimonials, setTestimonials] = useState(false);
+  const [podcasts, setPodcasts] = useState(false);
+  const [publications, setPublications] = useState(false);
 
   const color = {
     Education: {
@@ -443,16 +417,16 @@ const ResumePage = ({ data }) => {
           className="pt-16 text-center max-w-4xl mx-auto m-4 leading-loose print:hidden"
         >
           <Button
-            color={education ? color['Education'].button : ''}
-            onClick={() => toggle(setEducation, !education)}
-          >
-            Education
-          </Button>
-          <Button
             color={career ? color['Career'].button : ''}
             onClick={() => toggle(setCareer, !career)}
           >
             Career
+          </Button>
+          <Button
+            color={education ? color['Education'].button : ''}
+            onClick={() => toggle(setEducation, !education)}
+          >
+            Qualifications
           </Button>
           <Button
             color={testimonials ? color['Testimonial'].button : ''}
@@ -514,6 +488,7 @@ export const query = graphql`
               logo
               tech
               type
+              arrangement
               website
               summary
               name

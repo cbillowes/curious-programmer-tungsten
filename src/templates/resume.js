@@ -26,6 +26,7 @@ export const query = graphql`
           jobTitle
           company
           type
+          arrangement
           website
           location
           tech
@@ -66,6 +67,7 @@ const ResumeTemplate = ({ data }) => {
     jobTitle,
     location,
     type,
+    arrangement,
     start,
     end,
     tech,
@@ -95,9 +97,8 @@ const ResumeTemplate = ({ data }) => {
           <img
             src={require(`@images/logos/${logo}`).default}
             alt={company}
-            className={`logo mx-auto ${
-              category === 'Testimonial' ? 'rounded-full' : ''
-            } `}
+            className={`logo bg-white rounded-lg px-6 py-4 mx-auto max-w-[200px] ${category === 'Testimonial' ? 'rounded-full' : ''
+              } `}
           />
         )}
         {company && (
@@ -113,13 +114,20 @@ const ResumeTemplate = ({ data }) => {
               />
             </h2>
             <div className="text-center text-neutral">
-              <Anchor to={website}>
-                {' '}
-                {website && website.replace('https://', '')}
-              </Anchor>{' '}
-              &middot; {location} &middot; {type}
-              &middot; <ResumeDates start={start} end={end} />
+              {website && (
+                <>
+                  <Anchor to={website}>
+                    {website && website.replace('https://', '')}
+                  </Anchor>
+                  {" "}&middot;</>
+              )}
+              {" "}{location}
+              {" "}&middot;
+              {" "}{type}
+              {" "}&middot;
+              {" "}{arrangement}
             </div>
+            <ResumeDates start={start} end={end} className="flex gap-2 justify-center" />
           </>
         )}
         {name && (

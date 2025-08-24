@@ -25,6 +25,14 @@
 #article {
   line-height: 1.75rem;
 
+  h1 {
+    border-bottom: dashed 1px var(--neutral);
+    color: var(--neutral);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    opacity: 0.5;
+  }
+
   h2,
   h3,
   h4,
@@ -163,6 +171,18 @@
 
   .gatsby-resp-image-figcaption p {
     font-size: 0.875rem;
+  }
+
+  .tags {
+    @apply flex flex-wrap gap-2;
+
+    .tag {
+      @apply inline-block bg-blue-900 text-white px-3 py-1 rounded-md;
+
+      &:hover {
+        @apply bg-pink-700;
+      }
+    }
   }
 }
 

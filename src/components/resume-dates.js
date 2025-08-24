@@ -40,8 +40,9 @@ const ResumeDates = ({ className, start, end }) => {
   const endTimestamp = getTimestamp(end) || getTimestamp(new Date());
   return (
     <span className={className}>
-      {format(start)} to {format(end)} &middot;
-      {timeSince(endTimestamp - startTimestamp)}
+      <span>{format(start)} to {format(end)}</span>
+      <span>&middot;</span>
+      <span>{timeSince(endTimestamp - startTimestamp)}</span>
     </span>
   );
 };
