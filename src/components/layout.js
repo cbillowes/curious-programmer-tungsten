@@ -50,25 +50,11 @@ const Layout = ({ className, children, setTheme, theme, baseRoute, group }) => {
           { to: '/scribbles', name: 'Scribbles' },
           { to: '/courses', name: 'Courses' },
           { to: '/tags', name: 'Tags' },
-          { to: 'https://dly.to/LD032K64hKq', name: 'Daily.dev' },
           {
             name: 'Connect with me',
             items: [
               { to: 'https://www.linkedin.com/in/cbouwer/', name: 'LinkedIn' },
               { to: 'https://github.com/cbillowes', name: 'GitHub' },
-              { to: 'https://dly.to/1L0EwBOqg4w', name: 'Daily.dev' },
-              {
-                to: 'https://mastodon.social/@curiousprogrammer',
-                name: 'Mastodon',
-              },
-              {
-                to: 'https://techhub.social/@curiousprogrammer',
-                name: 'Techhub',
-              },
-              {
-                to: 'https://bsky.app/profile/curiousprogrammer.bsky.social',
-                name: 'Bluesky',
-              },
             ],
           },
           {
