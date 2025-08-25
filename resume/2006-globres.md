@@ -1,5 +1,6 @@
 ---
 slug: globres
+share: globres.png
 resume:
   category: Career
   company: Globres

@@ -1,5 +1,6 @@
 ---
 slug: qualification-lean-six-sigma
+share: mf-treinamentos.png
 resume:
   category: Education
   logo: mf-treinamentos.png

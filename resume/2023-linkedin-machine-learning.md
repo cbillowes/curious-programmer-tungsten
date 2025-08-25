@@ -1,5 +1,6 @@
 ---
 slug: qualification-linkedin-machine-learning
+share: linkedin-machine-learning.jpeg
 resume:
   category: Education
   logo: linkedin-machine-learning.jpeg

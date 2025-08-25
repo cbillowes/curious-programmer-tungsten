@@ -1,5 +1,6 @@
 ---
 slug: remata
+share: remata.png
 resume:
   category: Career
   logo: remata.png

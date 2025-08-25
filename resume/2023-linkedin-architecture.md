@@ -1,5 +1,6 @@
 ---
 slug: qualification-linkedin-architecture
+share: linkedin-architecture.jpeg
 resume:
   category: Education
   logo: linkedin-architecture.jpeg

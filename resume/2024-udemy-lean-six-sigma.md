@@ -1,5 +1,6 @@
 ---
 slug: qualification-udemy-lean-six-sigma
+share: udemy-lss.webp
 resume:
   category: Education
   logo: udemy-lss.webp

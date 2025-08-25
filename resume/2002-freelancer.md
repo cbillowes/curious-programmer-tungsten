@@ -1,5 +1,6 @@
 ---
 slug: freelancer-2002-2004
+share: spyder.png
 resume:
   logo: spyder.png
   category: Career

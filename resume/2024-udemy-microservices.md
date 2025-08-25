@@ -1,5 +1,6 @@
 ---
 slug: qualification-udemy-microservices
+share: udemy-microservices.webp
 resume:
   category: Education
   logo: udemy-microservices.webp

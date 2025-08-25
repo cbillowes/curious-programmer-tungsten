@@ -1,5 +1,6 @@
 ---
 slug: qualification-le-wagon-data-science
+share: le-wagon.png
 resume:
   category: Education
   logo: le-wagon.png

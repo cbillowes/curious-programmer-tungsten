@@ -1,6 +1,6 @@
 ---
 slug: cloudafrica
-share: cloudafrica.webp
+share: cloudafrica.png
 resume:
   category: Career
   logo: cloudafrica.png

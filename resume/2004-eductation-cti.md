@@ -1,6 +1,6 @@
 ---
 slug: education-cti-computer-science
-share: cti.webp
+share: cti.png
 resume:
   category: Education
   logo: cti.png

@@ -1,5 +1,6 @@
 ---
 slug: multichoice
+share: multichoice.png
 resume:
   category: Career
   logo: multichoice.png

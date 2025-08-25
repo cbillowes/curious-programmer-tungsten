@@ -1,5 +1,6 @@
 ---
 slug: education-johan-jurgens
+share: jj.png
 resume:
   category: Education
   logo: jj.png
