@@ -39,6 +39,7 @@ const Timeline = ({
   showTestimonials,
   showPodcasts,
   showPublications,
+  showProjects,
 }) => {
   return allMarkdownRemark.edges.map(({ node }, index) => {
     const { excerpt, frontmatter } = node;
@@ -64,6 +65,7 @@ const Timeline = ({
        ${showCareer ? 'Career' : ''}|
        ${showPodcasts ? 'Podcast' : ''}|
        ${showPublications ? 'Publication' : ''}|
+       ${showProjects ? 'Project' : ''}|
        ${showTestimonials ? 'Testimonial' : ''}`.indexOf(category) === -1
     )
       return <></>;
@@ -115,7 +117,7 @@ const Timeline = ({
           )}
           <div className="leading-loose mb-4 print:text-sm print:mb-0">
             <div className="flex flex-col space-x-2 space-y-0 justify-end">
-              {(category === 'Career' || category === 'Education') && (
+              {(category === 'Career' || category === 'Education' || category === 'Project') && (
                 <>
                   <ResumeDates start={start} end={end} className="flex gap-2 justify-end opacity-80" />
                   <div className="opacity-80">
@@ -368,6 +370,7 @@ const ResumePage = ({ data }) => {
   const [career, setCareer] = useState(true);
   const [testimonials, setTestimonials] = useState(false);
   const [podcasts, setPodcasts] = useState(false);
+  const [projects, setProjects] = useState(false);
   const [publications, setPublications] = useState(false);
 
   const color = {
@@ -387,6 +390,10 @@ const ResumePage = ({ data }) => {
       button: 'bg-blue-500 text-white',
       heading: 'text-blue-500',
     },
+    Project: {
+      button: 'bg-purple-500 text-white',
+      heading: 'text-purple-500',
+    },
     Publication: {
       button: 'bg-yellow-500 text-white',
       heading: 'text-yellow-500',
@@ -394,11 +401,12 @@ const ResumePage = ({ data }) => {
   };
 
   const toggle = (onToggle, value) => {
-    if (education && career && testimonials && podcasts && publications) {
+    if (education && career && testimonials && podcasts && projects && publications) {
       setEducation(false);
       setCareer(false);
       setTestimonials(false);
       setPodcasts(false);
+      setProjects(false);
       setPublications(false);
       onToggle(true);
     } else {
@@ -441,6 +449,12 @@ const ResumePage = ({ data }) => {
             Podcasts
           </Button>
           <Button
+            color={projects ? color['Project'].button : ''}
+            onClick={() => toggle(setProjects, !projects)}
+          >
+            Projects
+          </Button>
+          <Button
             color={publications ? color['Publication'].button : ''}
             onClick={() => toggle(setPublications, !publications)}
           >
@@ -457,6 +471,7 @@ const ResumePage = ({ data }) => {
           showCareer={career}
           showTestimonials={testimonials}
           showPodcasts={podcasts}
+          showProjects={projects}
           showPublications={publications}
         />
       </div>

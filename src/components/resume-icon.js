@@ -25,6 +25,9 @@ const ResumeIcon = ({ category, className = '' }) => {
       {category === 'Testimonial' && (
         <FaRegComment className={className} title={category} />
       )}
+      {category === 'Project' && (
+        <FaCode className={className} title={category} />
+      )}
     </>
   );
 };
