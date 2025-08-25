@@ -10,6 +10,8 @@ resume:
   summary: Maneesh commends me for my exceptional knowledge and extensive experience in real-world implementations across various web, app, and software solutions, noting my commitment to refining skills, adherence to industry standards, and valuable contributions as an intelligent and questioning team player, expressing a strong desire to work with me again and highly recommending me to others.
 ---
 
+# Testimonial
+
 I worked with Clarice during my time at DStv Digital Media
 across two scrum teams. Clarice has an exceptional knowledge and experience
 with real world implementations across various web,app and software solutions.

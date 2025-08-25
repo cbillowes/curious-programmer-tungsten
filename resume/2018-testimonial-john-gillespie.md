@@ -10,6 +10,8 @@ resume:
   summary: John commends me as an exceptional and collaborative team member, praising my commitment to exceeding expectations, technical competence, and eagerness to continually learn and grow.
 ---
 
+# Testimonial
+
 I have had the distinct pleasure of working alongside Clarice for a number of years now.
 During this time I have come to know her as an upstanding individual, and an invaluable member of the team.
 

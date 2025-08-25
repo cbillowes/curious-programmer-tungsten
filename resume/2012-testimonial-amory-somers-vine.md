@@ -9,5 +9,7 @@ resume:
   summary: Amory describes me as a fantastic team asset, emphasizing her remarkable commitment to delivery and attention to detail.
 ---
 
+# Testimonial
+
 Clarice is a fantastic asset to have on your team.
 Her commitment to delivery and her attention to detail are remarkable!

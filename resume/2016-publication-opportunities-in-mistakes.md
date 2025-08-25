@@ -8,6 +8,8 @@ resume:
   start: 2016-08-02
 ---
 
+# Publication
+
 [Read](https://alistapart.com/article/finding-opportunities-in-the-mistakes-we-make/)
 my frustrations and burn-out and how I started to use the mistakes
 I was making to find ways to improve my well-being

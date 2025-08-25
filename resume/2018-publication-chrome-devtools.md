@@ -1,5 +1,6 @@
 ---
 slug: published-article-about-chrome-devtools
+share: offerzen.png
 resume:
   logo: offerzen.png
   category: Publication
@@ -7,6 +8,8 @@ resume:
   description: OfferZen
   start: 2018-07-22
 ---
+
+# Publication
 
 [Read](https://www.offerzen.com/blog/debugging-with-chrome-devtools-quick-front-end-fixes) about familiarizing yourself with the Chrome DevTools.
 

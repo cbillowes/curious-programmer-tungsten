@@ -8,6 +8,8 @@ resume:
   start: 2017-02-03
 ---
 
+# Presentation
+
 [Watch](https://www.youtube.com/watch?v=fkgAc0DY4s8) as I take the audience through my interpretation of
 imposter syndrome. You can also see the [highlights](https://twitter.com/i/moments/830378337516322816)
 or [read](/blog/rubyfuza-2017-conference/) about it.

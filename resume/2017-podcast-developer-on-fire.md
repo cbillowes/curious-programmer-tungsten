@@ -8,6 +8,8 @@ resume:
   start: 2017-08-28
 ---
 
+# Podcast
+
 [Listen](https://developeronfire.com/podcast/episode-202-clarice-bouwer-leaving-comfort-behind)
 to the episode where I talk about collaboration, empathy, fear, and being an impostor.
 

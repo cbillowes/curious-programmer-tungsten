@@ -7,6 +7,8 @@ resume:
   start: 2016-06-04
 ---
 
+# Presentation
+
 [Jozi-JUG](https://www.meetup.com/Jozi-JUG/) is a Johannesburg, South Africa JVM User Group (Jozi-JUG) is a User Group.
 
 [This](/blog/branding-your-identity) was my first talk.
